@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">removeDocSchemaDef</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJuYW1lIiApOw0K
+cGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpTdHJpbmcgZXJyb3JNc2cgPSAiIjsNCg0KdHJ5
+IHsNCglzTWFuYWdlci5yZW1vdmVEb2NTY2hlbWFEZWYoIG5hbWUgKTsNCn0gY2F0Y2ggKCBFeGNl
+cHRpb24gZSApIHsNCgllcnJvck1zZyA9IGUudG9TdHJpbmcoKTsNCn0NCg0KSURhdGFDdXJzb3Ig
+cGlwZWxpbmVDdXJzb3JfMSA9IHBpcGVsaW5lLmdldEN1cnNvcigpOw0KSURhdGFVdGlsLnB1dCgg
+cGlwZWxpbmVDdXJzb3JfMSwgImVycm9yTXNnIiwgZXJyb3JNc2cgKTsNCnBpcGVsaW5lQ3Vyc29y
+XzEuZGVzdHJveSgpOw==</value>
+</Values>

@@ -1,0 +1,1614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT></COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">CustomVariableInfoList</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">JSocketAdapter.DOC:CustomVariableInfo</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">CustomVariableValueInfoList</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">JSocketAdapter.DOC:CustomVariableValueInfo</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/CustomVariableInfoList;4;1;JSocketAdapter.DOC:CustomVariableInfo">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <array name="xml" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.AS400.ASYNCHONLINEYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">AS400 시스템에서 Asynch Online 방식의 Socket 연계 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.AS400.CLUSTERPATH</value>
+      <value name="variableValue">/WMDATA_EX/AS400/CLUSTER/</value>
+      <value name="description">AS400 Data Q Listener Clustering을 위한 임시 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.AS400.CONFIGPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/as400/</value>
+      <value name="description">AS400 Data Q Listener 관리 XML 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.AS400.DATAQUSEYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">AS400 시스템에서 Data Q를 이용해서 ESB와 연계 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.AS400.LISTENERHC</value>
+      <value name="variableValue">false</value>
+      <value name="description">AS400 Data Q Listener에 대한 Health Check 수행 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.AUDITLOG.CMENUDISPLAY</value>
+      <value name="variableValue">true</value>
+      <value name="description">Socket Log &gt; Remote Server Audit Log 메뉴 Display 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.AUDITLOG.LEVEL</value>
+      <value name="variableValue">DEBUG</value>
+      <value name="description">ESB 제품에 의한 Audit Logging 시 저장할 Pipeline Data Level</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.AUDITLOG.SMENUDISPLAY</value>
+      <value name="variableValue">true</value>
+      <value name="description">Socket Log &gt; Local Server Audit Log 메뉴 Display 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.BUSINESSNM.LENGTH</value>
+      <value name="variableValue">4</value>
+      <value name="description">Basic Info &amp;gt; Business Name 메뉴에서 등록하는 Business Name의 길이</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.BUSINESSNM.LENGTHCHK</value>
+      <value name="variableValue">false</value>
+      <value name="description">Basic Info &amp;gt; Business Name 메뉴에서 등록하는 Business Name의 길이를 고정길이로 할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.COMPANY.NAME</value>
+      <value name="variableValue">NBLEE</value>
+      <value name="description">회사명</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.CUSTOMMENU.CUSTOMER</value>
+      <value name="variableValue">NBLEE</value>
+      <value name="description">Customer에 따라서 Menu를 다르게 보이게 하기 위한 Customer의 Code</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.DESIGN.PATH</value>
+      <value name="variableValue">WmRoot</value>
+      <value name="description">JSocketAdapter Admin 화면 디자인 관련 파일 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.EMAIL.HOST</value>
+      <value name="variableValue">email_host</value>
+      <value name="description">Email Host Name or IP</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.EMAIL.HOSTPORT</value>
+      <value name="variableValue">25</value>
+      <value name="description">Email Host의 Port Number</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.ERRORNOTI.EMAIL</value>
+      <value name="description">인터페이스 에러에 대해서 에러 통보를 수신할 ESB 관리자의 이메일</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.ERRORNOTI.EMAILYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">인터페이스 에러에 대해서 ESB 관리자에게 메일 통보 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.ERRORNOTI.STEMAILYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">인터페이스 에러에 대해서 Source, Target System 담당자에게 메일 통보 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.EXCEPT.IP</value>
+      <value name="description">Socket Server Port에 대한 접속을 제외시키는 IP</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.GWSERVER.ALIAS</value>
+      <value name="description">Gateway Server에 대한 Remote Server Alias 목록</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.INCHARGE.EMAIL</value>
+      <value name="variableValue">aaa@bbb.com</value>
+      <value name="description">ESB 관리자 이메일</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.INCHARGE.EMAILYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">장애발생 및 처리결과에 대해서 ESB 관리자에게 메일 통보 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.INTERFACE.IDLENGTH</value>
+      <value name="variableValue">10</value>
+      <value name="description">인터페이스 아이디 길이</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.LOCALFILE.CONFIGPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/localfile/</value>
+      <value name="description">ESB 파일 시스템에 쌓이는 파일의 저장 위치를 관리하는 XML 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.MASERVER.ALIAS</value>
+      <value name="description">Main Server에 대한 Remote Server Alias 목록</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.MULTIREMOTE.ALIAS</value>
+      <value name="description">동기화 처리를 하고자 하는 Remote Server Alias 목록</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.OTHER.SERVERNAME</value>
+      <value name="description">Clustering을 구성하는 다른 서버의 Host Name</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.PIPELINE.SAVEYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">Pipeline 데이터 저장 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.REMOTE.ALIAS</value>
+      <value name="description">Clustering을 구성하는 다른 서버의 Remote Server Alias</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.REMOTE.DEPCONFIG</value>
+      <value name="description">'Deploy Config' 메뉴에서 Deploy 가능한 Remote Server Alias 목록</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.REMOTE.DEPFILE</value>
+      <value name="description">'Utility &gt; Deploy File' 메뉴에서 Deploy 가능한 Remote Server Alias 목록</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.REMOTE.IP</value>
+      <value name="description">Clustering을 구성하는 다른 서버의 Remote Server IP</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.SERVER.ROLE</value>
+      <value name="variableValue">NA</value>
+      <value name="description">ESB 서버의 역할 구분</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.SERVER.TYPE</value>
+      <value name="variableValue">DEV_EX</value>
+      <value name="description">ESB 서버 구분(개발/UAT/운영)</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.SVCSTARTEND.DEBUGLOG</value>
+      <value name="variableValue">true</value>
+      <value name="description">Flow Service의 Start, End Debug Log를 Server Log에 Print 할지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.SYSTEM.NAME</value>
+      <value name="variableValue">ESB</value>
+      <value name="description">JSocketAdapter를 설치한 System의 명칭</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.SYSTEMNM.LENGTH</value>
+      <value name="variableValue">4</value>
+      <value name="description">Basic Info &amp;gt; System Name 메뉴에서 등록하는 System Name의 길이</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.SYSTEMNM.LENGTHCHK</value>
+      <value name="variableValue">false</value>
+      <value name="description">Basic Info &amp;gt; System Name 메뉴에서 등록하는 System Name의 길이를 고정길이로 할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.SYSTEMTM.PATTERN</value>
+      <value name="variableValue">yyyy-MM-dd HH:mm:ss.SSS</value>
+      <value name="description">시스템 현재 날짜, 시간을 구하는 패턴</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.WARNING.COUNT</value>
+      <value name="variableValue">3</value>
+      <value name="description">System Resource 사용양의 위험 상태를 경고음으로 알리는 횟수</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.WARNING.INTERVAL</value>
+      <value name="variableValue">2</value>
+      <value name="description">System Resource 사용양의 위험 상태를 경고음으로 알릴 경우 경고음의 간격</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.WARNINGCHK.DMSVCEXEC</value>
+      <value name="variableValue">false</value>
+      <value name="description">Server Resources Monitoring 및 Warning을 수행하는 데몬 서비스의 실행 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.WARNINGCHK.DOYN</value>
+      <value name="variableValue">true</value>
+      <value name="description">Server Resources Monitoring 및 Warning의 수행 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.WARNINGCHK.INTERVAL</value>
+      <value name="variableValue">30</value>
+      <value name="description">Server Resources Monitoring 및 Warning을 수행하는 Interval(초단위)</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.WARNINGTHRESHOLD.CONTIMEOUT</value>
+      <value name="variableValue">5</value>
+      <value name="description">UM, Terracotta 서버에 연결 테스트 수행 시 Connection Timeout</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.WARNINGTHRESHOLD.CPU</value>
+      <value name="variableValue">70</value>
+      <value name="description">경고음으로 알리기 위한 현재 사용중인 CPU의 비율(%) 임계치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.WARNINGTHRESHOLD.MEMORY</value>
+      <value name="variableValue">10</value>
+      <value name="description">경고음으로 알리기 위한 현재 사용 가능한 Heap Memory의 비율(%) 임계치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.WARNINGTHRESHOLD.QUEUE</value>
+      <value name="variableValue">10</value>
+      <value name="description">경고음으로 알리기 위한 현재 Queue/Topic에 처리되지 않고 남아 있는 메세지의 갯수</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.WARNINGTHRESHOLD.SVCDURATION</value>
+      <value name="variableValue">5</value>
+      <value name="description">인터페이스 Main Service의 실행시간에 대한 경고 임계치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.WARNINGTHRESHOLD.THREAD</value>
+      <value name="variableValue">10</value>
+      <value name="description">경고음으로 알리기 위한 현재 사용 가능한 Thread의 비율(%) 임계치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ACK.DOCLIST</value>
+      <value name="description">Socket Server에서 데이터 수신하자마자 Ack를 송신해야 하는 전문 목록</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.AUDITLOG.CPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/cauditlogs/</value>
+      <value name="description">Socket Client Transaction Audit Log 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.AUDITLOG.CSUBPATHTYPE</value>
+      <value name="variableValue">DOC_ID</value>
+      <value name="description">Socket Client Transaction Audit Log 파일 저장 서브 디렉토리 타입</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.AUDITLOG.DPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/auditlogexcel/</value>
+      <value name="description">Socket Server/Client Transaction Audit Log 엑셀파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.AUDITLOG.RPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/rauditlogs/</value>
+      <value name="description">Socket Server Resubmit Transaction Audit Log 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.AUDITLOG.SAVEYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">Socket Transaction Audit Log를 파일로 저장할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.AUDITLOG.SPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/sauditlogs/</value>
+      <value name="description">Socket Server Transaction Audit Log 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.AUDITLOG.SSUBPATHTYPE</value>
+      <value name="variableValue">DOC_ID</value>
+      <value name="description">Socket Server Transaction Audit Log 파일 저장 서브 디렉토리 타입</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.BUSINESSDOCFILE.PATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/businessdocfile/</value>
+      <value name="description">Remote Server Socket 전문의 Schema 정의 엑셀파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.BUSINESSDOCSCHEMA.PATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/businessdocschema/</value>
+      <value name="description">Remote Server Socket 전문의 Schema 정의 IData 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.CONFIG.BATCHPATH</value>
+      <value name="variableValue">/WMDATA_EX/SFTP/</value>
+      <value name="description">Batch Socket 통신 시 사용하는 파일저장 기본 디렉토리</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.CONFIG.CHARSET</value>
+      <value name="variableValue">KSC5601/EUC-KR/UTF-8/GB2312/GB18030</value>
+      <value name="description">Socket 데이터 변환 시 사용 가능한 Character Set</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.CONFIG.ISTYPE</value>
+      <value name="description">Integration Server가 설치된 형태</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.CONFIG.PATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/</value>
+      <value name="description">Socket 관리 XML 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.CONFIG.RECONCOUNT</value>
+      <value name="variableValue">2</value>
+      <value name="description">Socket 연결이 안 될 경우 연결 재시도 횟수</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.CONFIG.RECONINTERVAL</value>
+      <value name="variableValue">3</value>
+      <value name="description">Socket 연결이 안 될 경우 연결 재시도 Interval(초단위)</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.CONFIG.SHAREPATH</value>
+      <value name="description">Socket 관리 XML 파일 공유 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.CONNLOG.CPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/cconnlogs/</value>
+      <value name="description">Online Socket Client 연결, 연결해제 Log 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.CONNLOG.SAVEYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">Online Socket 연결, 연결해제 Log를 파일로 저장할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.CONNLOG.SPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/sconnlogs/</value>
+      <value name="description">Online Socket Server 연결, 연결해제 Log 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.DOCFILE.EXTENSION</value>
+      <value name="variableValue">csv</value>
+      <value name="description">전문의 각 필드에 대한 Schema를 정의한 엑셀파일의 확장자</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.DOCFILE.PATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/docfile/</value>
+      <value name="description">전문의 Schema 정의 엑셀파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.DOCINFO.MULTISYNCHYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">Local Server Socket Doc 정보를 모든 서버에 동기화 할지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.DOCSCHEMA.PATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/docschema/</value>
+      <value name="description">Local Server Socket 전문의 Schema 정의 IData 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ERRORLOG.PATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/errorlogs/</value>
+      <value name="description">Socket Error Log 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ERRORLOG.SAVEYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">Socket Error Log를 파일로 저장할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.GWMASEP.RTNPATH</value>
+      <value name="description">Gateway Server에서 전문 송신한 결과 파일을 Main Server에 리턴하기 위해서 저장할 디렉토리</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.INTERFACE.TYPE</value>
+      <value name="variableValue">Socket To Socket/Socket To REST API/REST API To Socket/Socket To SOAP WS/SOAP WS To Socket/Socket To EJB</value>
+      <value name="description">Source System과 Target System 간의 인터페이스 방식</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.LOG.PATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/logs/</value>
+      <value name="description">Socket Log 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.LOG.SAVEYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">Socket Log를 파일로 저장할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.LOG.UMCONALIAS</value>
+      <value name="variableValue">TCP_LOG_JMS_CON</value>
+      <value name="description">Socket 관련 Log를 파일로 저장 시 UM을 사용할 경우 JMS Connection Alias</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.LOG.UMUSEYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">Socket Log를 파일로 저장 시 UM을 사용할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.MAILNOTI.SAVEYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">ESB 관리자에게 메일로 통보하는 내용을 파일로 저장할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.MAINSVC.COMMSVC</value>
+      <value name="description">전문을 처리하는 Processing Service에서 Invoke 할 공통로직 Service 목록</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.OBJECT.REQPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/realtime/request/</value>
+      <value name="description">Realtime Synch Socket 인터페이스 시 Socket Object 임시 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.CHKCLSINTERVAL</value>
+      <value name="variableValue">3</value>
+      <value name="description">Asynch Online 송신전용 Server Port에 대한 Client Socket Close 체크 Interval(초단위)</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.ERRORPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/online/error/</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 에러 발생한 내역 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.INVDATA</value>
+      <value name="variableValue">exit</value>
+      <value name="description">Asynch Online Socket Listener에서 비정상 데이터 수신 시 처리 방법</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.LOADBALCOUNT</value>
+      <value name="variableValue">5</value>
+      <value name="description">Asynch Online Socket Client 수에 대한 Load Balancing을 유지하기 위한 Client 수의 차이</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.MENUDISPLAY</value>
+      <value name="variableValue">inlist</value>
+      <value name="description">Asynch Online Socket Server, Client 관리 메뉴를 Display 하는 방법</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.MESTRGPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/online/mestrigger/</value>
+      <value name="description">Asynch Online Socket Switching 시 webMethods messaging trigger 정보를 파일로 저장할 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.RECONTIMEOUT</value>
+      <value name="variableValue">20</value>
+      <value name="description">Asynch Online Socket 송신 시 Socket Reconnect 중인 경우 Reconnect 가 완료될 때까지 기다리는 Timeout(초단위)</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.REQPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/online/request/</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 ESB Header 임시 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.RESPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/online/response/</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 Response Data 임시 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.RESTIMEOUT</value>
+      <value name="variableValue">120</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 요청전문 송신 후 응답전문을 기다리는 Timeout(초단위)</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.SAVE</value>
+      <value name="variableValue">MEM</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 ESB Header, Response Data, Send Status 임시 저장 방법</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.SNDSTSPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/online/sndsts/</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 전문송신 성공여부 임시 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.SNDSTSTIMEOUT</value>
+      <value name="variableValue">60</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 전문송신 후 송신결과를 기다리는 Timeout(초단위)</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.SNDTYPE</value>
+      <value name="variableValue">SND</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 전문송신 후 송신결과를 전달받는 방법</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.SYNCHSERVER</value>
+      <value name="variableValue">Synch Server IP/Port</value>
+      <value name="description">Asynch Online Socket Object를 동기화 하기 위한 다른 운영서버의 Socket IP/Port</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.TMPHISPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/online/tmphis/</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 데이터 임시 저장에 대한 이력 관리를 위한 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.TMPSAVEYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 데이터 임시 저장에 대한 이력 관리를 위한 파일 저장 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.TRACEPATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/online/trace/</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 전문 송수신에 대한 Trace 관리를 위한 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.TRACESAVEYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 전문 송수신에 대한 Trace 관리를 위한 파일 저장 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.TRANSTYPE</value>
+      <value name="variableValue">JMS</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 데이터의 Asynch 처리 방법</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.UMCONALIAS</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 전문 송수신을 위한 JMS Connection Alias</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.QINFO.PATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/qinfos/</value>
+      <value name="description">UM에 전송한 데이터 정보 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.QINFO.SAVETYPE</value>
+      <value name="variableValue">FIL</value>
+      <value name="description">UM에 전송한 데이터 정보 임시저장 방법</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.QINFO.SAVEYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">UM에 전송한 데이터 정보를 파일로 저장할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.SCHEMASVC.COMMSVC</value>
+      <value name="description">전문의 공통정보부 Schema 정의 Service 목록</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.SKIPLOG.PATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/skiplogs/</value>
+      <value name="description">전문처리 Skip 내역 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.SKIPLOG.SAVEYN</value>
+      <value name="variableValue">false</value>
+      <value name="description">전문처리 Skip 내역을 파일로 저장 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.SOPROCESSING.URL</value>
+      <value name="variableValue">http://localhost:5555/invoke/JSocketAdapter.RESTAPI.GATEWAY/receive</value>
+      <value name="description">REST API To Socket 방식의 인터페이스일 경우 Socket 통신을 담당하는 서비스의 URL</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.SVCDURATION.PATH</value>
+      <value name="variableValue">../../../CUSTOM_CONFIG/socket/svcduration/</value>
+      <value name="description">경고 임계치 이상의 시간이 소요된 인터페이스 Main Service에 대한 파일 저장 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.SYNCHRT.UMCONALIAS</value>
+      <value name="description">Synch Realtime Socket 인터페이스 시 전문 송수신을 위한 JMS Connection Alias</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.TRIGGER.CONTSVC</value>
+      <value name="description">Trigger의 Enable 여부 변경 서비스</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+    </record>
+  </array>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/CustomVariableValueInfoList;4;1;JSocketAdapter.DOC:CustomVariableValueInfo">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <array name="xml" type="record" depth="1">
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.AS400.ASYNCHONLINEYN</value>
+      <value name="description">AS400 시스템에서 Asynch Online 방식의 Socket 연계 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">AS400 시스템에서 Asynch Online 방식의 Socket 연계 없음</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">AS400 시스템에서 Asynch Online 방식의 Socket 연계 있음</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.AS400.DATAQUSEYN</value>
+      <value name="description">AS400 시스템에서 Data Q를 이용해서 ESB와 연계 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">AS400 시스템에서 Data Q를 이용해서 ESB와 연계 없음</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">AS400 시스템에서 Data Q를 이용해서 ESB와 연계 있음</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.AS400.LISTENERHC</value>
+      <value name="description">AS400 Data Q Listener에 대한 Health Check 수행 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">AS400 Data Q Listener에 대한 Health Check 수행 안함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">AS400 Data Q Listener에 대한 Health Check 수행 함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.AUDITLOG.CMENUDISPLAY</value>
+      <value name="description">Socket Log &gt; Remote Server Audit Log 메뉴 Display 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">Display 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">Display 하지 않음</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.AUDITLOG.LEVEL</value>
+      <value name="description">ESB 제품에 의한 Audit Logging 시 저장할 Pipeline Data Level</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">OFF</value>
+          <value name="desc">로그를 저장하지 않음</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">DEBUG</value>
+          <value name="desc">테스트 및 디버깅을 위해서 많은 Pipeline Data를 저장</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">PROD</value>
+          <value name="desc">시스템 운영에 꼭 필요한 Pipeline Data를 저장</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.AUDITLOG.SMENUDISPLAY</value>
+      <value name="description">Socket Log &gt; Local Server Audit Log 메뉴 Display 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">Display 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">Display 하지 않음</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.BUSINESSNM.LENGTHCHK</value>
+      <value name="description">Basic Info &amp;gt; Business Name 메뉴에서 등록하는 Business Name의 길이를 고정길이로 할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">고정길이로 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">고정길이로 하지 않음</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.DESIGN.PATH</value>
+      <value name="description">JSocketAdapter Admin 화면 디자인 관련 파일 위치</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">WmRoot</value>
+          <value name="desc">WmRoot 패키지에 있는 디자인을 이용</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">custom</value>
+          <value name="desc">JSocketAdapter 패키지에 있는 디자인을 이용</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.ERRORNOTI.EMAILYN</value>
+      <value name="description">인터페이스 에러에 대해서 ESB 관리자에게 메일 통보 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">메일로 통보를 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">메일로 통보하지 않음</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.ERRORNOTI.STEMAILYN</value>
+      <value name="description">인터페이스 에러에 대해서 Source, Target System 담당자에게 메일 통보 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">메일로 통보를 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">메일로 통보하지 않음</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.INCHARGE.EMAILYN</value>
+      <value name="description">장애발생 및 처리결과에 대해서 ESB 관리자에게 메일 통보 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">ESB 관리자에게 메일 통보 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">ESB 관리자에게 메일 통보 안함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.PIPELINE.SAVEYN</value>
+      <value name="description">Pipeline 데이터 저장 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">Pipeline 데이터 저장하지 않음</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true_file_fixedname</value>
+          <value name="desc">Pipeline 데이터를 고정값 이름의 파일로 저장함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true_file_variablename</value>
+          <value name="desc">Pipeline 데이터를 가변값 이름의 파일로 저장함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true_memory_fixedname</value>
+          <value name="desc">Pipeline 데이터를 고정값 이름의 메모리에 저장함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true_memory_variablename</value>
+          <value name="desc">Pipeline 데이터를 가변값 이름의 메모리에 저장함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.SERVER.ROLE</value>
+      <value name="description">ESB 서버의 역할 구분</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">NA</value>
+          <value name="desc">GW/MA 구분 없음</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">GW</value>
+          <value name="desc">Gateway Server</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">MA</value>
+          <value name="desc">Main Server</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.SERVER.TYPE</value>
+      <value name="description">ESB 서버 구분(개발/UAT/운영)</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">DEV_IN</value>
+          <value name="desc">EAI 개발서버</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">DEV1_IN</value>
+          <value name="desc">EAI 개발서버1</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">DEV2_IN</value>
+          <value name="desc">EAI 개발서버2</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">DEV_EX</value>
+          <value name="desc">B2Bi 개발서버</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">DEV1_EX</value>
+          <value name="desc">B2Bi 개발서버1</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">DEV2_EX</value>
+          <value name="desc">B2Bi 개발서버2</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">UAT_IN</value>
+          <value name="desc">EAI UAT 서버</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">UAT1_IN</value>
+          <value name="desc">EAI UAT 서버1</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">UAT2_IN</value>
+          <value name="desc">EAI UAT 서버2</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">UAT_EX</value>
+          <value name="desc">B2Bi UAT 서버</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">UAT1_EX</value>
+          <value name="desc">B2Bi UAT 서버1</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">UAT2_EX</value>
+          <value name="desc">B2Bi UAT 서버2</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">PROD_IN</value>
+          <value name="desc">EAI 운영서버</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">PROD1_IN</value>
+          <value name="desc">EAI 운영서버1</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">PROD2_IN</value>
+          <value name="desc">EAI 운영서버2</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">PROD_EX</value>
+          <value name="desc">B2Bi 운영서버</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">PROD1_EX</value>
+          <value name="desc">B2Bi 운영서버1</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">PROD2_EX</value>
+          <value name="desc">B2Bi 운영서버2</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.SVCSTARTEND.DEBUGLOG</value>
+      <value name="description">Flow Service의 Start, End Debug Log를 Server Log에 Print 할지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">Server Log에 Print 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">Server Log에 Print 하지 않음</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.SYSTEMNM.LENGTHCHK</value>
+      <value name="description">Basic Info &amp;gt; System Name 메뉴에서 등록하는 System Name의 길이를 고정길이로 할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">고정길이로 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">고정길이로 하지 않음</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.WARNINGCHK.DMSVCEXEC</value>
+      <value name="description">Server Resources Monitoring 및 Warning을 수행하는 데몬 서비스의 실행 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">데몬 서비스를 실행함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">실행 중인 데몬 서비스를 종료함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.CONFIG.WARNINGCHK.DOYN</value>
+      <value name="description">Server Resources Monitoring 및 Warning의 수행 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">Server Resources Monitoring 및 Warning을 수행함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">Server Resources Monitoring 및 Warning을 수행하지 않음</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.AUDITLOG.CSUBPATHTYPE</value>
+      <value name="description">Socket Client Transaction Audit Log 파일 저장 서브 디렉토리 타입</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">CUR_DATE</value>
+          <value name="desc">현재날짜</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">SOCKET_NAME</value>
+          <value name="desc">현재날짜-소켓Name</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">DOC_ID</value>
+          <value name="desc">현재날짜-소켓Name-전문ID</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.AUDITLOG.SAVEYN</value>
+      <value name="description">Socket Transaction Audit Log를 파일로 저장할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">Socket Transaction Audit Log를 파일로 저장 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">Socket Transaction Audit Log를 파일로 저장 안함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.AUDITLOG.SSUBPATHTYPE</value>
+      <value name="description">Socket Server Transaction Audit Log 파일 저장 서브 디렉토리 타입</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">CUR_DATE</value>
+          <value name="desc">현재날짜</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">PORT_NUMBER</value>
+          <value name="desc">현재날짜-포트번호</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">DOC_ID</value>
+          <value name="desc">현재날짜-포트번호-전문ID</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.CONFIG.ISTYPE</value>
+      <value name="description">Integration Server가 설치된 형태</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">standalone</value>
+          <value name="desc">독립적으로 설치된 형태</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">apigw</value>
+          <value name="desc">API Gateway에 설치된 형태</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.CONNLOG.SAVEYN</value>
+      <value name="description">Online Socket 연결, 연결해제 Log를 파일로 저장할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">Socket 연결, 연결해제 Log를 파일로 저장 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">Socket 연결, 연결해제 Log를 파일로 저장 안함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.DOCFILE.EXTENSION</value>
+      <value name="description">전문의 각 필드에 대한 Schema를 정의한 엑셀파일의 확장자</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">csv</value>
+          <value name="desc">csv 파일</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">xls</value>
+          <value name="desc">xls 파일</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">xlsx</value>
+          <value name="desc">xlsx 파일</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.DOCINFO.MULTISYNCHYN</value>
+      <value name="description">Local Server Socket Doc 정보를 모든 서버에 동기화 할지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">모든 서버에 동기화 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">Clustering 운영서버에만 동기화 함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ERRORLOG.SAVEYN</value>
+      <value name="description">Socket Error Log를 파일로 저장할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">Socket Error Log를 파일로 저장 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">Socket Error Log를 파일로 저장 안함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.LOG.SAVEYN</value>
+      <value name="description">Socket Log를 파일로 저장할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">Socket Log를 파일로 저장 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">Socket Log를 파일로 저장 안함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.LOG.UMUSEYN</value>
+      <value name="description">Socket Log를 파일로 저장 시 UM을 사용할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">UM을 사용 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">UM을 사용 안함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.MAILNOTI.SAVEYN</value>
+      <value name="description">ESB 관리자에게 메일로 통보하는 내용을 파일로 저장할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">메일통보 내용을 파일로 저장 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">메일통보 내용을 파일로 저장 안함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.INVDATA</value>
+      <value name="description">Asynch Online Socket Listener에서 비정상 데이터 수신 시 처리 방법</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">exit</value>
+          <value name="desc">Listener를 종료하고 Client Socket을 Close</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">continue</value>
+          <value name="desc">Listener를 종료하지 않고 계속 데이터를 수신</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.MENUDISPLAY</value>
+      <value name="description">Asynch Online Socket Server, Client 관리 메뉴를 Display 하는 방법</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">inlist</value>
+          <value name="desc">오른쪽 화면에 목록을 Display 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">inmenu</value>
+          <value name="desc">메뉴 화면에 목록을 Display 함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.SAVE</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 ESB Header, Response Data, Send Status 임시 저장 방법</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">MEM</value>
+          <value name="desc">IS Memory에 저장</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">FIL</value>
+          <value name="desc">파일 시스템에 저장</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.SNDTYPE</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 전문송신 후 송신결과를 전달받는 방법</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">SND</value>
+          <value name="desc">JMS send 또는 publish</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">SNR</value>
+          <value name="desc">JMS sendAndWait 또는 publishAndWait</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.TMPSAVEYN</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 데이터 임시 저장에 대한 이력 관리를 위한 파일 저장 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">파일로 저장 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">파일로 저장 안함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.TRACESAVEYN</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 전문 송수신에 대한 Trace 관리를 위한 파일 저장 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">파일로 저장 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">파일로 저장 안함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.ONLINE.TRANSTYPE</value>
+      <value name="description">Asynch Online Socket 인터페이스 시 데이터의 Asynch 처리 방법</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">JMS</value>
+          <value name="desc">UM에 JMS send</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">MES</value>
+          <value name="desc">UM에 webMethods Messaging publish</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">INV</value>
+          <value name="desc">UM을 사용하지 않고 서비스를 직접 Invoke</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.QINFO.SAVETYPE</value>
+      <value name="description">UM에 전송한 데이터 정보 임시저장 방법</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">MEM</value>
+          <value name="desc">IS Memory에 저장함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">FIL</value>
+          <value name="desc">파일 시스템에 저장함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.QINFO.SAVEYN</value>
+      <value name="description">UM에 전송한 데이터 정보를 파일로 저장할 것인지 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">파일로 저장 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">파일로 저장 안함</value>
+        </record>
+      </array>
+    </record>
+    <record javaclass="com.wm.util.Values">
+      <value name="variableName">ESB.SOCKET.SKIPLOG.SAVEYN</value>
+      <value name="description">전문처리 Skip 내역을 파일로 저장 여부</value>
+      <value name="canDelete">No</value>
+      <value name="deployYN">Yes</value>
+      <array name="variableValueList" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="value">true</value>
+          <value name="desc">파일로 저장 함</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="value">false</value>
+          <value name="desc">파일로 저장 안함</value>
+        </record>
+      </array>
+    </record>
+  </array>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+</FLOW>

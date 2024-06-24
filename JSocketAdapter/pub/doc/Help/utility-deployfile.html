@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Notify Certificate Expiration</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Utility &gt; Deploy File Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Utility &gt; Deploy File</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">ESB Server Local 파일시스템에 존재하는 파일을 다른 서버에 Deploy 하는 메뉴이다.
+      	                                        </a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Utility &gt; Deploy File 클릭 : Deploy 처리 화면으로 이동한다.</li>
+    	                                              <li>Deploy File 클릭 : File Deploy 처리를 한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Deploy Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>특정 ESB Server의 Local 파일시스템에 존재하는 파일을 다른 ESB Server에 동기화 하고자 할 경우에 이 기능을 사용할 수 있다.<br>
+            	                                                                     예를 들어서, JSocketAdapter Administrator의 dsp 파일을 수정하고 다른 ESB Server에도 동기화 하고자 할 경우에
+            	                                                                     유용하게 사용할 수 있다.
+            	                                                                 </li>
+            	                                                                 <li>Full File Name 그대로 Target Server에 Overwrite 하기 때문에 디렉토리 구조가 같은 파일에 대해서 Deploy 해야 하고
+            	                                                                     Integration Server 설치 디렉토리가 서로 다른 경우 그 아래에 있는 파일은 상대경로로 해야 한다.<br>
+            	                                                                     예를 들어서,<br>
+            	                                                                     Source Server 파일 : /ESB01/IntegrationServer/instances/default/packages/JSocketAdapter/pub/index.dsp<br>
+            	                                                                     Target Server 파일 : /ESB02/IntegrationServer/instances/default/packages/JSocketAdapter/pub/index.dsp<br>
+            	                                                                     위와 같이 Deploy 하기 위해서는 Full File Name을 상대경로인 packages/JSocketAdapter/pub/index.dsp 로 입력해야 한다.
+            	                                                                 </li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Target Server</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Deploy 하고자 하는 Target Server를 선택<br>
+      	                                                              Basic Info &gt; Custom Variable 메뉴의 ESB.CONFIG.REMOTE.DEPFILE에 설정한 목록을 Display 한다.<br>
+      	                                                              다중 선택이 가능하고 선택을 하지 않으면 목록에 있는 모든 서버에 Deploy 할 수 있다.</a></div>
+    	<div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Full File Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Deploy 하고자 하는 파일의 전체 이름</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

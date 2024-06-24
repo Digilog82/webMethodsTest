@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">removeOnlineClientListener</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwlzZXNzaW9uTmFtZSA9IElEYXRhVXRpbC5nZXRTdHJpbmcoIHBpcGVsaW5lQ3Vyc29yLCAibmFt
+ZSIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ryb3koKTsNCg0KU3RyaW5nIGVycm9yTXNnID0gIiI7
+DQoNCnRyeSB7DQoJLy8gT25saW5lQ2xpZW50TGlzdGVuZXJMaXN0IEhhc2h0YWJsZSBcdUM1RDBc
+dUMxMUMgXHVDMEFEXHVDODFDDQoJc01hbmFnZXIucmVtb3ZlT25saW5lQ2xpZW50TGlzdGVuZXIo
+IHNlc3Npb25OYW1lICk7DQp9IGNhdGNoICggRXhjZXB0aW9uIGUgKSB7DQoJZXJyb3JNc2cgPSBl
+LnRvU3RyaW5nKCk7DQp9DQoNCklEYXRhQ3Vyc29yIHBpcGVsaW5lQ3Vyc29yXzEgPSBwaXBlbGlu
+ZS5nZXRDdXJzb3IoKTsNCklEYXRhVXRpbC5wdXQoIHBpcGVsaW5lQ3Vyc29yXzEsICJlcnJvck1z
+ZyIsIGVycm9yTXNnICk7DQpwaXBlbGluZUN1cnNvcl8xLmRlc3Ryb3koKTs=</value>
+</Values>

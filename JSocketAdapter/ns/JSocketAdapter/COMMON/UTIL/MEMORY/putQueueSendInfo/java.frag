@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">putQueueSendInfo</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJuYW1lIiApOw0K
+SURhdGEgUXVldWVTZW5kSW5mbwk9IElEYXRhVXRpbC5nZXRJRGF0YSggcGlwZWxpbmVDdXJzb3Is
+ICJRdWV1ZVNlbmRJbmZvIiApOw0KcGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpTdHJpbmcg
+ZXJyb3JNc2cgPSAiIjsNCg0KdHJ5IHsNCglzTWFuYWdlci5wdXRRdWV1ZVNlbmRJbmZvKCBuYW1l
+LCBRdWV1ZVNlbmRJbmZvICk7DQp9IGNhdGNoICggRXhjZXB0aW9uIGUgKSB7DQoJZXJyb3JNc2cg
+PSBlLnRvU3RyaW5nKCk7DQp9DQoNClF1ZXVlU2VuZEluZm8gPSBudWxsOw0KDQpJRGF0YUN1cnNv
+ciBwaXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJRGF0YVV0aWwucHV0
+KCBwaXBlbGluZUN1cnNvcl8xLCAiZXJyb3JNc2ciLCBlcnJvck1zZyApOw0KcGlwZWxpbmVDdXJz
+b3JfMS5kZXN0cm95KCk7DQoJ</value>
+</Values>

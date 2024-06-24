@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">removeRealtimeRequestHeader</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJuYW1lIiApOw0K
+cGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpTdHJpbmcgZXJyb3JNc2cgPSAiIjsNCg0KdHJ5
+IHsNCgkvLyBSZWFsdGltZVJlcXVlc3RIZWFkZXJMaXN0IEhhc2h0YWJsZSBcdUM1RDBcdUMxMUMg
+XHVDMEFEXHVDODFDDQoJc01hbmFnZXIucmVtb3ZlUmVhbHRpbWVSZXF1ZXN0SGVhZGVyKCBuYW1l
+ICk7DQp9IGNhdGNoICggRXhjZXB0aW9uIGUgKSB7DQoJZXJyb3JNc2cgPSBlLnRvU3RyaW5nKCk7
+DQp9DQoNCklEYXRhQ3Vyc29yIHBpcGVsaW5lQ3Vyc29yXzEgPSBwaXBlbGluZS5nZXRDdXJzb3Io
+KTsNCklEYXRhVXRpbC5wdXQoIHBpcGVsaW5lQ3Vyc29yXzEsICJlcnJvck1zZyIsIGVycm9yTXNn
+ICk7DQpwaXBlbGluZUN1cnNvcl8xLmRlc3Ryb3koKTs=</value>
+</Values>

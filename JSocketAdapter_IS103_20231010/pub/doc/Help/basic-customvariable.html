@@ -1,0 +1,815 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Custom Variable</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Basic Info &gt; Custom Variable Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Basic Info &gt; Custom Variable</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">JSocketAdapter를 구현하는데 필요한 Values에 대해서 소스 안에서 Set Value 하는 것을 피하고 소스 수정 없이 Values를 변경하면 바로 반영될 수<br>
+      	                                        있도록 하기 위해서 Name/Value 쌍으로 Variables를 [등록/수정/삭제/조회] 하는 메뉴이다.<br>
+      	                                        JSocketAdapter Package를 최초에 Install 하면 Custom Variable 기본값들이 자동으로 등록된다.<br>
+      	                                        JSocketAdapter Package Install 후 가장 먼저 해야할 일은 System 상황에 맞게 적당한 Value로 수정하는 것이다.<br>
+      	                                        다음과 같은 Variable Name에 대해서는 특히 주의해서 수정해야 한다.<br>
+      	                                        - ESB.CONFIG.COMPANY.NAME(회사명)<br>
+      	                                        - ESB.CONFIG.EMAIL.HOST(Email Host Name or IP)<br>
+      	                                        - ESB.CONFIG.INCHARGE.EMAIL(ESB 관리자 이메일)<br>
+												- ESB.CONFIG.MULTIREMOTE.ALIAS(동기화 처리할 서버가 Clustering 상관 없이 두 개 이상인 경우 Remote Server Alias 목록)<br>
+      	                                        - ESB.CONFIG.OTHER.SERVERNAME(다른 운영서버의 Host Name)<br>
+      	                                        - ESB.CONFIG.REMOTE.ALIAS(다른 운영서버의 Remote Server Alias)<br>
+      	                                        - ESB.CONFIG.REMOTE.DEPCONFIG(Deploy 가능한 Remote Server Alias 목록)<br>
+												- ESB.CONFIG.REMOTE.IP(다른 운영서버의 Remote Server IP)<br>
+      	                                        - ESB.CONFIG.SERVER.TYPE(ESB 서버 구분)<br><br>
+												Custom Variable의 Value 수정 순서(수정이 필요 없는 경우에는 Skip)<br>
+												1. ESB.CONFIG.MULTIREMOTE.ALIAS<br>
+												2. ESB.CONFIG.SERVER.TYPE<br>
+                                                3. ESB.CONFIG.REMOTE.ALIAS<br>
+												4. ESB.CONFIG.REMOTE.IP<br>
+                                                5. ESB.CONFIG.OTHER.SERVERNAME<br>
+                                                6. 나머지는 순서 상관 없음<br>
+                                                1, 2, 3번이 먼저 설정이 되어야 다른 운영서버와 동기화 처리가 된다.<br><br>
+												Socket Server에 대한 구성을 물리적으로 Gateway Server(Socket Port Open, Data Listening)와 Main Server(Data Processing)로 구분해서 운영하는 경우에는
+												다음과 같은 Variable Name에 대해서 적당하게 설정해야 한다.<br>
+												Gateway Server에서의 설정<br>
+												- ESB.CONFIG.MULTIREMOTE.ALIAS<br>
+												  &nbsp;&nbsp;자기 자신을 제외한 Gateway Server와 Main Server에 대한 Remote Server Alias를 '/'로 구분해서 설정<br>
+												- ESB.CONFIG.MASERVER.ALIAS<br>
+												  &nbsp;&nbsp;Main Server에 대한 Remote Server Alias를 '/'로 구분해서 설정<br>
+												  &nbsp;&nbsp;만약 Main Server에 대한 L4 스위치가 있는 경우에는 L4 스위치에 대한 Remote Server Alias 하나만 설정<br>
+												- ESB.CONFIG.SERVER.ROLE = GW<br>
+												- ESB.SOCKET.DOCINFO.MULTISYNCHYN = true<br>
+												Main Server에서의 설정<br>
+												- ESB.CONFIG.MULTIREMOTE.ALIAS<br>
+												  &nbsp;&nbsp;자기 자신을 제외한 Main Server와 Gateway Server에 대한 Remote Server Alias를 '/'로 구분해서 설정<br>
+												- ESB.CONFIG.GWSERVER.ALIAS<br>
+												  &nbsp;&nbsp;Gateway Server에 대한 Remote Server Alias를 '/'로 구분해서 설정<br>
+												  &nbsp;&nbsp;만약 Gateway Server에 대한 L4 스위치가 있는 경우에는 L4 스위치에 대한 Remote Server Alias 하나만<br>
+												  &nbsp;&nbsp;설정<br>
+												- ESB.CONFIG.SERVER.ROLE = MA<br>
+												- ESB.SOCKET.DOCINFO.MULTISYNCHYN = true
+      	                                        </a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Basic Info &gt; Custom Variable 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Create New Custom Variable 클릭 : 신규정보 등록화면으로 이동한다.</li>
+    	                                              <li>Edit 아이콘 클릭 : 상세조회 및 수정화면으로 이동한다.</li>
+    	                                              <li>Delete 아이콘 클릭 : 등록정보를 삭제한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Create And Update Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>기본적으로 등록되어 있는 Variables는 삭제하거나 Name을 수정하지 않도록 한다. JSocketAdapter 내에서 Variable Name을 사용하는 것이 있다.</li>
+            	                                                                 <li>Variable Name은 기존에 등록되지 않은 Unique 한 값으로 해야 한다.</li>
+            	                                                                 <li>모든 Field에 대해서는 필수로 입력한다.</li>
+            	                                                                 <li>Variable Name은 직접 입력할 수도 있고 Custom Variable Value에 등록되어 있는 Variable Name을 선택해서 입력할 수도 있다.</li>
+            	                                                                 <li>Variable Name을 직접 입력했는데 Custom Variable Value에 등록되어 있는 Variable Name과 동일할 경우에는 자동으로 Custom Variable Value에 등록되어 있는 Values 중에서 선택할 수 있도록 된다.</li>
+            	                                                                 <li>Value를 여러 개를 등록해야 하는 경우에는 '/' 를 구분자로 해서 여러 Value를 입력한다.<br>
+            	                                                                     예를 들어서, ESB.CONFIG.INCHARGE.EMAIL 에 대한 Value를 여러 개 등록하는 경우 다음과 같이 입력한다.<br>
+            	                                                                     aaa@nblee.com/bbb@nblee.com/ccc@nblee.com
+            	                                                                 </li>
+            	                                                                 <li>Custom Variable에 대한 [등록/수정/삭제] 정보는 Integration Server Memory에도 똑같이 동기화 된다.<br>
+            	                                                                 	   Integration Server Memory에 저장된 정보는 IS Memory Object &gt; Custom Variable 메뉴에서 확인 가능하다.
+            	                                                                 </li>            	                                                                 
+            	                                                                 <li><font color="blue">운영서버가 두 대인 경우 한 쪽 운영서버에서 [등록/수정/삭제] 하면 다른 쪽 운영서버에서도 자동으로 [등록/수정/삭제] 된다.</font></li>
+            	                                                                 <li>Config File : SAG_Directory/CUSTOM_CONFIG/socket/customVariableConfig.xml</li>
+            	                                                                 <li>Integration Server를 Restart 하거나 JSocketAdapter Package를 Reload 하면 StartUp 서비스에 의해서 Config File의 정보를 Integration Server Memory에 동기화 시킨다.</li>
+            	                                                                 <li>Variable의 Value를 수정하면 JSocketAdapter, JSocketSamples Package의 Flow Service는 소스 수정 없이 바로 적용이 가능하도록 되어 있다.</li>
+            	                                                                 <li>ESB.CONFIG.AS400.ASYNCHONLINEYN<br>
+            	                                                                 	   AS400 시스템이 존재하면서 Data Queue를 이용해서 Asynch Online 방식의 Socket 인터페이스를 위해서 ESB와 연계하는지 여부를 설정한다.<br>
+            	                                                                 	   true : ESB와 연계함, false : ESB와 연계하지 않음<br>
+            	                                                                 	   Basic Info &gt; Business Name 메뉴에서 Asynch Online Socket YN 필드가 'Yes' 인 Business Name이 있는 경우에는 왼쪽 메뉴에 "ProviderSystemName Online" 이라는 메뉴가 Display 된다.<br>
+            	                                                                 	   그러면서 ESB.CONFIG.AS400.ASYNCHONLINEYN의 Value가 true인 경우에는 "ProviderSystemName Online" 메뉴 아래에 "Data Q Listener" 라는 메뉴가 Display 된다.
+            	                                                                 </li>
+            	                                                                 <li>ESB.CONFIG.AS400.CLUSTERPATH<br>
+            	                                                                 	   AS400 Data Q Listener Clustering을 위한 임시파일 저장위치를 설정한다.<br>
+            	                                                                     AS400 시스템이 존재하면서 Data Queue를 이용해서 ESB와 연계하는 경우 ESB 시스템에는 Data Queue Listener를 등록한다.<br>
+            	                                                                     ESB 운영서버가 두 대인 경우 Data Queue Listener를 양 쪽 서버에서 모두 Enable 해서 사용할 수 없고 한 쪽 서버에서만 Enable 해서 사용해야 한다.<br>
+            	                                                                     이러한 제품의 한계를 극복하기 위해서 JSocketAdapter에서는 Data Queue Listener를 양 쪽 서버에서 모두 Enable 해서 사용하도록 할 수 있다.<br>
+            	                                                                     운영서버이고 운영서버가 이중화 되어 있으면서 두 서버에서 공유할 수 있는 파일 시스템이 있는 경우에만 설정한다.
+            	                                                                 </li>
+            	                                                                 <li>ESB.CONFIG.AS400.CONFIGPATH<br>
+            	                                                                     AS400 Data Q Listener 관리 XML 파일 저장위치를 설정한다.<br>
+            	                                                                     AS400 시스템이 존재하면서 Data Queue를 이용해서 ESB와 연계하는 경우 ESB 시스템에는 Data Queue Listener를 등록한다.<br>
+            	                                                                     IS Administrator &gt; Adapters &gt; AS/400 Adapter 메뉴에서 등록한 Data Queue Listener 중에서 ESB 시스템에서 관리할 Listener를 등록하는데 이 등록한 정보를 XML 파일로 관리한다.<br>
+            	                                                                     이 Variable에 대해서는 Value를 수정할 수 없다.
+            	                                                                 </li>
+            	                                                                 <li>ESB.CONFIG.AS400.DATAQUSEYN<br>
+            	                                                                     AS400 시스템이 존재하면서 Data Queue를 이용해서 ESB와 연계하는지 여부를 설정한다.<br>
+            	                                                                     true : ESB와 연계함, false : ESB와 연계하지 않음<br>
+            	                                                                     ESB.CONFIG.AS400.DATAQUSEYN의 Value가 true인 경우에는 왼쪽 메뉴에 "AS/400" 이라는 메뉴가 Display 된다.
+            	                                                                 </li>
+            	                                                                 <li>ESB.CONFIG.AS400.LISTENERHC<br>
+            	                                                                 	   AS400 Data Queue Listener에 대한 Health Check 수행 여부를 설정한다.<br>
+            	                                                                     AS400 시스템이 존재하면서 Data Queue를 이용해서 ESB와 연계하는 경우 ESB 시스템에는 Data Queue Listener를 등록한다.<br>
+            	                                                                     이 Data Queue Listener는 AS400 시스템과 ESB 시스템 사이에 Online Socket으로 연결되어 있는 것으로서 일정시간 동안 데이터 송수신이 없을 경우 Network Level에서 임의로 연결을 끊을 수 있다.<br>
+            	                                                                     JSocketAdapter에서는 Data Queue Listener에 대한 연결이 끊어지지 않게 하기 위한 기능을 제공한다.<br>
+            	                                                                     ESB.CONFIG.AS400.LISTENERHC의 Value는 JSocketAdapter에서 제공하는 기능이 수행될 때 변경되는 것으로서 Basic Info &gt; Custom Variable 메뉴에서 임의로 Value를 수정하지 않도록 한다.
+            	                                                                 </li>
+            	                                                                 <li>ESB.CONFIG.AUDITLOG.CMENUDISPLAY<br>
+            	                                                                     Socket Log &gt; Remote Server Audit Log 메뉴의 Display 여부를 설정한다.<br>
+            	                                                                     true : Display 함<br>
+																					 false : Display 하지 않음<br>
+																					 Audit Log 건수가 많을 경우 조회할 때 서버에 부하를 주기 때문에 Audit Log 건수에 따라서 Display 여부를 결정한다.
+            	                                                                 </li>
+            	                                                                 <li>ESB.CONFIG.AUDITLOG.LEVEL<br>
+            	                                                                     ESB 제품에 의한 Audit Logging 시 저장할 Pipeline Data Level을 설정한다.<br>
+            	                                                                     OFF : 로그를 저장하지 않음<br>
+																					 DEBUG : 테스트 및 디버깅을 위해서 많은 Pipeline Data를 저장한다.<br>
+																					 PROD : 시스템 운영에 꼭 필요한 Pipeline Data를 저장한다.
+            	                                                                 </li>
+																				 <li>ESB.CONFIG.AUDITLOG.SMENUDISPLAY<br>
+            	                                                                     Socket Log &gt; Local Server Audit Log 메뉴의 Display 여부를 설정한다.<br>
+            	                                                                     true : Display 함<br>
+																					 false : Display 하지 않음<br>
+																					 Audit Log 건수가 많을 경우 조회할 때 서버에 부하를 주기 때문에 Audit Log 건수에 따라서 Display 여부를 결정한다.
+            	                                                                 </li>
+																				 <li>ESB.CONFIG.BUSINESSNM.LENGTH<br>
+            	                                                                     Basic Info &gt; Business Name 메뉴에서 등록하는 Business Name의 길이를 설정한다.
+            	                                                                 </li>
+																				 <li>ESB.CONFIG.BUSINESSNM.LENGTHCHK<br>
+            	                                                                     Basic Info &gt; Business Name 메뉴에서 등록하는 Business Name의 길이를 고정길이로 할 것인지 여부를 설정한다.
+            	                                                                 </li>
+																				 <li>ESB.CONFIG.COMPANY.NAME<br>
+            	                                                                     Enterprise 회사명을 설정한다.<br>
+            	                                                                     Space를 포함하지 않도록 한다.
+            	                                                                 </li>
+																				 <li>ESB.CONFIG.CUSTOMMENU.CUSTOMER<br>
+            	                                                                     Customer에 따라서 Menu를 다르게 보이게 하기 위한 Customer의 Code를 설정한다.
+            	                                                                 </li>
+            	                                                                 <li>ESB.CONFIG.DESIGN.PATH<br>
+            	                                                                     JSocketAdapter Administrator 화면 디자인 관련 파일의 기본위치를 설정한다.<br>
+            	                                                                     WmRoot : WmRoot Package에 있는 CSS, Images를 사용함<br>
+            	                                                                     custom : packages/JSocketAdapter/pub/custom 폴더에 있는 CSS, Images를 사용함<br>
+            	                                                                     JSocketAdapter Administrator의 화면 디자인은 기본적으로 WmRoot Package에 있는 CSS, Images를 사용한다.<br>
+    	                                              	                             그러므로 운영중인 IS 버전의 디자인과 같게 된다. 그러나 운영중인 IS 버전이 10.3 보다 상위인 경우 JSocketAdapter를 개발한 IS 10.3 버전과 CSS, Images의 경로 및 파일명이 다르면 화면이 깨지게 될 것이다.<br>
+    	                                              	                             이럴 경우에는 Basic Info &gt; Custom Variable 메뉴의 ESB.CONFIG.DESIGN.PATH의 Value를 custom 으로 수정 후 화면을 Refresh 하면 packages/JSocketAdapter/pub/custom 폴더에 있는 CSS, Images가 적용된다.<br>
+    	                                              	                             이 폴더에는 IS 10.3 WmRoot Package에 있는 CSS, Images가 있다.
+            	                                                                 </li>
+            	                                                                 <li>ESB.CONFIG.EMAIL.HOST<br>
+            	                                                                     Email 서버의 Host Name 또는 IP를 설정한다.<br>
+            	                                                                     JSocketAdapter에서 수행하는 눈에 보이지 않는 기능을 수행 시 수행결과 또는 에러발생에 대한 내용을 ESB 관리자에게 메일로 통보를 할 때 사용할 Email 서버의 Host Name 또는 IP 이다.<br>
+            	                                                                     ESB 서버와 Email 서버와의 방화벽 오픈 등의 Network 환경을 고려해야 한다.<br>
+            	                                                                     Email 서버를 사용할 수 없는 상황일 경우에는 ESB.CONFIG.INCHARGE.EMAILYN의 Value를 반드시 false로 설정해야 한다.
+            	                                                                 </li>
+																				 <li>ESB.CONFIG.EMAIL.HOSTPORT<br>
+            	                                                                     Email 서버의 Port 번호를 설정한다.
+            	                                                                 </li>
+																				 <li>ESB.CONFIG.ERRORNOTI.EMAIL<br>
+            	                                                                 	 인터페이스 수행 시 에러가 발생했을 경우 에러 통보를 수신할 ESB 관리자의 이메일 주소를 설정한다.<br>
+            	                                                                 	 여러 개를 등록해야 하는 경우에는 '/' 를 구분자로 사용하고 첫 번째에 있는 이메일 주소가 보낸사람 및 받는사람 주소로 사용되고 두 번째 이후의 이메일 주소는 참조로 사용된다.
+            	                                                                 </li>
+            	                                                                 <li>ESB.CONFIG.ERRORNOTI.EMAILYN<br>
+            	                                                                     인터페이스 수행 시 에러가 발생했을 경우 에러 내용을 ESB 관리자에게 메일로 통보를 할지 여부를 설정한다.<br>
+            	                                                                     true : 메일로 통보를 함, false : 메일로 통보하지 않음
+            	                                                                 </li>
+																				 <li>ESB.CONFIG.ERRORNOTI.STEMAILYN<br>
+            	                                                                     인터페이스 수행 시 에러가 발생했을 경우 에러 내용을 Source System 담당자와 Target System 담당자에게 메일로 통보를 할지 여부를 설정한다.<br>
+            	                                                                     true : 메일로 통보를 함, false : 메일로 통보하지 않음
+            	                                                                 </li>
+            	                                                                 <li>ESB.CONFIG.EXCEPT.IP<br>
+            	                                                                     Socket Server Port에 대한 접속을 제외시키는 IP를 설정한다.<br>
+            	                                                                     Socket Server Port를 Enable 시키면 L4 스위치에서 주기적으로 Health Check를 수행할 수 있다.<br>
+            	                                                                     운영서버가 두 대인 경우에 다른 운영서버에서도 Socket Server Port에 접속을 할 수 있다.<br>
+            	                                                                     해당 Port로 Client의 접속이 있을 때 수신되는 전문에 대해서 처리를 하는 Flow Service를 실행할 것인지 여부를 판단할 때 사용한다.<br>
+            	                                                                     Network Level에서 임의로 접속하는 IP가 존재할 경우에만 설정한다.<br>
+            	                                                                     L4 스위치가 아니더라도 Request를 Skip 해야 할 IP가 있는 경우에는 여기에 설정한다.<br>
+            	                                                                     운영서버인 경우 일반적으로 L4 스위치 IP, 운영서버 두 대의 IP를 모두 설정한다.
+            	                                                                 </li>
+																				 <li>ESB.CONFIG.GWSERVER.ALIAS<br>
+      	                                                                             Socket Server에 대한 구성을 물리적으로 Gateway Server(Socket Port Open, Data Listening)와 Main Server(Data Processing)로 구분해서 운영하는 경우
+																				     Gateway Server에 대한 Remote Server Alias 목록을 설정한다.<br>
+      	                                                                             여러 개를 등록해야 하는 경우에는 '/' 를 구분자로 사용하고 IS Administrator &gt; Settings &gt; Remote Servers 메뉴에서 등록한 Alias를 입력해야 한다.<br>
+																				     운영서버가 두 대 이상이면서 L4가 있는 경우에는 모든 Gateway Server에 대한 Remote Server Alias를 등록할 필요 없이 L4에 대한 Alias 하나만 등록하면 된다.<br>
+      	                                                                             GW/MA 서버 구분이 있는 경우에 "ESB.CONFIG.GWSERVER.ALIAS"의 Value 대해서는 MA Server 끼리는 동기화 처리를 하고 GW Server에는 동기화 처리를 하지 않는다.<br>
+																				     Gateway Server에서는 설정할 필요 없고 Main Server에서 이 값을 설정해야 한다.<br>
+																				     Gateway Server에는 존재하면서 Main Server에는 존재하지 않는 정보를 Main Server에서 구하는 경우에 이 Alias가 사용된다.<br>
+																				     예) Local Server Socket 정보
+      	                                                                         </li>
+            	                                                                 <li>ESB.CONFIG.INCHARGE.EMAIL<br>
+            	                                                                 	   ESB 관리자의 이메일 주소를 설정한다.<br>
+            	                                                                 	   여러 개를 등록해야 하는 경우에는 '/' 를 구분자로 사용하고 첫 번째에 있는 이메일 주소가 보낸사람 및 받는사람 주소로 사용되고 두 번째 이후의 이메일 주소는 참조로 사용된다.
+            	                                                                 </li>
+            	                                                                 <li>ESB.CONFIG.INCHARGE.EMAILYN<br>
+            	                                                                     JSocketAdapter에서 수행하는 눈에 보이지 않는 기능을 수행 시 수행결과 또는 에러발생에 대한 내용을 ESB 관리자에게 메일로 통보를 할지 여부를 설정한다.<br>
+            	                                                                     true : 메일로 통보를 함, false : 메일로 통보하지 않음<br>
+																					 true로 설정하는 순간에 Server Resources Monitoring 및 Warning을 수행하는 데몬 서비스를 자동으로 실행시키고 false로 설정하는 순간에 실행 중인
+																					 데몬 서비스를 자동으로 종료시킨다.
+            	                                                                 </li>
+            	                                                                 <li>ESB.CONFIG.INTERFACE.IDLENGTH<br>
+            	                                                                     Interface ID의 길이를 설정한다.<br>
+            	                                                                     Interface를 수행하는 메인 서비스 안에서 Namin Rule에 의해서 Interface ID를 추출해야 하는 경우가 생길 수 있다. 이와 같이 Interface ID를 추출할 때 사용한다.
+            	                                                                 </li>            	                                                                 
+            	                                                                 <li>ESB.CONFIG.LOCALFILE.CONFIGPATH<br>
+            	                                                                     ESB 서버 Local 파일 시스템에 쌓이는 파일의 주기적인 삭제를 위한 정보를 관리하는 XML 파일 저장위치를 설정한다.<br>
+            	                                                                     ESB 서버 Local 파일 시스템에는 Server Log, Socket Log 등 파일이 계속 늘어나서 파일 시스템의 사용 가능한 공간이 줄어들게 된다.<br>
+            	                                                                     JSocketAdapter에서는 일정기간 동안만 파일을 저장하고 일정기간이 지나면 파일 시스템에서 파일을 삭제하는 기능을 제공한다.<br>
+            	                                                                     이 Variable에 대해서는 Value를 수정할 수 없다.
+            	                                                                 </li>
+																				 <li>ESB.CONFIG.MASERVER.ALIAS<br>
+      	                                                                             Socket Server에 대한 구성을 물리적으로 Gateway Server(Socket Port Open, Data Listening)와 Main Server(Data Processing)로 구분해서 운영하는 경우
+																				     Main Server에 대한 Remote Server Alias 목록을 설정한다.<br>
+      	                                                                             여러 개를 등록해야 하는 경우에는 '/' 를 구분자로 사용하고 IS Administrator &gt; Settings &gt; Remote Servers 메뉴에서 등록한 Alias를 입력해야 한다.<br>
+																				     운영서버가 두 대 이상이면서 L4가 있는 경우에는 모든 Main Server에 대한 Remote Server Alias를 등록할 필요 없이 L4에 대한 Alias 하나만 등록하면 된다.<br>
+																					 단, IS Administrator &gt; Solutions &gt; Socket Admin &gt; Server Socket &gt; Local Server Socket 메뉴에서 Port 정보 등록 시
+																					 Topic, JMS Trigger를 자동으로 생성하고자 할 경우에는 Main Server에 대한 모든 Remote Server Alias를 '/' 를 구분자로 해서 등록해야 한다.<br>
+      	                                                                             GW/MA 서버 구분이 있는 경우에 "ESB.CONFIG.MASERVER.ALIAS"의 Value 대해서는 GW Server 끼리는 동기화 처리를 하고 MA Server에는 동기화 처리를 하지 않는다.<br>
+																				     Main Server에서는 설정할 필요 없고 Gateway Server에서 이 값을 설정해야 한다.<br>
+																				     Gateway Server에서 수신한 데이터를 Main Server에 전달하기 위해서 UM을 사용할 수 없어서 Remote Invoke 하는 경우에 이 Alias가 사용된다.
+      	                                                                         </li>
+      	                                                                       <li>ESB.CONFIG.MULTIREMOTE.ALIAS<br>
+      	                                                                           Socket Server에 대한 구성을 물리적으로 Gateway Server(Socket Port Open, Data Listening)와 Main Server(Data Processing)로 구분해서 운영하는 경우
+																				   Custom Variable 정보와 Interface Doc 정보는 모든 서버에 동기화가 필요할 수 있다.<br>
+																				   이와 같이 동기화 처리를 하고자 하는 서버에 대한 Remote Server Alias 목록을 설정한다.<br>
+      	                                                                           여러 개를 등록해야 하는 경우에는 '/' 를 구분자로 사용하고 IS Administrator &gt; Settings &gt; Remote Servers 메뉴에서 등록한 Alias를 입력해야 한다.<br>
+      	                                                                           각각의 서버에서 서로 다른 Value가 설정되어야 하기 때문에 수정 시 다른 서버에 동기화 처리를 하지 않고 각각의 서버에서 직접 수정해야 한다.
+      	                                                                       </li>
+																			   <li>ESB.CONFIG.OTHER.SERVERNAME<br>
+      	                                                                           Clustering을 구성하는 서버가 두 대 이상인 경우 다른 서버에 대한 Host Name을 설정한다.<br>
+      	                                                                           예를 들어서, 운영서버1에서는 운영서버2에 대한 Host Name을, 운영서버2에서는 운영서버1에 대한 Host Name을 입력한다.<br>
+      	                                                                           각각의 서버에서 서로 다른 Value가 설정되어야 하기 때문에 수정 시 다른 서버에 동기화 처리를 하지 않고 각각의 서버에서 직접 수정해야 한다.<br>
+      	                                                                           개발/UAT/운영서버 상관 없이 서버가 두 대 이상인 경우에만 적당한 Value로 수정한다.<br>
+																				   만약에 서버가 세 대 이상인 경우에는 '/'를 구분자로 해서 Host Name 목록을 설정한다.<br>
+																				   Host Name 순서는 ESB.CONFIG.REMOTE.ALIAS의 순서와 같게 한다.
+      	                                                                       </li>
+																			   <li>ESB.CONFIG.PIPELINE.SAVEYN<br>
+																			       Pipeline 데이터 저장 여부를 설정한다.<br>
+																				   Pipeline 데이터 저장하기 위해서 Flow Service에서 pub.flow:savePipeline 서비스 또는 pub.flow:savePipelineToFile 서비스를 직접 Invoke 하지 않고
+																				   JSocketAdapter.COMMON.UTIL.FLOW:savePipelineData 서비스를 Invoke 하면 소스 수정 없이 "ESB.CONFIG.PIPELINE.SAVEYN" 설정에 따라서 Pipeline
+																				   데이터를 저장할 수도 있고 저장하지 않을 수도 있다. 단, JSocketAdapter.COMMON.UTIL.FLOW:savePipelineData 서비스를 Invoke 한 모든 Flow Service에
+																				   일괄적으로 적용이 된다.<br>
+																				   false : Pipeline 데이터 저장하지 않음<br>
+                                                                                   true_file_fixedname : Pipeline 데이터를 고정값 이름의 파일로 저장함<br>
+                                                                                   true_file_variablename : Pipeline 데이터를 가변값 이름의 파일로 저장함<br>
+                                                                                   true_memory_fixedname : Pipeline 데이터를 고정값 이름의 메모리에 저장함<br>
+                                                                                   true_memory_variablename : Pipeline 데이터를 가변값 이름의 메모리에 저장함
+																			   </li>
+      	                                                                       <li>ESB.CONFIG.REMOTE.ALIAS<br>
+      	                                                                           Clustering을 구성하는 서버가 두 대 이상인 경우 다른 서버에 대한 Remote Server Alias를 설정한다.<br>
+      	                                                                           예를 들어서, 운영서버1에서는 운영서버2에 대한 Alias를, 운영서버2에서는 운영서버1에 대한 Alias를 입력한다.<br>
+      	                                                                           IS Administrator &gt; Settings &gt; Remote Servers 메뉴에서 등록한 Alias를 입력해야 한다.<br>
+      	                                                                           각각의 서버에서 서로 다른 Value가 설정되어야 하기 때문에 수정 시 다른 서버에 동기화 처리를 하지 않고 각각의 서버에서 직접 수정해야 한다.<br>
+      	                                                                           개발/UAT/운영서버 상관 없이 서버가 두 대 이상인 경우에만 적당한 Value로 수정한다.<br>
+																				   만약에 서버가 세 대 이상인 경우에는 '/'를 구분자로 해서 Remote Server Alias 목록을 설정한다.<br>
+																				   Alias 순서는 ESB.CONFIG.OTHER.SERVERNAME의 순서와 같게 한다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.CONFIG.REMOTE.DEPCONFIG<br>
+      	                                                                           Deploy Config 메뉴에서 Deploy 할 수 있는 Target Server에 대한 Remote Server Alias 목록을 설정한다.<br>
+      	                                                                           예를 들어서, System 상황에 따라서 개발서버에서는 UAT서버에만 Deploy 가능하고 UAT서버에서는 운영서버에만
+      	                                                                           Deploy 가능하다면 개발서버에는 UAT서버에 대한 Remote Server Alias를 입력하고 UAT서버에는 운영서버에 대한
+      	                                                                           Remote Server Alias를 입력한다. '/' 를 이용해서 여러 개를 등록하면 등록한 모든 서버에 Deploy 된다.<br>
+      	                                                                           <font color="blue">운영서버가 두 대인 경우에는 한 운영서버에 대한 Remote Server Alias만 입력한다. 한 운영서버에 Deploy 하면
+      	                                                                           다른 운영서버에도 자동으로 Deploy 된다.</font><br>
+      	                                                                           IS Administrator &gt; Settings &gt; Remote Servers 메뉴에서 등록한 Alias를 입력해야 한다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.CONFIG.REMOTE.DEPFILE<br>
+      	                                                                           Utility &gt; Deploy File 메뉴에서 Deploy 할 수 있는 Target Server에 대한 Remote Server Alias 목록을 설정한다.<br>
+      	                                                                           '/' 를 이용해서 여러 개를 등록하면 등록한 모든 서버에 Deploy 된다.<br>
+      	                                                                           <font color="blue">운영서버가 두 대인 경우에 한 운영서버에 Deploy 한다고 해서 다른 운영서버에도 자동으로 Deploy 되지 않는다. 그러므로 두 서버에 대한 Alias 모두 등록해야 한다.</font><br>
+      	                                                                           IS Administrator &gt; Settings &gt; Remote Servers 메뉴에서 등록한 Alias를 입력해야 한다.<br>
+      	                                                                           예를 들어서, JSocketAdapter의 dsp 파일이 수정되거나 추가된 경우에 모든 ESB 서버에 Deploy 하고자 할 때 유용하게 사용할 수 있다.
+      	                                                                       </li>
+																			   <li>ESB.CONFIG.REMOTE.IP<br>
+      	                                                                           Clustering을 구성하는 서버가 두 대 이상인 경우 다른 서버에 대한 Remote Server IP를 설정한다.<br>
+      	                                                                           예를 들어서, 운영서버1에서는 운영서버2에 대한 IP를, 운영서버2에서는 운영서버1에 대한 IP를 입력한다.<br>
+      	                                                                           각각의 서버에서 서로 다른 Value가 설정되어야 하기 때문에 수정 시 다른 서버에 동기화 처리를 하지 않고 각각의 서버에서 직접 수정해야 한다.<br>
+      	                                                                           개발/UAT/운영서버 상관 없이 서버가 두 대 이상인 경우에만 적당한 Value로 수정한다.<br>
+																				   만약에 서버가 세 대 이상인 경우에는 '/'를 구분자로 해서 Remote Server IP 목록을 설정한다.<br>
+																				   IP 순서는 ESB.CONFIG.REMOTE.ALIAS의 순서와 같게 한다.
+      	                                                                       </li>
+																			   <li>ESB.CONFIG.SERVER.ROLE<br>
+      	                                                                           ESB 서버가 [Gateway Server/Main Server] 중에서 어떤 역할을 하는지에 대한 구분을 설정한다.<br>
+      	                                                                           NA : Gateway Server/Main Server 구분이 없음<br>
+      	                                                                           GW : Gateway Server. Socket Server 역할을 하고 데이터 수신처리만 담당한다.<br>
+																				   MA : Main Server. Gateway Server에서 수신한 데이터를 실제로 처리하는 역할을 담당한다.<br>
+      	                                                                           GW/MA 서버 구분이 있는 경우에 "ESB.CONFIG.SERVER.ROLE"에 대해서는 같은 역할을 하는 서버끼리는 동기화 처리를 한다.<br>
+																				   GW 운영서버끼리 동기화 되고 MA 운영서버끼리 동기화 되므로 GW, MA 서버에서 각각 다르게 직접 수정해야 한다.<br>
+																				   GW 서버에서는 Local Server Socket 정보를 등록, 관리하고 MA 서버에서는 Remote Server Socket 정보를 등록, 관리하고
+																				   Custom Variable, Interface Doc 정보는 GW, MA 서버 모두에서 등록, 관리한다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.CONFIG.SERVER.TYPE<br>
+      	                                                                           ESB 서버에 대한 [개발서버/UAT서버/운영서버]에 대한 구분과 [EAI/B2Bi]에 대한 구분을 설정한다.<br>
+      	                                                                           DEV : 개발서버, UAT : UAT서버, PROD : 운영서버<br>
+      	                                                                           IN : EAI 인터페이스용 서버, EX : B2Bi 인터페이스용 서버<br>																				   
+																				   Clustering 환경이 아니고 Single 서버인 경우에는 DEV/UAT/PROD 뒤에 순번이 붙지 않고 Clustering 환경을 위해서 순번은 기본적으로 1, 2까지 등록되어 있고
+																				   서버가 세 대 이상인 경우에는 Basic Info &gt; Custom Variable Value 메뉴에서 ESB.CONFIG.SERVER.TYPE에 대한 Value를 먼저 추가한 후 Basic Info &gt; Custom Variable
+																				   메뉴에서 ESB.CONFIG.SERVER.TYPE에 대한 Value를 수정한다.<br>
+																				   Naming Rule은 반드시 "DEV" 또는 "UAT" 또는 "PROD" + 순번 형태로 한다.<br>
+																				   Clustering을 구성하는 서버가 두 대 이상일 경우 각각의 서버에서 서로 다른 Value가 설정되어야 하기 때문에 수정 시 다른 서버에 동기화 처리를 하지
+																				   않고 각각의 서버에서 직접 수정해야 한다.<br>
+      	                                                                       </li>
+																			   <li>ESB.CONFIG.SVCSTARTEND.DEBUGLOG<br>
+            	                                                                   Flow Service의 Start, End Debug Log를 Server Log에 Print 할지 여부를 설정한다.<br>
+            	                                                                   true : Server Log에 Print 함<br>
+																				   false : Server Log에 Print 하지 않음
+            	                                                               </li>
+																			   <li>ESB.CONFIG.SYSTEM.NAME<br>
+            	                                                                   JSocketAdapter를 설치한 System의 명칭을 설정한다.<br>
+            	                                                                   예를 들어서, EAI, B2Bi, ESB ...<br>
+																				   Space를 포함하지 않도록 한다.
+            	                                                               </li>
+																			   <li>ESB.CONFIG.SYSTEMNM.LENGTH<br>
+            	                                                                   Basic Info &gt; System Name 메뉴에서 등록하는 System Name의 길이를 설정한다.
+            	                                                               </li>
+																			   <li>ESB.CONFIG.SYSTEMNM.LENGTHCHK<br>
+            	                                                                   Basic Info &gt; System Name 메뉴에서 등록하는 System Name의 길이를 고정길이로 할 것인지 여부를 설정한다.
+            	                                                               </li>
+																			   <li>ESB.CONFIG.SYSTEMTM.PATTERN<br>
+            	                                                                   시스템 현재 날짜, 시간을 구할 때 사용할 패턴을 설정한다. 기본적으로 yyyy-MM-dd HH:mm:ss.SSS 로 설정되어 있고 필요 시 수정하면 된다.
+            	                                                               </li>
+																			   <li>ESB.CONFIG.WARNING.COUNT<br>
+																			       System Resource 사용 가능양이 경고 임계치에 도달하였을 경우 경고음으로 알릴 수 있다. 경고음을 알리는 횟수를 설정한다.<br>
+																				   0으로 설정하면 경고음으로 알리지 않는다.
+																			   </li>
+																			   <li>ESB.CONFIG.WARNING.INTERVAL<br>
+																			       System Resource 사용 가능양이 경고 임계치에 도달하였을 경우 경고음으로 알릴 수 있다. 경고음을 알리는 간격을 초단위로 설정한다.<br>
+																				   경고음 간격은 최소한 2초로 설정해야 경고음 횟수가 정상적으로 적용된다.
+																			   </li>
+																			   <li>ESB.CONFIG.WARNINGCHK.DMSVCEXEC<br>
+																			       Server Resources Monitoring 및 Warning을 수행하는 데몬 서비스의 실행 여부를 설정한다.<br>
+																				   true : 데몬 서비스를 실행함.<br>
+																				   false : 데몬 서비스를 실행하지 않음. 또는 실행 중인 데몬 서비스를 종료함.<br>
+																				   IS Start 시에 Startup Service에 등록되어 있는 JSocketAdapter.ADMIN:startupServerResourcesWarning 서비스가 실행되는데
+																				   이 값이 true로 설정되어 있으면 데몬 서비스를 실행시키고 false로 설정되어 있으면 데몬 서비스를 실행시키지 않는다.<br>
+																				   또는 데몬 서비스가 실행 중인 상태에서 이 Variable을 false로 설정하거나 JSocketAdapter.ADMIN:stopServerResourcesWarning 서비스를 실행시키면
+																				   실행 중인 데몬 서비스가 종료된다.<br>
+																				   데몬 서비스를 다시 실행시키기 위해서는 이 Variable을 true로 설정한 후에 Designer에서 JSocketAdapter.ADMIN:startupServerResourcesWarning
+																				   서비스를 실행시키면 된다.<br>
+																				   데몬 서비스의 실행은 Warning 상황 발생 시 관리자에게 메일로 통보하는 것에 의미가 있기 때문에 메일 송신과 관련된 Custom Variables(ESB.CONFIG.EMAIL.HOST, 
+																				   ESB.CONFIG.EMAIL.HOSTPORT, ESB.CONFIG.INCHARGE.EMAIL, ESB.CONFIG.INCHARGE.EMAILYN)에 대해서 메일 송신이 가능하도록 먼저 설정한 후에
+																				   데몬 서비스 실행에 관련된 설정을 해야 한다.<br>
+																				   ESB.CONFIG.EMAIL.HOST, ESB.CONFIG.EMAIL.HOSTPORT, ESB.CONFIG.INCHARGE.EMAIL을 먼저 설정한 후에 ESB.CONFIG.INCHARGE.EMAILYN을
+																				   true로 설정하면 데몬 서비스가 자동으로 실행되고 ESB.CONFIG.INCHARGE.EMAILYN을 false로 설정하면 실행 중인 데몬 서비스가 자동으로 종료된다.
+																			   </li>
+																			   <li>ESB.CONFIG.WARNINGCHK.DOYN<br>
+																			       Server Resources Monitoring 및 Warning의 수행 여부를 설정한다.<br>
+																				   true : Server Resources Monitoring 및 Warning을 수행함.<br>
+																				   false : Server Resources Monitoring 및 Warning을 수행하지 않음.<br>
+																				   Server Resources Monitoring 및 Warning 데몬 서비스는 실행 중인 상태에서 Server Resources Monitoring 및 Warning의 수행 여부만을 설정하는 것이다.
+																			   </li>																			   
+																			   <li>ESB.CONFIG.WARNINGCHK.INTERVAL<br>
+																			       Server Resources Monitoring 및 Warning을 수행하는 Interval을 초단위로 설정한다.
+																			   </li>
+																			   <li>ESB.CONFIG.WARNINGTHRESHOLD.CONTIMEOUT<br>
+																			       IS에 UM, Terracotta 서버가 설정이 되어 있고 연결 테스트를 수행해서 연결이 안 될 경우 경고음으로 알릴 수 있다.
+																				   경고음으로 알리기 위한 연결 테스트 시 Connection Timeout을 초단위로 설정한다.<br>
+																				   이 Timeout 이내에 연결이 안 될 경우 경고음로 알린다.
+																			   </li>
+																			   <li>ESB.CONFIG.WARNINGTHRESHOLD.CPU<br>
+																			       IS Machine의 CPU 사용양이 경고 임계치에 도달하였을 경우 경고음으로 알릴 수 있다.
+																				   경고음으로 알리기 위한 현재 사용중인 CPU의 비율(%) 임계치를 설정한다.<br>
+																				   이 임계치 이상일 경우 경고음로 알린다.
+																			   </li>
+																			   <li>ESB.CONFIG.WARNINGTHRESHOLD.MEMORY<br>
+																			       IS Heap Memory 사용 가능양이 경고 임계치에 도달하였을 경우 경고음으로 알릴 수 있다.
+																				   경고음으로 알리기 위한 현재 사용 가능한 Heap Memory의 비율(%) 임계치를 설정한다. 이 비율은 IS Max Heap Memory를 기준으로 한 비율이다.<br>
+																				   이 임계치 이하일 경우 경고음로 알린다.
+																			   </li>
+																			   <li>ESB.CONFIG.WARNINGTHRESHOLD.QUEUE<br>
+																			       UM Queue/Topic에 처리되지 않고 남아 있는 메세지의 갯수가 경고 임계치에 도달하였을 경우 경고음으로 알릴 수 있다.
+																				   경고음으로 알리기 위한 현재 Queue/Topic에 처리되지 않고 남아 있는 메세지의 갯수를 설정한다. 모든 Queue/Topic의 합계가 아니고 Queue/Topic별 각각에 대해서 적용된다.<br>
+																				   이 임계치 이상일 경우 경고음로 알린다.
+																			   </li>
+																			   <li>ESB.CONFIG.WARNINGTHRESHOLD.SVCDURATION<br>
+																			       인터페이스 Main Service의 실행시간(Duration)이 경고 임계치 이상의 시간이 소요되었을 경우 ESB 관리자에게 메일로 통보하고 로그를 저장하기 위한
+																				   임계치를 초단위로 설정한다.
+																			   </li>
+																			   <li>ESB.CONFIG.WARNINGTHRESHOLD.THREAD<br>
+																			       IS Thread Pool의 Thread 사용 가능양이 경고 임계치에 도달하였을 경우 경고음으로 알릴 수 있다.
+																				   경고음으로 알리기 위한 현재 사용 가능한 Thread의 비율(%) 임계치를 설정한다. 이 비율은 IS Administrator &gt; Settings &gt; Resources 메뉴에서 설정한 Maximum Threads를
+																				   기준으로 한 비율이다.<br>
+																				   이 임계치 이하일 경우 경고음로 알린다.
+																			   </li>																			   
+																			   <li>ESB.SOCKET.ACK.DOCLIST<br>
+      	                                                                           Socket Server에서 데이터 수신하자마자 Ack를 송신해야 하는 전문 목록을 설정한다.<br>
+      	                                                                           Socket Server에 대한 구성을 물리적으로 Gateway Server(Socket Port Open, Data Listening)와 Main Server(Data Processing)로 구분해서 운영하고 있는데
+																				   전문에 대한 기본정보는 Main Server 쪽에만 존재할 경우 Gateway Server 쪽에서 Ack를 송신해야 하는 전문인지 판단하기 위해서 설정한다.<br>
+																				   ESB.SOCKET.DOCINFO.MULTISYNCHYN이 true로 설정 되어서 모든 서버에 동기화 처리를 하고 있거나
+																				   물리적으로 Gateway Server와 Main Server로 구분하지 않고 하나의 서버에서 모든 기능을 수행하는 경우에는 설정하지 않아도 된다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.AUDITLOG.CPATH<br>
+      	                                                                           Socket Client에서 생성된 Socket Transaction Audit Log를 파일로 저장할 위치를 설정한다.<br>
+      	                                                                           운영서버의 경우 NAS 등 공유 디렉토리가 있는 경우에는 공유 디렉토리를 설정해야 로그가 분산되어 저장되지 않는다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.AUDITLOG.CSUBPATHTYPE<br>
+      	                                                                           Socket Client에서 생성된 Socket Transaction Audit Log를 파일로 저장할 서브 디렉토리 타입을 설정한다.<br>
+      	                                                                           CUR_DATE : "ESB.SOCKET.AUDITLOG.CPATH"에 설정된 디렉토리 하위에 "현재날짜" 서브 디렉토리를 생성해서 저장<br>
+																				   SOCKET_NAME : "ESB.SOCKET.AUDITLOG.CPATH"에 설정된 디렉토리 하위에 "현재날짜/소켓Name" 서브 디렉토리를 생성해서 저장<br>
+																				   DOC_ID : "ESB.SOCKET.AUDITLOG.CPATH"에 설정된 디렉토리 하위에 "현재날짜/소켓Name/인터페이스ID" 서브 디렉토리를 생성해서 저장
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.AUDITLOG.DPATH<br>
+      	                                                                           Socket Server/Client에서 생성된 Socket Transaction Audit Log를 엑셀파일로 저장할 위치를 설정한다.<br>
+      	                                                                           Audit Log를 엑셀파일로 다운로드 할 때 임시로 엑셀파일을 저장하고 다운로드가 끝난 후에 삭제를 한다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.AUDITLOG.RPATH<br>
+      	                                                                           Socket Transaction Audit Log를 수정 후 재실행한 경우 생성된 Socket Transaction Audit Log를 파일로 저장할 위치를 설정한다.<br>
+      	                                                                           운영서버의 경우 NAS 등 공유 디렉토리가 있는 경우에는 공유 디렉토리를 설정해야 로그가 분산되어 저장되지 않는다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.AUDITLOG.SPATH<br>
+      	                                                                           Socket Server에서 생성된 Socket Transaction Audit Log를 파일로 저장할 위치를 설정한다.<br>
+      	                                                                           운영서버의 경우 NAS 등 공유 디렉토리가 있는 경우에는 공유 디렉토리를 설정해야 로그가 분산되어 저장되지 않는다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.AUDITLOG.SSUBPATHTYPE<br>
+      	                                                                           Socket Server에서 생성된 Socket Transaction Audit Log를 파일로 저장할 서브 디렉토리 타입을 설정한다.<br>
+      	                                                                           CUR_DATE : "ESB.SOCKET.AUDITLOG.SPATH"에 설정된 디렉토리 하위에 "현재날짜" 서브 디렉토리를 생성해서 저장<br>
+																				   PORT_NUMBER : "ESB.SOCKET.AUDITLOG.SPATH"에 설정된 디렉토리 하위에 "현재날짜/포트번호" 서브 디렉토리를 생성해서 저장<br>
+																				   DOC_ID : "ESB.SOCKET.AUDITLOG.SPATH"에 설정된 디렉토리 하위에 "현재날짜/포트번호/전문ID" 서브 디렉토리를 생성해서 저장
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.AUDITLOG.SAVEYN<br>
+      	                                                                           Socket 통신 시 생성된 Socket Transaction Audit Log를 파일로 저장할 것인지 여부를 설정한다.<br>
+      	                                                                           true : 파일로 저장함, false : 파일로 저장하지 않음
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.BUSINESSDOCFILE.PATH<br>
+																			       Remote Server Socket 전문의 각 필드에 대한 Schema를 정의한 엑셀파일을 저장할 위치를 설정한다.<br>
+																				   엑셀파일은 개발서버에만 저장하고 그 이외의 서버에는 저장하지 않는다.<br>
+																				   Basic Info &gt; Business Name &gt; Business Doc List 메뉴에서 전문에 대한 정보 등록 시 "Schema Define File" 필드에서 엑셀파일을 선택하면
+																				   여기에서 설정한 디렉토리에 엑셀파일을 저장한 후 엑셀파일을 읽어서 "Schema Define" 필드에서 입력하는 것과 같은 데이터를 만들어낸다.
+																			   </li>
+																			   <li>ESB.SOCKET.BUSINESSDOCSCHEMA.PATH<br>
+																			       Remote Server Socket 전문의 각 필드에 대한 Schema를 정의한 IData를 파일로 저장할 위치를 설정한다.<br>
+																				   NAS 등 공유 디렉토리로 설정하지 말고 로컬 파일 시스템 디렉토리로 설정한다.<br>
+																				   Basic Info &gt; Business Name &gt; Business Doc List 메뉴에서 전문에 대한 정보 등록 시 "Schema Define Service" 필드에 값을 입력하지 않으면
+																				   여기에서 설정한 디렉토리에 IData를 파일로 저장하고 IS Start 할 때 Startup Service에 의해서 이 디렉토리에 있는 IData 정보를
+																				   IS Memory에 동기화 한다.
+																			   </li>
+      	                                                                       <li>ESB.SOCKET.CONFIG.BATCHPATH<br>
+      	                                                                           Batch Socket 통신 시 사용하는 ESB 서버 Local 파일 시스템의 파일저장 기본 디렉토리를 설정한다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.CONFIG.CHARSET<br>
+      	                                                                           Socket 데이터 변환 시 사용 가능한 Character Set을 설정한다.<br>
+      	                                                                           사용하고자 하는 Character Set이 기본적으로 등록된 목록에 없을 경우에는 '/' 를 이용해서 추가한다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.CONFIG.ISTYPE<br>
+      	                                                                           Integration Server가 설치된 형태를 설정한다.<br>
+      	                                                                           standalone : 독립적으로 설치된 형태<br>
+                                                                                   apigw : API Gateway에 설치된 형태<br>
+																				   IS를 최초에 Start 할 때 Startup Service에서 값을 셋팅한다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.CONFIG.PATH<br>
+      	                                                                           Socket 관리에 필요한 XML 파일 저장위치를 설정한다.<br>
+      	                                                                           이 Variable에 대해서는 Value를 수정할 수 없다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.CONFIG.RECONCOUNT<br>
+      	                                                                           Remote Socket Server에 연결 실패 시 연결 재시도 횟수를 설정한다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.CONFIG.RECONINTERVAL<br>
+      	                                                                           Remote Socket Server에 연결 실패 시 연결 재시도 Interval을 초단위로 설정한다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.CONFIG.SHAREPATH<br>
+      	                                                                           Socket 관리에 필요한 XML 파일 공유 저장위치를 설정한다.<br>
+      	                                                                           Socket Server에 대한 구성을 물리적으로 Gateway Server(Socket Port Open, Data Listening)와 Main Server(Data Processing)로 구분해서 운영하면서
+																				   NAS 등 공유 저장장치가 있을 경우 Local Server Socket 정보, Remote Server Socket 정보, System Name 정보, Business Name 정보, Business Doc 정보를
+																				   공유폴더에도 저장해서 다른 서버에만 존재하는 정보를 조회할 수 있도록 한다.<br>
+																				   이 외에도 서버가 여러 대인 경우 각 서버의 Start/Shutdown 상태를 알 수 있는 파일을 이 디렉토리에 저장하고
+																				   Online Client 재연결 진행중 여부를 다른 서버에서 알 수 있게 하기 위한 임시 파일을 이 디렉토리에 저장하고
+																				   Remote Server Socket의 연결 갯수를 하나만 허용하는 경우에 두 개 이상 연결되지 않도록 하기 위해서 최초로
+																				   연결한 서버에 대한 정보 파일을 이 디렉토리에 저장한다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.CONNLOG.CPATH<br>
+      	                                                                           Online Socket Client에서 생성된 Socket 연결과 연결 해제에 대한 Log를 파일로 저장할 위치를 설정한다.<br>
+      	                                                                           운영서버의 경우 NAS 등 공유 디렉토리가 있는 경우에는 공유 디렉토리를 설정해야 로그가 분산되어 저장되지 않는다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.CONNLOG.SAVEYN<br>
+      	                                                                           Online Socket 통신 시 Socket 연결과 연결 해제에 대한 Log를 파일로 저장할 것인지 여부를 설정한다.<br>
+      	                                                                           true : 파일로 저장함, false : 파일로 저장하지 않음
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.CONNLOG.SPATH<br>
+      	                                                                           Online Socket Server에서 생성된 Socket 연결과 연결 해제에 대한 Log를 파일로 저장할 위치를 설정한다.<br>
+      	                                                                           운영서버의 경우 NAS 등 공유 디렉토리가 있는 경우에는 공유 디렉토리를 설정해야 로그가 분산되어 저장되지 않는다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.DOCFILE.EXTENSION<br>
+																			       전문의 각 필드에 대한 Schema를 정의한 엑셀파일의 확장자를 설정한다.<br>
+																				   파일 확장자 : csv, xls, xlsx
+																			   </li>
+																			   <li>ESB.SOCKET.DOCFILE.PATH<br>
+																			       전문의 각 필드에 대한 Schema를 정의한 엑셀파일을 저장할 위치를 설정한다.<br>
+																				   엑셀파일은 개발서버에만 저장하고 그 이외의 서버에는 저장하지 않는다.<br>
+																				   Basic Info &gt; Interface Doc, Basic Info &gt; Business Name &gt; Business Doc List
+																				   메뉴에서 전문에 대한 정보 등록 시 "Schema Define File" 필드에서 엑셀파일을 선택하면
+																				   여기에서 설정한 디렉토리에 엑셀파일을 저장한 후 엑셀파일을 읽어서 "Schema Define" 필드에서 입력하는 것과 같은 데이터를 만들어낸다.
+																			   </li>
+      	                                                                       <li>ESB.SOCKET.DOCINFO.MULTISYNCHYN<br>
+      	                                                                           Socket Server에 대한 구성을 물리적으로 Gateway Server(Socket Port Open, Data Listening)와 Main Server(Data Processing)로 구분해서 운영하는 경우
+																				   Custom Variable 정보와 Interface Doc 정보는 모든 서버에 동기화가 필요할 수 있다.<br>
+																				   Custom Variable 정보와 Interface Doc 정보를 모든 서버에 동기화 할지 여부를 설정한다.<br>
+																				   true : 모든 서버에 동기화 함, false : 모든 서버에 동기화 하지 않고 Clustering 안에 있는 다른 운영서버에만 동기화 함<br>
+																				   true로 설정하면 ESB.CONFIG.MULTIREMOTE.ALIAS에 설정된 Remote Server 들에 동기화를 한다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.DOCSCHEMA.PATH<br>
+																			       Local Server Socket 전문의 각 필드에 대한 Schema를 정의한 IData를 파일로 저장할 위치를 설정한다.<br>
+																				   NAS 등 공유 디렉토리로 설정하지 말고 로컬 파일 시스템 디렉토리로 설정한다.<br>
+																				   Basic Info &gt; Interface Doc 메뉴에서 전문에 대한 정보 등록 시 "Schema Define Service" 필드에 값을 입력하지 않으면
+																				   여기에서 설정한 디렉토리에 IData를 파일로 저장하고 IS Start 할 때 Startup Service에 의해서 이 디렉토리에 있는 IData 정보를
+																				   IS Memory에 동기화 한다.
+																			   </li>																			   
+																			   <li>ESB.SOCKET.ERRORLOG.PATH<br>
+      	                                                                           Socket 통신 시 생성된 Socket Transaction Error Log를 파일로 저장할 위치를 설정한다.<br>
+      	                                                                           운영서버의 경우 NAS 등 공유 디렉토리가 있는 경우에는 공유 디렉토리를 설정해야 로그가 분산되어 저장되지 않는다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.ERRORLOG.SAVEYN<br>
+      	                                                                           Socket 통신 시 생성된 Socket Transaction Error Log를 파일로 저장할 것인지 여부를 설정한다.<br>
+      	                                                                           true : 파일로 저장함, false : 파일로 저장하지 않음
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.GWMASEP.RTNPATH<br>
+      	                                                                           Socket Server에 대한 구성을 물리적으로 Gateway Server(Socket Port Open, Data Listening)와 Main Server(Data Processing)로 구분해서 운영하고 있고
+																				   Gateway Server에서 전문 송신한 결과를 Main Server에 리턴해줘야 하는 경우가 있을 수 있다.<br>
+																				   Gateway Server에서 전문 송신한 결과 파일을 Main Server에 리턴하기 위해서 저장할 디렉토리를 설정한다.<br>
+																				   반드시 NAS 등 공유 디렉토리를 설정해야 한다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.INTERFACE.TYPE<br>
+      	                                                                           Source System과 Target System 간의 인터페이스 방식을 설정한다.<br>
+																				   사용하고자 하는 인터페이스 방식이 기본적으로 등록된 목록에 없을 경우에는 '/' 를 이용해서 추가한다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.LOG.PATH<br>
+      	                                                                           Socket 통신 시 생성된 Log를 파일로 저장할 기본 디렉토리를 설정한다.<br>
+      	                                                                           시스템 상황에 맞게 다른 저장위치로 설정할 수 있다.<br>
+																				   단, 운영서버의 경우 NAS 등 공유 디렉토리가 있는 경우에는 공유 디렉토리를 설정할 수 있다.<br>
+																				   공유 디렉토리를 설정하면 파일명이 같은 로그가 양 쪽 서버에 분산되어 저장되지 않고 하나의 파일에 저장된다.<br>
+																				   ESB.SOCKET.LOG.UMUSEYN 설정이 UM을 사용하도록 설정되어 있으면서 Local File System에 저장하도록 설정하면 인터페이스가 실제로 실행된 서버가 아닌
+																				   다른 서버에 로그가 저장될 수도 있다.<br>
+																				   ESB.SOCKET.LOG.UMUSEYN 설정이 UM을 사용하지 않도록 설정되어 있으면서 공유 디렉토리에 저장하도록 설정하면 IS Local Queue는 양 쪽 서버에 모두 존재하기
+																				   때문에 동시에 같은 파일에 접근할 가능성이 있다.<br>
+																				   가장 Best한 설정 : ESB.SOCKET.LOG.UMUSEYN=true, ESB.SOCKET.LOG.PATH=공유디렉토리
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.LOG.SAVEYN<br>
+      	                                                                           Socket 통신 시 생성된 Log를 파일로 저장할 것인지 여부를 설정한다.<br>
+      	                                                                           true : 파일로 저장함, false : 파일로 저장하지 않음<br>
+																				   Socket 통신 시 Server Log에 로그를 저장하면 로그 양이 너무 많아서 디버깅할 때 어려움이 있다.<br>
+																				   그래서, ESB.SOCKET.LOG.SAVEYN을 true로 설정하고 JSocketAdapter.COMMON.UTIL.FLOW:saveSocketDebugLog 서비스를 호출하면
+																				   Server Log에 로그를 저장한 후에 Port Number별로 또는 Socket Name별로 로그를 별도로 저장한다.<br>
+																				   Port Number별 로그 : Socket Admin > Socket Log > Local Server Socket Log 메뉴에서 확인할 수 있다.<br>
+																				   Socket Name별 로그 : Socket Admin > Socket Log > Remote Server Socket Log 메뉴에서 확인할 수 있다.<br>
+																				   로그파일명은 날짜별로도 구분된다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.LOG.UMCONALIAS<br>
+      	                                                                           Socket 관련 Log를 파일로 저장 시 UM을 사용할 경우 JMS Connection Alias를 설정한다.<br>
+      	                                                                           IS Administrator > Settings > Messaging > JMS Settings 메뉴에서 생성한 Connection Alias Name으로 설정한다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.LOG.UMUSEYN<br>
+      	                                                                           Socket 통신 시 생성된 Log를 파일로 저장 시 UM을 사용할 것인지 여부를 설정한다.<br>
+      	                                                                           true : UM을 사용함, false : UM을 사용하지 않음 ==> IS Local Queue를 사용함<br>
+																				   UM을 사용하는 경우 다음과 같은 순서로 JMS 관련 셋업을 해야 한다.<br>
+																				   1. UM Enterprise Manager > Realms 트리에서 해당 UM 클릭 > 오른쪽 화면에서 JNDI 탭 클릭 > Connection Factories 마우스 오른쪽 클릭 > New Connection Factory<br>
+																				   &nbsp;&nbsp;&nbsp;&nbsp;Name : TCP_LOG_JNDI_CF<br>
+																				   &nbsp;&nbsp;&nbsp;&nbsp;Durable Type : Serial<br>
+																				   2. IS Administrator > Settings > Messaging > JNDI Settings > JNDI Provider Alias > Create<br>
+																				   &nbsp;&nbsp;&nbsp;&nbsp;JNDI Alias Name : TCP_LOG_JNDI_PROVIDER<br>
+                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;Description : JNDI provider for TCP log record.<br>
+																				   &nbsp;&nbsp;&nbsp;&nbsp;Predefined JNDI Templates : UM<br>
+                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;Initial Context Factory : com.pcbsys.nirvana.nSpace.NirvanaContextFactory<br>
+                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;Provider URL : UM의 Realm URL 입력<br>
+																				   3. IS Administrator > Settings > Messaging > JMS Settings > JMS Connection Alias > Create<br>
+																				   &nbsp;&nbsp;&nbsp;&nbsp;Connection Alias Name : TCP_LOG_JMS_CON<br>
+                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;Description : JMS connection for TCP log record.<br>
+                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;Transaction Type : NO_TRANSACTION<br>
+                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;Connection Client ID : TCP_LOG_JMS_CLIENT<br>
+																				   &nbsp;&nbsp;&nbsp;&nbsp;Create Connection Using : JNDI LOOKUP<br>
+																				   &nbsp;&nbsp;&nbsp;&nbsp;JNDI Provider Alias : TCP_LOG_JNDI_PROVIDER<br>
+																				   &nbsp;&nbsp;&nbsp;&nbsp;Connection Factory Lookup Name : TCP_LOG_JNDI_CF<br>
+																				   4. UM Enterprise Manager > Realms 트리에서 해당 UM 클릭 > 오른쪽 화면에서 JNDI 탭 클릭 > Topics 마우스 오른쪽 클릭 > New Topic<br>
+																				   &nbsp;&nbsp;&nbsp;&nbsp;/topic/tcp/logs/localserver<br>
+                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;/topic/tcp/logs/remoteserver<br>
+                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;/topic/tcp/logs/serverontrace<br>
+                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;/topic/tcp/logs/clientontrace<br>
+                                                                                   &nbsp;&nbsp;&nbsp;&nbsp;/topic/tcp/logs/clienttemphis<br>
+																				   &nbsp;&nbsp;&nbsp;&nbsp;/topic/tcp/logs/mailnoti<br>
+																				   위와 같이 셋업을 해야 Socket 통신 시 생성된 Log를 파일에 Append 할 때 Single Thread에 의해서 순차적으로 저장할 수 있다.<br>
+																				   JSocketAdapter.COMMON.UTIL.UMLOG.TRIGGER 폴더에는 JMS Trigger가 있는데 JMS Trigger의 Processing mode는 Serial 이고 운영서버의 경우
+																				   양 쪽 서버에서 모두 Enabled true 상태로 해도 된다.<br>
+																				   UM을 사용하는 경우에는 ESB.SOCKET.LOG.UMCONALIAS를 "TCP_LOG_JMS_CON"으로 반드시 설정해야 한다.<br>
+																				   JSocketAdapter에는 기본적으로 Trigger Enabled가 False로 설정되어 있고 Custom Variable "ESB.SOCKET.LOG.UMUSEYN", "ESB.SOCKET.LOG.SAVEYN",
+																				   "ESB.SOCKET.MAILNOTI.SAVEYN", "ESB.SOCKET.ONLINE.TMPSAVEYN", "ESB.SOCKET.ONLINE.TRACESAVEYN" 의 Value를 수정할 때 자동으로
+																				   Trigger Enable/Disable 처리를 한다.<br>
+																				   GW/MA 서버 구분이 있는 경우에 GW Server에서는 Trigger Enable/Disable 처리를 하지 않고 MA Server에서는 Trigger Enable/Disable 처리를 한다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.MAILNOTI.SAVEYN<br>
+      	                                                                           Socket 통신 시 발생하는 ESB 관리자에게 메일로 통보하는 내용을 파일로 저장할 것인지 여부를 설정한다.<br>
+      	                                                                           true : 파일로 저장함, false : 파일로 저장하지 않음
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.MAINSVC.COMMSVC<br>
+																			       전문을 처리하는 Processing Service에서 Invoke 할 공통로직 Service 목록을 설정한다.<br>
+																				   Full Name을 입력하고 Service가 여러 개일 경우에는 '/'를 구분자로 사용한다.
+																			   </li>
+																			   <li>ESB.SOCKET.OBJECT.REQPATH<br>
+      	                                                                           Realtime Synch Socket 인터페이스 시 Socket Object 정보에 대한 임시파일을 저장할 위치를 설정한다.<br>
+																				   Socket Server에 대한 구성을 물리적으로 Gateway Server(Socket Port Open, Data Listening)와 Main Server(Data Processing)로 구분해서 운영하는 경우
+																				   Gateway Server에서 요청전문을 수신해서 Main Server에 전달하고 Main Server에서 응답전문을 생성해서 Gateway Server에 전달하고 Gateway Server에서
+																				   응답전문을 송신해야 한다.<br>
+																				   Gateway Server에서 요청전문 수신할 때 Socket Object 정보를 임시로 IS Memory 또는 파일 시스템에 저장하고 응답전문 송신할 때 이 Socket Object 정보를
+																				   구해서 응답전문 송신을 한다.<br>
+      	                                                                           파일 시스템에 저장하도록 설정되어 있을 경우 임시파일을 저장하는 디렉토리이다.<br>
+      	                                                                           시스템 상황에 맞게 다른 저장위치로 설정할 수 있다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.ONLINE.CHKCLSINTERVAL<br>
+      	                                                                           Asynch Online 송신전용 Server Port에 대해서 Client 쪽에서 Socket Close 했는지 체크하는 Interval을 초단위로 설정한다.<br>
+      	                                                                           Asynch Online 송신전용 Server Port에 대해서 Client에서 접속하는 순간 JSocketAdapter.COMMON.CONNECT:listenOnlineClientClose
+      	                                                                           서비스를 실행시켜서 Client 쪽에서 Socket Close 했는지를 지속적으로 체크하고 Client 쪽에서 Socket Close한 경우
+      	                                                                           송신가능한 목록에서 해당 Socket Client 정보를 삭제하고 서비스를 종료한다. 이런 상황에 대해서 ESB 담당자에게 메일로 통보한다.
+      	                                                                       </li>      	                                                                       
+																			   <li>ESB.SOCKET.ONLINE.ERRORPATH<br>
+      	                                                                           Asynch Online Socket 인터페이스 시 에러가 발생한 경우 에러내역을 파일로 저장할 위치를 설정한다.<br>
+      	                                                                           시스템 상황에 맞게 다른 저장위치로 설정할 수 있다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.ONLINE.INVDATA<br>
+      	                                                                           Asynch Online Socket Listener에서 비정상 데이터를 수신한 경우 처리 방법을 설정한다.<br>
+      	                                                                           exit : Listener를 종료하고 Client Socket을 Close 함, continue : Listener를 종료하지 않고 계속 데이터를 수신 함
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.ONLINE.LOADBALCOUNT<br>
+																			       Asynch Online Socket Client 수에 대한 Load Balancing을 유지하기 위한 Asynch Online Socket Client 수의 차이를 설정한다.<br>
+																				   서버가 다중화 구성되어 있는 경우에 Asynch Online Socket Client의 수를 각각의 서버에 비슷한 숫자를 유지하도록 해야 하는데
+																				   여기에 설정한 수 이상으로 갯수가 더 많은 서버 쪽에서 Asynch Online Socket Client를 Close 처리를 해서 연결 갯수에 대한
+																				   Load Balancing이 되도록 한다.
+																			   </li>
+																			   <li>ESB.SOCKET.ONLINE.MENUDISPLAY<br>
+      	                                                                           Asynch Online Socket Server, Client 관리 메뉴를 Display 하는 방법을 설정한다.<br>
+      	                                                                           inlist : 오른쪽 화면에 목록을 Display 함, inmenu : 메뉴 화면에 목록을 Display 함
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.ONLINE.MESTRGPATH<br>
+      	                                                                           Asynch Online Socket Switching 시 webMethods messaging trigger 상태정보를 파일로 저장할 위치를 설정한다.<br>
+      	                                                                           JSocketAdapter 초기 버전에서 필요했던 Variable로서 현재는 사용하지 않는다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.ONLINE.RECONTIMEOUT<br>
+      	                                                                           Asynch Online Socket에서 데이터 송신 시 Socket 재연결 중인 경우 재연결이 완료될 때까지 기다리는 Timeout을 초단위로 설정한다.<br>
+      	                                                                           Asynch Online Socket Connection에 문제가 발생 시 JSocketAdapter에서 자동으로 재연결 시도를 하고 재연결 중이라는 정보를 IS Memory에 저장한다.<br>
+      	                                                                           재연결 중에 데이터 송신이 동시에 발생하면 재연결이 완료될 때까지 기다리는데 무한정 기다릴 수 없기 때문에 설정된 Timeout 까지만 기다리고
+      	                                                                           Timeout 설정시간까지 재연결이 완료되지 않으면 에러 처리를 한다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.ONLINE.REQPATH<br>
+      	                                                                           Asynch Online Socket 인터페이스 시 ESB Header 정보에 대한 임시파일을 저장할 위치를 설정한다.<br>
+      	                                                                           Asynch Online Socket의 경우 요청전문 송신과 응답전문 수신이 Asynch 방식으로 처리되기 때문에 응답전문 수신 시 짝을 이루는 요청전문 정보를
+      	                                                                           구하기 위해서 요청전문 송신할 때 ESB Header 정보 등 필요한 정보를 임시로 IS Memory 또는 파일 시스템에 저장한다.<br>
+      	                                                                           파일 시스템에 저장하도록 설정되어 있을 경우 임시파일을 저장하는 디렉토리이다.<br>
+      	                                                                           시스템 상황에 맞게 다른 저장위치로 설정할 수 있다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.ONLINE.RESPATH<br>
+      	                                                                           Asynch Online Socket 인터페이스 시 Response Data 임시파일을 저장할 위치를 설정한다.<br>
+      	                                                                           Asynch Online Socket의 경우 요청전문 송신과 응답전문 수신이 Asynch 방식으로 처리되기 때문에 요청전문 송신 후 응답전문을 IS Memory 또는
+      	                                                                           파일 시스템에서 구하는데 응답전문 수신 서비스에서는 응답전문을 IS Memory 또는 파일 시스템에 저장한다.<br>
+      	                                                                           파일 시스템에 저장하도록 설정되어 있을 경우 임시파일을 저장하는 디렉토리이다.<br>
+      	                                                                           시스템 상황에 맞게 다른 저장위치로 설정할 수 있다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.ONLINE.RESTIMEOUT<br>
+      	                                                                           Asynch Online Socket 인터페이스 시 요청전문 송신 후 응답전문을 구할 때까지 기다리는 Timeout을 초단위로 설정한다.<br>
+      	                                                                           Asynch Online Socket의 경우 요청전문 송신과 응답전문 수신이 Asynch 방식으로 처리되기 때문에 요청전문 송신 후 응답전문을 IS Memory 또는
+      	                                                                           파일 시스템에서 구하는데 무한정 기다릴 수 없기 때문에 설정된 Timeout 까지만 기다리고 Timeout 설정시간까지 응답전문을 수신하지 못하면 에러 처리를 한다.<br>
+      	                                                                           Basic Info &gt; Business Name &gt; Business Name 링크 클릭 &gt; Create Business Interface List 메뉴에서
+      	                                                                           Interface ID 별로 설정 가능하나 설정하지 않으면 여기의 설정값이 기본값으로 적용된다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.ONLINE.SAVE<br>
+      	                                                                           Asynch Online Socket 인터페이스 시 ESB Header, Response Data, Send Status 임시저장 방법을 설정한다.<br>
+      	                                                                           Asynch Online Socket의 경우 요청전문 송신과 응답전문 수신이 Asynch 방식으로 처리되기 때문에 전문 송수신 처리에 필요한
+      	                                                                           ESB Header, Response Data, Send Status를 IS Memory 또는 파일 시스템에 저장해서 각각의 처리 Step에서 참조하도록 한다.<br>
+      	                                                                           MEM : IS Memory에 저장함, FIL : 파일 시스템에 저장함
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.ONLINE.SNDSTSPATH<br>
+      	                                                                           Asynch Online Socket 인터페이스 시 전문송신 성공여부 임시파일을 저장할 위치를 설정한다.<br>
+      	                                                                           Asynch Online Socket의 경우 전문송신 후 송신결과를 IS Memory 또는 파일 시스템에서 구하는데 전문송신 서비스에서는 송신결과를 IS Memory 또는 파일 시스템에 저장한다.<br>
+      	                                                                           파일 시스템에 저장하도록 설정되어 있을 경우 임시파일을 저장하는 디렉토리이다.<br>
+      	                                                                           시스템 상황에 맞게 다른 저장위치로 설정할 수 있다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.ONLINE.SNDSTSTIMEOUT<br>
+      	                                                                           Asynch Online Socket 인터페이스 시 전문송신 후 송신결과를 기다리는 Timeout을 초단위로 설정한다.<br>
+      	                                                                           Asynch Online Socket의 경우 전문송신 후 송신결과를 IS Memory 또는 파일 시스템에서 구하는데 무한정 기다릴 수 없기 때문에 설정된 Timeout 까지만
+      	                                                                           기다리고 Timeout 설정시간까지 송신결과를 구하지 못하면 에러 처리를 한다.<br>
+      	                                                                           Basic Info &gt; Business Name &gt; Business Name 링크 클릭 &gt; Create Business Interface List 메뉴에서
+      	                                                                           Interface ID 별로 설정 가능하나 설정하지 않으면 여기의 설정값이 기본값으로 적용된다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.ONLINE.SNDTYPE<br>
+      	                                                                           Asynch Online Socket 인터페이스 시 전문송신 후 송신결과를 전달받는 방법을 설정한다.<br>
+      	                                                                           SND : 전문송신 후 송신결과를 Synch 방식으로 전달받지 않고 IS Memory 또는 파일 시스템에서 구한다.<br>
+      	                                                                           SNR : 전문송신 후 송신결과를 Synch 방식으로 전달받는다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.ONLINE.SYNCHSERVER<br>
+																			       Asynch Online Socket Object를 동기화 하기 위한 다른 운영서버의 Socket IP/Port를 설정한다.<br>
+																				   개발서버/UAT서버와 같이 서버가 한 대인 경우에는 설정하지 않고 운영서버가 두 대인 경우 다른 운영서버에 대한 Socket IP/Port를 설정한다.<br>
+																				   운영서버1에서는 운영서버2에 대한 IP/Port를, 운영서버2에서는 운영서버1에 대한 IP/Port를 입력한다.<br>
+																				   각각의 운영서버에서 서로 다른 Value가 설정되어야 하기 때문에 수정 시 다른 운영서버에 동기화 처리를 하지 않고 각각의 운영서버에서 직접 수정해야 한다.<br>
+                                                                                   운영서버이면서 운영서버가 두 대인 경우에만 적당한 Value로 수정하고 IP와 Port는 '/'로 구분한다.
+      	                                                                       <li>ESB.SOCKET.ONLINE.TMPHISPATH<br>
+      	                                                                           Asynch Online Socket 인터페이스 시 데이터 임시저장에 대한 이력관리 파일을 저장할 위치를 설정한다.<br>
+      	                                                                           Asynch Online Socket의 경우 요청전문 송신과 응답전문 수신이 Asynch 방식으로 처리되기 때문에 전문 송수신 처리에 필요한
+      	                                                                           ESB Header, Response Data, Send Status를 IS Memory 또는 파일 시스템에 저장해서 각각의 처리 Step에서 참조하는데 처리가 완료된 후에는 삭제를 한다.<br>
+      	                                                                           임시로 저장한 데이터를 이력관리하기 위하여 파일로 저장할 경우 파일을 저장하는 디렉토리이다.<br>
+      	                                                                           시스템 상황에 맞게 다른 저장위치로 설정할 수 있다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.ONLINE.TMPSAVEYN<br>
+      	                                                                           Asynch Online Socket 인터페이스 시 데이터 임시저장에 대한 이력관리를 하기 위하여 별도의 파일로 저장할지 여부를 설정한다.<br>
+      	                                                                           true : 이력관리 파일에 저장함, false : 이력관리 파일에 저장하지 않음
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.ONLINE.TRACEPATH<br>
+      	                                                                           Asynch Online Socket 인터페이스 시 전문 송수신에 대한 Trace Log 관리를 위한 파일을 저장할 위치를 설정한다.<br>
+      	                                                                           Asynch Online Socket의 경우 요청전문 송신과 응답전문 수신이 Asynch 방식으로 처리되기 때문에 전문 송수신 당사자 간에 데이터 유실에 대한
+      	                                                                           공방이 발생할 수 있다.<br>
+      	                                                                           그래서 전문 송수신 처리의 Step 별로 Trace Log를 남겨서 데이터 유실 발생 시 분석자료로 활용할 수 있다.<br>
+      	                                                                           시스템 상황에 맞게 다른 저장위치로 설정할 수 있다.
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.ONLINE.TRACESAVEYN<br>
+      	                                                                           Asynch Online Socket 인터페이스 시 전문 송수신에 대한 Trace Log 관리를 하기 위해서 파일로 저장할지 여부를 설정한다.<br>
+      	                                                                           true : Trace Log를 파일로 저장함, false : Trace Log를 파일로 저장하지 않음
+      	                                                                       </li>
+      	                                                                       <li>ESB.SOCKET.ONLINE.TRANSTYPE<br>
+      	                                                                           Asynch Online Socket 인터페이스 시 데이터의 Asynch 처리 방법을 설정한다.<br>
+      	                                                                           JMS : UM에 JMS Send 한다.<br>
+      	                                                                           MES : UM에 webMethods Messaging Publish 한다.<br>
+      	                                                                           INV : UM을 사용하지 않고 서비스를 직접 Invoke 한다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.ONLINE.UMCONALIAS<br>
+      	                                                                           Asynch Online Socket 인터페이스 시 전문 송수신을 위해서 UM을 사용할 경우 JMS Connection Alias를 설정한다.<br>
+      	                                                                           IS Administrator > Settings > Messaging > JMS Settings 메뉴에서 생성한 Connection Alias Name으로 설정한다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.QINFO.PATH<br>
+      	                                                                           Local Server Socket Port로 수신한 데이터를 UM에 전송하는 경우 전송한 데이터 정보를 파일로 저장할 위치를 설정한다.<br>
+      	                                                                           운영서버의 경우 반드시 NAS 등 공유 디렉토리로 설정해야 한다.<br>
+																				   여기에 저장된 데이터를 조회해서 특정 전문을 처리하지 않고 Skip 할 수 있다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.QINFO.SAVETYPE<br>
+      	                                                                           Local Server Socket Port로 수신한 데이터를 UM에 전송하는 경우 전송한 데이터 정보 임시저장 방법을 설정한다.<br>
+      	                                                                           MEM : IS Memory에 저장함, FIL : 파일 시스템에 저장함
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.QINFO.SAVEYN<br>
+      	                                                                           Local Server Socket Port로 수신한 데이터를 UM에 전송하는 경우 전송한 데이터 정보를 파일로 저장할 것인지 여부를 설정한다.<br>
+      	                                                                           true : 파일로 저장함, false : 파일로 저장하지 않음
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.SCHEMASVC.COMMSVC<br>
+																			       전문의 공통정보부 Schema 정의 Service 목록을 설정한다.<br>
+																				   Full Name을 입력하고 Service가 여러 개일 경우에는 '/'를 구분자로 사용한다.
+																			   </li>
+																			   <li>ESB.SOCKET.SKIPLOG.PATH<br>
+      	                                                                           Socket Server에서 수신한 데이터를 처리하지 않고 Skip 한 경우 내역을 파일로 저장할 위치를 설정한다.<br>
+      	                                                                           운영서버의 경우 NAS 등 공유 디렉토리가 있는 경우에는 공유 디렉토리를 설정해야 로그가 분산되어 저장되지 않는다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.SKIPLOG.SAVEYN<br>
+      	                                                                           Socket Server에서 수신한 데이터를 처리하지 않고 Skip 한 경우 내역을 파일로 저장할 것인지 여부를 설정한다.<br>
+      	                                                                           true : 파일로 저장함, false : 파일로 저장하지 않음
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.SOPROCESSING.URL<br>
+      	                                                                           REST API To Socket 방식의 인터페이스일 경우 Socket 통신을 담당하는 서비스의 URL을 설정한다.<br>
+      	                                                                           REST API To Socket 방식의 인터페이스에 대한 전문정보를 Deploy 하는 경우 Deploy 대상 서버에서의 Socket 통신을 담당하는 서비스의 URL을 설정한다.<br>
+																				   예를 들어서, 전문정보를 개발서버에서 운영서버로 Deploy 하는 경우 운영서버에서 Socket 통신을 담당하는 서비스의 URL을 개발서버에 설정해 놓고
+																				   Deploy 할 때 이 정보를 이용하게 된다.<br>
+																				   기본값은 http://localhost:5555/invoke/JSocketAdapter.RESTAPI.GATEWAY/receive 이고 환경에 맞게 적당하게 수정해야 한다.<br>
+																				   "/invoke/JSocketAdapter.RESTAPI.GATEWAY/receive" 부분은 수정하면 안되고 "http://localhost:5555" 부분만 수정해야 한다.<br>
+																				   Deploy 대상 환경에서 Socket 통신을 담당하는 서비스가 있는 서버와 API Gateway 서버가 동일한 경우에는 "localhost" 부분은 수정하지 않도록 한다.
+																				   Deploy 대상 환경에서 서버가 이중화 되어 있더라도 L4 IP를 통해서 호출하지 않고 직접 호출하기 위함이다.<br>
+																				   그러나, Socket 통신을 담당하는 서비스가 있는 서버와 API Gateway 서버가 서로 다른 경우에는 Socket 통신을 담당하는 서비스가 있는 서버에 대한 L4 IP로 수정해야 한다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.SVCDURATION.PATH<br>
+																			       인터페이스 Main Service의 실행시간(Duration)이 경고 임계치 이상의 시간이 소요되었을 경우 내역을 파일로 저장할 위치를 설정한다.<br>
+																				   NAS 등 공유 디렉토리로 설정하지 말고 로컬 파일 시스템 디렉토리로 설정한다.<br>
+																				   JSocketAdapter.COMMON.UTIL.FLOW:saveSocketAuditLog 서비스에서 파일을 저장하고 Utility &gt; Server Resources Warning 메뉴 실행 시 파일을 삭제한다.<br>
+																				   만약에 Utility &gt; Server Resources Warning 메뉴 실행을 하지 않아서 파일이 많이 쌓일 경우를 대비해서 Basic Info &gt; Delete Local File 메뉴에
+																				   이 디렉토리에 대한 정보를 등록하도록 한다.
+																			   </li>
+																			   <li>ESB.SOCKET.SYNCHRT.UMCONALIAS<br>
+      	                                                                           Synch Realtime Socket 인터페이스 시 전문 송수신을 위해서 UM을 사용할 경우 JMS Connection Alias를 설정한다.<br>
+      	                                                                           IS Administrator > Settings > Messaging > JMS Settings 메뉴에서 생성한 Connection Alias Name으로 설정한다.
+      	                                                                       </li>
+																			   <li>ESB.SOCKET.TRIGGER.CONTSVC<br>
+      	                                                                           Custom Variable "ESB.SOCKET.ONLINE.TRANSTYPE"의 Value 변경에 따른 Trigger의 Enable 여부 변경 서비스를 설정한다.<br>
+      	                                                                           JMS로 변경 시에는 JMS Trigger의 Enabled는 True로 변경하고 webMethods Messaging Trigger의 Enabled는 False로 변경한다.<br>
+																				   MES로 변경 시에는 JMS Trigger의 Enabled는 False로 변경하고 webMethods Messaging Trigger의 Enabled는 True로 변경한다.<br>
+																				   해당 서비스는 시스템 상황에 맞게 개발하여야 하고 해당 서비스가 존재할 경우에만 Full Name으로 설정한다.
+      	                                                                       </li>
+																			   <li>UM을 사용하지 않고 Java Queue를 이용해서 Socket 관련 로그를 저장하는 경우 Java Queue 생성 및 Queue 데이터 처리 데몬을 실행시키는 Variable<br>
+																			       ESB.SOCKET.LOG.SAVEYN ==> Local Server Log, Remote Server Log 두 개 생성 및 실행<br>
+																				   ESB.SOCKET.ONLINE.TRACESAVEYN ==> Server Trace, Client Trace 두 개 생성 및 실행<br>
+																				   ESB.SOCKET.ONLINE.TMPSAVEYN ==> 한 개 생성 및 실행<br>
+																				   ESB.SOCKET.MAILNOTI.SAVEYN ==> 한 개 생성 및 실행<br>
+																				   그러나, Java Queue를 사용할 경우 문제 발생의 소지가 있어서 2021.08.10일 이후로 Java Queue를 사용하지 않고 IS Local Queue를 사용하는 방식으로 변경됨.
+																			   </li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Variable Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">기존에 등록되지 않은 Unique 한 Variable의 이름</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Variable Value</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Variable에 대한 Value</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Description</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Variable Name에 대한 간략한 설명</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">putDocSchemaDef</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJuYW1lIiApOw0K
+SURhdGEgc2NoZW1hRGVmCT0gSURhdGFVdGlsLmdldElEYXRhKCBwaXBlbGluZUN1cnNvciwgInNj
+aGVtYURlZiIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ryb3koKTsNCg0KU3RyaW5nIGVycm9yTXNn
+ID0gIiI7DQoNCnRyeSB7DQoJc01hbmFnZXIucHV0RG9jU2NoZW1hRGVmKCBuYW1lLCBzY2hlbWFE
+ZWYgKTsNCn0gY2F0Y2ggKCBFeGNlcHRpb24gZSApIHsNCgllcnJvck1zZyA9IGUudG9TdHJpbmco
+KTsNCn0NCg0KSURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3JfMSA9IHBpcGVsaW5lLmdldEN1cnNv
+cigpOw0KSURhdGFVdGlsLnB1dCggcGlwZWxpbmVDdXJzb3JfMSwgImVycm9yTXNnIiwgZXJyb3JN
+c2cgKTsNCnBpcGVsaW5lQ3Vyc29yXzEuZGVzdHJveSgpOw==</value>
+</Values>

@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Server Restart</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Utility &gt; Server Restart Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Utility &gt; Server Restart</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">운영서버가 이중화 되어 있을 경우에 현재 운영서버에서 운영되고 있는 기능들을 다른 운영서버에서 실행되도록 Switching 한 후
+      	                                        현재 Server를 Shutdown or Restart 하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Utility &gt; Server Restart 클릭 : 처리화면으로 이동한다.</li>
+    	                                              <li>Restart 클릭 : Integratin Server를 Restart 한다.</li>
+    	                                              <li>Shutdown 클릭 : Integratin Server를 Shutdown만 한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Search Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>업무시간에 운영서버를 Shutdown 또는 Restart 해야 하는 상황에서 서비스의 중단 및 오류 없이 운영서버를 Shutdown 또는 Restart 할 수 있다.</li>
+            	                                                                 <li>현재 운영서버에서 운영되고 있는 기능들을 다른 운영서버에서 실행되도록 Switching 한다.</li>
+            	                                                                 <li>현재 인터페이스 서비스를 하는 모든 Port에 대해서 Disable 처리를 해서 더 이상 Request 수신이 되지 않게 하고
+            	                                                                 	 유효한 Client 세션이 모두 종료된 후에 서버를 Shutdown 또는 Restart 한다.<br>
+																					 그러나, http(s) Port로 Request를 수신하는 인터페이스가 하나도 없는 경우에는 Primary Port Change 항목에서 "No Change"를 선택해서
+																					 4번 ~ 6번 스텝은 처리되지 않게 할 수 있다.
+            	                                                                 </li>
+            	                                                                 <li>서버를 Shutdown 하기 전에 처리한 내역들을 파일로 저장했다가 서버를 Start 할 때 원래의 상태로 되돌릴 수 있다.<br>
+            	                                                                 	   파일명 : SAG_Directory/CUSTOM_CONFIG/localfile/ServerRestartInfo
+            	                                                                 </li>
+            	                                                                 <li>처리한 내역들에 대해서 ESB 관리자에게 메일로 통보를 한다.</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Primary Port Change</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">현재 Primary Port에 대해서 Disable 처리를 하기 위해서 Primary Port를 변경해야 한다.<br>
+      	                                                              그러므로 인터페이스용으로 사용하지 않는 Port를 선택해야 한다. 그런 Port가 없을 경우에는 신규로 하나 생성한다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Ignore Session User</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">서버를 Shutdown 하기 전에 유효한 Client 세션이 존재하는지 체크를 해서 세션이 모두 종료된 후에 서버를 Shutdown 하는데
+      	                                                              이 때 접속한 Client User ID를 이용해서 체크를 한다. IS Administrator 화면에 접속하여 Shutdown 또는 Restart 처리를 하는
+      	                                                              것이기 때문에 Administrator와 같은 User에 대해서는 체크 대상에서 제외를 해야 한다.
+      	                                                              이와 같이 체크 대상에서 제외를 해야 하는 User를 입력한다. 제외 대상 User가 여러 개인 경우에는 '/' 를 이용해서 구분한다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Re-Switching YN After Server Starting</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">현재 서버를 Shutdown 했다가 Starting 한 후에 기존의 운영하고 있던 기능들을 현재 Server에서 다시 운영되도록 Switching 할
+      	                                                              것인지 여부를 선택한다.<br>
+      	                                                              'Yes' 를 선택하면 서버를 Shutdown 하기 전에 처리한 내역들을 파일로 저장했다가 서버를 Start 할 때 파일을 읽어서 파일의
+      	                                                              정보를 이용해서 원래의 상태로 되돌리고
+      	                                                              'No' 를 선택하면 처리내역을 파일로 저장하지 않고 관리자가 직접 수동으로 원래의 상태로 되돌리는 처리를 해야 한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Switching Target Server</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">현재 서버에서 실행 중인 기능을 중지하고 다른 서버에서 실행 하고자 할 경우 해당 Remote Server Alias를 선택한다.</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

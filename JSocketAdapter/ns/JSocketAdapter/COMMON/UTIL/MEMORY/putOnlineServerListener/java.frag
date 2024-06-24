@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">putOnlineServerListener</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwlzZXNzaW9uTmFtZSA9IElEYXRhVXRpbC5nZXRTdHJpbmcoIHBpcGVsaW5lQ3Vyc29yLCAibmFt
+ZSIgKTsNCklEYXRhIE9ubGluZUxpc3RlbmVySW5mbwk9IElEYXRhVXRpbC5nZXRJRGF0YSggcGlw
+ZWxpbmVDdXJzb3IsICJPbmxpbmVMaXN0ZW5lckluZm8iICk7DQpwaXBlbGluZUN1cnNvci5kZXN0
+cm95KCk7DQoNClN0cmluZyBlcnJvck1zZyA9ICIiOw0KDQp0cnkgew0KCXNNYW5hZ2VyLnB1dE9u
+bGluZVNlcnZlckxpc3RlbmVyKCBzZXNzaW9uTmFtZSwgT25saW5lTGlzdGVuZXJJbmZvICk7DQp9
+IGNhdGNoICggRXhjZXB0aW9uIGUgKSB7DQoJZXJyb3JNc2cgPSBlLnRvU3RyaW5nKCk7DQp9DQoN
+Ck9ubGluZUxpc3RlbmVySW5mbyA9IG51bGw7DQoNCklEYXRhQ3Vyc29yIHBpcGVsaW5lQ3Vyc29y
+XzEgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCklEYXRhVXRpbC5wdXQoIHBpcGVsaW5lQ3Vyc29y
+XzEsICJlcnJvck1zZyIsIGVycm9yTXNnICk7DQpwaXBlbGluZUN1cnNvcl8xLmRlc3Ryb3koKTs=
+</value>
+</Values>

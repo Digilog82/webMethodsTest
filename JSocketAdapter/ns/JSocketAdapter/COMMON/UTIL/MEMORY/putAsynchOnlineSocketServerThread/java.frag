@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">putAsynchOnlineSocketServerThread</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCmludCBw
+b3J0TnVtYmVyID0gSURhdGFVdGlsLmdldEludCggcGlwZWxpbmVDdXJzb3IsICJwb3J0TnVtYmVy
+IiwgMCApOw0KQXN5bmNoT25saW5lU29ja2V0U2VydmVyIGFvc3MgPSAoIEFzeW5jaE9ubGluZVNv
+Y2tldFNlcnZlciApSURhdGFVdGlsLmdldCggcGlwZWxpbmVDdXJzb3IsICJBc3luY2hPbmxpbmVT
+b2NrZXRTZXJ2ZXIiICk7DQpwaXBlbGluZUN1cnNvci5kZXN0cm95KCk7DQoNClN0cmluZyBlcnJv
+ck1zZyA9ICIiOw0KDQp0cnkgew0KCXNNYW5hZ2VyLnB1dEFzeW5jaE9ubGluZVNvY2tldFNlcnZl
+clRocmVhZCggcG9ydE51bWJlciwgYW9zcyApOw0KfSBjYXRjaCAoIEV4Y2VwdGlvbiBlICkgew0K
+CWVycm9yTXNnID0gZS50b1N0cmluZygpOw0KfQ0KDQpJRGF0YUN1cnNvciBwaXBlbGluZUN1cnNv
+cl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJRGF0YVV0aWwucHV0KCBwaXBlbGluZUN1cnNv
+cl8xLCAiZXJyb3JNc2ciLCBlcnJvck1zZyApOw0KcGlwZWxpbmVDdXJzb3JfMS5kZXN0cm95KCk7
+</value>
+</Values>

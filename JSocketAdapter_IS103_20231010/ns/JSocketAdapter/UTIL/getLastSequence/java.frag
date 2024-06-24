@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">getLastSequence</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCmRvdWJs
+ZSB0b3RhbENvdW50ID0gKCBkb3VibGUgKUlEYXRhVXRpbC5nZXRJbnQoIHBpcGVsaW5lQ3Vyc29y
+LCAidG90YWxDb3VudCIsIDAgKTsNCmRvdWJsZSBtYXhDb3VudCA9ICggZG91YmxlIClJRGF0YVV0
+aWwuZ2V0SW50KCBwaXBlbGluZUN1cnNvciwgIm1heENvdW50IiwgMCApOw0KDQpTdHJpbmcgbGFz
+dFNlcSA9ICggKCBpbnQgKU1hdGguY2VpbCggdG90YWxDb3VudCAvIG1heENvdW50ICkgKSArICIi
+Ow0KDQpJRGF0YUN1cnNvciBwaXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7
+DQpJRGF0YVV0aWwucHV0KCBwaXBlbGluZUN1cnNvcl8xLCAibGFzdFNlcSIsIGxhc3RTZXEgKTsN
+CnBpcGVsaW5lQ3Vyc29yXzEuZGVzdHJveSgpOw==</value>
+</Values>

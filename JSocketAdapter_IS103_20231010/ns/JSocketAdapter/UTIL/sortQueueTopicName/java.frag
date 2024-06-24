@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">sortQueueTopicName</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+Z1tdIEluRmlsZU5hbWVMaXN0ID0gSURhdGFVdGlsLmdldFN0cmluZ0FycmF5KCBwaXBlbGluZUN1
+cnNvciwgIkluRmlsZU5hbWVMaXN0IiApOw0KcGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpT
+dHJpbmdbXSBPdXRGaWxlTmFtZUxpc3QgPSBzb3J0UXVldWVUb3BpYyggSW5GaWxlTmFtZUxpc3Qg
+KTsNCg0KSURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3JfMSA9IHBpcGVsaW5lLmdldEN1cnNvcigp
+Ow0KSURhdGFVdGlsLnB1dCggcGlwZWxpbmVDdXJzb3JfMSwgIk91dEZpbGVOYW1lTGlzdCIsIE91
+dEZpbGVOYW1lTGlzdCApOw0KcGlwZWxpbmVDdXJzb3JfMS5kZXN0cm95KCk7</value>
+</Values>

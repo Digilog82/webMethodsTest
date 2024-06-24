@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">putOnlineReceiveSequence</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZyBOQU1FID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJOQU1FIiApOw0K
+SURhdGEgT25saW5lUmVjZWl2ZVNlcXVlbmNlID0gSURhdGFVdGlsLmdldElEYXRhKCBwaXBlbGlu
+ZUN1cnNvciwgIk9ubGluZVJlY2VpdmVTZXF1ZW5jZSIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ry
+b3koKTsNCg0KU3RyaW5nIGVycm9yTXNnID0gIiI7DQoNCnRyeSB7DQoJc01hbmFnZXIucHV0T25s
+aW5lUmVjZWl2ZVNlcXVlbmNlKCBOQU1FLCBPbmxpbmVSZWNlaXZlU2VxdWVuY2UgKTsNCn0gY2F0
+Y2ggKCBFeGNlcHRpb24gZSApIHsNCgllcnJvck1zZyA9IGUudG9TdHJpbmcoKTsNCn0NCg0KSURh
+dGFDdXJzb3IgcGlwZWxpbmVDdXJzb3JfMSA9IHBpcGVsaW5lLmdldEN1cnNvcigpOw0KSURhdGFV
+dGlsLnB1dCggcGlwZWxpbmVDdXJzb3JfMSwgImVycm9yTXNnIiwgZXJyb3JNc2cgKTsNCnBpcGVs
+aW5lQ3Vyc29yXzEuZGVzdHJveSgpOw==</value>
+</Values>

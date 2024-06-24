@@ -1,0 +1,607 @@
+            webMethods Adapter 10.1 for SAP Fix 12 readme
+
+							November 2023
+
+________________________________________________________________________________
+
+1.0   Fix Name
+2.0   Fix ID
+3.0   Product(s)/Component(s) Affected
+4.0   Requirements and Dependencies
+5.0   Platform Support
+6.0   Cautions and Warnings
+7.0   Fix Contents
+8.0   Installation
+9.0   Uninstallation
+10.0  Globalization
+11.0  Copyright
+________________________________________________________________________________
+
+
+1.0 Fix Name
+
+webMethods Adapter 10.1 for SAP Fix 12
+
+
+
+2.0 Fix ID
+
+SAP_10.1_Fix12
+
+
+
+3.0 Product(s)/Component(s) Affected
+
+None
+
+
+
+4.0 Requirements and Dependencies
+
+This fix requires the following libraries and fixes installed:
+1. Library SAP JCo 3.1.8 or higher.
+2. Library SAP IDoc Class 3.1.3 or higher.
+3. For Integration Server 10.1: 
+Adapter Runtime 10.1 Fix 2 - Fix WAR_10.1_Fix2,
+Integration Server Core 10.1 Fix 24 or higher - IS_10.1_Core_Fix24 or higher
+4. For Integration Server 10.3: 
+Integration Server Core 10.3 Fix 30 or higher - Fix IS_10.3_Core_Fix20 or higher
+5. For Integration Server 10.5: 
+Integration Server Core 10.5 Fix 13 or higher - Fix IS_10.5_Core_Fix13 or higher
+6. For Integration Server 10.7: 
+Adapter Runtime 10.7 Fix 3 - Fix WAR_10.7_Fix3, 
+Integration Server Core 10.7 Fix 6 or higher - IS_10.7_Core_Fix6 or higher
+7. For Integration Server 10.11: 
+Adapter Runtime 10.11 Fix 1 - Fix WAR_10.11_Fix1,
+Integration Server Core 10.11 Fix 1 or higher - IS_10.11_Core_Fix1 or higher
+
+Fixes are cumulative. Therefore, for each of the listed fixes, you can install 
+the specified fix or later.
+
+For language pack requirements, see the Globalization section of the Software AG
+Empower Product Support website at 
+https://empower.softwareag.com/Products/Globalization/default.asp
+
+
+
+5.0 Platform Support
+
+Same platforms as product release.
+
+
+
+6.0 Cautions and Warnings
+
+Software AG recommends disabling all RFC connections and listeners, and ending 
+all pending SAP processing before installing or uninstalling the fix. 
+
+If webMethods Adapter for SAP is configured as a CTS server, you must either 
+stop all connected CTS clients or disable their RFC connections and listeners 
+before installing or uninstalling the fix on the CTS server. The CTS clients 
+must be at the same fix level as the webMethods Adapter for SAP configured as a 
+CTS server.
+
+
+
+7.0 Fix Contents
+
+In addition to including resolutions to product defects, a fix may also include 
+enhancements to existing functionality and features. Any of these items can 
+result in new or changed built-in services, APIs, or configuration parameters. 
+Review the fix contents carefully before installing the fix.
+
+This fix is cumulative, which means that it includes all previous fixes for the 
+release.
+
+WSP-2041
+In webMethods Adapter for SAP, a new public service
+pub.sap.util:getListenerRuntimeStatus is introduced, which returns the current
+accurate runtime status of an RFC Listener instance. The service can be used to
+monitor and report the RFC Listener status and also for automated health checks to
+determine the current state, thread usage, and latency of an RFC listener.
+
+WSP-2029
+In webMethods Adapter for SAP, the adapter may partially load after exiting
+Integration Server Quiesce mode.
+
+This issue is now resolved. 
+
+WSP-2004
+Builtin private service wm.sap.Bapi.getParameterDefinition service is not working
+when an empty string is passed for the eventName input parameter.
+
+This issue is now resolved.
+
+WSP-1999
+In webMethods Adapter for SAP, the search for all available Business Objects in 
+the SAP system returns an empty list if the DDIC cache is cleared before the 
+search.
+
+This issue is now resolved. 
+
+WSP-1970
+In webMethods Adapter for SAP, two or more RFC Listener instances with identical
+configurations cannot be enabled at the same time. The underlying SAP JCo library
+imposes the limitation. The resulting error message now contains the names of
+the identical RFC listener instances for easier identification and resolution of
+the issue.
+
+WSP-1931
+In webMethods Adapter for SAP, the metadata of the connected SAP systems is stored
+in an internal cache to accelerate SAP document processing. If the metadata is
+changed in the SAP system, then the changes are not automatically updated in the
+internal cache. A manual reset of the cache is required to avoid errors in the
+SAP payload data.
+
+This issue is now resolved.
+
+In Integration Server Administrator > Extended > Settings page, set the
+watt.sap.repo.check.interval to a positive value larger than 0. The value set in
+the property is the time interval (in minutes) to check the internal SAP metadata
+caches for outdated entries and to remove them if exist. If the property value
+is set to 0 or a negative value results in default behavior, where the internal
+SAP metadata caches are not checked for outdated entries. 
+
+WSP-1874
+In webMethods Adapter for SAP, an internal decoding error causes the logging of
+the "The LockInfo object is invalid" error messages in the Integration Server logs.
+ 
+This issue is now resolved.
+
+WSP-1881 (SAP_10.1_Fix11)
+In Integration Server Administrator > webMethods Adapter for SAP > Monitoring
+screen, a NullPointerException appears when two similar RFC listener instances
+with identical Program ID are enabled.
+
+This issue is now resolved.
+
+WSP-1866 (SAP_10.1_Fix11)
+In webMethods Adapter for SAP, the RFC adapter service calls execute redundant
+user access right checks ignoring the value set in watt.sap.strictDefaultUserCheck
+property if webMethods SAP Adapter 10.1 Fix 10 is installed.
+
+This issue is now resolved.
+
+WSP-1861 (SAP_10.1_Fix11)
+In webMethods Adapter for SAP, a new public service pub.sap.util:createTID is
+introduced. The service can be used to create an SAP Transaction ID without
+requiring an SAP connection, providing more flexibility and performance than the
+pub.sap.client:createTID service. The Transaction ID is based on randomly created
+UUID Version 4.
+
+Set the watt.sap.fastTIDCreation property to true in Integration Server
+Administrator > Settings > Extended to ensure that the webMethods Adapter for
+SAP uses the fast, offline method of creating Transaction ID in the existing
+public service pub.sap.client:createTID. 
+
+WSP-1858 (SAP_10.1_Fix11)
+In webMethods Adapter for SAP, when executing the Publish And Wait operation of
+a synchronous ALE notification, a "Field is absent, field must exist" error
+appears for the "_env" field. The "_env" field is not populated in the IDoc
+received by the listener, whereas the field is set as mandatory in the
+publishable RequestDocument generated by the ALE notification.
+
+This issue is now resolved.
+
+WSP-1826 (SAP_10.1_Fix11)
+In webMethods Adapter for SAP, RFC connections to SAP systems of release 4.6 
+(or below) cannot be enabled anymore if Fix10 has been installed.
+
+This issue is resolved now. 
+
+WSP-1820 (SAP_10.1_Fix11)
+In webMethods Adapter for SAP, you cannot enable or disable a suspended
+connection if Integration Server is hosted on a Linux operating system.
+
+This issue is now resolved.
+
+WSP-1745 (SAP_10.1_Fix10)
+In webMethods Adapter for SAP, if X.509 client authentication is used in a
+session, then the SNC connections with user/password authentication fail.
+
+This issue is now resolved.
+
+WSP-1708 (SAP_10.1_Fix10)
+In webMethods Adapter for SAP, when Integration Server session is terminated, the
+transactions may fail with the exception "connection closed after cancel".
+
+This issue is now resolved.
+
+WSP-1545 (SAP_10.1_Fix10)
+In webMethods Adapter for SAP, the RFC adapter services contain the fields
+$runtime and $rfctime that are defined as java.lang.Long type in the output
+signature. However, the values returned in these fields are of type
+java.lang.String when the service is executed.
+
+This issue is now resolved.
+
+The fields $runtime and $rfctime are defined as java.lang.String type in the
+output signature of the RFC adapter service. 
+
+WSP-1508 (SAP_10.1_Fix10)
+In webMethods Adapter for SAP, the Routing Mapping and SAP Users which can be
+configured from Integration Server Administrator are available as configuration
+variables template generated by Microservices Runtime.
+
+You can now update the values of the properties in the application.properties
+file and pass to a Microservices Runtime.
+Ensure that the Integration Server core fixes and ART fix are also installed.
+This feature is available in webMethods Integration Server 10.7 or higher.
+
+WSP-1359 (SAP_10.1_Fix10)
+In webMethods Adapter for SAP, the connection appears disabled in the Integration
+Server Administrator interface when enabling connection fails during Integration
+Server startup.
+
+This issue is now resolved.
+
+A new connection state Suspended is introduced for the connections. When enabling
+connection fails during Integration Server startup, the connection state is
+Suspended. This feature is available in Integration Server 10.7 and later. 
+
+WSP-1522 (SAP_10.1_Fix9)
+In webMethods Adapter for SAP, the RFC listeners are sometimes not enabled during
+adapter startup and remain in the Failed status, in Integration Server 10.7 and
+higher, if the SAP JCo library version 3.1.4 or 3.1.5 is installed.
+
+This issue is now resolved.
+
+WSP-1518 (SAP_10.1_Fix9)
+In webMethods Adapter for SAP, the endDate and startDate input parameters of 
+the pub.sap.transaction:list public service are ignored, if the values are not
+provided in the "yyyy-MM-dd HH:mm:ss.SSS z" format with decimal point and
+decimal places.
+
+This issue is now resolved.
+
+The decimal point and decimal places are bypassed for the endDate and startDate
+input parameters of the pub.sap.transaction:list service.
+
+WSP-1505 (SAP_10.1_Fix9)
+In webMethods Adapter for SAP, the automatic sharing of a single repository
+connection between RFC connections to the same SAP system may result in metadata
+access exceptions, if the default user of one of the RFC connections does not have
+the required metadata access rights in SAP.
+
+This issue is now resolved.
+
+If the property watt.sap.strictDefaultUserCheck is set to true, the adapter checks
+the metadata access rights of the default user before an RFC connection is enabled.
+The RFC connection cannot be enabled if the default user does not have the required
+access rights.
+
+Alternatively, you can set a dedicated repository user for an RFC connection using
+the 'Repository User Name' and 'Repository Password' properties. All RFC and IDoc
+metadata access calls are then executed with the repository user. All other
+non-metadata RFC calls are executed with the default user.
+
+WSP-1503 (SAP_10.1_Fix9)
+In webMethods Adapter for SAP, the CSRF token must not be visible in the hyperlink
+when you enable the Cross-Site Request Forgery (CSRF) guard in Integration Server.
+
+This issue is now resolved.
+
+WSP-1460 (SAP_10.1_Fix6)
+In webMethods Adapter for SAP, on installing JCo 3.1.3 and higher, the SNC
+enabled connections with user/password authentication cannot be enabled.
+
+This issue is now resolved.
+
+WSP-1443 (SAP_10.1_Fix6)
+In webMethods Adapter for SAP, the user is unable to enable the connection if
+the property watt.art.connection.byPassConnValidation is set to true and SAP
+system is unavailable during Integration Server startup.
+
+This issue is now resolved. 
+
+WSP-1433 (SAP_10.1_Fix6)
+In webMethods Adapter for SAP, the user exit service, sample.sap.idoc.Mappings:ordrsp
+throws a NullPointerException for inbound IDocs of message type ORDRSP.
+
+This issue is now resolved.
+
+WSP-1415 (SAP_10.1_Fix6)
+In webMethods Adapter for SAP, the user token $MYSAPSSO2$ cannot be set as the
+default user for an RFC client connection.
+
+This issue is now resolved.
+
+The user token $MYSAPSSO2$ can be set as the default user.
+The password for this default user is a base64-encoded SSO logon ticket. 
+
+WSP-1412 (SAP_10.1_Fix6)
+In webMethods Adapter for SAP, internal references to closed Integration Server 
+sessions are not always deleted and may cause memory exhaustion.
+
+This issue is now resolved. 
+
+WSP-1364 (SAP_10.1_Fix6)
+In webMethods Adapter for SAP, Test Connection button is introduced.
+Test Connection button can be used to test the connection while creating or editing 
+a connection. This feature is only available on Integration Server 10.7 and higher. 
+
+WSP-1396 (SAP_10.1_Fix5)
+In webMethods Adapter for SAP, the throughput performance logging does not work
+with SAP JCo version 3.1.3 and later.
+ 
+If you install SAP JCo middleware version 3.1.3 and if watt.sap.throughput is
+set to true, then webMethods SAP Adapter 10.1 displays the error message
+"java.lang.NoClassDefFoundError".
+ 
+This issue is now resolved. The adapter now supports throughput logging with
+SAP JCo version 3.1.3 and later. 
+
+WSP-1327 (SAP_10.1_Fix5)
+In webMethods Adapter for SAP, 2 metadata entries, build and subsystem are
+required in manifest.v3 file of WmSAP package for the SPM Plugin to work
+correctly. These metadata entries are not getting added if WmSAP package is
+loaded partially.
+
+This issue is now resolved.
+
+WSP-1323 (SAP_10.1_Fix5)
+In webMethods Adapter for SAP, autocomplete property for the password fields is
+enabled in the Integration Server Administrator page of the adapter.
+ 
+The password fields with autocomplete property enabled is a security
+vulnerability.
+ 
+The issue is now resolved.
+
+WSP-1320 (SAP_10.1_Fix5)
+In webMethods Adapter for SAP, the warning "Second directory could not be created"
+appears in the server logs for a few transactions under high transaction traffic.
+The message appears because the path of the second directory is not correct in
+the logging logic of the transaction store.
+
+This issue is resolved.
+
+WSP-1297 (SAP_10.1_Fix4)
+In webMethods Adapter for SAP, Cloud Container environment is unable to load the
+JavaScript files for the Admin User Interface due to an invalid file extension.
+
+This issue is resolved. Now, the file extension has been changed.
+
+WSP-1293 (SAP_10.1_Fix4)
+webMethods SAP Adapter 10.1 does not support the registration of an RFC Listener
+at multiple SAP Gateways.
+
+SAP JCo 3.1 introduces a new feature which allows the automatic registration of
+RFC Listeners at several SAP Gateway instances to achieve high availability and
+to improve load balancing. The webMethods SAP Adapter 10.1 needs to be enhanced
+to use this new JCo feature for RFC Listeners.
+
+This issue is now resolved. The adapter now supports the automatic registration
+of an RFC Listener at multiple SAP Gateway instances.
+
+WSP-1281 (SAP_10.1_Fix4)
+webMethods SAP Adapter 10.1 is not compatible with SAP JCo version
+3.1.2 and later.
+
+When you install SAP JCo middleware version 3.1.2 or later, then
+webMethods SAP Adapter 10.1 fails to load with the following error message:
+Error registering SAP Adapter with ART: WmSAP 10.1 requires SAP
+JCo 3.0.18 (or higher) and is not compatible with earlier JCo
+versions 2.x or 3.0.0 to 3.0.17.
+
+This issue is resolved. The adapter is now compatible with SAP
+JCo version 3.1.2 and later. 
+
+WSP-1278 (SAP_10.1_Fix4)
+In webMethods Adapter for SAP, the pub.sap.monitor.systat01:report service can
+throw NullPointerExceptions when the connection attribute 'Log transaction status'
+is set to the Off state for at least a single RFC Listener which is receiving
+IDocs.
+
+This issue is now resolved. The connection attribute 'Log transaction status'
+is automatically enabled if an RFC Listener receives the IDocs.
+
+WSP-1250 (SAP_10.1_Fix3)
+In webMethods Adapter for SAP, the ALE notifications fail with Java type
+mismatch exception after installing Fix1.
+
+During runtime, the Java type and the ordering of IDoc segment field values are
+different compared to the IDoc document specification. This causes Java type
+mismatch exceptions.
+
+This issue is now resolved. 
+
+WSP-1232 (SAP_10.1_Fix1)
+In webMethods Adapter for SAP, the enhanced SAP IDocLib 3.0.13 API is not
+used to send the heterogenous IDoc lists.
+
+This issue is resolved. The adapter now includes the pub.sap.client:sendIDocLists
+service which allows sending multiple IDoc lists of different IDoc types in a
+single tRFC transaction. 
+
+WSP-1226 (SAP_10.1_Fix1)
+In webMethods Adapter for SAP, the enhanced SAP IDocLib 3.0.13 API is not used
+to improve the performance of IDoc inbound processing.
+
+This issue is resolved. The adapter now uses SAP IDocLib 3.0.13 API to
+increase the performance of the 
+pub.sap.idoc:iDocToDocument and pub.sap.idoc:iDocToTables methods for large IDocs. 
+
+WSP-1222 (SAP_10.1_Fix1)
+In webMethods Adapter for SAP, the Return to Results link fails to retrieve the
+results of the previous RFC function call with an exception.
+
+This issue occurs when you execute an RFC function test in the adapter's Lookup
+page and then click the Return to Results link in the table view to return to 
+the results of the RFC function call.
+
+This issue is now resolved. 
+
+WSP-1218 (SAP_10.1_Fix1)
+In webMethods Adapter for SAP, Repository Server in the Listener page contains
+duplicate options.
+
+If two or more connections have the same connection alias, the Repository Server
+contains duplicate options in the Listener page.
+
+This issue is now resolved. 
+
+WSP-1210 (SAP_10.1_Fix1)
+In webMethods Adapter for SAP, the inbound request from SAP cannot be processed,
+if the requests are sent using the bgRFC protocol.
+
+This issue is resolved. Now, the adapter can process the inbound SAP requests
+using the bgRFC protocol. 
+
+WSP-1197 (SAP_10.1_Fix1)
+In webMethods Adapter for SAP, the documentation is missing for Java IDoc API.
+
+This issue is resolved. IDoc Java API documentation is now included in
+Adapter for SAP. 
+
+WSP-1196 (SAP_10.1_Fix1)
+In webMethods Adapter for SAP, the processing of inbound IDocs and the execution
+of the pub.sap.idoc:iDocToDocument service fails with the following exception-
+com.wm.data.IData; cannot be cast to java.util.ArrayList
+
+This issue is now resolved.  
+
+WSP-1191 (SAP_10.1_Fix1)
+In webMethods Adapter for SAP, if the CIM type field is not set, then you must
+create additional ALE notifications to process IDocs with CIM type extensions.
+
+This issue is resolved. Now, setting an empty CIM type notification field to the
+wildcard character (*) restores the runtime behavior of the adapter and allows
+to process all IDocs with or without CIM type extension.
+
+WSP-1165 (SAP_10.1_Fix1)
+In webMethods Adapter for SAP, if the default user of a master repository
+connection does not have the necessary access rights in SAP, then specific
+error log messages are not generated.
+
+This issue can occur for the below situations:
+- after a new RFC connection is created
+- if there is a change in the startup order of RFC connections
+
+The cause for this issue is when the default user of the connection does not have
+necessary access rights in SAP and the connection becomes the master repository
+connection for the other connections to the same SAP system.
+
+This issue is resolved. Now, the adapter logs display a more descriptive error
+message, if the default user does not have the necessary access rights in SAP. 
+
+RGHADPESTBL-4599 (SAP_10.1_Fix1)
+In webMethods Adapter for SAP, the home page is updated with minimal compliance 
+with DELITE. 
+
+
+
+8.0 Installation
+
+Install using Software AG Update Manager. For instructions, see the 
+documentation at http://documentation.softwareag.com.
+
+1. Disable all enabled webMethods Adapter for SAP RFC connections and RFC 
+   listeners.
+
+2. Wait until all pending SAP processing is finished and then install the fix.
+   Disable any scheduled Integration Server tasks related to webMethods Adapter 
+   for SAP.
+
+3. If webMethods Adapter for SAP is configured as a CTS server, you must either 
+   stop all connected CTS clients or disable their RFC connections and RFC 
+   listeners before installing the fix on the CTS server. The CTS clients must be
+   at the same fix level as the webMethods Adapter for SAP configured as a CTS 
+   server.
+
+4. Create a backup of the IntegrationServer/packages/WmSAP folder, and then delete
+   the txstore subfolder from IntegrationServer/packages/WmSAP.
+
+5. Install the fix using the Software AG Update Manager. For instructions, 
+   see the documentation at http://documentation.softwareag.com.
+
+6. After installing the fix, copy the txstore subfolder from the backup to 
+   IntegrationServer/packages/WmSAP.
+   
+7. Enable the disabled scheduled Integration Server tasks, and webMethods Adapter 
+   for SAP RFC connections and RFC listeners.
+   
+8. Restart all stopped CTS clients or enable their disabled RFC connections 
+   and RFC listeners.
+
+
+
+9.0 Uninstallation
+
+Note: These instructions can only be used to uninstall the most recently 
+installed fix. This action will revert your installation to the previously 
+installed fix. You cannot use these instructions to uninstall the previously 
+installed fix.
+
+Uninstall using Software AG Update Manager. For instructions, see the 
+documentation at http://documentation.softwareag.com.
+
+1. Disable all enabled webMethods Adapter for SAP, RFC connections and RFC 
+   listeners.
+
+2. Wait until all pending SAP processing is finished and then install the fix.
+   Disable any scheduled Integration Server tasks related to webMethods Adapter 
+   for SAP.
+
+3. If webMethods Adapter for SAP is configured as a CTS server, you must either 
+   stop all connected CTS clients or disable their RFC connections and RFC 
+   listeners before installing the fix on the CTS server. The CTS clients must be 
+   at the same fix level as the webMethods Adapter for SAP configured as a CTS 
+   server.
+
+4. Create a backup of the IntegrationServer/packages/WmSAP folder. 
+
+5. Uninstall the fix using the Software AG Update Manager. For instructions, see 
+   the documentation at http://documentation.softwareag.com.
+
+6. After uninstalling the fix, delete the txstore subfolder from 
+   IntegrationServer/packages/WmSAP, and then copy the txstore folder from the 
+   backup to IntegrationServer/packages/WmSAP.
+   
+7. Enable the disabled scheduled Integration Server tasks, and webMethods Adapter 
+   for SAP RFC connections and RFC listeners.
+   
+8. Restart all stopped CTS clients or enable their disabled RFC connections and 
+   RFC listeners.
+
+
+
+10.0 Globalization
+
+This fix conforms to the internationalization standards of the webMethods 
+product suite and includes support for operation in any country, locale, or 
+language as specified in the Installing webMethods Products guide. It was not 
+tested with non-English configurations and non-ASCII data. However, this fix has 
+no globalization impact and can be applied to systems running in any supported 
+locale or configuration.
+
+
+10.1 Localization
+
+This fix does not require an updated language pack. It might contain new 
+messages and these messages will appear in English.
+
+
+11.0 Copyright
+
+Copyright © 2023 Software AG, Darmstadt, Germany and/or Software AG USA Inc., 
+Reston, VA, USA, and/or its subsidiaries and/or its affiliates and/or their 
+licensors.
+
+The name Software AG and all Software AG product names are either trademarks or 
+registered trademarks of Software AG and/or Software AG USA Inc. and/or its 
+subsidiaries and/or its affiliates and/or their licensors. Other company and 
+product names mentioned herein may be trademarks of their respective owners.
+
+Detailed information on trademarks and patents owned by Software AG and/or its 
+subsidiaries is located at http://softwareag.com/licenses .
+
+This software may include portions of third-party products. For third-party 
+copyright notices, license terms, additional rights or restrictions, please 
+refer to "License Texts, Copyright Notices and Disclaimers of Third Party 
+Products". For certain specific third-party license restrictions, please refer 
+to section E of the Legal Notices available under "License Terms and Conditions 
+for Use of Software AG Products / Copyright and Trademark Notices of Software AG
+Products". These documents are part of the product documentation, located at 
+http://softwareag.com/licenses and/or in the root installation directory of the 
+licensed product(s).

@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Business Name</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Basic Info &gt; Business Name Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Basic Info &gt; Business Name</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Remote Socket Server가 제공하는 Business에 대한 Name(업무명)을 [등록/수정/삭제/조회] 하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Basic Info &gt; Business Name 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Create New Business Name 클릭 : 신규정보 등록화면으로 이동한다.</li>
+    	                                              <li>Edit 아이콘 클릭 : 상세조회 및 수정화면으로 이동한다.</li>
+    	                                              <li>Delete 아이콘 클릭 : 등록정보를 삭제한다.</li>
+    	                                              <li>Enabled 필드의 링크 클릭 : Business Name의 사용 여부를 수정한다.</li>
+    	                                              <!--<li>Business Name 필드의 링크 클릭 : 해당 Business Name에서 수행하는 인터페이스에 대한 ID를 [등록/수정/삭제/조회] 하는 메뉴로 이동한다.</li>-->
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Create And Update Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Business Name은 기존에 등록되지 않은 Unique 한 값으로 해야 한다.</li>
+            	                                                                 <li>Business Name은 영문 이니셜(대문자) 등으로 하고 Custom Variable "ESB.CONFIG.BUSINESSNM.LENGTHCHK"가 true인 경우에는 
+																				     Custom Variable "ESB.CONFIG.BUSINESSNM.LENGTH"에 설정한 고정길이로 하고 Custom Variable "ESB.CONFIG.BUSINESSNM.LENGTHCHK"가 false인 경우에는
+																					 길이에 대한 제한을 하지 않는다.<br>
+																					 Business Name은 언더바( _ )를 포함할 수 없다.
+																				 </li>
+            	                                                                 <li>Receive Data Q Name, Receive Data Q Key Length 필드는 AS400 시스템이 존재하는 경우에만 입력한다.<br>
+            	                                                                 	   그 이외의 모든 Field에 대해서는 필수로 입력한다.
+            	                                                                 </li>
+            	                                                                 <li>Asynch Online Socket YN 필드를 'Yes' 로 하면 Asynch Online Socket Client로서의 업무를 의미하고 왼쪽 메뉴에 "ProviderSystemName Online" 이라는 메뉴가 Display 된다.<br>
+            	                                                                     예를 들어서, Provider System Name이 KFTC(금융결제원) 이라면 "KFTC Online" 이라는 메뉴가 Display 된다.
+            	                                                                 </li>
+																				 <li>Business Name, Provider System Name에 대한 정보는 그대로 두면서 Asynch Online Socket YN의 정보를 수정할 때 해당 Business Name, Provider System Name에 대한
+																				     REST API Protocol 정보를 이미 등록한 경우에는 다음과 같이 webMethods Messaging Trigger의 생성 또는 삭제가 이루어진다.<br>
+																					 Asynch Online Socket YN의 정보를 No에서 Yes로 수정하는 경우에는 webMethods Messaging Trigger를 자동으로 생성하고 Yes에서 No로 수정하는 경우에는 webMethods Messaging Trigger를 자동으로 삭제한다.<br>
+																					 Trigger는 Outbound에 대한 응답전문 송신용, Inbound에 대한 요청전문 송신용 두 개를 생성 및 삭제한다.
+																				 </li>
+																				 <li>Socket To REST API 또는 REST API To Socket 방식의 인터페이스를 위해서 Business Name을 등록하는 경우에 "Asynch Online Socket YN" 필드는 Socket으로 연계하는 시스템과의 통신을 기준으로 설정한다.</li>
+            	                                                                 <li>Server Socket &gt; Remote Server Socket 메뉴에서 Socket Name 등록 시 사용된다.</li>
+            	                                                                 <li>Business Name에 대한 [등록/수정/삭제] 정보는 Integration Server Memory에도 똑같이 동기화 된다.<br>
+            	                                                                 	   Integration Server Memory에 저장된 정보는 IS Memory Object &gt; Business Name 메뉴에서 확인 가능하다.
+            	                                                                 </li>
+            	                                                                 <li><font color="blue">운영서버가 두 대인 경우 한 쪽 운영서버에서 [등록/수정/삭제] 하면 다른 쪽 운영서버에서도 자동으로 [등록/수정/삭제] 된다.</font></li>
+            	                                                                 <li>Config File : SAG_Directory/CUSTOM_CONFIG/socket/businessNameConfig.xml</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Enabled</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Business Name에 대한 사용 여부</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Business Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">기존에 등록되지 않은 Unique 한 Business의 이름<br>
+	                                                                  Socket To REST API 방식 또는 REST API To Socket 방식의 인터페이스가 존재하는 경우에는 같은 업무라 하더라도 Socket Admin &gt; Basic Info &gt; REST API Protocol 메뉴에서 사용할 Business Name과
+																	  Socket Admin &gt; Server Socket &gt; Remote Server Socket 메뉴에서 사용할 Business Name을 각각 등록해야 한다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Provider System Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Remote Socket Server가 위치하고 있는 Remote System의 Name</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Asynch Online Socket YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Asynch Online Socket 방식으로 처리하는 업무인지 여부</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Receive Data Q Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">AS400 시스템이 존재하면서 Data Queue를 이용해서 ESB 시스템에 Request 하는 경우 처리결과를 AS400 시스템에 리턴할 때 사용하는 Receive Data Queue의 Name<br>
+	                                                                  Basic Info &gt; Custom Variable 메뉴의 "ESB.CONFIG.AS400.DATAQUSEYN" Variable이 "true"로 설정되어 있는 경우에만 Display 된다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Receive Data Q Key Length</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Receive Data Queue가 Keyed Queue인 경우 Key의 길이<br>
+	                                                                  Basic Info &gt; Custom Variable 메뉴의 "ESB.CONFIG.AS400.DATAQUSEYN" Variable이 "true"로 설정되어 있는 경우에만 Display 된다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Description</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Business Name에 대한 간략한 설명</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

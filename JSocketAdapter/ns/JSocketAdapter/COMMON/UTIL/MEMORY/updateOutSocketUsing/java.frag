@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">updateOutSocketUsing</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCmludAlw
+b3J0TnVtYmVyID0gSURhdGFVdGlsLmdldEludCggcGlwZWxpbmVDdXJzb3IsICJwb3J0TnVtYmVy
+IiwgMCApOw0KU3RyaW5nCW5hbWUgPSBJRGF0YVV0aWwuZ2V0U3RyaW5nKCBwaXBlbGluZUN1cnNv
+ciwgInNvY2tldE5hbWUiICk7DQpTdHJpbmcgdXNpbmcgPSBJRGF0YVV0aWwuZ2V0U3RyaW5nKCBw
+aXBlbGluZUN1cnNvciwgInVzaW5nIiApOw0KcGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpT
+dHJpbmcgZXJyb3JNc2cgPSAiIjsNCg0KdHJ5IHsNCglzTWFuYWdlci51cGRhdGVPdXRTb2NrZXRV
+c2luZyggcG9ydE51bWJlciwgbmFtZSwgdXNpbmcgKTsNCn0gY2F0Y2ggKCBFeGNlcHRpb24gZSAp
+IHsNCgllcnJvck1zZyA9IGUudG9TdHJpbmcoKTsNCn0NCg0KSURhdGFDdXJzb3IgcGlwZWxpbmVD
+dXJzb3JfMSA9IHBpcGVsaW5lLmdldEN1cnNvcigpOw0KSURhdGFVdGlsLnB1dCggcGlwZWxpbmVD
+dXJzb3JfMSwgImVycm9yTXNnIiwgZXJyb3JNc2cgKTsNCnBpcGVsaW5lQ3Vyc29yXzEuZGVzdHJv
+eSgpOw==</value>
+</Values>

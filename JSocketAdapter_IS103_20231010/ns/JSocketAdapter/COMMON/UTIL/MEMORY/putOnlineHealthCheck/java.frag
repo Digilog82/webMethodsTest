@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">putOnlineHealthCheck</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJuYW1lIiApOw0K
+SURhdGEgT25saW5lSGVhbHRoQ2hlY2tJbmZvCT0gSURhdGFVdGlsLmdldElEYXRhKCBwaXBlbGlu
+ZUN1cnNvciwgIk9ubGluZUhlYWx0aENoZWNrSW5mbyIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ry
+b3koKTsNCg0KU3RyaW5nIGVycm9yTXNnID0gIiI7DQoNCnRyeSB7DQoJc01hbmFnZXIucHV0T25s
+aW5lSGVhbHRoQ2hlY2soIG5hbWUsIE9ubGluZUhlYWx0aENoZWNrSW5mbyApOw0KfSBjYXRjaCAo
+IEV4Y2VwdGlvbiBlICkgew0KCWVycm9yTXNnID0gZS50b1N0cmluZygpOw0KfQ0KDQpPbmxpbmVI
+ZWFsdGhDaGVja0luZm8gPSBudWxsOw0KDQpJRGF0YUN1cnNvciBwaXBlbGluZUN1cnNvcl8xID0g
+cGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJRGF0YVV0aWwucHV0KCBwaXBlbGluZUN1cnNvcl8xLCAi
+ZXJyb3JNc2ciLCBlcnJvck1zZyApOw0KcGlwZWxpbmVDdXJzb3JfMS5kZXN0cm95KCk7</value>
+</Values>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">makeDir</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZyBmaWxlUGF0aCA9IElEYXRhVXRpbC5nZXRTdHJpbmcoIHBpcGVsaW5lQ3Vyc29yLCAiZmlsZVBh
+dGgiICk7DQpwaXBlbGluZUN1cnNvci5kZXN0cm95KCk7DQoNClN0cmluZyBlcnJvck1zZyA9ICIi
+Ow0KRmlsZSBwYXRoVG9CZVdyaXR0ZW4gPSBudWxsOw0KDQp0cnkgew0KCXBhdGhUb0JlV3JpdHRl
+biA9IG5ldyBGaWxlKCBmaWxlUGF0aCApOw0KDQoJLy8gQ3JlYXRlIHRoZSBkaXJlY3RvcnkNCglp
+ZiAoIHBhdGhUb0JlV3JpdHRlbi5leGlzdHMoKSA9PSBmYWxzZSApIHsNCgkJcGF0aFRvQmVXcml0
+dGVuLm1rZGlycygpOw0KCX0NCn0gY2F0Y2ggKCBFeGNlcHRpb24gZSApIHsNCgllcnJvck1zZyA9
+IGUuZ2V0TWVzc2FnZSgpOw0KfQ0KDQpwYXRoVG9CZVdyaXR0ZW4gPSBudWxsOw0KDQpJRGF0YUN1
+cnNvciBwaXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJRGF0YVV0aWwu
+cHV0KCBwaXBlbGluZUN1cnNvcl8xLCAiZXJyb3JNc2ciLCBlcnJvck1zZyApOw0KcGlwZWxpbmVD
+dXJzb3JfMS5kZXN0cm95KCk7</value>
+</Values>

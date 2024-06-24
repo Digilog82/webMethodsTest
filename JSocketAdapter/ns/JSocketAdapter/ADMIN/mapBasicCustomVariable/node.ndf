@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">flow</value>
+  <value name="svc_subtype">default</value>
+  <value name="svc_sigtype">java 3.5</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="node_subtype">unknown</value>
+      <value name="is_public">false</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="wrapper_type">IData</value>
+      <value name="nillable">true</value>
+      <value name="form_qualified">false</value>
+      <value name="is_global">false</value>
+      <array name="rec_fields" type="record" depth="1">
+      </array>
+      <value name="modifiable">true</value>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="node_subtype">unknown</value>
+      <value name="is_public">false</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="wrapper_type">IData</value>
+      <value name="nillable">true</value>
+      <value name="form_qualified">false</value>
+      <value name="is_global">false</value>
+      <array name="rec_fields" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="node_subtype">unknown</value>
+          <value name="node_comment"></value>
+          <record name="node_hints" javaclass="com.wm.util.Values">
+            <value name="field_largerEditor">false</value>
+            <value name="field_password">false</value>
+          </record>
+          <value name="is_public">false</value>
+          <value name="field_name">CustomVariableInfoList</value>
+          <value name="field_type">recref</value>
+          <value name="field_dim">1</value>
+          <value name="wrapper_type">IData</value>
+          <value name="nillable">true</value>
+          <value name="form_qualified">false</value>
+          <value name="is_global">false</value>
+          <value name="is_soap_array_encoding_used">false</value>
+          <value name="modifiable">true</value>
+          <value name="rec_ref">JSocketAdapter.DOC:CustomVariableInfo</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="node_subtype">unknown</value>
+          <value name="node_comment"></value>
+          <record name="node_hints" javaclass="com.wm.util.Values">
+            <value name="field_largerEditor">false</value>
+            <value name="field_password">false</value>
+          </record>
+          <value name="is_public">false</value>
+          <value name="field_name">CustomVariableValueInfoList</value>
+          <value name="field_type">recref</value>
+          <value name="field_dim">1</value>
+          <value name="wrapper_type">IData</value>
+          <value name="nillable">true</value>
+          <value name="form_qualified">false</value>
+          <value name="is_global">false</value>
+          <value name="is_soap_array_encoding_used">false</value>
+          <value name="rec_closed">true</value>
+          <value name="modifiable">true</value>
+          <value name="rec_ref">JSocketAdapter.DOC:CustomVariableValueInfo</value>
+        </record>
+      </array>
+      <value name="modifiable">true</value>
+    </record>
+  </record>
+  <value name="node_comment">- 여러 개를 등록해야 하는 경우에는 구분자로 '/' 를 사용한다.
+
+- 여부를 나타내는 필드에 대해서는 true, false 로 구분한다.
+
+- ESB.CONFIG.SERVER.TYPE
+   ESB 서버 구분(개발/UAT/운영)
+   DEV_IN : 대내계 개발서버에 생성
+   DEV_EX : 대외계 개발서버에 생성
+   UAT_IN : 대내계 UAT 서버에 생성
+   UAT_EX : 대외계 UAT 서버에 생성
+   PROD1_IN : 대내계 운영서버1에 생성
+   PROD2_IN : 대내계 운영서버2에 생성
+   PROD1_EX : 대외계 운영서버1에 생성
+   PROD2_EX : 대외계 운영서버2에 생성
+   value 변경 금지. 각 서버에 맞는 값으로 설정한다.
+
+- ESB.CONFIG.REMOTE.ALIAS
+   운영서버일 경우 다른 운영서버에 대한 Remote Server Alias를 설정한다.
+
+- ESB.CONFIG.REMOTE.DEPCONFIG
+   'Deploy Config' 화면에서 Deploy 가능한 Remote Server Alias 목록을 설정한다.
+   운영서버가 이중화 되어 있을 경우에는 둘 중에서 하나만 등록한다. ==&gt; 나머지 운영서버에 자동으로 동기화 되기 때문
+
+- ESB.CONFIG.REMOTE.DEPFILE
+   'Deploy File' 화면에서 Deploy 가능한 Remote Server Alias 목록을 설정한다.
+   운영서버가 이중화 되어 있다 하더라도 동기화 처리를 하지 않으므로 둘 다 등록해야 한다.
+
+- ESB.CONFIG.OTHER.SERVERNAME
+   운영서버일 경우 다른 운영서버에 대한 Server Name을 설정한다.
+
+- ESB.SOCKET.ONLINE.TRANSTYPE
+   Asynch Online 업무의 송수신 데이터 처리 방법
+   INV : doThreadInvoke ==&gt; UM 을 사용하지 않음
+   MES : webMethods Messaging publish
+   JMS : JMS send ==&gt; default
+
+- ESB.SOCKET.ONLINE.SAVE
+   Asynch Online Socket 인터페이스 시 ESB Header, Response Data, Send Status 임시 저장 방법
+   MEM : IS Memory 에 저장 ==&gt; default
+   FIL : 파일 시스템에 저장
+
+- ESB.SOCKET.ONLINE.SNDTYPE
+   Asynch Online Socket 송신 시 UM 에 전송하는 타입
+   SND : JMS send 또는 publish ==&gt; default
+   SNR : JMS sendAndWait 또는 publishAndWait
+
+- ESB.CONFIG.AS400.ASYNCHONLINEYN
+   AS400 시스템에서 Asynch Online 방식의 Socket 연계하는지 여부
+   true : menu.dsp 화면에서 SystemName Online &gt; Data Q Listener 메뉴가 Display 됨
+   false : menu.dsp 화면에서 SystemName Online &gt; Data Q Listener 메뉴가 Display 안 됨
+
+- ESB.CONFIG.AS400.DATAQUSEYN
+   AS400 시스템에서 Data Q를 이용해서 ESB와 연계하는지 여부
+   true : menu.dsp 화면에서 AS/400 메뉴가 Display 됨
+   false : menu.dsp 화면에서 AS/400 메뉴가 Display 안 됨</value>
+  <value name="stateless">yes</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="audit_level">off</value>
+  <value name="check_internal_acls">no</value>
+  <value name="icontext_policy">$null</value>
+  <value name="svcInvkURLAlias"></value>
+  <value name="system_service">no</value>
+  <value name="retry_max">0</value>
+  <value name="retry_interval">0</value>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+  <value name="auditoption">0</value>
+  <null name="auditfields_input"/>
+  <null name="auditfields_output"/>
+  <record name="auditsettings" javaclass="com.wm.util.Values">
+    <value name="document_data">0</value>
+    <value name="startExecution">false</value>
+    <value name="stopExecution">false</value>
+    <value name="onError">true</value>
+  </record>
+  <record name="circuitbreakersettings" javaclass="com.wm.util.Values">
+    <value name="enabled">false</value>
+    <value name="failureEvent">1</value>
+    <value name="timeoutPeriod">60</value>
+    <value name="failureThreshold">5</value>
+    <value name="failurePeriod">60</value>
+    <value name="openAction">1</value>
+    <null name="serviceToInvoke"/>
+    <value name="resetPeriod">300</value>
+    <value name="cancelThreadOnTimeout">false</value>
+  </record>
+  <array name="allowedHTTPMethods" type="value" depth="1">
+    <value>HEAD</value>
+    <value>DELETE</value>
+    <value>POST</value>
+    <value>GET</value>
+    <value>OPTIONS</value>
+    <value>PUT</value>
+    <value>PATCH</value>
+  </array>
+  <value name="pipeline_option">1</value>
+  <null name="originURI"/>
+  <value name="modifiable">true</value>
+  <value name="is_public">false</value>
+</Values>

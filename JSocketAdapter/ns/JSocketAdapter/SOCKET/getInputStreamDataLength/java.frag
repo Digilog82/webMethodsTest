@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">getInputStreamDataLength</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCkJ1ZmZl
+cmVkSW5wdXRTdHJlYW0JaW5wdXRTdHJlYW0JPSAoIEJ1ZmZlcmVkSW5wdXRTdHJlYW0gKUlEYXRh
+VXRpbC5nZXQoIHBpcGVsaW5lQ3Vyc29yLCAiaW5wdXRTdHJlYW0iICk7DQpwaXBlbGluZUN1cnNv
+ci5kZXN0cm95KCk7DQoNCmludCBzdHJlYW1EYXRhTGVuZ3RoID0gMDsNCg0KdHJ5IHsNCglzdHJl
+YW1EYXRhTGVuZ3RoID0gaW5wdXRTdHJlYW0uYXZhaWxhYmxlKCk7DQp9IGNhdGNoICggRXhjZXB0
+aW9uIGUgKSB7DQoJDQp9DQoNCklEYXRhQ3Vyc29yIHBpcGVsaW5lQ3Vyc29yXzEgPSBwaXBlbGlu
+ZS5nZXRDdXJzb3IoKTsNCklEYXRhVXRpbC5wdXQoIHBpcGVsaW5lQ3Vyc29yXzEsICJzdHJlYW1E
+YXRhTGVuZ3RoIiwgc3RyZWFtRGF0YUxlbmd0aCArICIiICk7DQpwaXBlbGluZUN1cnNvcl8xLmRl
+c3Ryb3koKTs=</value>
+</Values>

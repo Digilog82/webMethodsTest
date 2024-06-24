@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Custom Variable Value</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">KFTC Online &gt; Online Connection Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; KFTC Online &gt; Online Connection</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Asynch Online Socket Client에 대한 Socket 연결 및 연결해제 처리를 하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>KFTC Online &gt; Online Connection 클릭 : 목록을 조회한다.</li>
+    	                                              <li>To Do 필드의 "Connect" 링크 클릭 : Socket Server에 연결한다.</li>
+    	                                              <li>To Do 필드의 "Close" 링크 클릭 : Socket Server에서 연결해제한다.</li>
+    	                                              <li>All Connect 클릭 : 목록에 조회된 모든 Asynch Online Socket Client에 대해서 Socket Server에 연결한다.</li>
+    	                                              <li>All Close 클릭 : 목록에 조회된 모든 Asynch Online Socket Client에 대해서 Socket Server에서 연결해제한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Connect And Close Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>KFTC는 예를 들어서 설명하기 위한 System Name 이다.</li>
+            	                                                                 <li>Basic Info &gt; Business Name 메뉴에서 Asynch Online Socket YN 필드가 'Yes'인 Business Name이 존재할 경우 Provider System Name 단위로 "ProviderSystemName Online" 이라는 메뉴가 생성된다.</li>
+            	                                                                 <li>Provider System Name이 'KFTC'인 모든 Asynch Online Socket Client의 Socket Name이 Display 된다.</li>
+            	                                                                 <li>Socket Server에 연결성공하면 Socket 관련 Object 정보를 IS Memory에 저장하고 연결상태를 계속 유지하며 데이터 수신 Socket인 경우에는 Listener Service가 실행된다.</li>
+            	                                                                 <li>Socket Server에서 연결해제하면 Socket 관련 Object 정보를 IS Memory에서 삭제하고 데이터 수신 Socket인 경우에는 Listener Service가 종료된다.</li>
+            	                                                                 <li>Server Socket &gt; Remote Server Socket 메뉴에서 Allowed Session Count 필드에 값을 설정한 경우 IP/Port에 대한 연결갯수가 이 값을 초과하지 못하도록 제한한다.</li>
+            	                                                                 <li>연결에 문제가 발생 시(Server 쪽에서 Socket Server를 Restart 하는 경우도 포함) JSocketAdapter에서 자동으로 Socket Server에 재연결 하고
+            	                                                                 	   ESB 관리자에게 메일로 통보한다.
+            	                                                                 </li>
+            	                                                                 <li>Socket Name은 Asynch Online Socket Business Name 단위로 생성한다.</li>
+            	                                                                 <li><font color="blue">운영서버가 두 대인 경우 한 쪽 운영서버에서만 Socket Server에 연결하도록 한다.</font></li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

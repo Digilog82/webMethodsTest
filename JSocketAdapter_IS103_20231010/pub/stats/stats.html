@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <title>Log Analysis</title>
+	  <meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+		<link rel="stylesheet" type="text/css" href="/WmRoot/webMethods.css">
+	  <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css">
+	  <link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+  	<table width="100%">
+			<tr>
+					<td class="menusection-Settings" colspan="2">
+						JSocketAdapter Package Home &gt;
+						Utility &gt;
+						Stats Log Analysis
+					</td>
+			</tr>
+		</table>
+  
+  	<table class="tableForm" width="100%">
+			<tr>
+				<td class="heading" colspan="2"><h3>Stats Log Analyzer</h3></td>
+			</tr>
+			<tr>
+				<tr>
+					<td class="evenrow" width="30%">Stats Log File</td>
+					<td class="evenrow-l" width="70%"><input type="file" id="statfiles" multiple /></td>
+				</tr>
+				<tr>
+					<td class="evenrow" width="30%">확대</td>
+					<td class="evenrow-l" width="70%">더블클릭, 스크롤휠</td>
+				</tr>
+				<tr>
+					<td class="evenrow" width="30%">축소</td>
+					<td class="evenrow-l" width="70%">Ctrl + 더블클릭, 스크롤휠</td>
+				</tr>
+				<tr>
+					<td class="evenrow" width="30%">영역확대</td>
+					<td class="evenrow-l" width="70%">Shift + 마우스드래그</td>
+				</tr>
+				<tr>
+					<td class="evenrow" width="30%">Panning</td>
+					<td class="evenrow-l" width="70%">마우스드래그</td>
+				</tr>
+				<tr>
+					<td class="action" colspan="2">
+						<button type="button" id="reset" data-inline="true" style="margin-left:20px; padding:3px 5px; font-weight:normal;">초기화</button>
+					</td>
+				</tr>
+			</tr>			
+		</table>
+		
+  	<div id="myChart" style="height: 500px; width: 100%;"></div>
+  	<div class="legend-container">
+  	  <ul id="legend1" class="legend"></ul>
+  	</div>
+  	
+  	<script src="js/jquery-1.11.0.min.js"></script>
+  	<script src="js/jquery.mobile-1.4.2.min.js"></script>
+  	<script src="js/underscore-min.js"></script>
+  	<script src="js/d3.v3.min.js"></script>
+  	<script src="js/math.min.js"></script>
+  	<script src="js/dygraph-combined.js"></script>
+  	<script src="js/interaction.js"></script>
+  	<script src="js/script.js"></script>
+  	
+	</body>
+</html>

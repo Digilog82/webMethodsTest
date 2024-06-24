@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Schedule</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Deploy Config &gt; Schedule</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Deploy Config &gt; Schedule</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">IS Administrator &gt; Server &gt; Scheduler 메뉴에서 관리하는 Schedule 정보를 다른 서버에 Deploy 하는 메뉴이다.
+      	                                        </a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Deploy Config &gt; Schedule 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Deploy Schedule to Suspended 클릭 : 선택한 Schedule을 Suspended 상태로 Target Server에 Deploy 한다.</li>
+    	                                              <li>Deploy Schedule to Active 클릭 : 선택한 Schedule을 Active 상태로 Target Server에 Deploy 한다.</li>
+													  <li>Reserve to Suspended 클릭 : 선택한 Schedule을 Suspended 상태로 Target Server에 Deploy 하는 Schedule을 등록한다.<br>
+    	                                              	  Schedule 실행 후 Target Server에서 직접 Active 상태로 바꾸는 처리를 해야 한다.</li>
+													  <li>Reserve to Active 클릭 : 선택한 Schedule을 Active 상태로 Target Server에 Deploy 하는 Schedule을 등록한다.<br>
+													      Schedule 실행 후 Target Server에서 직접 Active 상태로 바꾸는 처리를 할 필요가 없다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Search And Deploy Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Deploy Config 메뉴는 개발서버, UAT서버에서는 Display 되고 운영서버에서는 Display 되지 않는다.</li>
+			                                                                     <li>Schedule은 제품의 기능으로서 Deploy 여부를 알 수 없기 때문에 무조건 등록된 모든 Schedule 정보가 조회된다.</li>
+            	                                                                 <li>Check Box를 적어도 하나 이상 선택해야 한다.</li>
+            	                                                                 <li>Target Server가 여러 개일 경우 Target Server를 변경해서 선택하면 해당 Target Server에 등록된 Schedule 실행 Target Node 목록이 Target Node 부분에 조회된다.</li>
+																				 <li>Reserve to Suspended, Reserve to Active는 바로 Deploy 처리를 하는 것이 아니고 Deploy 예약을 하는 것이다.<br>
+            	                                                                     Schedule 등록은 Schedule Service가 이미 생성되어 있어야만 등록이 가능하다. 만약, Source Deploy가 야간에 수행될 경우에 유용하게 사용할 수 있는 기능이다.<br>
+            	                                                                     Deploy 예약을 하면 정해진 시간에 Deploy 되도록 Schedule 등록을 하는 것으로서 Deploy Config &gt; Deployment Reservation 메뉴에서 [조회/수정/삭제] 할 수 있다.<br>
+            	                                                                     이 Schedule은 IS Administrator &gt; Server &gt; Scheduler 메뉴에서도 확인할 수 있다.<br>
+            	                                                                     이 Schedule은 한 번만 실행되는 것으로서 실행되고 나면 목록에서 자동으로 삭제된다.<br>
+            	                                                                     이 Schedule에 의해서 Deploy 처리를 한 후에 Deploy 결과를 ESB 관리자에게 메일로 통보한다.
+            	                                                                 </li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Target Server</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Deploy 하고자 하는 Target Server<br>
+      	                                                              Basic Info &gt; Custom Variable 메뉴의 ESB.CONFIG.REMOTE.DEPCONFIG Variable에 등록된 Remote Server Alias 목록<br>
+      	                                                              Remote Server Alias가 여러 개일 경우 다중 선택 가능</a>
+			</div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target Node</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Target Server에 Schedule을 Deploy 한 후에 Schedule이 실행될 Target Node를 선택한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Reservation Time</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">"Reserve to Suspended" 또는 "Reserve to Active" 기능을 사용할 경우 Schedule이 실행될 날짜, 시간을 입력한다.</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

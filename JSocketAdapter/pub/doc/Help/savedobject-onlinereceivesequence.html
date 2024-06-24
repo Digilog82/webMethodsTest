@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Custom Variable</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">IS Memory Object &gt; Online Receive Sequence Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; IS Memory Object &gt; Online Receive Sequence</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Integration Server Memory에 저장하여 관리하는 Object 중에서 Multi Record 수신 순번 정보 목록을 조회하는 메뉴이다.
+      	                                        </a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>IS Memory Object &gt; Online Receive Sequence 클릭 : 목록을 조회한다.</li>
+    		                                            <li>Delete 아이콘 클릭 : Online Receive Sequence 정보를 삭제한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Search Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Asynch Online Socket Client가 존재하는 경우에만 이 메뉴가 Display 된다.</li>
+            	                                                                 <li>Asynch Online Business 응답전문의 구조가 Multi Record 형태이면서 Target System에서 전문의 사이즈 제한으로
+            	                                                                     인해서 한 번에 모든 Record를 보내주지 않고 여러 번 나눠서 보내주는 경우가 있다.<br>
+            	                                                                     JSocketAdapter에서는 응답전문의 수신처리를 Concurrent 하게 처리 하도록 구성하는데 응답전문을 여러 번 나눠서
+            	                                                                     수신할 경우 순서대로 처리하지 않으면 내부 시스템에서 문제가 발생할 수도 있다.<br>
+            	                                                                     수신한 순서대로 처리하기 위해서 현재 처리되고 있는 순번에 대한 정보를 IS Memory에 저장해서 처리되는 순서를
+            	                                                                     결정하는 데에 이용한다.
+            	                                                                 </li>
+            	                                                                 <li>전문 송수신 인터페이스가 완료되면 Online Receive Sequence 정보는 삭제를 하기 때문에 일반적으로는 조회되는 정보가 없다.
+            	                                                                     그러나, 전문 송수신 인터페이스가 수행되는 바로 그 순간에는 잠시 조회될 수도 있다.<br>
+            	                                                                     전문 송수신 인터페이스가 완료된 후에도 예외상황 발생으로 인해서 Online Receive Sequence 정보가 삭제되지 않을 수 있다.
+            	                                                                     이런 경우에는 오류 원인을 파악한 후에 ESB 관리자가 직접 삭제를 할 수 있다.
+            	                                                                 </li>
+            	                                                                 <li>IS Memory Object &gt; Online Data Delete Schedule 메뉴에서 Schedule을 등록해서 보관일수가 지난 데이터는 자동으로 삭제되도록 할 수 있다.</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">concatDataRecord</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZyBkYXRhUmVjb3JkID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJkYXRh
+UmVjb3JkIiApOw0KU3RyaW5nIGFkZERhdGEgPSBJRGF0YVV0aWwuZ2V0U3RyaW5nKCBwaXBlbGlu
+ZUN1cnNvciwgImFkZERhdGEiICk7DQpwaXBlbGluZUN1cnNvci5kZXN0cm95KCk7DQoNClN0cmlu
+Z0J1ZmZlciBzdHJCdWZmZXIgPSBuZXcgU3RyaW5nQnVmZmVyKCk7DQoNCnN0ckJ1ZmZlci5hcHBl
+bmQoIGRhdGFSZWNvcmQgKTsNCnN0ckJ1ZmZlci5hcHBlbmQoIGFkZERhdGEgKTsNCg0KZGF0YVJl
+Y29yZCA9IHN0ckJ1ZmZlci50b1N0cmluZygpOw0KDQpJRGF0YUN1cnNvciBwaXBlbGluZUN1cnNv
+cl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJRGF0YVV0aWwucHV0KCBwaXBlbGluZUN1cnNv
+cl8xLCAiZGF0YVJlY29yZCIsIGRhdGFSZWNvcmQgKTsNCnBpcGVsaW5lQ3Vyc29yXzEuZGVzdHJv
+eSgpOw==</value>
+</Values>

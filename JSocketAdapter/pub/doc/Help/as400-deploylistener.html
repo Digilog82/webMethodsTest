@@ -1,0 +1,119 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Deploy Listener</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">AS/400 &gt; Deploy Listener Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; AS/400 &gt; Deploy Listener</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">AS/400 &gt; Data Q Listener 메뉴에서 관리하는 Listeners 정보를 다른 서버에 Deploy 하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>AS/400 &gt; Deploy Listener 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Search Listener 클릭 : 조회조건에 해당하는 Listeners를 조회한다.</li>
+    	                                              <li>Deploy Listener to Disabled 클릭 : 선택한 Listeners 정보를 Disable 상태로 Target Server에 Deploy 한다.<br>
+    	                                              	  Target Server에서 직접 Enable 처리를 해야 한다.
+    	                                              </li>
+    	                                              <li>Deploy Listener to Enabled 클릭 : 선택한 Listeners 정보를 Enable 상태로 Target Server에 Deploy 한다.<br>
+    	                                              	  Target Server에서 직접 Enable 처리를 할 필요가 없다.
+    	                                              </li>
+    	                                              <li>Reserve to Disabled 클릭 : 선택한 Listeners 정보를 Disable 상태로 Target Server에 Deploy 하는 Schedule을 등록한다.<br>
+    	                                              	  Schedule 실행 후 Target Server에서 직접 Enable 처리를 해야 한다.
+    	                                              </li>
+    	                                              <li>Reserve to Enabled 클릭 : 선택한 Listeners 정보를 Enable 상태로 Target Server에 Deploy 하는 Schedule을 등록한다.<br>
+    	                                              	  Schedule 실행 후 Target Server에서 직접 Enable 처리를 할 필요가 없다.
+    	                                              </li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Search And Deploy Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>AS/400 메뉴는 AS400 시스템이 존재하고 Data Queue를 이용해서 ESB와 연계하는 경우에만 Display 된다.<br>
+            	                                                                     즉, Basic Info &gt; Custom Variable 메뉴에서 ESB.CONFIG.AS400.DATAQUSEYN의 Value가 true로 설정되어 있는 경우에만 Display 된다.
+            	                                                                 </li>
+            	                                                                 <li>AS/400 메뉴는 IS Administrator &gt; Adapters &gt; AS/400 Adapter에서 제공되지 않는 Data Queue Listener 관리에 대한 편리 기능을 제공한다.<br>
+            	                                                                     이런 기능을 사용하기 위해서는 IS Administrator &gt; Adapters &gt; AS/400 Adapter &gt; Data Queue Listeners 메뉴에서 등록한 Listener는
+            	                                                                     AS/400 &gt; Data Q Listener 메뉴에서도 모두 등록하도록 한다.
+            	                                                                 </li>
+            	                                                                 <li>AS/400 &gt; Deploy Listener 메뉴는 개발서버 또는 UAT서버에서만 Display 된다.</li>
+            	                                                                 <li>여기에서 Deploy 처리를 하면 Target Server의 IS Administrator &gt; Adapters &gt; AS/400 Adapter &gt; Data Queue Listeners 메뉴에 Listener가 등록되는 것이다.<br>
+            	                                                                     그러므로, Target Server에서 Listener Node Name에 해당하는 Flow Service가 이미 생성되어 있어야 한다.
+            	                                                                 </li>
+            	                                                                 <li>Reserve to Disabled, Reserve to Enabled는 바로 Deploy 처리를 하는 것이 아니고 Deploy 예약을 하는 것이다.<br>
+            	                                                                     Listener 등록은 Listener Node Service가 이미 생성되어 있어야만 등록이 가능하다. 만약, Source Deploy가 야간에 수행될 경우에 유용하게 사용할 수 있는 기능이다.<br>
+            	                                                                     Deploy 예약을 하면 정해진 시간에 Deploy 되도록 Schedule 등록을 하는 것으로서 AS/400 &gt; Deployment Reservation 메뉴에서 [조회/수정/삭제] 할 수 있다.<br>
+            	                                                                     이 Schedule은 IS Administrator &gt; Server &gt; Scheduler 메뉴에서도 확인할 수 있다.<br>
+            	                                                                     이 Schedule은 한 번만 실행되는 것으로서 실행되고 나면 목록에서 자동으로 삭제된다.<br>
+            	                                                                     이 Schedule에 의해서 Deploy 처리를 한 후에 Deploy 결과를 ESB 관리자에게 메일로 통보한다.
+            	                                                                 </li>
+            	                                                                 <li>메일이 정상적으로 전송 가능하기 위해서는 아래 조건을 만족해야 한다.<br>
+            	                                                                 	   Basic Info &gt; Custom Variable 메뉴에서 아래 Custom Variable을 모두 정확하게 설정해야 한다.<br>
+            	                                                                 	   ESB.CONFIG.INCHARGE.EMAILYN : 반드시 true 로 설정<br>
+            	                                                                 	   ESB.CONFIG.EMAIL.HOST : 메일서버의 IP 또는 Host Name<br>
+            	                                                                 	   ESB.CONFIG.INCHARGE.EMAIL : ESB 관리자 이메일 주소
+            	                                                                 </li>
+            	                                                                 <li>AS/400 &gt; Deploy Listener 클릭 시 Search Type은 기본적으로 "Only No Deploy" 이다.<br>
+            	                                                                     즉, Deploy 처리를 하지 않은 정보들만 조회를 한다.<br>
+            	                                                                     Search Type을 "ALL" 로 변경해서 Deploy 처리 여부와 관계없이 모든 정보를 조회할 수도 있다.</li>
+            	                                                                 <li>Check Box를 선택하지 않고 Deploy 하면 조회된 모든 정보를 Deploy 한다.</li>
+            	                                                                 <li><font color="blue">운영서버가 두 대인 경우 한 쪽 운영서버에 Deploy 하면 다른 쪽 운영서버에도 자동으로 Deploy 된다.</font></li>
+            	                                                                 <li>Deploy 처리가 완료된 정보에 대해서는 deployYN이 "Yes" 로 Update 된다.</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Target Server</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Deploy 하고자 하는 Target Server<br>
+      	                                                              Basic Info &gt; Custom Variable 메뉴의 ESB.CONFIG.REMOTE.DEPCONFIG Variable에 등록된 Remote Server Alias 목록<br>
+      	                                                              Remote Server Alias가 여러 개일 경우 다중 선택 가능<br>
+      	                                                              Deploy 시 선택</a>
+			</div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Change Library</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Local Server와 Target Server의 Library Name이 서로 다른 경우 여기에 입력하면 Library Name이 변경되어서 Deploy 된다.<br>
+      	                                                              Deploy 시 입력</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Reservation Time</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">"Reserve to Disabled" 또는 "Reserve to Enabled" 기능을 사용할 경우 Schedule이 실행될 날짜, 시간을 입력한다.<br>
+      	                                                              Deploy 시 입력</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Deploy to PROD Server, Enabling Server</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">운영서버에 Deploy 하는 것인지 여부<br>
+      	                                                              운영서버가 두 대인 경우 Listener는 한 쪽 운영서버에서만 Enable 되어 있어야 한다.<br>
+      	                                                              "Deploy Listener to Enabled" 또는 "Reserve to Enabled" 기능을 사용해서 운영서버에 Deploy 하는 경우에 어떤 서버에서 Enable
+      	                                                              처리를 할지 선택해야 한다.<br>
+      	                                                              Deploy 시 선택</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Provider System Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Listener가 이용하는 ESB 인터페이스의 Target System Name<br>
+      	                                                              조회 시 선택</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Business Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Listener가 이용하는 ESB 인터페이스의 Business Name<br>
+      	                                                              조회 시 선택</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Search Type</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Deploy 하고자 하는 대상에 대한 조회조건<br>
+      	                                                              Only No Deploy : Deploy 처리를 하지 않은 정보들만 조회<br>
+      	                                                              ALL : Deploy 처리 여부와 관계없이 모든 정보를 조회<br>
+      	                                                              조회 시 선택</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

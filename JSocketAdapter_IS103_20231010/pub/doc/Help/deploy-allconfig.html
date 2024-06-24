@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Custom Variable</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Deploy Config &gt; All Config Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Deploy Config &gt; All Config</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Deploy Config 메뉴에서 Deploy 하는 모든 정보 중에서 Deploy 처리를 하지 않은 정보들을 일괄적으로 다른 서버에 Deploy 하는 메뉴이다.
+      	                                        </a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Deploy Config &gt; All Config 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Deploy All Config 클릭 : 아직 Deploy 하지 않은 모든 정보들을 일괄적으로 Target Server에 Deploy 한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Search And Deploy Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Deploy Config 메뉴는 개발서버, UAT서버에서는 Display 되고 운영서버에서는 Display 되지 않는다.</li>
+            	                                                                 <li>Deploy Config &gt; All Config 클릭 시 아직 Deploy 처리를 하지 않은 정보들만 조회를 한다.<br>
+																				     단, Schedule 정보는 이 메뉴에서 Deploy 할 수 없고 Deploy Config &gt; Schedule 메뉴에서만 Deploy 할 수 있다.
+																				 </li>
+            	                                                                 <li>Deploy 하고자 하는 것을 선택할 수 없고 Deploy 하면 아직 Deploy 처리를 하지 않은 모든 정보를 Deploy 한다.</li>
+            	                                                                 <li><font color="blue">운영서버가 두 대인 경우 한 쪽 운영서버에 Deploy 하면 다른 쪽 운영서버에도 자동으로 Deploy 된다.</font></li>
+            	                                                                 <li>Deploy 처리가 완료된 정보에 대해서는 deployYN이 "Yes" 로 Update 된다.</li>
+																				 <li>Remote Server Socket의 Target Socket Server의 IP, Port는 일반적으로 개발서버/UAT서버/운영서버에 따라서 서로 다르므로 Deploy 처리할 때
+            	                                                                 	 Change IP & Port 항목의 Target Server 부분에 해당 서버 환경에 맞는 IP, Port 정보를 입력해서 Deploy 한다.<br>
+																					 변경이 없을 경우에는 기본 값 그대로 두거나 입력하지 않아도 된다.
+																				 </li>
+																				 <li>Interface Doc, REST API Protocol에서 URL 정보가 포함되어 있으면서 개발서버/UAT서버/운영서버에 따라서 URL이 서로 다른 경우에는
+																				     Deploy 한 후에 Target Server에서 직접 수정을 해야한다.
+																				 </li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Target Server</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Deploy 하고자 하는 Target Server<br>
+      	                                                              Basic Info &gt; Custom Variable 메뉴의 ESB.CONFIG.REMOTE.DEPCONFIG Variable에 등록된 Remote Server Alias 목록<br>
+      	                                                              Remote Server Alias가 여러 개일 경우 다중 선택 가능</a>
+			</div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

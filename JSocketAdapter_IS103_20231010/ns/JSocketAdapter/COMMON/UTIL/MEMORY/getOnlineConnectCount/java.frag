@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">getOnlineConnectCount</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwlzZXJ2ZXJJUCA9IElEYXRhVXRpbC5nZXRTdHJpbmcoIHBpcGVsaW5lQ3Vyc29yLCAic2VydmVy
+SVAiICk7DQpTdHJpbmcJcG9ydE51bWJlciA9IElEYXRhVXRpbC5nZXRTdHJpbmcoIHBpcGVsaW5l
+Q3Vyc29yLCAicG9ydE51bWJlciIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ryb3koKTsNCg0KU3Ry
+aW5nIG5hbWUgPSAiQ29ubmVjdF8iICsgc2VydmVySVAgKyAiXyIgKyBwb3J0TnVtYmVyOw0KU3Ry
+aW5nIGNvbm5lY3RDb3VudCA9IHNNYW5hZ2VyLmdldE9ubGluZUNvbm5lY3RDb3VudCggbmFtZSAp
+Ow0KDQpJRGF0YUN1cnNvciBwaXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7
+DQpJRGF0YVV0aWwucHV0KCBwaXBlbGluZUN1cnNvcl8xLCAiY29ubmVjdENvdW50IiwgY29ubmVj
+dENvdW50ICk7DQpwaXBlbGluZUN1cnNvcl8xLmRlc3Ryb3koKTs=</value>
+</Values>

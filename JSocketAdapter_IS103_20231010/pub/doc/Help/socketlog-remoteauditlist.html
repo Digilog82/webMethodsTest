@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Remote Server Audit Log</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Socket Log &gt; Remote Server Audit Log Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Socket Log &gt; Remote Server Audit Log</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Remote Socket Server Port Number로 송수신 되는 Audit Log를 조회하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Socket Log &gt; Remote Server Audit Log 클릭 : 조회화면으로 이동한다.</li>
+    	                                              <li>Search Logs 클릭 : 조회조건에 해당하는 Audit Log 목록을 조회한다.</li>
+    	                                              <li>Transaction ID 링크 클릭 : Audit Log 상세조회 화면으로 이동한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Search Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Basic Info &gt; Custom Variable 메뉴의 ESB.SOCKET.AUDITLOG.SAVEYN의 Value가 true인 경우에만 로그파일로 저장된다.</li>
+            	                                                                 <li>로그파일 Naming Rule은 아래와 같다.<br>
+            	                                                                     Port Number or Socket Name + "$" + Start Time + "$" + End Time + "$" + targetSystemName + "$" + interfaceID + "$" + 전문ID + "$" + transactionID + "$" + serverIP + "$" + resultCode + "$" + resubmit
+            	                                                                 </li>
+            	                                                                 <li>파일 저장 위치<br>
+                                                                                     Custom Variable "ESB.SOCKET.AUDITLOG.CPATH"에 설정한다.<br>
+																					 Socket Server : SAG_Directory/CUSTOM_CONFIG/socket/cauditlogs<br>
+																					 운영서버의 경우 NAS 등 공유 디렉토리가 있는 경우에는 공유 디렉토리를 설정해야 로그가 분산되어 저장되지 않는다.<br>
+																					 Custom Variable "ESB.SOCKET.AUDITLOG.CSUBPATHTYPE"의 설정에 따라서 서브디렉토리 구조가 달라진다.<br>
+																					 CUR_DATE : "ESB.SOCKET.AUDITLOG.CPATH"에 설정된 디렉토리 하위에 "현재날짜" 서브 디렉토리를 생성해서 저장<br>
+																				     SOCKET_NAME : "ESB.SOCKET.AUDITLOG.CPATH"에 설정된 디렉토리 하위에 "현재날짜/소켓Name" 서브 디렉토리를 생성해서 저장<br>
+																				     DOC_ID : "ESB.SOCKET.AUDITLOG.CPATH"에 설정된 디렉토리 하위에 "현재날짜/소켓Name/인터페이스ID" 서브 디렉토리를 생성해서 저장
+																				 </li>
+            	                                                                 <li>Basic Info &gt; Delete Local File 메뉴에서 위의 디렉토리를 등록해서 보관일수가 지난 파일은 자동으로 삭제되도록 할 수 있다.</li>
+																				 <li>"ESB.SOCKET.AUDITLOG.CSUBPATHTYPE"의 설정이 "CUR_DATE"인 경우에는 조회조건 중에서 Log Date는 반드시 입력해야 하고
+																				     조회조건 중에서 Socket Name, Target System, Interface ID를 "ALL"로 선택하는 경우에는 조회 건수가 너무 많아서 서버 성능에 영향을 줄 수 있기
+																				     때문에 Status를 "Fail"로 선택 해야만 조회 가능하다.
+																				 </li>
+																				 <li>"ESB.SOCKET.AUDITLOG.CSUBPATHTYPE"의 설정이 "SOCKET_NAME"인 경우에는 조회조건 중에서 Log Date, Socket Name은 반드시 입력해야 한다.</li>
+																				 <li>"ESB.SOCKET.AUDITLOG.CSUBPATHTYPE"의 설정이 "DOC_ID"인 경우에는 조회조건 중에서 Log Date, Socket Name, Interface ID는 반드시 입력해야 한다.</li>
+																				 <li>Transaction ID 링크를 클릭하면 해당 Transaction에 대한 상세 데이터를 조회하는 화면으로 이동한다.<br>
+																				     상세조회 화면에서는 Transaction의 기본정보, Socket 통신 로그, 전문의 Schema 정의, 전문의 각 필드의 데이터를 조회할 수 있고
+																					 전문의 Schema 정의, 전문의 각 필드의 데이터 및 전문 원본 String 데이터를 엑셀파일로 다운로드 할 수 있다.
+																				 </li>
+																				 <li>Source System과의 인터페이스 방식이 Socket이 아니면서 Target System과의 인터페이스 방식이 Socket인 인터페이스에 대해서
+																				     이 메뉴에서 로그를 조회한다.
+																				 </li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Log Date</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">로그파일이 생성된 날짜</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Log Time</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">로그파일이 생성된 시간</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Socket Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">조회하고자 하는 데이터 송수신 Socket에 대한 Name</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target System</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문을 송신해야 할 Target System</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Interface ID</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">조회하고자 하는 전문의 Interface ID</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Status</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">인터페이스 실행 성공 여부</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Transaction ID</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Transaction ID</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Page Size</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">한 페이지에서 보여줄 데이터 건수</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Start Time Sorting</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Start Time을 기준으로 보여줄 데이터의 Sorting 방법</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

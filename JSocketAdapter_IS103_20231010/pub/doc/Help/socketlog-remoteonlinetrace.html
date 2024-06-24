@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Remote Online Trace Log</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Socket Log &gt; Remote Online Trace Log Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Socket Log &gt; Remote Online Trace Log</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Asynch Online Socket Client의 전문 송수신 시 Step별로 저장한 Trace 로그파일을 조회하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Socket Log &gt; Remote Online Trace Log 클릭 : 조회화면으로 이동한다.</li>
+    	                                              <li>Search Logs 클릭 : 조회조건에 해당하는 로그파일을 조회한다.</li>
+    	                                              <li>Download File 클릭 : 조회조건에 해당하는 로그파일을 Download 한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Search Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Asynch Online Socket의 경우 요청전문 송신과 응답전문 수신이 Asynch 방식으로 처리되기 때문에 전문 송수신 당사자 간에 데이터 유실에 대한
+      	                                                                           공방이 발생할 수 있다.<br>
+      	                                                                           그래서 전문 송수신 처리의 Step 별로 Trace Log를 남겨서 데이터 유실 발생 시 분석자료로 활용할 수 있다.
+      	                                                                       </li>
+            	                                                                 <li>Basic Info &gt; Custom Variable 메뉴의 ESB.SOCKET.ONLINE.TRACESAVEYN의 Value가 true인 경우에만 로그파일로 저장된다.</li>
+            	                                                                 <li>로그파일은 날짜별, Socket Name별로 생성된다. 로그파일 Naming Rule은 아래와 같다.<br>
+            	                                                                     OnlineTrace_SocketName(SystemName_BusinessName)_yyyyMMdd.log(예 : OnlineTrace_KFTC_BUSI_20180101.log)<br>
+            	                                                                     Aynch Online인 경우에는 Socket Name 중에서 SystemName_BusinessName 까지만 파일명에 포함시킨다.
+            	                                                                 </li>
+            	                                                                 <li>파일 저장 위치 : SAG_Directory/CUSTOM_CONFIG/socket/online/trace</li>
+            	                                                                 <li>Basic Info &gt; Delete Local File 메뉴에서 위의 디렉토리를 등록해서 보관일수가 지난 파일은 자동으로 삭제되도록 할 수 있다.</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Download Threshold</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">로그파일을 조회할 때 파일 사이즈가 너무 큰 경우에는 서버 성능에 영향을 줄 수 있다.<br>
+      	                                                              Download Threshold에 설정한 값보다 파일 사이즈가 클 경우에는 로그파일을 조회하지 않고 자동으로 파일을 Download 하도록 되어 있다.<br>
+      	                                                              즉, Download Threshold에 설정한 값보다 파일 사이즈가 작을 경우에 로그파일을 조회해서 화면에 Display 한다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Provider SystemName_BusinessName</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">조회하고자 하는 Socket Name<br>
+      	                                                              Aynch Online에 대해서는 Socket Name 중에서 SystemName_BusinessName 까지만 Display 된다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Log Date</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">로그파일이 생성된 날짜</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

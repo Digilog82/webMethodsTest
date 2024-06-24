@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">getLocalPort</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IJcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClNvY2tl
+dCBzb2NrZXQgPSAoIFNvY2tldCApSURhdGFVdGlsLmdldCggcGlwZWxpbmVDdXJzb3IsICJzb2Nr
+ZXQiICk7DQpwaXBlbGluZUN1cnNvci5kZXN0cm95KCk7DQoNClN0cmluZyBlcnJvck1zZyA9ICIi
+Ow0KU3RyaW5nIGxvY2FsUG9ydCA9ICIiOw0KDQp0cnkgew0KCWxvY2FsUG9ydCA9IHNvY2tldC5n
+ZXRMb2NhbFBvcnQoKSArICIiOw0KfSBjYXRjaCAoIEV4Y2VwdGlvbiBlICkgew0KCWVycm9yTXNn
+ID0gZS50b1N0cmluZygpOw0KfQ0KDQpJRGF0YUN1cnNvciBwaXBlbGluZUN1cnNvcl8xID0gcGlw
+ZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJRGF0YVV0aWwucHV0KCBwaXBlbGluZUN1cnNvcl8xLCAiZXJy
+b3JNc2ciLCBlcnJvck1zZyApOw0KSURhdGFVdGlsLnB1dCggcGlwZWxpbmVDdXJzb3JfMSwgImxv
+Y2FsUG9ydCIsIGxvY2FsUG9ydCApOw0KcGlwZWxpbmVDdXJzb3JfMS5kZXN0cm95KCk7</value>
+</Values>

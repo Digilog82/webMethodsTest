@@ -1,0 +1,17 @@
+			function alertMsg() {
+				var frm = document.pform;
+				var msg = frm.alertMsg.value;
+				
+				if (msg != "") {
+					alert(msg);
+					frm.alertMsg.value = ""; // 다른 화면으로 이동 시 영향을 주기 때문에 alertMsg 를 공백처리 한다.
+				}
+				
+				
+				
+				
+				
+				var audioObj = new Audio('media/system_warning.mp3');
+				audioObj.play();
+				setTimeout(function() {audioObj.play();}, 5000);
+			}

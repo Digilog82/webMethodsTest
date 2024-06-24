@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">putThreadIDInfo</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJuYW1lIiApOw0K
+SURhdGEgVGhyZWFkSURJbmZvCT0gSURhdGFVdGlsLmdldElEYXRhKCBwaXBlbGluZUN1cnNvciwg
+IlRocmVhZElESW5mbyIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ryb3koKTsNCg0KU3RyaW5nIGVy
+cm9yTXNnID0gIiI7DQoNCnRyeSB7DQoJc01hbmFnZXIucHV0VGhyZWFkSURJbmZvKCBuYW1lLCBU
+aHJlYWRJREluZm8gKTsNCn0gY2F0Y2ggKCBFeGNlcHRpb24gZSApIHsNCgllcnJvck1zZyA9IGUu
+dG9TdHJpbmcoKTsNCn0NCg0KVGhyZWFkSURJbmZvID0gbnVsbDsNCg0KSURhdGFDdXJzb3IgcGlw
+ZWxpbmVDdXJzb3JfMSA9IHBpcGVsaW5lLmdldEN1cnNvcigpOw0KSURhdGFVdGlsLnB1dCggcGlw
+ZWxpbmVDdXJzb3JfMSwgImVycm9yTXNnIiwgZXJyb3JNc2cgKTsNCnBpcGVsaW5lQ3Vyc29yXzEu
+ZGVzdHJveSgpOw==</value>
+</Values>

@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Notify Certificate Expiration</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Utility &gt; Check Target Connection Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Utility &gt; Check Target Connection</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Target Server와의 방화벽 오픈여부 및 Server Running 상태를 Check하는 메뉴이다.
+      	                                        </a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Utility &gt; Check Target Connection 클릭 : 테스트 화면으로 이동한다.</li>
+    	                                              <li>Test Connection 클릭 : Server와의 연결 테스트를 수행하고 테스트 결과를 Display 한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Test Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>ESB Server와 Target Server와의 방화벽 오픈여부 및 Target Server의 Running 상태를 알 수 있다.</li>
+            	                                                                 <li>만약에 방화벽이 오픈되어 있지 않다면 Connection Timeout이 발생할 때까지 기다리는 시간이 길므로(몇분 소요)
+            	                                                                     Target Host Properties 영역 Connect Timeout 필드의 값을 조정해서 기다리는 시간을 줄일 수 있다.<br>
+            	                                                                     Connect Timeout 필드에 설정한 시간 안에 연결이 안되면 Connection Timeout이 발생하고 테스트를 종료한다.
+            	                                                                 </li>
+            	                                                                 <li>Connection Test Results 영역 Error Message 필드에 "Connection refused" 라는 문구가 포함되어 있으면
+            	                                                                 	   Target Server가 Shutdown 상태인 것이다.
+            	                                                                 </li>
+																				 <li>Target Server가 Online Socket Server일 경우에는 연결 갯수 제한 등의 설정으로 Target Server에 장애가 발생할 수 있으므로
+																				     Online Socket Server와는 Connection 테스트를 수행하지 않도록 주의해야 한다.
+																				 </li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

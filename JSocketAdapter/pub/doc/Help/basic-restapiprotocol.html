@@ -1,0 +1,160 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>REST API Protocol</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Basic Info &gt; REST API Protocol Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Basic Info &gt; REST API Protocol</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">REST API 통신을 하는 Partner에 대한 REST API Protocol을 [등록/수정/삭제/조회] 하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Basic Info &gt; REST API Protocol 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Create New REST API Protocol 클릭 : 신규정보 등록화면으로 이동한다.</li>
+    	                                              <li>Edit 아이콘 클릭 : 상세조회 및 수정화면으로 이동한다.</li>
+    	                                              <li>Delete 아이콘 클릭 : 등록정보를 삭제한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Create And Update Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Name은 기존에 등록되지 않은 Unique 한 값으로 해야 한다.</li>
+            	                                                                 <li>Name은 System Name + "_" + Business Name 으로 자동으로 입력된다.</li>
+            	                                                                 <li>Socket To REST API 또는 REST API To Socket 통신을 하는 Partner에 대한 REST API와 관련된 정보를 관리한다.</li>
+																				 <li>REST API Protocol 정보는 대상 System, Business를 기준으로 하나만 등록해서 Inbound/Outbound, 요청전문/응답전문 모두 공통적으로 사용할 수 있다.</li>
+																				 <li>Inbound 전문을 위해서는 Doc ID Path ~ Inbound Error Response Service를 설정해야 하고 Outbound 전문을 위해서는 Internal API URL ~ Outbound Error Response Service를 설정해야 한다.<br>
+																				     Conversion Encoding은 Inbound 전문, Outbound 전문에 모두 적용된다.
+																				 </li>
+																				 <li>Outbound 전문이라 하더라도 응답전문을 수신한 경우에는 Doc ID Path에 설정한 정보를 이용해서 전문 ID를 추출한다.</li>
+																				 <li>Access Token API URL ~ Http Header 까지는 API Gateway 서버가 존재하지 않아서 Partner의 REST API를 호출하는 서비스를 직접
+																				     개발해야 하는 경우에 필요한 필드들이다.
+																				 </li>
+																				 <li>Socket To REST API 방식에 대한 전문을 처리할 때 Internal API URL을 호출할 때 또는 Target API URL을 호출할 때 User/Password가 필요한 경우에는
+																				     이 메뉴에서 해당 정보를 등록해야 한다.
+																				 </li>
+																				 <li>Socket To REST API Outbound 전문에 대해서 API System Name, API Business Name이 동일한 전문들의 Internal API URL, Target API URL이
+																				     동일한 경우에는 Socket Admin &gt; Basic Info &gt; Interface Doc 메뉴에서 Internal API URL, Target HTTP/S URL을 설정하지 않고
+																					 이 메뉴에서 설정해서 공통적으로 적용할 수 있다.
+																				 </li>																				 
+																				 <li>API Business Name의 "Asynch Online Socket YN"이 Yes로 설정되어 있는 경우에는 REST API Protocol 정보 등록 시 webMethods Messaging Trigger를 자동으로 생성한다.<br>
+																				     해당 REST API Protocol 정보를 삭제할 때에는 webMethods Messaging Trigger를 자동으로 삭제한다.<br>
+																					 REST API Protocol 정보를 수정할 때 API Business Name을 수정한 경우에는 수정 전 API Business Name의 "Asynch Online Socket YN"이 Yes로 설정되어 있는 경우에는
+																					 이전에 REST API Protocol 정보 등록 시 생성했던 webMethods Messaging Trigger를 자동으로 삭제하고 수정 후 API Business Name의 "Asynch Online Socket YN"이 Yes로 설정되어 있는 경우에는
+																					 webMethods Messaging Trigger를 자동으로 생성한다.<br>
+																					 Socket 통신 방식이 Online 방식인 경우에는 안정적인 통신을 위해서 통신 정보를 Local Queue에 Publish 하고 webMethods Messaging Trigger에 의해서 전문을 순차적으로 송신해야 한다.<br>
+																					 Trigger는 Outbound에 대한 응답전문 송신용, Inbound에 대한 요청전문 송신용 두 개를 생성 및 삭제한다.
+																				 </li>
+																				 <li><font color="blue">운영서버가 두 대 이상인 경우 한 쪽 운영서버에서 [등록/수정/삭제] 하면 다른 쪽 운영서버에서도 자동으로 [등록/수정/삭제] 된다.</font></li>
+            	                                                                 <li>Config File : SAG_Directory/CUSTOM_CONFIG/socket/restDocIDExtractConfig.xml</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">REST API Protocol Name<br>
+	                                                                  System Name + "_" + Business Name 으로 자동으로 입력된다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">System Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">REST API 통신을 하는 Partner에 대한 System Name</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Business Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">REST API 통신을 하는 Partner에 대한 Business Name</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Description</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">REST API Protocol Name에 대한 간략한 설명</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Conversion Encoding</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문 송수신 시 데이터 타입의 형변환에 사용되는 Encoding</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Doc ID Path</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문의 ID를 알 수 있는 Element에 대한 Path<br>
+	                                                                  Inbound 전문에 대해서 JSON String을 IData로 변환한 후에 Doc ID Path List에 설정된 Path의 값을 추출해서
+																	  Inbound 전문의 ID를 구하고 전문 ID를 이용해서 해당 전문에 대한 상세 정보를 구할 수 있다.<br>
+																	  예를 들어서, Basic Info &gt; Interface Doc 메뉴에서 전문정보 등록 시 Doc Class Code + Doc Business Code가 전문의 ID가 된다.<br>
+																	  그러므로 Inbound 전문에서 Doc Class Code, Doc Business Code에 대한 Path를 설정하면 된다. 반드시 전문 ID가 조힙되는 순서와 같게 Add Value 해야 한다.<br>
+																	  Path는 반드시 RootDoc/ 로 시작해야 한다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Source System Name Path</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Inbound 전문에 대해서 Source System Name 값이 담겨있는 XPath</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target System Name Path</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Inbound 전문에 대해서 Target System Name 값이 담겨있는 XPath</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Inbound Error Response Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Inbound 전문에 대해서 에러 발생 시 Source System에 리턴할 응답전문을 생성하기 위한 Service의 Full Name<br>
+	                                                                  Inbound 전문을 처리하는 중에 에러가 발생했을 경우에 Source System에 리턴할 응답전문을 생성하기 위한 Service를 직접 개발해야 한다.<br>
+																	  이 서비스의 Input Parameter는 Document 타입의 Name은 pipelineData로 하고 Output Parameter는 String 타입의 Name은 responseJson으로 해야 한다.<br>
+																	  Parent 서비스에서는 JSocketAdapter.COMMON.UTIL.IDATA:setPipelineData 서비스를 호출해서 모든 pipeline 데이터를 Document "pipelineData" 하위에 저장하여
+																	  이 서비스의 Input으로 넘겨주고 이 서비스에서는 pipelineData에서 필요한 값을 추출하여(필요 없을 경우에는 추출할 필요 없음) 응답전문을 생성하고 Output으로 리턴한다.<br>																	  
+																	  Source System에 응답전문을 리턴할 필요가 없는 경우에는 설정하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Internal API URL</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Outbound 전문에 대해서 Partner와 REST API를 연계해 주는 API Gateway 서버가 존재하는 경우에 Internal API URL을 호출해서
+	                                                                  Target API와 연계하도록 한다. API Gateway 서버가 존재하지 않는 경우에는 입력하지 않는다.<br>
+																	  전문 별로 Internal API URL이 다른 경우에는 Basic Info &gt; Interface Doc 메뉴에서 전문정보 등록 시 Internal API URL을 등록하고
+																	  System Name, Business Name 별로 Internal API URL이 동일한 경우에는 전문정보 등록 시 입력하지 않고 이 메뉴에서 등록한 Internal API URL을
+																	  활용하도록 한다.<br>
+																	  즉, API Gateway 서버가 존재하지 않는 경우에는 어떤 메뉴에서든 Internal API URL을 등록할 필요가 없고 API Gateway 서버가 존재하는 경우에는
+																	  Basic Info &gt; Interface Doc 메뉴 또는 Basic Info &gt; REST API Protocol 메뉴에서 Internal API URL을 등록하도록 한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Internal API Client ID</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Outbound 전문에 대해서 Internal API를 호출하기 위한 Client ID. 필요 없는 경우에는 입력하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Internal API Client Password</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Outbound 전문에 대해서 Internal API를 호출하기 위한 Client Password. 필요 없는 경우에는 입력하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Access Token API URL</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Outbound 전문에 대해서 Access Token을 발급 받기 위한 URL. Access Token이 필요 없는 경우에는 입력하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Access Token Client ID</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Outbound 전문에 대해서 Access Token을 발급 받기 위한 Client ID. Access Token이 필요 없는 경우에는 입력하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Access Token Client Password</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Outbound 전문에 대해서 Access Token을 발급 받기 위한 Client Password. Access Token이 필요 없는 경우에는 입력하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Unlimited Access Token</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Outbound 전문에 대해서 Access Token을 실시간으로 발급 받지 않고 Unlimited Access Token을 사용하는 경우. Access Token이 필요 없는 경우에는 입력하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Access Token Extract Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Outbound 전문에 대해서 Access Token을 발급 받은 경우 Access Token을 추출하기 위한 Service의 Full Name<br>
+	                                                                  Access Token 발급은 Target 서버마다 형태가 다르기 때문에 Access Token을 추출하는 서비스를 직접 개발해야 하고 이 서비스를 호출해서 Access Token을 얻어내야 한다.<br>
+																	  이 서비스의 Input Parameter는 Object 타입의 Name은 accessTokenStream으로 하고 Output Parameter는 String 타입의 Name은 accessToken으로 해야 한다.<br>
+																	  accessTokenStream에는 Access Token 발급 API를 호출한 결과가 Stream 타입으로 포함되어 있으므로 이 서비스에서 Access Token을 추출한 다음 Output으로 리턴한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Target API URL</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Outbound 전문에 대해서 최종적으로 호출해야 하는 Partner의 API URL.<br>
+	                                                                  전문 별로 Target API URL이 다른 경우에는 Basic Info &gt; Interface Doc 메뉴에서 전문정보 등록 시 Target API URL을 등록하고
+																	  System Name, Business Name 별로 Target API URL이 동일한 경우에는 전문정보 등록 시 입력하지 않고 이 메뉴에서 등록한 Target API URL을
+																	  활용하도록 한다.<br>
+																	  즉, Basic Info &gt; Interface Doc 메뉴 또는 Basic Info &gt; REST API Protocol 메뉴 중에서 어느 한 곳에서는 Target API URL을 등록해야 한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target Service Method</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Outbound 전문의 Target API URL에 대한 Service Method</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Target API Client ID</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Outbound 전문에 대해서 Target API를 호출하기 위한 Client ID. 필요 없는 경우에는 입력하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Target API Client Password</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Outbound 전문에 대해서 Target API를 호출하기 위한 Client Password. 필요 없는 경우에는 입력하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Http Header</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">REST API 호출 시 Http Header의 Name/Value 쌍을 정의한다.<br>
+	                                                                  Partner 별로 REST API 통신 방식 및 Http Header 설정은 다양할 수 있다. Http Header 설정이 기본적인 설정을 따르지 않을 경우 여기에서 설정한
+																	  Http Header Name/Value 를 이용해서 REST API를 호출하도록 한다.<br>
+																	  Value가 고정값이 아니고 Variable 한 경우에는 Value를 구하기 위한 Service의 Full Name을 입력한다.<br>
+																	  이 서비스의 Input Parameter는 Document 타입의 Name은 pipelineData로 하고 Output Parameter는 String 타입의 Name은 headerValue로 해야 한다.<br>
+																	  Parent 서비스에서는 JSocketAdapter.COMMON.UTIL.IDATA:setPipelineData 서비스를 호출해서 모든 pipeline 데이터를 Document "pipelineData" 하위에 저장하여
+																	  이 서비스의 Input으로 넘겨주고 이 서비스에서는 pipelineData에서 필요한 값을 추출하여(필요 없을 경우에는 추출할 필요 없음) Header Value를 완성한 다음 Output으로 리턴한다.<br>
+																	  REST API 호출 시 기본적인 Http Header를 설정하는 경우에는 입력하지 않는다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Outbound Error Response Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Outbound 전문에 대해서 에러 발생 시 Source System에 리턴할 응답전문을 생성하기 위한 Service의 Full Name<br>
+	                                                                  Outbound 전문을 처리하는 중에 에러가 발생했을 경우에 Source System에 리턴할 응답전문을 생성하기 위한 Service를 직접 개발해야 한다.<br>
+																	  이 서비스의 Input Parameter는 Document 타입의 Name은 pipelineData로 하고 Output Parameter는 String 타입의 Name은 responseData로 해야 한다.<br>
+																	  Parent 서비스에서는 JSocketAdapter.COMMON.UTIL.IDATA:setPipelineData 서비스를 호출해서 모든 pipeline 데이터를 Document "pipelineData" 하위에 저장하여
+																	  이 서비스의 Input으로 넘겨주고 이 서비스에서는 pipelineData에서 필요한 값을 추출하여(필요 없을 경우에는 추출할 필요 없음) 응답전문을 생성하고 Output으로 리턴한다.<br>																	  
+																	  Source System에 응답전문을 리턴할 필요가 없는 경우에는 설정하지 않는다.</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">removeOnlineReconnectingServer</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJOQU1FIiApOw0K
+cGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpTdHJpbmcgZXJyb3JNc2cgPSAiIjsNCg0KdHJ5
+IHsNCglzTWFuYWdlci5yZW1vdmVPbmxpbmVSZWNvbm5lY3RpbmdTZXJ2ZXIoIG5hbWUgKTsNCn0g
+Y2F0Y2ggKCBFeGNlcHRpb24gZSApIHsNCgllcnJvck1zZyA9IGUudG9TdHJpbmcoKTsNCn0NCg0K
+SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3JfMSA9IHBpcGVsaW5lLmdldEN1cnNvcigpOw0KSURh
+dGFVdGlsLnB1dCggcGlwZWxpbmVDdXJzb3JfMSwgImVycm9yTXNnIiwgZXJyb3JNc2cgKTsNCnBp
+cGVsaW5lQ3Vyc29yXzEuZGVzdHJveSgpOw==</value>
+</Values>

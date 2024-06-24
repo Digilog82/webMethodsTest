@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">existQueueManager</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwlxTmFtZSA9IElEYXRhVXRpbC5nZXRTdHJpbmcoIHBpcGVsaW5lQ3Vyc29yLCAicU5hbWUiICk7
+DQpwaXBlbGluZUN1cnNvci5kZXN0cm95KCk7DQoNClN0cmluZyBleGlzdCA9ICJ0cnVlIjsNClF1
+ZXVlTWFuYWdlciBxbSA9IHNNYW5hZ2VyLmdldFF1ZXVlTWFuYWdlciggcU5hbWUgKTsNCg0KaWYg
+KCBxbSA9PSBudWxsICkgew0KCWV4aXN0ID0gImZhbHNlIjsNCn0NCg0KSURhdGFDdXJzb3IgcGlw
+ZWxpbmVDdXJzb3JfMSA9IHBpcGVsaW5lLmdldEN1cnNvcigpOw0KSURhdGFVdGlsLnB1dCggcGlw
+ZWxpbmVDdXJzb3JfMSwgImV4aXN0IiwgZXhpc3QgKTsNCnBpcGVsaW5lQ3Vyc29yXzEuZGVzdHJv
+eSgpOw==</value>
+</Values>

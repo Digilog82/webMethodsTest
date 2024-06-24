@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">removeBusinessDocSchemaDef</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJuYW1lIiApOw0K
+cGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpTdHJpbmcgZXJyb3JNc2cgPSAiIjsNCg0KdHJ5
+IHsNCglzTWFuYWdlci5yZW1vdmVCdXNpbmVzc0RvY1NjaGVtYURlZiggbmFtZSApOw0KfSBjYXRj
+aCAoIEV4Y2VwdGlvbiBlICkgew0KCWVycm9yTXNnID0gZS50b1N0cmluZygpOw0KfQ0KDQpJRGF0
+YUN1cnNvciBwaXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJRGF0YVV0
+aWwucHV0KCBwaXBlbGluZUN1cnNvcl8xLCAiZXJyb3JNc2ciLCBlcnJvck1zZyApOw0KcGlwZWxp
+bmVDdXJzb3JfMS5kZXN0cm95KCk7</value>
+</Values>

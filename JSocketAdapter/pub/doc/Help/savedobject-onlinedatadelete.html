@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Temp Data Delete Schedule</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">IS Memory Object &gt; Temp Data Delete Schedule Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; IS Memory Object &gt; Temp Data Delete Schedule</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Integration Server Memory에 저장하여 관리하는 Object 중에서 보관일수가 지난 데이터를 삭제하는 Schedule을 등록, 관리하는 메뉴이다.
+      	                                        </a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>IS Memory Object &gt; Temp Data Delete Schedule 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Create Schedule 버튼 클릭 : Schedule을 등록한다. Schedule 등록을 하지 않은 상태에서는 Create Schedule 버튼이 Display 된다.</li>
+    	                                              <li>Suspend Schedule 버튼 클릭 : Schedule을 중지한다. Schedule을 등록하고 Status가 Active인 경우에는 Suspend Schedule 버튼이 Display 된다.</li>
+    	                                              <li>Active Schedule 버튼 클릭 : Schedule을 Active 시킨다. Schedule을 등록하고 Status가 Suspended인 경우에는 Active Schedule 버튼이 Display 된다.
+    	                                              	  Run Time, Remain Days를 수정하고 Active 시킬 수 있다.
+    	                                              </li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Create And Suspend And Active Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Schedule은 하루에 한번 정해진 시간에 실행된다.</li>
+            	                                                                 <li>Schedule 등록 후에 Run Time 및 Remain Days를 수정하고자 할 경우에는 Suppended 상태로 한 다음에 수정하고 다시 Active 상태로 한다.</li>
+            	                                                                 <li>여기에서 등록한 Schedule은 IS Administrator &gt; Scheduler &gt; Complex Repeating Tasks에서도 확인 가능하다.</li>
+            	                                                                 <li>아래 메뉴에서 조회되는 데이터들이 삭제 대상이다.<br>
+            	                                                                     IS Memory Object &gt; Request Socket Object<br>
+																					 IS Memory Object &gt; Online Request Header<br>
+            	                                                                     IS Memory Object &gt; Online Send Status<br>
+            	                                                                     IS Memory Object &gt; Online Response Data<br>
+            	                                                                     IS Memory Object &gt; Online Reconnecting Socket<br>
+            	                                                                     IS Memory Object &gt; Online Receive Sequence<br>
+            	                                                                     GW/MA Server가 분리되어 있는 구조에서 Realtime Synch Socket 또는 Asynch Online Socket 전문 송수신 인터페이스가 완료되면
+																					 위의 데이터들은 바로 삭제가 되는데 예외상황 발생으로 인해서 삭제되지 않을 수 있다.
+																					 삭제되지 않고 남아 있을 경우 JSocketAdapter에서 수행하는 기능에 영향을 주기 때문에 삭제되지 않은 데이터에 대해서 모니터링을
+																					 목적으로 일정기간 동안만 저장하고 보관일수가 지나면 삭제처리를 한다.
+            	                                                                 </li>
+            	                                                                 <li>Schedule이 실행되는 일자를 기준으로 해서 데이터가 저장된 날짜가 Remain Days 이전인 데이터가 삭제 대상이 된다.</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Schedule에 의해서 실행되는 삭제 Flow Service<br>
+      	                                                              JSocketAdapter.ADMIN:deleteOnlineData로 고정되어 있다.</a>
+			</div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Run Time</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Schedule 실행 시간</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Remain Days</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">삭제하지 않고 보관하는 일수</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

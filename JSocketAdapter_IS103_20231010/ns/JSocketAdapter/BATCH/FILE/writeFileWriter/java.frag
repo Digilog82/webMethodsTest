@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">writeFileWriter</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCkJ1ZmZl
+cmVkV3JpdGVyIGZpbGVXcml0ZXIgPSAoIEJ1ZmZlcmVkV3JpdGVyIClJRGF0YVV0aWwuZ2V0KCBw
+aXBlbGluZUN1cnNvciwgImZpbGVXcml0ZXIiICk7DQpTdHJpbmcgZmlsZUNvbnRlbnQgPSBJRGF0
+YVV0aWwuZ2V0U3RyaW5nKCBwaXBlbGluZUN1cnNvciwgImZpbGVDb250ZW50IiApOw0KcGlwZWxp
+bmVDdXJzb3IuZGVzdHJveSgpOw0KDQpTdHJpbmcgZXJyb3JNc2cgPSAiIjsNCg0KdHJ5IHsNCglm
+aWxlV3JpdGVyLndyaXRlKCBmaWxlQ29udGVudCApOw0KfSBjYXRjaCAoIEV4Y2VwdGlvbiBlICkg
+ew0KCWVycm9yTXNnID0gZS50b1N0cmluZygpOyANCn0NCg0KSURhdGFDdXJzb3IgcGlwZWxpbmVD
+dXJzb3JfMSA9IHBpcGVsaW5lLmdldEN1cnNvcigpOw0KSURhdGFVdGlsLnB1dCggcGlwZWxpbmVD
+dXJzb3JfMSwgImVycm9yTXNnIiwgZXJyb3JNc2cgKTsNCnBpcGVsaW5lQ3Vyc29yXzEuZGVzdHJv
+eSgpOw==</value>
+</Values>

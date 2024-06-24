@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">convertBytesToString</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCmJ5dGVb
+XSBpbnB1dEJ5dGVzID0gKCBieXRlW10gKUlEYXRhVXRpbC5nZXQoIHBpcGVsaW5lQ3Vyc29yLCAi
+aW5wdXRCeXRlcyIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ryb3koKTsNCg0KU3RyaW5nQnVpbGRl
+ciBzYiA9IG5ldyBTdHJpbmdCdWlsZGVyKCk7DQoNCmZvciAoIGJ5dGUgYiA6IGlucHV0Qnl0ZXMg
+KSB7DQoJc2IuYXBwZW5kKCBTdHJpbmcuZm9ybWF0KCAiICUwMnggICIsIGIgKSApOw0KfQ0KDQpJ
+RGF0YUN1cnNvciBwaXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJRGF0
+YVV0aWwucHV0KCBwaXBlbGluZUN1cnNvcl8xLCAib3V0cHV0U3RyaW5nIiwgc2IudG9TdHJpbmco
+KSApOw0KcGlwZWxpbmVDdXJzb3JfMS5kZXN0cm95KCk7</value>
+</Values>

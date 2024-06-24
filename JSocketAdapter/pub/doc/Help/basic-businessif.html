@@ -1,0 +1,148 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Business Doc</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Basic Info &gt; Business Name &gt; Business Doc Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Basic Info &gt; Business Name &gt; Business Name 링크 클릭</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Remote Socket Server가 제공하는 Business에 대한 전문의 기본정보를 [등록/수정/삭제/조회] 하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Basic Info &gt; Business Name &gt; Business Name 링크 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Create New Business Doc 클릭 : 신규정보 등록화면으로 이동한다.</li>
+    	                                              <li>Schema Def Download 아이콘 클릭 : 전문의 Schema 정의 엑셀파일을 Download 한다.</li>
+													  <li>Schema 아이콘 클릭 : 전문의 Schema 정의를 볼 수 있는 화면을 Open 한다.</li>
+    	                                              <li>Edit 아이콘 클릭 : 상세조회 및 수정화면으로 이동한다.</li>
+    	                                              <li>Delete 아이콘 클릭 : 등록정보를 삭제한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Create And Update Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Doc Name은 기존에 등록되지 않은 Unique 한 값으로 해야 한다.<br>
+            	                                                                   Doc Class Code, Doc Business Code는 Socket Server 쪽에서 정해주는 값이기 때문에 Doc Class Code + Doc Business Code는 중복되는 값이 있을 수 있다.<br>
+																				   Doc Name = System Name + Business Name + Doc Class Code + Doc Business Code 로 자동으로 생성된다.
+            	                                                                 </li>
+																				 <li>Doc Class Code와 Doc Business Code는 전문 안에서 추출할 수 있는 값으로 해야 한다.</li>
+            	                                                                 <li>Send Status Timeout, Response Timeout 필드는 Asynch Online Business에서 Interface ID 별로
+            	                                                                 	   전문송신결과를 기다리는 Timeout, 응답전문수신결과를 기다리는 Timeout을 다르게 설정하고자 하는
+            	                                                                 	   경우에 입력한다. 설정하지 않으면 Custom Variable의 "ESB.SOCKET.ONLINE.SNDSTSTIMEOUT",
+            	                                                                 	   "ESB.SOCKET.ONLINE.RESTIMEOUT" 설정값이 적용된다.<br>
+            	                                                                 	   그 이외의 모든 Field에 대해서는 필수로 입력한다.
+            	                                                                 </li>
+																				 <li>인터페이스 방식이 Socket to Socket 인 경우에는 Basic Info &gt; Interface Doc 메뉴에서
+																				     전문에 대한 관리를 하므로 이 메뉴에서는 등록을 생략하고 Source System과의 인터페이스 방식이
+																					 Socket이 아니면서 Target System과의 인터페이스 방식이 Socket인 경우에 이 메뉴에서 전문에 대한
+																					 관리를 한다.
+																			     </li>
+            	                                                                 <li>Business Doc에 대한 [등록/수정/삭제] 정보는 Integration Server Memory에도 똑같이 동기화 된다.<br>
+            	                                                                 	   Integration Server Memory에 저장된 정보는 IS Memory Object &gt; Business Doc 메뉴에서 확인 가능하다.
+            	                                                                 </li>
+																				 <li>전문에 대한 Format을 정의 하는 IData Document Type과 전문의 각 필드에 대한 속성을 정의하는 Flow Service를 자동으로 생성할 수 있다.<br>
+																				     SAG_Directory/packages/JSocketSamples/templates/DOC_Define_Sample.xls 파일을 참고해서 똑같은 형식으로 전문에 대한 Schema 정의
+																					 엑셀 파일을 만들어서 타이틀 부분을 제외한 모든 부분을 복사해서 "Schema Define" 필드 Text Area에 붙여 넣는다.<br>
+																					 또는 "Schema Define File" 필드에서 전문에 대한 Schema 정의 엑셀 파일을 선택하면 엑셀 파일을 서버에 Upload 한 후 엑셀 파일을 읽어서
+																					 "Schema Define" 필드에 입력하는 것과 같은 데이터를 자동으로 생성해 준다. 그러므로, 최초 등록 시에는 "Schema Define", "Schema Define File"
+																					 중에서 하나는 반드시 입력 또는 선택해야 하고 수정 시에는 전문의 Schema가 수정되지 않은 경우에는 입력 또는 선택하지 않는다.<br>
+																					 엑셀 파일 Upload는 개발서버에서만 수행되고 그 이외의 서버에서는 수행되지 않는다. 그러므로 목록조회 화면에서 "Schema Def Download" 항목은
+																					 개발서버에만 Display 되고 그 이외의 서버에서는 Display 되지 않는다.<br>
+																					 여기서 개발서는 Socket Server에 대한 구성이 물리적으로 Gateway Server와 Main Server로 구분되어 있지 않은 경우의 개발서버 또는
+																					 Socket Server에 대한 구성이 물리적으로 Gateway Server와 Main Server로 구분되어 있는 경우의 Main Server 개발서버가 해당된다.<br>
+																					 "Schema Define Service", "Schema Document Type Name" 필드에는 Name Space Naming Rule에 맞게 Full Name을 입력해야 한다.<br>
+																					 저장 후 Designer를 Refresh 하면 새로 생성된 IData Document Type과 Flow Service를 확인할 수 있다.<br>
+																					 IData Document Type과 Flow Service의 자동 생성은 최초에 정보 등록 시 Create 되고 , 정보 수정 시에는 Overwrite 된다.
+																					 그러나 Socket Server에 대한 구성이 물리적으로 Gateway Server와 Main Server로 구분되어 있는 경우에는 Gateway Server에서는
+																					 IData Document Type과 Flow Service를 자동으로 생성하지 않는다.<br>
+																					 필드 추가 또는 필드의 속성이 변경된 경우에는 엑셀 파일을 먼저 수정하고 해당 전문 수정화면에서 "Schema Define" 필드에 변경된 값을
+																					 입력하고 저장하면 IData Document Type과 Flow Service가 자동으로 수정된다. 그러므로 해당 전문정보 수정 시 전문의 Schema 변경이 없는
+																					 경우에는 "Schema Define" 필드에 값을 입력하지 않도록 한다.<br>
+                                                                                     "Schema Define" 필드의 값은 Config XML, IS Memory에 저장하지 않기 때문에 Deploy Config &gt; Business Interface 메뉴에서 Deploy
+																					 하는 경우에는 Target Server에 IData Document Type과 Flow Service가 자동으로 생성되지 않는다.
+																					 IData Document Type과 Flow Service Object는 IS Administrator &gt; Solutions &gt; Deployer 메뉴에서 Deploy 한다.<br>
+																					 <font color="blue">주의) IData Document Type과 Flow Service를 생성할 Package의 Name과 Package의 최상위 폴더의 Name을 반드시 같게 해야 하고
+																					 IData Document Type, Flow Service를 생성할 폴더는 Designer에서 미리 만들어 놓아야 한다.<br>
+																					 전문에 대한 Schema 정의 엑셀 파일의 확장자는 .xls로 해야 한다. 엑셀파일을 업로드한 후 jxl 라이브러리를 이용해서 엑셀파일을 Read 해서
+																					 schemaDefine String을 만들어내는 경우에 엑셀파일의 확장자가 .xlsx인 경우에는 "jxl.read.biff.BiffException: Unable to recognize OLE stream"
+																					 에러가 발생한다.<br>
+																					 jxl 라이브러리를 이용해서 엑셀파일을 Read 하는 경우에는 속도가 느리기 때문에 "Schema Define" 필드에도 값을 입력해서 엑셀파일을 Read 하는
+																					 것을 Skip 함으로써 처리속도를 빠르게 할 수 있다.</font><br><br>
+																					 
+																					 "Schema Define Service" 필드에 값을 입력하지 않는 경우에는 Schema를 정의한 IData를 생성해서 IS Memory와 IS 파일 시스템에 저장한다.<br>
+																					 그러므로 시스템 상황에 따라서 IData Document Type과 Flow Service가 필요한지 필요하지 않은지 판단하여 "Schema Define Service", "Schema Document Type Name" 필드에
+																					 값을 입력할 수도 있고 입력하지 않을 수도 있다.<br>
+																					 예를 들어서, 메인 서비스에서 IData Document Type을 이용한 매핑이 없는 경우에는 IData Document Type을 생성할 필요가 없다.<br>
+																					 만약, IData Document Type과 Flow Service를 생성하지 않는 환경에서 전문의 Format이 변경된 경우에는 IS Memory에 저장된 Schema 정의 IData 만을
+																					 변경해서 다른 서버에 Deploy 함으로써 Package의 Reloading 없이 변경된 전문 Format으로 바로 반영할 수 있다.
+																				 </li>
+																				 <li>공통 헤더에 대한 IData Document Type과 각 필드에 대한 속성을 정의하는 Flow Service는 Designer를 이용해서 미리 적당한 위치에 만들어 놓아야 한다.<br>
+																				     "Common Header Schema Define Service" 필드에 위에서 생성한 Flow Service의 Full Name을 입력하도록 한다.
+																				 </li>
+            	                                                                 <li><font color="blue">운영서버가 두 대인 경우 한 쪽 운영서버에서 [등록/수정/삭제] 하면 다른 쪽 운영서버에서도 자동으로 [등록/수정/삭제] 된다.</font></li>
+            	                                                                 <li>Config File : SAG_Directory/CUSTOM_CONFIG/socket/interfaceListConfig.xml</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Business Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Interface ID가 속한 Business의 이름</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">System Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Remote Socket Server가 위치하고 있는 Remote System의 Name</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Doc Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">기존에 등록되지 않은 Unique 한 전문의 이름</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Doc Class Code</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">전문의 종별코드</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Doc Business Code</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">전문의 업무구분코드</a></div>      
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Interface ID</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Interface의 Unique한 ID</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Description</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Interface ID에 대한 간략한 설명</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Send Status Timeout</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Asynch Online 전문송신 시 전문송신결과를 기다리는 Timeout</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Response Timeout</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Asynch Online 전문송신 시 응답전문수신결과를 기다리는 Timeout</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Common Header Schema Define Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문의 공통정보부 Format 및 각 Field에 대한 속성(필드길이/패딩문자/패딩구분/필드명)을 정의한 Service의 Full Name을 입력한다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Schema Define Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문의 업무정보부 Format 및 각 Field에 대한 속성(필드길이/패딩문자/패딩구분/필드명)을 정의한 Service의 Full Name을 입력한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target Socket Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Target System의 Socket Name<br>
+																	  전문과 Target System이 1:1 관계일 경우에 입력하고 그 이외의 경우는 입력하지 말고 Main Service에서 Target Socket Name을 결정한다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Multi Record Count Field Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문 데이터가 Multi Record인 경우 Record의 갯수를 포함하고 있는 Field의 Name<br>
+	                                                                  전문의 구조가 복잡하여 Multi Record 하위에 또 Multi Record가 존재하는 구조인 경우에는 전문 구조상 나오는 순서대로 Field Name을 '/'를 구분자로 해서 입력한다.<br>
+																	  전문이 고정길이 이고 Record의 갯수를 포함하고 있는 Field가 없는 경우에는 Field Name 대신 Record의 갯수를 숫자로 입력한다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Schema Document Type Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문의 업무정보부 Format을 정의한 IData Document Type의 Full Name을 입력한다.<br>
+	                                                                  "Schema Define" 필드에 값을 입력하면 이 IData Document Type이 자동으로 생성된다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Schema Define</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문의 업무정보부 Format 및 각 Field에 대한 속성(필드길이/패딩문자/패딩구분/필드명)을 정의한 String List 값을 입력한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Schema Define File</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문의 업무정보부 Format 및 각 Field에 대한 속성(필드길이/패딩문자/패딩구분/필드명)을 정의한 엑셀파일을 선택한다.</a></div>
+	</blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

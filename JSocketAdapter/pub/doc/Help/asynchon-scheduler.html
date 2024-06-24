@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Custom Variable Value</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">KFTC Online &gt; Online Check Schedule Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; KFTC Online &gt; Online Check Schedule</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Asynch Online Socket Client에 대한 Socket 연결상태를 유효하도록 하기 위한 Schedule을 [등록/수정/삭제/조회] 하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>KFTC Online &gt; Online Check Schedule 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Register New Online Check Schedule 클릭 : 신규정보 등록화면으로 이동한다.</li>
+    	                                              <li>Edit 아이콘 클릭 : 상세조회 및 수정화면으로 이동한다.</li>
+    	                                              <li>Delete 아이콘 클릭 : 등록정보를 삭제한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Create And Update Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>KFTC는 예를 들어서 설명하기 위한 System Name 이다.</li>
+            	                                                                 <li>Basic Info &gt; Business Name 메뉴에서 Asynch Online Socket YN 필드가 'Yes'인 Business Name이 존재할 경우 Provider System Name 단위로 "ProviderSystemName Online" 이라는 메뉴가 생성된다.</li>
+            	                                                                 <li>Asynch Online Socket은 Socket Server에 연결한 후에 연결상태를 계속 유지해야 하는데 일정시간 동안 데이터 송수신이 없을 경우에
+            	                                                                 	   Network Level에서 임의로 연결을 끊을 수 있다. 이런 상황을 방지하기 위해서 Client에서는 일정 주기로 Online Check 전문을 송수신
+            	                                                                 	   하여 연결상태를 유효하도록 한다.<br>
+            	                                                                 	   이런 처리를 하는 서비스에 대해서는 IS Administrator &gt; Server &gt; Scheduler 메뉴에서 미리 Schedule을 등록하고
+            	                                                                 	   KFTC Online 메뉴에서 관리할 수 있도록 KFTC Online &gt; Online Check Schedule 메뉴에서도 등록한다.<br>
+            	                                                                 	   즉, Schedule 자체를 등록하는 것이 아니고 이미 등록되어 있는 Schedule에 대해서 관리하기 위한 정보를 등록하는 것이다.
+            	                                                                 </li>
+            	                                                                 <li>Schedule은 Asynch Online Socket Business Name 단위로 생성한다.</li>
+            	                                                                 <li><font color="blue">운영서버가 두 대인 경우 한 쪽 운영서버에서만 Schedule이 실행되도록 해야 한다.</font></li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Schedule Type</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Schedule 실행시간과 실행주기에 대한 유형</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Schedule Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Online Check를 수행하는 Flow Service<br>
+      	                                                              IS Administrator &gt; Server &gt; Scheduler 메뉴에 등록되어 있는 Service 전체 목록을 Display 한다.
+      	                                                              이 목록 중에서 해당 서비스를 선택해야 한다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Provider System Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Online Check를 수행하고자 하는 Remote Socket Server가 위치하고 있는 Remote System의 Name</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Business Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Online Check를 수행하고자 하는 Socket Name이 속해 있는 Business Name<br>
+      	                                                              Provider System Name에 속해 있는 Asynch Online Socket Business Name만 Display 된다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Online Check Socket Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Online Check를 수행하고자 하는 Socket Name<br>
+      	                                                              Asynch Online Socket Business Name에 속해 있는 Socket Name만 Display 된다.</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

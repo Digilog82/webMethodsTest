@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">startWithStx</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZyBpblN0cmluZyA9IElEYXRhVXRpbC5nZXRTdHJpbmcoIHBpcGVsaW5lQ3Vyc29yLCAiaW5TdHJp
+bmciICk7DQpwaXBlbGluZUN1cnNvci5kZXN0cm95KCk7DQoNCmJ5dGUgU1RYID0gMHgwMjsgLy8g
+U3RhcnQgb2YgVGV4dA0KU3RyaW5nIHN0YXJ0U3R4ID0gIiI7DQoNCmlmICggU1RYID09IGluU3Ry
+aW5nLmNoYXJBdCggMCApICkgew0KCQlzdGFydFN0eCA9ICJ0cnVlIjsNCn0gZWxzZSB7DQoJCXN0
+YXJ0U3R4ID0gImZhbHNlIjsNCn0NCg0KSURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3JfMSA9IHBp
+cGVsaW5lLmdldEN1cnNvcigpOw0KSURhdGFVdGlsLnB1dCggcGlwZWxpbmVDdXJzb3JfMSwgInN0
+YXJ0U3R4Iiwgc3RhcnRTdHggKTsNCnBpcGVsaW5lQ3Vyc29yXzEuZGVzdHJveSgpOw==</value>
+</Values>

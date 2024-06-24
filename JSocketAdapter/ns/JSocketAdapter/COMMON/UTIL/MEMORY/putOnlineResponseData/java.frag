@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">putOnlineResponseData</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJuYW1lIiApOw0K
+SURhdGEgT25saW5lUmVzcG9uc2VEYXRhCT0gSURhdGFVdGlsLmdldElEYXRhKCBwaXBlbGluZUN1
+cnNvciwgIk9ubGluZVJlc3BvbnNlRGF0YSIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ryb3koKTsN
+Cg0KU3RyaW5nIGVycm9yTXNnID0gIiI7DQoNCnRyeSB7DQoJc01hbmFnZXIucHV0T25saW5lUmVz
+cG9uc2VEYXRhKCBuYW1lLCBPbmxpbmVSZXNwb25zZURhdGEgKTsNCn0gY2F0Y2ggKCBFeGNlcHRp
+b24gZSApIHsNCgllcnJvck1zZyA9IGUudG9TdHJpbmcoKTsNCn0NCg0KT25saW5lUmVzcG9uc2VE
+YXRhID0gbnVsbDsNCg0KSURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3JfMSA9IHBpcGVsaW5lLmdl
+dEN1cnNvcigpOw0KSURhdGFVdGlsLnB1dCggcGlwZWxpbmVDdXJzb3JfMSwgImVycm9yTXNnIiwg
+ZXJyb3JNc2cgKTsNCnBpcGVsaW5lQ3Vyc29yXzEuZGVzdHJveSgpOw0KCQ==</value>
+</Values>

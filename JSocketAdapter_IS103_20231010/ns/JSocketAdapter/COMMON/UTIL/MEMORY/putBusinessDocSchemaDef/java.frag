@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">putBusinessDocSchemaDef</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJuYW1lIiApOw0K
+SURhdGEgc2NoZW1hRGVmCT0gSURhdGFVdGlsLmdldElEYXRhKCBwaXBlbGluZUN1cnNvciwgInNj
+aGVtYURlZiIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ryb3koKTsNCg0KU3RyaW5nIGVycm9yTXNn
+ID0gIiI7DQoNCnRyeSB7DQoJc01hbmFnZXIucHV0QnVzaW5lc3NEb2NTY2hlbWFEZWYoIG5hbWUs
+IHNjaGVtYURlZiApOw0KfSBjYXRjaCAoIEV4Y2VwdGlvbiBlICkgew0KCWVycm9yTXNnID0gZS50
+b1N0cmluZygpOw0KfQ0KDQpJRGF0YUN1cnNvciBwaXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUu
+Z2V0Q3Vyc29yKCk7DQpJRGF0YVV0aWwucHV0KCBwaXBlbGluZUN1cnNvcl8xLCAiZXJyb3JNc2ci
+LCBlcnJvck1zZyApOw0KcGlwZWxpbmVDdXJzb3JfMS5kZXN0cm95KCk7</value>
+</Values>

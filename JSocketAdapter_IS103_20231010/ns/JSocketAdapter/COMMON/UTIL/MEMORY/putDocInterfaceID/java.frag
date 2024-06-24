@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">putDocInterfaceID</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+Zwlkb2NOYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJkb2NOYW1l
+IiApOw0KSURhdGEgRG9jSW50ZXJmYWNlSURJbmZvCT0gSURhdGFVdGlsLmdldElEYXRhKCBwaXBl
+bGluZUN1cnNvciwgIkRvY0ludGVyZmFjZUlESW5mbyIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ry
+b3koKTsNCg0KU3RyaW5nIGVycm9yTXNnID0gIiI7DQoNCnRyeSB7DQoJc01hbmFnZXIucHV0RG9j
+SW50ZXJmYWNlSUQoIGRvY05hbWUsIERvY0ludGVyZmFjZUlESW5mbyApOw0KfSBjYXRjaCAoIEV4
+Y2VwdGlvbiBlICkgew0KCWVycm9yTXNnID0gZS50b1N0cmluZygpOw0KfQ0KDQpJRGF0YUN1cnNv
+ciBwaXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJRGF0YVV0aWwucHV0
+KCBwaXBlbGluZUN1cnNvcl8xLCAiZXJyb3JNc2ciLCBlcnJvck1zZyApOw0KcGlwZWxpbmVDdXJz
+b3JfMS5kZXN0cm95KCk7</value>
+</Values>

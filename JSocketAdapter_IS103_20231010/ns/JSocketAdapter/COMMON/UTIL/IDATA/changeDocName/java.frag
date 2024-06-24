@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">changeDocName</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCklEYXRh
+IG9yZ0RvYyA9IElEYXRhVXRpbC5nZXRJRGF0YSggcGlwZWxpbmVDdXJzb3IsICJvcmdEb2MiICk7
+DQpTdHJpbmcgbmV3TmFtZSA9IElEYXRhVXRpbC5nZXRTdHJpbmcoIHBpcGVsaW5lQ3Vyc29yLCAi
+bmV3TmFtZSIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ryb3koKTsNCg0KSURhdGEgbmV3RG9jID0g
+SURhdGFGYWN0b3J5LmNyZWF0ZSgpOw0KSURhdGFDdXJzb3IgZG9jQ3Vyc29yID0gbmV3RG9jLmdl
+dEN1cnNvcigpOw0KZG9jQ3Vyc29yLmluc2VydEFmdGVyKCBuZXdOYW1lLCBvcmdEb2MgKTsNCmRv
+Y0N1cnNvci5kZXN0cm95KCk7DQoNCklEYXRhQ3Vyc29yIHBpcGVsaW5lQ3Vyc29yXzEgPSBwaXBl
+bGluZS5nZXRDdXJzb3IoKTsNCklEYXRhVXRpbC5wdXQoIHBpcGVsaW5lQ3Vyc29yXzEsICJuZXdE
+b2MiLCBuZXdEb2MgKTsNCnBpcGVsaW5lQ3Vyc29yXzEuZGVzdHJveSgpOw==</value>
+</Values>

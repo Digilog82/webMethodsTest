@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">makeSpace</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IJcGlwZWxpbmVDdXJzb3IJPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZyBzcGFjZUNvdW50ID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJzcGFj
+ZUNvdW50IiApOw0KcGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQppbnQgc0NvdW50ID0gSW50
+ZWdlci5wYXJzZUludCggc3BhY2VDb3VudCApOw0KU3RyaW5nIHNwYWNlU3RyaW5nID0gIiI7DQpT
+dHJpbmdCdWZmZXIgc3RyQnVmZmVyID0gbmV3IFN0cmluZ0J1ZmZlcigpOw0KDQpmb3IgKCBpbnQg
+aSA9IDA7IGkgPCBzQ291bnQ7IGkrKyApIHsNCglzdHJCdWZmZXIuYXBwZW5kKCAiICIgKTsNCn0N
+Cg0Kc3BhY2VTdHJpbmcgPSBzdHJCdWZmZXIudG9TdHJpbmcoKTsNCg0KSURhdGFDdXJzb3IgcGlw
+ZWxpbmVDdXJzb3JfMSA9IHBpcGVsaW5lLmdldEN1cnNvcigpOw0KSURhdGFVdGlsLnB1dCggcGlw
+ZWxpbmVDdXJzb3JfMSwgInNwYWNlU3RyaW5nIiwgc3BhY2VTdHJpbmcgKTsNCnBpcGVsaW5lQ3Vy
+c29yXzEuZGVzdHJveSgpOw==</value>
+</Values>

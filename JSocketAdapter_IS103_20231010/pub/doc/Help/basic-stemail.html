@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Source Target Email</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Basic Info &gt; Source Target Email Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Basic Info &gt; Source Target Email</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Interface ID에 대한 Source System 담당자와 Target System 담당자의 Email을 [등록/수정/삭제/조회] 하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Basic Info &gt; Source Target Email 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Create New Source Target Email 클릭 : 신규정보 등록화면으로 이동한다.</li>
+    	                                              <li>Edit 아이콘 클릭 : 상세조회 및 수정화면으로 이동한다.</li>
+    	                                              <li>Delete 아이콘 클릭 : 등록정보를 삭제한다.</li>
+													  <li>Search 버튼 클릭 : 조회 조건에 해당하는 Interface ID 목록을 조회한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Create And Update Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Interface ID는 기존에 등록되지 않은 Unique 한 값으로 해야 한다.</li>
+            	                                                                 <li>모든 Field에 대해서는 필수로 입력하고 Interface ID를 선택하면 Doc Name, Description은 자동으로 입력된다.</li>
+            	                                                                 <li>인터페이스 수행 하다가 에러가 발생한 경우 Source System 담당자와 Target System 담당자에게 메일로 에러통보를 할 때 이용된다.<br>
+																				     Basic Info &gt; Custom Variable 메뉴에 등록된 "ESB.CONFIG.ERRORNOTI.STEMAILYN"의 Value가 "true"로 설정되어 있으면서
+                                                                                     이 메뉴의 "Email Receive YN" 필드가 "Yes"로 설정되어 있는 경우에만 메일이 전송된다.
+																				 </li>
+																				 <li>Deploy Config &gt; Source Target Email 메뉴에서 Deploy 한 이후에 Source System 담당자 또는 Target System 담당자의 메일 정보를 수정한 경우에는
+																				     다시 Deploy 가능하도록 deployYN 필드의 값을 "No"로 업데이트 해준다.
+																				 </li>
+																				 <li><font color="blue">운영서버가 두 대 이상인 경우 한 쪽 운영서버에서 [등록/수정/삭제] 하면 다른 쪽 운영서버에서도 자동으로 [등록/수정/삭제] 된다.</font></li>
+            	                                                                 <li>Config File : SAG_Directory/CUSTOM_CONFIG/socket/sourceTargetEmailConfig.xml</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Interface ID</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">인터페이스 ID<br>
+	                                                                  Basic Info &gt; Interface Doc 메뉴에 등록되어 있는 Interface ID와 Basic Info &gt; Business Name &gt; Business Interface List 메뉴에 등록되어 있는
+																	  Interface ID를 합쳐서 Display 한다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Doc Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">전문의 이름. Interface ID를 선택하면 자동으로 셋팅된다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Description</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Interface ID에 대한 간략한 설명. Interface ID를 선택하면 자동으로 셋팅된다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Email Receive YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">해당 인터페이스 에러 발생 시 메일을 수신할지 여부</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Source System Name/Incharge Name/Email</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Interface ID에 대한 Source System Name, 시스템 담당자 이름과 Email</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_6_2">Target System Name/Incharge Name/Email</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_6_4">Interface ID에 대한 Target System Name, 시스템 담당자 이름과 Email</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">removeQueueSendInfo</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJuYW1lIiApOw0K
+cGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpTdHJpbmcgZXJyb3JNc2cgPSAiIjsNCg0KdHJ5
+IHsNCgkvLyBRdWV1ZVNlbmRJbmZvTGlzdCBIYXNodGFibGUgXHVDNUQwXHVDMTFDIFx1QzBBRFx1
+QzgxQw0KCXNNYW5hZ2VyLnJlbW92ZVF1ZXVlU2VuZEluZm8oIG5hbWUgKTsNCn0gY2F0Y2ggKCBF
+eGNlcHRpb24gZSApIHsNCgllcnJvck1zZyA9IGUudG9TdHJpbmcoKTsNCn0NCg0KSURhdGFDdXJz
+b3IgcGlwZWxpbmVDdXJzb3JfMSA9IHBpcGVsaW5lLmdldEN1cnNvcigpOw0KSURhdGFVdGlsLnB1
+dCggcGlwZWxpbmVDdXJzb3JfMSwgImVycm9yTXNnIiwgZXJyb3JNc2cgKTsNCnBpcGVsaW5lQ3Vy
+c29yXzEuZGVzdHJveSgpOw==</value>
+</Values>

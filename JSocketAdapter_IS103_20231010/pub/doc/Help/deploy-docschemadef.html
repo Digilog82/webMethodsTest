@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Doc Schema Define</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Deploy Config &gt; Doc Schema Define</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Deploy Config &gt; Doc Schema Define</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Basic Info &gt; Interface Doc 메뉴에서 관리하는 전문의 Schema Define 정보를 다른 서버에 Deploy 하는 메뉴이다.
+      	                                        </a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Deploy Config &gt; Doc Schema Define 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Search Doc 클릭 : 조회조건에 해당하는 전문 목록을 조회한다.</li>
+    	                                              <li>Deploy Doc Schema 클릭 : 선택한 전문의 Schema 정의 IData를 Target Server에 Deploy 한다.</li>
+													  <li>Reserve Deployment 클릭 : 선택한 전문의 Schema 정의 IData를 Target Server에 Deploy 하는 Schedule을 등록한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Search And Deploy Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Deploy Config 메뉴는 개발서버, UAT서버에서는 Display 되고 운영서버에서는 Display 되지 않는다.</li>
+			                                                                     <li>전문의 Schema Define IData를 Flow Service에서 관리하지 않고 IS Memory, 로컬 파일시스템에서 관리하는 환경이면서
+																				     Main Service의 변경은 없고 전문의 Schema Define만 변경된 경우에 이 메뉴에서 전문의 Schema Define 정보를 Deploy 하면
+																					 Package Reloading이 없이 Target Server에서 변경 내용이 바로 적용된다.
+																				 </li>
+																				 <li>이미 다른 서버에 Deploy한 전문 중에서 Socket Admin &gt; Basic Info &gt; Interface Doc 메뉴에서 "Schema Edit" 버튼을 클릭하여 Schema Define 정보를 수정한 전문의 경우만
+																				     이 메뉴에서 조회 및 Deploy가 가능하다. 여기에서는 전문의 Schema Define 정보만 Deploy 한다.
+																				 </li>
+            	                                                                 <li>Check Box를 적어도 하나 이상 선택해야 한다.</li>
+            	                                                                 <li>Target Server를 적어도 하나 선택해야 Deploy 가능하다.</li>
+																				 <li>Reserve Deployment는 바로 Deploy 처리를 하는 것이 아니고 Deploy 예약을 하는 것이다.<br>
+            	                                                                     만약, Source Deploy가 야간에 수행될 경우에 유용하게 사용할 수 있는 기능이다.<br>
+            	                                                                     Deploy 예약을 하면 정해진 시간에 Deploy 되도록 Schedule 등록을 하는 것으로서 Deploy Config &gt; Doc Schema Reservation 메뉴에서 [조회/수정/삭제] 할 수 있다.<br>
+            	                                                                     이 Schedule은 IS Administrator &gt; Server &gt; Scheduler 메뉴에서도 확인할 수 있다.<br>
+            	                                                                     이 Schedule은 한 번만 실행되는 것으로서 실행되고 나면 목록에서 자동으로 삭제된다.<br>
+            	                                                                     이 Schedule에 의해서 Deploy 처리를 한 후에 Deploy 결과를 ESB 관리자에게 메일로 통보한다.
+            	                                                                 </li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Target Server</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Deploy 하고자 하는 Target Server<br>
+      	                                                              Basic Info &gt; Custom Variable 메뉴의 ESB.CONFIG.REMOTE.DEPCONFIG Variable에 등록된 Remote Server Alias 목록<br>
+      	                                                              Remote Server Alias가 여러 개일 경우 다중 선택 가능</a></div>
+	  <!-- 2022.08.07 수정. Basic Info > Interface Doc 메뉴에서 관리하는 Schema Define 정보만 Deploy 하는 것으로 변경
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Doc Type</a></div>
+	  <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Deploy 하고자 하는 전문의 유형<br>
+      	                                                              Interface Doc : Basic Info &gt; Interface Doc 메뉴에서 관리하는 전문에 대해서 조회 및 Deploy 한다.<br>
+      	                                                              Business Doc : Basic Info &gt; Business Name &gt; Business Doc List 메뉴에서 관리하는 전문에 대해서 조회 및 Deploy 한다.</a></div>
+	  -->
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Reservation Time</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">"Reserve Deployment" 기능을 사용할 경우 Schedule이 실행될 날짜, 시간을 입력한다.</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">setSoTimeout</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IJcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClNvY2tl
+dCBzb2NrZXQgPSAoIFNvY2tldCApSURhdGFVdGlsLmdldCggcGlwZWxpbmVDdXJzb3IsICJzb2Nr
+ZXQiICk7DQppbnQJcmVhZFRpbWVvdXQgPSBJRGF0YVV0aWwuZ2V0SW50KCBwaXBlbGluZUN1cnNv
+ciwgInJlYWRUaW1lb3V0IiwgMCApOw0KcGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpTdHJp
+bmcgZXJyb3JNc2cgPSAiIjsNCg0KdHJ5IHsNCglzb2NrZXQuc2V0U29UaW1lb3V0KCByZWFkVGlt
+ZW91dCApOw0KfSBjYXRjaCggRXhjZXB0aW9uIGUgKSB7DQoJZXJyb3JNc2cgPSBlLnRvU3RyaW5n
+KCk7DQp9DQoNCklEYXRhQ3Vyc29yIHBpcGVsaW5lQ3Vyc29yXzEgPSBwaXBlbGluZS5nZXRDdXJz
+b3IoKTsNCklEYXRhVXRpbC5wdXQoIHBpcGVsaW5lQ3Vyc29yXzEsICJlcnJvck1zZyIsIGVycm9y
+TXNnICk7DQpwaXBlbGluZUN1cnNvcl8xLmRlc3Ryb3koKTs=</value>
+</Values>

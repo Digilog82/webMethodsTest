@@ -1,0 +1,347 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>About JSocketAdapter Administration</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">About JSocketAdapter Administrator</a></div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>TCP/IP 프로토콜을 이용하여 전문 송수신을 할 수 있는 환경을 구성 해준다.<br>
+    		                                                Socket Server 역할 : Asynch Online, Synch Realtime, Batch 모두 가능<br>
+    		                                                Socket Client 역할 : Asynch Online, Synch Realtime, Batch 모두 가능
+    		                                            </li>
+    	                                              <li>Socket Server와 Socket Client에 관련된 정보들을 관리할 수 있다.</li>
+    	                                              <li>Socket을 이용한 전문 송수신 시의 통신로그를 모니터링 할 수 있다.</li>
+    	                                              <li>시스템 운영에 필요한 부가적인 편리 기능을 제공한다.</li>
+    	                                              <li>시스템을 안정적으로 운영하기 위해서 시스템 Resource 사용의 위험수위에 대한 임계치를 관리하고 있고 위험상황이 발생하였을 경우 관리자에게 메일로 통보를 한다.<br>
+													      Utility &gt; Server Resources Warning 메뉴를 상시 오픈해 놓으면 위험상황이 발생하였을 경우 경고음으로 위험상황을 알릴 수 있다.
+													  </li>
+													  <li>JSocketAdapter Administrator의 메뉴는 아래와 같은 설정과 환경에 따라서 가변적이다(메뉴가 보이기도 하고 안 보이기도 한다).<br>
+    	                                              	  Basic Info &gt; Custom Variable 메뉴의 ESB.CONFIG.AS400.ASYNCHONLINEYN, ESB.CONFIG.AS400.DATAQUSEYN의 Value에 따라서<br>
+    	                                              	  Basic Info &gt; Business Name 메뉴의 Asynch Online Socket YN 필드 설정에 따라서<br>
+    	                                              	  Server Socket &gt; Local Server Socket 메뉴의 Asynch Online YN 필드 설정에 따라서<br>
+    	                                              	  개발서버, UAT서버, 운영서버에 따라서    	                                              	  
+    	                                              </li>
+    	                                              <li>Flow Service 소스 안에서 Set Value 하는 것을 가능하면 피하도록 했고 JSocketAdapter Administrator에서 설정 변경에 따라서 소스 수정 없이<br>
+    	                                              	  바로 실행이 가능하고 유기적으로 동작하도록 구성되어 있다.</li>
+    	                                              <li>JSocketAdapter Administrator의 화면 디자인은 기본적으로 WmRoot Package에 있는 CSS, Images를 사용한다.<br>
+    	                                              	  그러므로 운영중인 IS 버전의 디자인과 같게 된다. 그러나 운영중인 IS 버전이 10.3 보다 상위인 경우 JSocketAdapter를 개발한 IS 10.3 버전과
+    	                                              	  CSS, Images의 경로 및 파일명이 다르면 화면이 깨지게 될 것이다.<br>
+    	                                              	  이럴 경우에는 Basic Info &gt; Custom Variable 메뉴의 ESB.CONFIG.DESIGN.PATH의 Value를 custom 으로 수정 후 화면을 Refresh 하면<br>
+    	                                              	  packages/JSocketAdapter/pub/custom 폴더에 있는 CSS, Images가 적용된다. 이 폴더에는 IS 10.3 WmRoot Package에 있는 CSS, Images를<br>
+    	                                              	  놓아두었다.
+    	                                              </li>
+    	                                              <li>전문에 대한 Format을 Flat File Schema를 이용해서 정의하고 전문 데이터에 대한 변환을 WmFlatFile Package에 있는 Built-In 서비스를<br>
+    	                                              	  이용할 경우 아래와 같은 단점들이 있다.<br>
+    	                                              	  - Flat File Schema를 이용해서 전문의 Format을 정의하면 각각의 필드의 위치 및 길이에 대해서 Index 번호로 정의를 한다.<br>
+                                                          &nbsp;&nbsp;만약 전문에 필드 추가가 발생할 경우 필드가 추가된 위치 이후의 필드들에 대한 Index 번호가 모두 수정되어야 한다.<br>
+                                                        - Flat File Schema를 이용해서 전문의 Format을 정의하면 필드에 대한 Data Type(String 또는 Number) 및 Padding 문자를 정의할 수 없어서<br>
+                                                          &nbsp;&nbsp;Padding이 필요할 경우에는 메인 서비스 안에서 직접 Padding 처리를 해야 한다.<br>
+                                                        - 전문의 구조가 단일 형태(Only Single Record 또는 Only Multi Record)가 아닌 복잡한 구조(Single Record + Multi Record(2 depth 이상))일<br>
+                                                          &nbsp;&nbsp;경우 하나의 Flat File Schema로 나타낼 수 없어서 각각의 구조에 맞는 Flat File Schema를 여러 개 만들어야 하고 Document 형태의 전문을<br>
+                                                          &nbsp;&nbsp;String 형태로 변환하거나 String 형태의 전문을 Document로 변환하는 로직이 복잡해진다.<br>
+                                                        위와 같은 단점들을 개선하기 위해서 제품에서 제공하는 Flat File Schema 및 Built-In 서비스를 사용하지 않고 Java를 이용해서 변환 프로그램을<br>
+                                                        직접 개발하였다.<br>
+                                                        전문의 복잡한 정도와 상관 없이 전문의 Format과 동일한 구조의 Document Type을 하나만 생성하면 되고 각각의 필드에 대한 길이, Data Type,<br>
+                                                        Padding 문자 및 Padding 방향, 필드명을 정의하는 define 서비스를 만들어서 변환 프로그램을 호출하면 위와 같은 모든 담점들을 해결할 수 있다.<br>
+                                                        각각의 필드에 대한 정의는 "필드길이/Padding문자/Padding방향/필드명" 형태로 한다. 예) 10/ /RP/이름, 10/0/LP/나이<br>
+														필드길이, Padding문자, Padding방향은 필수로 정의해야 하고 필드명은 생략 가능하다.<br>
+                                                        Data Type이 String인 경우에는 Padding문자로 Space를 사용하고 Number인 경우에는 숫자 0을 사용한다.<br>
+                                                        Padding방향이 오른쪽 Padding인 경우에는 RP를 사용하고 왼쪽 Padding인 경우에는 LP를 사용한다.<br>
+                                                        필드의 길이가 1인 경우에는 Padding이 필요 없긴 하지만 그래도 Padding문자는 넣도록 한다.
+    	                                              </li>
+													  <li>전문 송수신 개발에 필요해서 등록한 여러 정보들에 대해서 다른 서버로 Deploy 하는 기능이 있다.</li>
+													  <li>전문 송수신 개발에 필요해서 등록/수정/삭제 하는 정보들에 대해서 Clustering 환경일 경우에는 한 쪽 서버에서만 등록/수정/삭제 하면 Clustering 내에 있는
+													      다른 서버에도 동기화 처리가 된다.<br>
+														  Deploy 하는 경우에도 한 쪽 서버에만 Deploy 하면 Clustering 내에 있는 다른 서버에도 동기화 처리가 된다.
+													  </li>
+    	                                              <li>JSocketAdapter Package 개발환경<br>
+    	                                              	  OS.Name : Windows 7<br>
+    	                                              	  Product : webMethods Integration Server 10.3.0.0<br>
+    	                                              	  Updates : IS_10.3_Core_Fix4, IS_10.3_SPM_Fix2<br>
+    	                                              	  Java Version : 1.8.0_181 (52.0)<br>
+    	                                              	  Java Vendor : Azul Systems, Inc.<br>
+														  Java VM Name : OpenJDK 64-Bit Server VM<br>
+    	                                              	  JSocketAdapter Package를 Install 해서 운영하는 환경이 위와 다를 경우 Customizing이 필요할 수도 있다.</li>
+    	                                              <li>JSocketAdapter Package를 최초에 Install 하면 Custom Variable Value, Custom Variable 기본값들이 자동으로 등록된다.</li>
+    	                                              <li>Integration Server를 Start 하면 IS Administrator &gt; Solutions 메뉴 아래에 Socket Admin 메뉴가 자동으로 추가된다.</li>
+    	                                              <li>JSocketAdapter Package를 최초에 Install 한 후에 Package에서 참조하는 Java Library를 Integration Server Memory에 Loading 하기 위해서 Integration Server를 Restart 해야 한다.<br>
+    	                                              	  Java Library : custom-jsocket-manager.jar, jxl-2.6.12.jar</li>
+    	                                              
+    	                                          </ul></a>
+      </div>      
+			<div class="Section_Title"><a name="3_5_7_6_6_4_3">Synch Realtime 방식의 Socket Client 개발 Flow</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">I. 환경 설정<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;1. Basic Info &gt; Custom Variable 메뉴에서 System 상황에 맞게 Value를 수정한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;2. Basic Info &gt; System Name  메뉴에서 Socket Server가 존재하는 System에 대한 System Name을 등록한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이미 등록되어 있을 경우에는 생략한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;3. Basic Info &gt; Business Name 메뉴에서 업무에 대한 Business Name을 등록한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이미 등록되어 있을 경우에는 생략한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;4. Server Socket &gt; Remote Server Socket  메뉴에서 Socket Server에 대한 정보를 등록한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;여기에서 등록한 Socket Name을 이용해서 Socket 통신 시 필요한 정보를 얻는다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;5. Basic Info &gt; Business Name &gt; Business Name Link 클릭해서 해당 업무에 속해있는 전문의 정보를 등록한다.<br><br>
+      	                                                              II. Object 개발(JSocketSamples Package의 JSocketSamples.CLIENT.SYNCH 폴더 참고)<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;1. 공통적으로 사용할 Object가 있는 경우 공통 Object를 먼저 생성한다(Business Name 단위로 구분해서 생성).<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.COMMON.DOC:DOC_COMMON_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부 Format을 정의한 Document Type<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.COMMON.SERVICE:defineCommonSchema_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부 필드에 대한 속성을 정의한 define 서비스<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.COMMON.SERVICE:mapCommonSchemaDef_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부 필드에 대한 속성을 정의한 내용을 전체전문 필드속성 정의에 매핑하는 서비스<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.COMMON.SERVICE:mapCommonInfoPart_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부의 데이터를 매핑하는 서비스<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;2. 전문의 Format과 동일한 Document Type을 생성한다. Document Type의 구성은 String과 Document List 만으로 가능하다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예) JSocketSamples.CLIENT.SYNCH.SINGLE.MAIN.ES_KCIS_0001.DOC:DOC_KCSI_0300110<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I. 환경 설정 &gt; 5번 설정 시에 "Schema Document Type Name" 필드에 값을 입력하면 Document Type이 자동으로 생성된다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;그러나, 메인 서비스에서 전문의 Document Type을 이용한 매핑이 없어서 Document Type을 생성할 필요가 없을 경우에는<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Schema Document Type Name" 필드에 값을 입력하지 않으면 Document Type이 생성되지 않는다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;3. 위에서 생성한 Document Type을 이용해서 각각의 필드에 대한 속성을 정의하는 define 서비스를 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문이 여러 개이면서 공통정보부가 있는 경우에는 공통정보부 필드 define 서비스를 별도로 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예) JSocketSamples.CLIENT.SYNCH.SINGLE.MAIN.ES_KCIS_0001.SERVICE:defineSchema<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I. 환경 설정 &gt; 5번 설정 시에 "Schema Define Service" 필드에 값을 입력하면 Flow Service가 자동으로 생성된다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;만약, "Schema Define Service" 필드에 값을 입력하지 않으면 Schema를 정의한 IData를 생성해서 IS Memory와 IS 파일 시스템에 저장한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;4. 전문 송수신 처리를 하는 메인 서비스를 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예) JSocketSamples.CLIENT.SYNCH.SINGLE.MAIN.ES_KCIS_0001:main_ES_KCIS_0001<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I. 환경 설정 4번에서 등록한 Socket Name을 socketName 변수에 Set Value 한다.
+      	                                                              </a>
+			</div>
+			<div class="Section_Title"><a name="3_5_7_6_6_4_3">Asynch Online 방식의 Socket Client 개발 Flow</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">I. 환경 설정<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;1. Basic Info &gt; Custom Variable 메뉴에서 System 상황에 맞게 Value를 수정한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;2. Basic Info &gt; System Name  메뉴에서 Socket Server가 존재하는 System에 대한 System Name을 등록한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이미 등록되어 있을 경우에는 생략한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;3. Basic Info &gt; Business Name 메뉴에서 업무에 대한 Business Name을 등록한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이미 등록되어 있을 경우에는 생략한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Asynch Online 방식의 경우 Business Name 단위로 공통 Object 생성 및 Socket 관리가 이루어진다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;4. Server Socket &gt; Remote Server Socket  메뉴에서 Socket Server에 대한 정보를 등록한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;여기에서 등록한 Socket Name을 이용해서 Socket 통신 시 필요한 정보를 얻는다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Port가 하나이면서 여러 개의 Connection을 허용하고 모든 Connection을 이용해서 송수신 모두 가능한 경우가 있고<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;송신전용 Port와 수신전용 Port가 따로 존재하면서 각각의 Port에 대한 Connection을 한 개 또는 여러 개를 허용하는 경우가 있다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;두 가지 경우 모두 Socket Name을 OUT, IN 두 개를 등록한다. 즉, Connection이 두 개 생기게 된다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Port가 하나인 경우에는 OUT Connection을 송신전용으로 사용하고 IN, OUT Connection 모두 수신이 가능하며<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IN, OUT Connection에 대해서 전문 수신용 Listener가 실행된다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Port가 두 개인 경우에는 OUT Connection을 송신전용으로 사용하고 IN Connection을 수신전용으로 사용하며<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IN Connection에 대해서 전문 수신용 Listener가 실행된다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 수신용 Listener에서는 Server 쪽에서 Socket Close 또는 Server Shutdown 했는지 알 수 있다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;5. Basic Info &gt; Business Name &gt; Business Name Link 클릭해서 해당 업무에 속해있는 전문의 정보를 등록한다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;6. UM에 전문송신용, 전문송신결과 Reply용, 전문수신용 Queue/Topic 세 개를 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Queue/Topic은 Business Name 단위로 구분해서 생성한다.<br><br>
+      	                                                              II. Object 개발(JSocketSamples Package의 JSocketSamples.CLIENT.ASYNCHONLINE 폴더 참고)<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;1. 공통적으로 사용할 Object가 있는 경우 공통 Object를 먼저 생성한다(Business Name 단위로 구분해서 생성).<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.DOC:DOC_COMMON_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부 Format을 정의한 Document Type<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.DOC:RECEIVEINFO_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 수신 시 수신정보를 UM에 Send 하기 위한 Document Type<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.DOC:REPLYINFO_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 송신 시 송신결과정보를 UM에 Reply 하기 위한 Document Type<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.DOC:SENDINFO_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 송신 시 송신정보를 UM에 Send 하기 위한 Document Type<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.LISTENER:listen_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 수신용 Listener. 수신한 전문을 distribute_KCDO 서비스에 전달한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.LISTENER:distribute_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;수신한 전문의 종류를 판단하여 전문처리 메인 서비를 호출한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.SCHEDULE:checkOnline_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online Connection이 Network Level에서 강제로 끊어지지 않도록 하기 위한 Online 유지 Schedule 서비스<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Port가 두 개인 경우에는 송신전용으로 Online 유지 전문을 송신하면 수신전용까지 자동으로 유지된다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Port가 하나인 경우에는 어떤 Connection으로 전문 수신이 될지 모르기 때문에 모든 Connection에 대해서<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online 유지 전문을 송신하도록 해야 한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.SENDER:asynchSendAndReply_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 송신처리를 한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.SERVICE:defineCommonSchema_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부 필드에 대한 속성을 정의한 define 서비스<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.SERVICE:mapCommonSchemaDef_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부 필드에 대한 속성을 정의한 내용을 전체전문 필드속성 정의에 매핑하는 서비스<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.SERVICE:mapCommonInfoPart_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부의 데이터를 매핑하는 서비스<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.TRIGGER:trgJMS_RECEIVE_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 수신 시 UM에 JMS Send 한 Document를 처리하기 위한 Trigger. distribute_KCDO 서비스를 호출한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.TRIGGER:trgMES_RECEIVE_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 수신 시 UM에 Publish 한 Document를 처리하기 위한 Trigger. distribute_KCDO 서비스를 호출한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.TRIGGER:trgJMS_SEND_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 송신 시 UM에 JMS Send 한 Document를 처리하기 위한 Trigger. asynchSendAndReply_KCDO 서비스를 호출한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.TRIGGER:trgMES_SEND_KCDO<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 송신 시 UM에 Publish 한 Document를 처리하기 위한 Trigger. asynchSendAndReply_KCDO 서비스를 호출한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 전문 송신의 경우는 안정성을 위해서 Serial 하게 데이터가 송신되도록 구성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예를 들어서, Trigger의 Processing mode를 Serial로 설정한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 전문 수신의 경우는 Performance 향상을 위해서 Multi Thread로 실행이 되도록 구성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예를 들어서, Trigger의 Processing mode를 Concurrent로 설정한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketAdapter Administrator에서 Trigger를 관리하기 위해서는 Trigger 생성 및 설정한 후에 Designer에서 Unlock 처리를 해야 한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Asynch 방식으로 전문 송수신 처리를 하기 위해서 아래 세 가지의 방법중에서 선택해서 사용할 수 있다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UM에 JMS Send, UM에 Publish, UM을 사용하지 않고 서비스를 직접 Invoke 하는 방법<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Basic Info > Custom Variable 메뉴에서 ESB.SOCKET.ONLINE.TRANSTYPE 의 Value를 수정하면 바로 적용이 된다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;현재 사용하지 않는 방법이라 할지라도 문제 발생 시에 언제 사용할지 모르기 때문에 관련된 Object 들은 모두 생성해 놓아야 한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 운영서버가 두 대인 경우에 두 서버에서 동시에 운영되도록 구성할 수 있다. 그러나 관리적인 측면에서 복잡하고 Client이기 때문에 서버<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;부하에 큰 영향이 없으므로 Asynch Online Socket Client는 한 쪽 서버에서만 동작하도록 구성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;2. 전문의 Format과 동일한 Document Type을 생성한다. Document Type의 구성은 String과 Document List 만으로 가능하다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예) JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.DOC:DOC_KCSI_0300110<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I. 환경 설정 &gt; 5번 설정 시에 "Schema Document Type Name" 필드에 값을 입력하면 Document Type이 자동으로 생성된다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;그러나, 메인 서비스에서 전문의 Document Type을 이용한 매핑이 없어서 Document Type을 생성할 필요가 없을 경우에는<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Schema Document Type Name" 필드에 값을 입력하지 않으면 Document Type이 생성되지 않는다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;3. 위에서 생성한 Document Type을 이용해서 각각의 필드에 대한 속성을 정의하는 define 서비스를 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문이 여러 개이면서 공통정보부가 있는 경우에는 공통정보부 필드 define 서비스를 별도로 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예) JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.SERVICE:defineSchema<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I. 환경 설정 &gt; 5번 설정 시에 "Schema Define Service" 필드에 값을 입력하면 Flow Service가 자동으로 생성된다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;만약, "Schema Define Service" 필드에 값을 입력하지 않으면 Schema를 정의한 IData를 생성해서 IS Memory와 IS 파일 시스템에 저장한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;4. 전문 송수신 처리를 하는 메인 서비스를 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예) JSocketSamples.CLIENT.ASYNCHONLINE.ONEPORT.MAIN.ES_KCIS_0001:main_ES_KCIS_0001<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I. 환경 설정 4번에서 등록한 Socket Name을 socketName 변수에 Set Value 한다.<br><br>
+      	                                                              III. 전문 송수신 전체 Flow(JMS Send 방식의 경우)<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;1. [요청] Source System에서 전문송신 요청<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;2. [요청] Asynch 방식으로 응답전문 수신 시 해당 전문의 짝이 되는 요청전문을 찾기 위해서 IS Memory에 요청정보를 저장한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부에 있는 몇 개의 필드들을 조합해서 Unique한 Key로 사용한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;3. [요청] 요청전문을 생성해서 UM에 JMS Send --> 전문송신결과에 대해서 IS Memory에서 지속적으로 체크를 한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--> 전문송신결과 수신 후 응답전문을 수신하기 위해서 IS Memory에서 지속적으로 체크를 한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;4. [요청] JMS Trigger 동작 --> asynchSendAndReply_KCDO 서비스 실행 --> 요청전문 송신 --> 전문송신결과에 대해서 IS Memory에 저장한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;5. [응답] listen_KCDO 서비스에서 응답전문 수신 --> UM에 JMS Send<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;6. [응답] JMS Trigger 동작 --> distribute_KCDO 서비스 실행 --> 해당 전문을 처리하는 메인 서비스를 호출한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;7. [응답] IS Memory에 응답전문 정보를 저장한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;8. [응답] IS Memory에 저장한 요청정보를 삭제한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;9. [요청] Source System에 응답전문을 리턴한다.<br>
+      	                                                              </a>
+			</div>
+			<div class="Section_Title"><a name="3_5_7_6_6_4_3">Synch Realtime 방식의 Socket Server 개발 Flow</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">I. 환경 설정<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;1. Basic Info &gt; Custom Variable 메뉴에서 System 상황에 맞게 Value를 수정한다.<br>      	                                                                 
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;2. Server Socket &gt; Local Server Socket 메뉴에서 Port Number에 대한 정보를 등록한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;해당 Port Number를 통하여 수신되는 전문을 처리하는 Flow Service는 미리 개발되어 있어야 한다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;순차처리가 아닌 경우 Listener Service 샘플은 JSocketSamples.SERVER.COMMON.LISTENER:distribute_7777<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;순차처리인 경우 Listener Service 샘플은 JSocketSamples.SERVER.SYNCH.SERIALPROCESSING:listen_7777<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;만약, Target System과의 통신방식이 Socket인 경우에는 Socket Client 개발 Flow를 참고해서 필요한 환경 설정 및 Object 개발을 해야한다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;3. Basic Info &gt; Interface Doc 메뉴에서 전문의 종별코드와 업무구분코드에 따른 전문의 정보를 등록한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;요청전문 수신 시 해당 전문을 처리하는 메인 서비스를 Naming Rule에 의해서 호출하기 위해서이다.<br><br>
+      	                                                              II. Object 개발(JSocketSamples Package의 JSocketSamples.SERVER.SYNCH 폴더 참고)<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;1. 공통적으로 사용할 Object가 있는 경우 공통 Object를 먼저 생성한다(Port Number 단위로 구분해서 생성).<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.COMMON.DOC:DOC_COMMON_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부 Format을 정의한 Document Type<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.COMMON.LISTENER:distribute_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;수신한 전문의 종류를 판단하여 전문처리 메인 서비를 호출한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;환경설정 2번에서 등록한 Doc Name 또는 Interface ID를 이용하게 된다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;순차처리를 해야 하는 경우에는 JSocketSamples.SERVER.SYNCH.SERIALPROCESSING:listen_7777 서비스를 참고한다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;순차처리를 해야 하는 경우에는 Port 별로 Listener Service, Distributer Service, JMS Queue, Trigger, Publishing Document Type을 1:1 관계로 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.COMMON.SERVICE:defineCommonSchema_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부 필드에 대한 속성을 정의한 define 서비스<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.COMMON.SERVICE:mapCommonSchemaDef_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부 필드에 대한 속성을 정의한 내용을 전체전문 필드속성 정의에 매핑하는 서비스<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.COMMON.SERVICE:mapCommonInfoPart_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부의 데이터를 매핑하는 서비스<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;2. 전문의 Format과 동일한 Document Type을 생성한다. Document Type의 구성은 String과 Document List 만으로 가능하다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예) JSocketSamples.SERVER.SYNCH.MAIN.ES_KCIS_0001.DOC:DOC_KCSI_0300110<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I. 환경 설정 &gt; 3번 설정 시에 "Schema Document Type Name" 필드에 값을 입력하면 Document Type이 자동으로 생성된다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;그러나, 메인 서비스에서 전문의 Document Type을 이용한 매핑이 없어서 Document Type을 생성할 필요가 없을 경우에는<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Schema Document Type Name" 필드에 값을 입력하지 않으면 Document Type이 생성되지 않는다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;3. 위에서 생성한 Document Type을 이용해서 각각의 필드에 대한 속성을 정의하는 define 서비스를 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문이 여러 개이면서 공통정보부가 있는 경우에는 공통정보부 필드 define 서비스를 별도로 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예) JSocketSamples.SERVER.SYNCH.MAIN.ES_KCIS_0001.SERVICE:defineSchema<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I. 환경 설정 &gt; 3번 설정 시에 "Schema Define Service" 필드에 값을 입력하면 Flow Service가 자동으로 생성된다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;만약, "Schema Define Service" 필드에 값을 입력하지 않으면 Schema를 정의한 IData를 생성해서 IS Memory와 IS 파일 시스템에 저장한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;4. 전문 수신 및 송신처리를 하는 메인 서비스를 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예) JSocketSamples.SERVER.SYNCH.MAIN.ES_KCIS_0001:main_ES_KCIS_0001<br><br>
+      	                                                              III. Socket Server Port Open<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;환경 설정 및 Object 개발이 완료되면 서비스를 하기 위해서 해당 Port를 Open 한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;Server Socket &gt; Local Server Socket 메뉴에서 해당 Port의 Opened 필드의 "No" 링크를 클릭하면 Socket Server가 기동된다.
+      	                                                              </a>
+			</div>
+			<div class="Section_Title"><a name="3_5_7_6_6_4_3">Asynch Online 방식의 Socket Server 개발 Flow</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">I. 환경 설정<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;1. Basic Info &gt; Custom Variable 메뉴에서 System 상황에 맞게 Value를 수정한다.<br>      	                                                                 
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;2. Server Socket &gt; Local Server Socket 메뉴에서 Port Number에 대한 정보를 등록한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;해당 Port Number를 통하여 수신되는 전문을 처리하는 Flow Service는 미리 개발되어 있어야 한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Port가 하나이면서 여러 개의 Connection을 허용하고 모든 Connection을 이용해서 송수신 모두 가능한 경우가 있고<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;송신전용 Port와 수신전용 Port가 따로 존재하면서 각각의 Port에 대한 Connection을 한 개 또는 여러 개를 허용하는 경우가 있다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Port가 하나인 경우에는 모든 Connection으로 전문 송수신이 가능하고 전문 수신용 Listener가 실행된다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이 Listener에서 Client 쪽에서 Socket Close 했는지도 알 수 있다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Port가 두 개인 경우에는 수신전용 Connection에 대한 전문 수신용 Listener가 실행되고 이 Connection으로 전문을 수신한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이 Listener에서 Client 쪽에서 Socket Close 했는지도 알 수 있다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;송신전용 Connection에 대해서 Client 쪽에서 Socket Close 했는지를 체크하는 Listener가 실행되고 이 Connection으로 전문을 송신한다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;순차처리가 아닌 경우 Listener Service 샘플은 JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.LISTENER:listen_7777<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;순차처리인 경우 Listener Service 샘플은 JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.SERIALPROCESSING:listen_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;만약, Target System과의 통신방식이 Socket인 경우에는 Socket Client 개발 Flow를 참고해서 필요한 환경 설정 및 Object 개발을 해야한다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;3. Basic Info &gt; Interface Doc 메뉴에서 전문의 종별코드와 업무구분코드에 따른 전문의 정보를 등록한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;요청전문 수신 시 해당 전문을 처리하는 메인 서비스를 Naming Rule에 의해서 호출하기 위해서이다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;4. UM에 전문송신용, 전문송신결과 Reply용, 전문수신용 Queue/Topic 세 개를 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Queue/Topic은 Business Name 단위로 구분해서 생성한다.<br><br>
+      	                                                              II. Object 개발(JSocketSamples Package의 JSocketSamples.SERVER.ASYNCHONLINE 폴더 참고)<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;1. 공통적으로 사용할 Object가 있는 경우 공통 Object를 먼저 생성한다(Port Number 단위로 구분해서 생성).<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.DOC:DOC_COMMON_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부 Format을 정의한 Document Type<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.DOC:RECEIVEINFO_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 수신 시 수신정보를 UM에 Send 하기 위한 Document Type<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.DOC:REPLYINFO_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 송신 시 송신결과정보를 UM에 Reply 하기 위한 Document Type<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.DOC:SENDINFO_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 송신 시 송신정보를 UM에 Send 하기 위한 Document Type<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.LISTENER:listen_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 수신용 Listener. 수신한 전문을 distribute_7777 서비스에 전달한다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;순차처리를 해야 하는 경우에는 JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.SERIALPROCESSING:listen_7777 서비스를 참고한다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;순차처리와 관계 없이 Port 별로 Listener Service, Distributer Service, JMS Queue, Trigger, Publishing Document Type을 1:1 관계로 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.LISTENER:distribute_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;수신한 전문의 종류를 판단하여 전문처리 메인 서비를 호출한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;환경설정 2번에서 등록한 Doc Name 또는 Interface ID를 이용하게 된다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;순차처리를 해야 하는 경우에는 JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.SERIALPROCESSING:distribute_7777 서비스를 참고한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.SENDER:asynchSendAndReply_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 송신처리를 한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.SERVICE:defineCommonSchema_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부 필드에 대한 속성을 정의한 define 서비스<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.SERVICE:mapCommonSchemaDef_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문의 공통정보부 필드에 대한 속성을 정의한 내용을 전체전문 필드속성 정의에 매핑하는 서비스<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.TRIGGER:trgJMS_RECEIVE_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 수신 시 UM에 JMS Send 한 Document를 처리하기 위한 Trigger. distribute_7777 서비스를 호출한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.TRIGGER:trgMES_RECEIVE_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 수신 시 UM에 Publish 한 Document를 처리하기 위한 Trigger. distribute_7777 서비스를 호출한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.TRIGGER:trgJMS_SEND_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 송신 시 UM에 JMS Send 한 Document를 처리하기 위한 Trigger. asynchSendAndReply_7777 서비스를 호출한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.TRIGGER:trgMES_SEND_7777<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문 송신 시 UM에 Publish 한 Document를 처리하기 위한 Trigger. asynchSendAndReply_7777 서비스를 호출한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 전문 송신의 경우는 안정성을 위해서 Serial 하게 데이터가 송신되도록 구성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예를 들어서, Trigger의 Processing mode를 Serial로 설정한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 전문 수신의 경우는 Performance 향상을 위해서 Multi Thread로 실행이 되도록 구성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예를 들어서, Trigger의 Processing mode를 Concurrent로 설정한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Asynch 방식으로 전문 송수신 처리를 하기 위해서 아래 세 가지의 방법중에서 선택해서 사용할 수 있다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UM에 JMS Send, UM에 Publish, UM을 사용하지 않고 서비스를 직접 Invoke 하는 방법<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Basic Info > Custom Variable 메뉴에서 ESB.SOCKET.ONLINE.TRANSTYPE 의 Value를 수정하면 바로 적용이 된다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;현재 사용하지 않는 방법이라 할지라도 문제 발생 시에 언제 사용할지 모르기 때문에 관련된 Object 들은 모두 생성해 놓아야 한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Asynch Online Socket Server의 경우 운영서버가 두 대인 경우에 JSocketAdapter에서 Socket 관련된 모든 정보에 대해서<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;두 서버에 동기화 처리를 하기 때문에 두 서버에서 동시에 운영이 가능하다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;2. 전문의 Format과 동일한 Document Type을 생성한다. Document Type의 구성은 String과 Document List 만으로 가능하다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예) JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.DOC:DOC_KCSI_0300110<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I. 환경 설정 &gt; 3번 설정 시에 "Schema Document Type Name" 필드에 값을 입력하면 Document Type이 자동으로 생성된다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;그러나, 메인 서비스에서 전문의 Document Type을 이용한 매핑이 없어서 Document Type을 생성할 필요가 없을 경우에는<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Schema Document Type Name" 필드에 값을 입력하지 않으면 Document Type이 생성되지 않는다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;3. 위에서 생성한 Document Type을 이용해서 각각의 필드에 대한 속성을 정의하는 define 서비스를 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전문이 여러 개이면서 공통정보부가 있는 경우에는 공통정보부 필드 define 서비스를 별도로 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예) JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.SERVICE:defineSchema<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I. 환경 설정 &gt; 3번 설정 시에 "Schema Define Service" 필드에 값을 입력하면 Flow Service가 자동으로 생성된다.<br>
+																		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;만약, "Schema Define Service" 필드에 값을 입력하지 않으면 Schema를 정의한 IData를 생성해서 IS Memory와 IS 파일 시스템에 저장한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;4. 전문 수신 및 송신처리를 하는 메인 서비스를 생성한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예) JSocketSamples.SERVER.ASYNCHONLINE.ONEPORT.MAIN.ES_KCIS_0001:main_ES_KCIS_0001<br><br>
+      	                                                              III. Socket Server Port Open<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;환경 설정 및 Object 개발이 완료되면 서비스를 하기 위해서 해당 Port를 Open 한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;Server Socket &gt; Local Server Socket 메뉴에서 해당 Port의 Opened 필드의 "No" 링크를 클릭하면 Socket Server가 기동된다.<br><br>
+      	                                                              IV. 전문 송수신 전체 Flow(JMS Send 방식의 경우)<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;1. [요청] Client System에서 요청전문 송신<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;2. [요청] listen_7777 서비스에서 요청전문 수신 --> UM에 JMS Send<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;3. [요청] JMS Trigger 동작 --> distribute_7777 서비스 실행 --> 해당 전문을 처리하는 메인 서비스를 호출한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;3. [응답] 응답전문을 생성해서 UM에 JMS Send --> 전문송신결과에 대해서 IS Memory에서 지속적으로 체크를 한다.<br>
+      	                                                                 &nbsp;&nbsp;&nbsp;&nbsp;4. [응답] JMS Trigger 동작 --> asynchSendAndReply_7777 서비스 실행 --> 응답전문 송신 --> 전문송신결과에 대해서 IS Memory에 저장한다.<br>
+      	                                                              </a>
+			</div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

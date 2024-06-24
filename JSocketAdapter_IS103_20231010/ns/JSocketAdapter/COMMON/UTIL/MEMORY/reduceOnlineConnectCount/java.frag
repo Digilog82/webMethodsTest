@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">reduceOnlineConnectCount</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwlzZXJ2ZXJJUCA9IElEYXRhVXRpbC5nZXRTdHJpbmcoIHBpcGVsaW5lQ3Vyc29yLCAic2VydmVy
+SVAiICk7DQpTdHJpbmcJcG9ydE51bWJlciA9IElEYXRhVXRpbC5nZXRTdHJpbmcoIHBpcGVsaW5l
+Q3Vyc29yLCAicG9ydE51bWJlciIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ryb3koKTsNCg0KU3Ry
+aW5nIG5hbWUgPSAiQ29ubmVjdF8iICsgc2VydmVySVAgKyAiXyIgKyBwb3J0TnVtYmVyOw0KU3Ry
+aW5nIGNvbkNvdW50ID0gc01hbmFnZXIuZ2V0T25saW5lQ29ubmVjdENvdW50KCBuYW1lICk7DQoN
+CmlmICggY29uQ291bnQuZXF1YWxzKCAiMCIgKSApIHsNCgkvLyBSZWR1Y2UgU2tpcA0KfSBlbHNl
+IHsNCglzTWFuYWdlci5yZWR1Y2VPbmxpbmVDb25uZWN0Q291bnQoIG5hbWUgKTsNCn0=</value>
+</Values>

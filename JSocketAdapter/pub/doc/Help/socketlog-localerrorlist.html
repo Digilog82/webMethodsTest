@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Local Server Error Log</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Socket Log &gt; Local Server Error Log Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Socket Log &gt; Local Server Error Log</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Local Socket Server Port Number로 송수신 되는 전문 중에서 에러가 발생한 전문의 Log를 조회하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Socket Log &gt; Local Server Error Log 클릭 : 조회화면으로 이동한다.</li>
+    	                                              <li>Search Logs 클릭 : 조회조건에 해당하는 Error Log 목록을 조회한다.</li>
+    	                                              <li>Start Time 링크 클릭 : Error Log 상세조회 화면으로 이동한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Search Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Basic Info &gt; Custom Variable 메뉴의 ESB.SOCKET.ERRORLOG.SAVEYN의 Value가 true인 경우에만 로그파일로 저장된다.</li>
+            	                                                                 <li>로그파일은 날짜별 폴더 아래에 생성된다. 로그파일 Naming Rule은 아래와 같다.<br>
+            	                                                                     Port Number + "$" + Start Time + "$" + interfaceID + "$" + 전문ID + "$" + transactionID + "$" + serverIP + "$" + Resubmit YN
+            	                                                                 </li>
+            	                                                                 <li>파일 저장 위치<br>
+                                                                                     Socket Server : SAG_Directory/CUSTOM_CONFIG/socket/errorlogs<br>
+																					 운영서버의 경우 NAS 등 공유 디렉토리가 있는 경우에는 공유 디렉토리를 설정해야 로그가 분산되어 저장되지 않는다.
+																				 </li>
+            	                                                                 <li>Basic Info &gt; Delete Local File 메뉴에서 위의 디렉토리를 등록해서 보관일수가 지난 파일은 자동으로 삭제되도록 할 수 있다.</li>
+																				 <li>조회조건 중에서 Log Date는 반드시 입력해야 한다.</li>
+																				 <li>Transaction ID 링크를 클릭하면 해당 Transaction에 대한 상세 데이터를 조회하는 화면으로 이동한다.<br>
+																				     상세조회 화면은 Socket Log &gt; Local Server Audit Log 메뉴에서 이동하는 Resubmit 처리를 할 수 있는 상세화면과 같은 것이다.
+																					 이 상세조회 화면에서 해당 Transaction에 대해서 Resubmit 처리가 가능하다.<br>
+																					 Resubmit 한 후에는 Socket Log &gt; Local Server Resubmit Log &gt; Details 화면으로 이동해서 처리결과를 조회한다.
+																				 </li>
+																				 <li>Resubmit 버튼을 클릭하면 여러 개의 Transaction을 선택해서 일괄적으로 Resubmit 처리를 할 수 있는데 이 경우에는 Audit Log 데이터 수정 없이
+																				     기존의 데이터를 그대로 Resubmit 처리하는 것이다.<br>
+																					 Resubmit 한 후에는 Socket Log &gt; Local Server Resubmit Log 화면으로 이동해서 처리결과를 조회한다.
+																				 </li>
+																				 <li>Resubmit 처리는 순차처리/비순차처리 상관 없이 해당 Transaction이 실행된 Main Service를 바로 재실행 하는 것이고 기존의 Transaction이 샐행됬던
+																				     서버와 상관 없이 현재 Resubmit 처리를 수행하는 서버에서 Resubmit 처리가 실행된다.
+																				 </li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Log Date</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">로그파일이 생성된 날짜</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Log Time</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">로그파일이 생성된 시간</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Port Number</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">조회하고자 하는 데이터 수신 Port Number</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Doc ID</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">조회하고자 하는 전문 ID</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Page Size</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">한 페이지에서 보여줄 데이터 건수</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Start Time Sorting</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Start Time을 기준으로 보여줄 데이터의 Sorting 방법</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

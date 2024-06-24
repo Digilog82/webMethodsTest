@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">readFileReader</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCkJ1ZmZl
+cmVkUmVhZGVyIGZpbGVSZWFkZXIgPSAoIEJ1ZmZlcmVkUmVhZGVyIClJRGF0YVV0aWwuZ2V0KCBw
+aXBlbGluZUN1cnNvciwgImZpbGVSZWFkZXIiICk7DQpwaXBlbGluZUN1cnNvci5kZXN0cm95KCk7
+DQoNClN0cmluZyBlcnJvck1zZyA9ICIiOw0KU3RyaW5nIGZpbGVDb250ZW50ID0gIiI7DQoNCnRy
+eSB7DQoJZmlsZUNvbnRlbnQgPSBmaWxlUmVhZGVyLnJlYWRMaW5lKCk7DQp9IGNhdGNoICggRXhj
+ZXB0aW9uIGUgKSB7DQoJZXJyb3JNc2cgPSBlLnRvU3RyaW5nKCk7IA0KfQ0KDQpJRGF0YUN1cnNv
+ciBwaXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJRGF0YVV0aWwucHV0
+KCBwaXBlbGluZUN1cnNvcl8xLCAiZXJyb3JNc2ciLCBlcnJvck1zZyApOw0KSURhdGFVdGlsLnB1
+dCggcGlwZWxpbmVDdXJzb3JfMSwgImZpbGVDb250ZW50IiwgZmlsZUNvbnRlbnQgKTsNCnBpcGVs
+aW5lQ3Vyc29yXzEuZGVzdHJveSgpOw==</value>
+</Values>

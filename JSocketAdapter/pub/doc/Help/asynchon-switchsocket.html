@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Custom Variable Value</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">KFTC Online &gt; Switch Socket Operation Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; KFTC Online &gt; Switch Socket Operation</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Asynch Online Socket Client 운영에 관련된 Object들의 Enable/Disable 상태를 일괄적으로 처리하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>KFTC Online &gt; Switch Socket Operation 클릭 : Enable/Disable 처리 목록을 조회한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Switching Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>KFTC는 예를 들어서 설명하기 위한 System Name 이다.</li>
+            	                                                                 <li>Basic Info &gt; Business Name 메뉴에서 Asynch Online Socket YN 필드가 'Yes'인 Business Name이 존재할 경우 Provider System Name 단위로 "ProviderSystemName Online" 이라는 메뉴가 생성된다.</li>
+            	                                                                 <li>운영서버가 두 대인 경우에 두 서버에서 동시에 운영되도록 구성할 수는 있으나 관리적인 측면에서 복잡하고 Client이기 때문에 서버 부하에 큰 영향이 없으므로 Asynch Online Socket Client는
+            	                                                                 	   한 쪽 서버에서만 동작하도록 구성을 한다.<br>
+            	                                                                 	   즉, Online Connection, Online Check Schedule, Trigger, Data Q Listener 메뉴에서 관리하는 Items에 대해서 Switch Socket Operation 메뉴를 이용해서 한 쪽 서버에서만 운영되도록 일괄처리를 한다.
+                                                                               </li>
+            	                                                                 <li>Basic Info &gt; Business Name 메뉴에서 Provider System Name이 'KFTC'이고 Asynch Online Socket YN 필드가 'Yes'인 Business Name 목록이 Display 된다.</li>
+            	                                                                 <li>KFTC Online 메뉴 아래에 있는 Online Connection, Online Check Schedule, Trigger, Data Q Listener 메뉴에서 관리하는 Items에 대해서 Business Name 단위로 일괄적으로 Enable, Disable 처리를 할 수 있다.<br>
+            	                                                                     또는 All Business Enable, All Business Disable을 클릭해서 KFTC의 모든 Asynch Online Socket Business에 대해서 일괄적으로 Enable, Disable 처리를 할 수 있다.<br>
+            	                                                                     이러한 처리를 수행하는 현재 서버에서만 처리되는 것이다.
+            	                                                                 </li>
+            	                                                                 <li>운영서버인 경우에는 "Switching Socket Operation" 이라는 링크가 추가적으로 Display 된다.<br>
+            	                                                                     현재 서버에서 KFTC의 모든 Asynch Online Socket Business에 대해서 일괄적으로 Disable 처리를 하고 다른 운영서버에서 일괄적으로 Enable 처리를 한다.<br>
+            	                                                                     그러므로 이 처리는 Asynch Online Socket Business가 운영중인 서버에서 수행해야 한다.<br>
+            	                                                                     ESB 서버의 장애 또는 다른 어떤 이유로 인해서 현재 서버에서 Asynch Online Socket Client 운영을 중지하고 다른 운영서버에서 Asynch Online Socket Client 운영을 해야 하는 경우에 사용한다.
+            	                                                                 </li>
+																				 <li>양방향 송수신이 아니고 단방향 송신 또는 수신만 있으면서 운영서버 두 대에서 연결이 모두 가능한 경우에는 이 메뉴는 필요가 없다.</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

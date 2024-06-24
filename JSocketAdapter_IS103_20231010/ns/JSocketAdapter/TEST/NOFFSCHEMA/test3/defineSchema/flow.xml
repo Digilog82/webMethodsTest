@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
+
+  <!-- nodes -->
+
+<SEQUENCE TIMEOUT="" EXIT-ON="FAILURE">
+  <COMMENT>   Single Record + Multi Record + Multi Record   </COMMENT>
+
+  <!-- nodes -->
+
+<MAP TIMEOUT="" MODE="STANDALONE">
+  <COMMENT></COMMENT>
+  <MAPTARGET>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">schemaDef</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">JSocketAdapter.TEST.NOFFSCHEMA.test3:doc</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="is_public">false</value>
+        <value name="field_name">schemaDef</value>
+        <value name="field_type">record</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <array name="rec_fields" type="record" depth="1">
+        </array>
+        <value name="modifiable">true</value>
+      </record>
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPTARGET>
+  <MAPSOURCE>
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <array name="rec_fields" type="record" depth="1">
+    </array>
+    <value name="modifiable">true</value>
+  </record>
+</Values>
+</MAPSOURCE>
+
+  <!-- nodes -->
+
+<MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/schemaDef(0);4;0;JSocketAdapter.TEST.NOFFSCHEMA.test3:doc">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <record name="xml" javaclass="com.wm.util.Values">
+    <value name="MRR_TransCode">9/ /RP</value>
+    <value name="MRR_DataLength">4/0/LP</value>
+    <value name="MRR_SystemId">2/ /RP</value>
+    <value name="MRR_SendCocd">3/ /RP</value>
+    <value name="MRR_TrxCode">4/0/LP</value>
+    <value name="MRR_BizCode">3/0/LP</value>
+    <value name="MRR_Flag">1/ /RP</value>
+    <value name="MRR_ResponseCode">3/0/LP</value>
+    <value name="MRR_BranchCode">7/ /RP</value>
+    <value name="MRR_CtlNumber">7/0/LP</value>
+    <value name="MRR_SendCymTms">14/ /RP</value>
+    <value name="MRR_IfpsCtlNumber">7/0/LP</value>
+    <value name="MRR_IfpsSendCymTms">14/ /RP</value>
+    <value name="MRR_userID">13/ /RP</value>
+    <value name="MRR_Filler">3/ /RP</value>
+    <value name="MR220_INSUR_ID">13/ /RP</value>
+    <value name="MR220_CREDIT_YN">1/ /RP</value>
+    <value name="MR220_INQ_DATE">8/ /RP</value>
+    <value name="MR220_INSUR_NAME">40/ /RP</value>
+    <value name="MR220_REG_TCNT">3/0/LP</value>
+    <value name="MR220_RCV_SEQ">2/0/LP</value>
+    <value name="MR220_POL_CNT">2/0/LP</value>
+    <array name="Data" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="MR220_COM_CD">3/ /RP</value>
+        <value name="MR220_POLNUM">30/ /RP</value>
+        <value name="MR220_INSUR_KIND">1/ /RP</value>
+        <value name="MR220_POL_STATUS">1/ /RP</value>
+        <value name="MR220_STS_CHGDT">8/ /RP</value>
+        <value name="MR220_BS_CD">5/ /RP</value>
+        <value name="MR220_BS_STRDT">8/ /RP</value>
+        <value name="MR220_REINS_DT">8/ /RP</value>
+        <value name="MR220_POL_TERM">16/ /RP</value>
+        <value name="MR220_PLAN_CD">20/ /RP</value>
+        <value name="MR220_PLAN_NM">40/ /RP</value>
+        <value name="MR220_MR_RANK">1/ /RP</value>
+        <value name="MR220_OWNER_ID">13/ /RP</value>
+        <value name="MR220_OWNER_NM">40/ /RP</value>
+        <value name="MR220_MR_CASE">2/0/LP</value>
+        <array name="Sub" type="record" depth="1">
+          <record javaclass="com.wm.util.Values">
+            <value name="MR220_MR_TERM">16/ /RP</value>
+            <value name="MR220_MR_IAMT">8/0/LP</value>
+            <value name="MR220_MS">5/0/LP</value>
+            <value name="MR220_MH">5/0/LP</value>
+            <value name="MR220_MT">5/0/LP</value>
+            <value name="MR220_MD">5/0/LP</value>
+            <value name="MR220_OD">5/0/LP</value>
+            <value name="MR220_MR_CVCD">3/ /RP</value>
+            <value name="MR220_MR_CSCD">1/ /RP</value>
+            <value name="MR220_MR_CPCD">1/ /RP</value>
+            <value name="MR220_MR_DACD">1/ /RP</value>
+            <value name="MR220_MR_CTCD">1/ /RP</value>
+            <value name="MR220_MR_BSCD">1/ /RP</value>
+            <value name="MR220_MR_KNCD">1/ /RP</value>
+          </record>
+        </array>
+      </record>
+    </array>
+  </record>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+</SEQUENCE>
+</FLOW>

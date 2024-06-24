@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">runningOnlineSocketClient</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJuYW1lIiApOw0K
+cGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpJRGF0YSBPbmxpbmVTb2NrZXRDbGllbnQgPSBu
+dWxsOw0KU3RyaW5nIHJ1bm5pbmcgPSAiIjsNCg0KdHJ5IHsNCglPbmxpbmVTb2NrZXRDbGllbnQg
+PSBzTWFuYWdlci5nZXRPbmxpbmVTb2NrZXRDbGllbnQoIG5hbWUgKTsNCgkNCglpZiAoIE9ubGlu
+ZVNvY2tldENsaWVudCA9PSBudWxsICkgew0KCQlydW5uaW5nID0gImZhbHNlIjsNCgl9IGVsc2Ug
+ew0KCQlydW5uaW5nID0gInRydWUiOw0KCX0NCn0gY2F0Y2ggKCBFeGNlcHRpb24gZSApIHsNCgly
+dW5uaW5nID0gImZhbHNlIjsNCn0NCg0KSURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3JfMSA9IHBp
+cGVsaW5lLmdldEN1cnNvcigpOw0KSURhdGFVdGlsLnB1dCggcGlwZWxpbmVDdXJzb3JfMSwgInJ1
+bm5pbmciLCBydW5uaW5nICk7DQpwaXBlbGluZUN1cnNvcl8xLmRlc3Ryb3koKTs=</value>
+</Values>

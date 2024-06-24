@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">removeDocInterfaceID</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+Zwlkb2NOYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJkb2NOYW1l
+IiApOw0KcGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpTdHJpbmcgZXJyb3JNc2cgPSAiIjsN
+Cg0KdHJ5IHsNCglzTWFuYWdlci5yZW1vdmVEb2NJbnRlcmZhY2VJRCggZG9jTmFtZSApOw0KfSBj
+YXRjaCAoIEV4Y2VwdGlvbiBlICkgew0KCWVycm9yTXNnID0gZS50b1N0cmluZygpOw0KfQ0KDQpJ
+RGF0YUN1cnNvciBwaXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJRGF0
+YVV0aWwucHV0KCBwaXBlbGluZUN1cnNvcl8xLCAiZXJyb3JNc2ciLCBlcnJvck1zZyApOw0KcGlw
+ZWxpbmVDdXJzb3JfMS5kZXN0cm95KCk7</value>
+</Values>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">putOnlineSendStatus</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJuYW1lIiApOw0K
+SURhdGEgT25saW5lU2VuZFN0YXR1cwk9IElEYXRhVXRpbC5nZXRJRGF0YSggcGlwZWxpbmVDdXJz
+b3IsICJPbmxpbmVTZW5kU3RhdHVzIiApOw0KcGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpT
+dHJpbmcgZXJyb3JNc2cgPSAiIjsNCg0KdHJ5IHsNCglzTWFuYWdlci5wdXRPbmxpbmVTZW5kU3Rh
+dHVzKCBuYW1lLCBPbmxpbmVTZW5kU3RhdHVzICk7DQp9IGNhdGNoICggRXhjZXB0aW9uIGUgKSB7
+DQoJZXJyb3JNc2cgPSBlLnRvU3RyaW5nKCk7DQp9DQoNCk9ubGluZVNlbmRTdGF0dXMgPSBudWxs
+Ow0KDQpJRGF0YUN1cnNvciBwaXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7
+DQpJRGF0YVV0aWwucHV0KCBwaXBlbGluZUN1cnNvcl8xLCAiZXJyb3JNc2ciLCBlcnJvck1zZyAp
+Ow0KcGlwZWxpbmVDdXJzb3JfMS5kZXN0cm95KCk7DQoJ</value>
+</Values>

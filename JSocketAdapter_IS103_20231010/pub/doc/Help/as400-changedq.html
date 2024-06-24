@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Change Data Queue</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">AS/400 &gt; Change Data Queue Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; AS/400 &gt; Change Data Queue</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">AS/400 &gt; Data Q Listener 메뉴에서 관리하는 Listeners의 Data Queue Name을 변경하기 위한 Schedule을 등록하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>AS/400 &gt; Change Data Queue 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Search Listener 클릭 : 조회조건에 해당하는 Listeners를 조회한다.</li>
+    	                                              <li>Reserve Change 클릭 : 선택한 Listeners의 Data Queue Name을 변경하는 Schedule을 등록한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Search And Schedule Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>AS/400 메뉴는 AS400 시스템이 존재하고 Data Queue를 이용해서 ESB와 연계하는 경우에만 Display 된다.<br>
+            	                                                                     즉, Basic Info &gt; Custom Variable 메뉴에서 ESB.CONFIG.AS400.DATAQUSEYN의 Value가 true로 설정되어 있는 경우에만 Display 된다.
+            	                                                                 </li>
+            	                                                                 <li>AS/400 메뉴는 IS Administrator &gt; Adapters &gt; AS/400 Adapter에서 제공되지 않는 Data Queue Listener 관리에 대한 편리 기능을 제공한다.<br>
+            	                                                                     이런 기능을 사용하기 위해서는 IS Administrator &gt; Adapters &gt; AS/400 Adapter &gt; Data Queue Listeners 메뉴에서 등록한 Listener는
+            	                                                                     AS/400 &gt; Data Q Listener 메뉴에서도 모두 등록하도록 한다.
+            	                                                                 </li>
+            	                                                                 <li>Target Node가 개발서버, UAT서버일 경우에는 $any로 등록되고 운영서버일 경우에는 $all로 등록된다.<br>
+            	                                                                     즉, 운영서버가 두 대일 경우 모든 운영서버에서 Schedule이 실행된다.
+            	                                                                 </li>
+            	                                                                 <li>Schedule이 실행되면 Basic Info &gt; Business Name 메뉴에 있는 해당 Business Name의 Receive Data Q Name을 변경하고
+            	                                                                 	   IS Administrator &gt; Adapters &gt; AS/400 Adapter &gt; Data Queue Listeners 메뉴에 있는 해당 Listener의
+            	                                                                 	   Data Queue Name을 변경한다.
+            	                                                                 </li>
+            	                                                                 <li>Listener의 Enable 여부는 기존의 상태를 그대로 유지한다. 즉, 기존에 Disable 상태였으면 그대로 Disable 상태로 하고
+            	                                                                 	   기존에 Enable 상태였으면 그대로 Enable 상태로 한다.
+            	                                                                 </li>
+            	                                                                 <li>Data Queue Listener의 Send Data Queue, Receive Data Queue를 변경해야 하는 경우 반영 시점이 야간에 수행될 경우에 유용하게 사용할 수 있는 기능이다.<br>
+            	                                                                     변경 예약을 하면 정해진 시간에 변경처리 되도록 Schedule 등록을 하는 것으로서 AS/400 &gt; Queue Change Reservation 메뉴에서 [조회/수정/삭제] 할 수 있다.<br>
+            	                                                                     이 Schedule은 IS Administrator &gt; Server &gt; Scheduler 메뉴에서도 확인할 수 있다.<br>
+            	                                                                     이 Schedule은 한 번만 실행되는 것으로서 실행되고 나면 목록에서 자동으로 삭제된다.<br>
+            	                                                                     이 Schedule에 의해서 변경처리를 한 후에 처리결과를 ESB 관리자에게 메일로 통보한다.
+            	                                                                 </li>
+            	                                                                 <li>메일이 정상적으로 전송 가능하기 위해서는 아래 조건을 만족해야 한다.<br>
+            	                                                                 	   Basic Info &gt; Custom Variable 메뉴에서 아래 Custom Variable을 모두 정확하게 설정해야 한다.<br>
+            	                                                                 	   ESB.CONFIG.INCHARGE.EMAILYN : 반드시 true 로 설정<br>
+            	                                                                 	   ESB.CONFIG.EMAIL.HOST : 메일서버의 IP 또는 Host Name<br>
+            	                                                                 	   ESB.CONFIG.INCHARGE.EMAIL : ESB 관리자 이메일 주소
+            	                                                                 </li>
+            	                                                                 <li>Check Box는 적어도 한 개 이상 선택해야 한다.</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Provider System Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Listener가 이용하는 ESB 인터페이스의 Target System Name<br>
+      	                                                              조회 시 선택</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Business Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Listener가 이용하는 ESB 인터페이스의 Business Name<br>
+      	                                                              조회 시 선택</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Before Send Data Queue Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">변경 전 Send Data Queue의 Name<br>
+      	                                                              Library Name을 포함하지 않은 Queue Name만 입력<br>
+      	                                                              Schedule 등록 시 필수 입력</a>
+			</div>
+			<div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">After Send Data Queue Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">변경 후 Send Data Queue의 Name<br>
+      	                                                              Library Name을 포함하지 않은 Queue Name만 입력<br>
+      	                                                              Schedule 등록 시 필수 입력</a>
+			</div>
+			<div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">After Receive Data Queue Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">변경 후 Receive Data Queue의 Name<br>
+      	                                                              Library Name을 포함하지 않은 Queue Name만 입력<br>
+      	                                                              Schedule 등록 시 필수 입력</a>
+			</div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Reservation Time</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">"Reserve Change" 기능을 사용할 경우 Schedule이 실행될 날짜, 시간을 입력한다.<br>
+      	                                                              Schedule 등록 시 필수 입력</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

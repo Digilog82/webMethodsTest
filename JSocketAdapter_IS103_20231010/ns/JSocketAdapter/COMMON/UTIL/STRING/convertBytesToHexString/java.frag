@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">convertBytesToHexString</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCmJ5dGVb
+XSBpbnB1dEJ5dGVzID0gKCBieXRlW10gKUlEYXRhVXRpbC5nZXQoIHBpcGVsaW5lQ3Vyc29yLCAi
+aW5wdXRCeXRlcyIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ryb3koKTsNCg0KU3RyaW5nIG91dHB1
+dFN0cmluZyA9IGJ5dGVBcnJheVRvSGV4KCBpbnB1dEJ5dGVzICk7DQoNCmlucHV0Qnl0ZXMgPSBu
+dWxsOw0KDQpJRGF0YUN1cnNvciBwaXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29y
+KCk7DQpJRGF0YVV0aWwucHV0KCBwaXBlbGluZUN1cnNvcl8xLCAib3V0cHV0U3RyaW5nIiwgb3V0
+cHV0U3RyaW5nICk7DQpwaXBlbGluZUN1cnNvcl8xLmRlc3Ryb3koKTs=</value>
+</Values>

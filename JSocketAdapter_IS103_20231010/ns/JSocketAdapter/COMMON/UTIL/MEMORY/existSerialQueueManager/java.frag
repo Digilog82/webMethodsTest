@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">existSerialQueueManager</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZyBxdWV1ZU5hbWUgPSBJRGF0YVV0aWwuZ2V0U3RyaW5nKCBwaXBlbGluZUN1cnNvciwgInF1ZXVl
+TmFtZSIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ryb3koKTsNCg0KU3RyaW5nIGV4aXN0cyA9ICJ0
+cnVlIjsNCg0KUXVldWVNYW5hZ2VyIHFtID0gc01hbmFnZXIuZ2V0U2VyaWFsUXVldWVNYW5hZ2Vy
+KCBxdWV1ZU5hbWUgKTsNCg0KaWYgKCBxbSA9PSBudWxsICkgew0KCWV4aXN0cyA9ICJmYWxzZSI7
+DQp9DQoNCnFtID0gbnVsbDsNCg0KSURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3JfMSA9IHBpcGVs
+aW5lLmdldEN1cnNvcigpOw0KSURhdGFVdGlsLnB1dCggcGlwZWxpbmVDdXJzb3JfMSwgImV4aXN0
+cyIsIGV4aXN0cyApOw0KcGlwZWxpbmVDdXJzb3JfMS5kZXN0cm95KCk7</value>
+</Values>

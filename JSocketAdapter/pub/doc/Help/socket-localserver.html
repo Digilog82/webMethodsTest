@@ -1,0 +1,277 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Local Server Socket</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Server Socket &gt; Local Server Socket Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Server Socket &gt; Local Server Socket</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Local Socket Server의 Port Number에 대한 정보를 [등록/수정/삭제/조회] 하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Server Socket &gt; Local Server Socket 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Create New Local Server Socket 클릭 : 신규정보 등록화면으로 이동한다.</li>
+    	                                              <li>Edit 아이콘 클릭 : 상세조회 및 수정화면으로 이동한다.</li>
+    	                                              <li>Delete 아이콘 클릭 : 등록정보를 삭제한다.</li>
+    	                                              <li>Disabled 필드의 링크 클릭 : 해당 Port를 Enable/Disable 한다. Enable 상태에서는 Edit, Delete 할 수 없다.</li>
+    	                                              <li>Port Enable 클릭 : 선택한 Port 또는 조회된 모든 Port를 일괄적으로 Enable 한다.</li>
+    	                                              <li>Port Disable 클릭 : 선택한 Port 또는 조회된 모든 Port를 일괄적으로 Disable 한다.</li>
+													  <li>Search 버튼 클릭 : 조회 조건에 해당하는 Port Number 목록을 조회한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Create And Update Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Port Number는 기존에 등록되지 않은 Unique 한 값으로 해야 한다.</li>
+            	                                                                 <li>Asynch Online YN 필드를 'Yes' 로 하면 Asynch Online Socket Server로서의 Port를 의미하고 왼쪽 메뉴에 "Online Server" 라는 메뉴가 Display 된다.<br>
+            	                                                                     예를 들어서, Port Number가 7777 이라면 "Online Server &gt; Port 7777" 이라는 메뉴가 Display 된다.<br>
+            	                                                                     Online Server 메뉴에서는 Asynch Online Socket Server Port에 대한 상세한 정보를 모니터링 할 수 있다.<br>
+																				     Asynch Online Socket Client에 전문을 송신하는 경우에는 안정성을 위해서 하나의 Socket Connection에 대해서 Serial 하게 전문을 송신할 수 있도록 해야 한다.
+            	                                                                 </li>
+            	                                                                 <li>인터페이스를 처리하는 Flow Service 에서는 Port Number를 이용해서 IS Memory에 저장된 정보를 구해서 처리로직에 이용한다.</li>
+            	                                                                 <li>Port Number에 대한 [등록/수정/삭제/Enable/Disable] 정보는 Integration Server Memory에도 똑같이 동기화 된다.<br>
+            	                                                                 	   Integration Server Memory에 저장된 정보는 IS Memory Object &gt; Local Server Socket 메뉴에서 확인 가능하다.
+            	                                                                 </li>
+            	                                                                 <li><font color="blue">운영서버가 두 대인 경우 한 쪽 운영서버에서 [등록/수정/삭제/Enable/Disable] 하면 다른 쪽 운영서버에서도 자동으로 [등록/수정/삭제/Enable/Disable] 된다.</font></li>
+            	                                                                 <li>Config File : SAG_Directory/CUSTOM_CONFIG/socket/localServerConfig.xml</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Enabled</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">처음에 등록할 때는 기본적으로 Disable 상태로만 등록이 된다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Plant</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">공장 코드<br>
+	                                                                  현대제철 냉연공장 전용으로 Custom Variable "ESB.CONFIG.CUSTOMMENU.CUSTOMER"가 "HCC" 인 경우에만 Display 된다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Source System Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">해당 Port에 접속하는 Remote System의 Name</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Target System Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">해당 Port로 수신한 전문을 전달해야 하는 Remote System의 Name</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Port Number</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Socket Server로서 Listening 할 TCP/IP Port 번호</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Description</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Port Number에 대한 간략한 설명</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Listener Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Port Number로 수신되는 데이터에 대해서 처리할 Flow Service Full Name<br>
+      	                                                              Port Number로 Client의 접속이 이루어지면 이 서비스가 실행된다.<br>
+																	  단, 연결 유지형의 배치 송신용으로 사용하는 경우에는 Listener Service를 입력하지 않아도 된다.
+																	  <!-- Asynch Online Socket Object 동기화는 현재 사용하지 않는 기능
+																	  단, 운영서버에서 Asynch Online Socket Object 정보를 양 쪽 서버에 동기화 하기 위한 Port를 등록하는 경우에는 Listener Service를 입력하지 말고
+																	  Asynch Online YN, Thread Pool Usage는 No를 선택해야 한다.
+																	  -->
+																	  </a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Distributer Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Asynch Online Socket Server 이면서 Listener Service에서 수신한 전문을 넘겨 받아서 실제로 전문을 처리할 서비스를 호출하는 처리를 할 Flow Service Full Name<br>
+      	                                                              Listener Service에서 전문을 전달하기 위해서 UM 또는 IS Local Queue를 사용하는 경우에는 입력할 필요 없다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Health Check Response Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Asynch Online Socket에 대한 Health Check 전문을 수신했을 경우 Health Check 응답전문을 생성하기 위한 Flow Service Full Name<br>
+      	                                                              Asynch Online YN이 'Yes' 이고 Health Check 전문을 수신하는 경우에만 설정하고 이 서비스는 상황에 맞게 직접 개발해야 한다.<br>
+																	  이 서비스의 Input Parameter는 Document 타입의 Name은 pipelineData로 하고 Output Parameter는 String 타입의 Name은 responseData로 해야 한다.<br>
+																	  Parent 서비스에서는 JSocketAdapter.COMMON.UTIL.IDATA:setPipelineData 서비스를 호출해서 모든 pipeline 데이터를 Document "pipelineData" 하위에 저장하여
+																	  이 서비스의 Input으로 넘겨주고 이 서비스에서는 pipelineData에서 필요한 값을 추출하여(필요 없을 경우에는 추출할 필요 없음) Health Check 응답전문을 생성한 다음 Output으로 리턴한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Run As</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Listener Service를 실행시키는 User<br>
+      	                                                              IS Administrator &gt; Security &gt; User Management 메뉴에 등록된 User 목록이 Display 된다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Read Timeout</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">InputStream으로부터 데이터를 Read 할 때 데이터 수신이 완료될 때까지 기다리는 Max Time을 Millisecond 단위로 설정<br>
+      	                                                              Timeout 설정 시간까지 데이터 수신이 완료되지 않으면 에러 발생.<br>
+      	                                                              <font color="blue">Asynch Online YN 필드가 'Yes' 이면서 송수신겸용 Port에 대해서는 0을 설정해도 되고 다른 적당한 값을 설정해도 된다.<br>
+      	                                                              Asynch Online YN 필드가 'Yes' 이면서 송신전용, 수신전용 Port가 따로 있는 경우에는 송신전용 Port에 대해서는
+      	                                                              JSocketAdapter에서 강제로 10을 셋팅하도록 되어 있고 수신전용 Port에 대해서는 0을 설정해도 되고 다른 적당한 값을
+      	                                                              설정해도 된다.<br>
+      	                                                              송신전용 Port를 통해서 데이터를 송신하기 전에 Socket Connection 유효성을 체크하기 위해서 Write 하기 전에
+      	                                                              Read를 먼저 수행하는데 이 때 Read Timeout이 큰 값으로 설정되어 있으면 처리시간이 오래 걸리므로 주의해야 한다.</font>
+      	                                                              </a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Read Timeout Error YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">InputStream으로부터 "First Reading Length" 필드에 설정한 길이만큼 데이터를 Read 할 때 Read Timeout이 발생한 경우 에러로 처리할 것인지 여부<br>
+      	                                                              Yes : 에러로 처리한다.<br>
+																	  No 또는 선택하지 않은 경우 : 에러로 처리하지 않는다.<br>
+      	                                                              Asynch Online YN이 'Yes' 이고 Health Check 요청전문을 수신하는 경우에는 'Yes'로 설정한다.<br>
+																	  Asynch Online YN이 'Yes' 이고 Health Check 요청전문을 수신하지 않는 경우에는 'No'로 설정한다.<br>
+																	  Asynch Online YN이 'No' 인 경우에는 무조건 에러로 처리하기 때문에 이 설정이 의미가 없다.<br>
+																	  전문 길이 추출 후 기본 정보부를 제외한 나머지 부분 Read 할 때 Read Timeout이 발생한 경우에는 이 설정을 적용하지 않고 무조건 에러로 취급한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Character Set</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문 데이터의 변환(String --> Byte or Byte --> String) 시 사용할 Character Set<br>
+      	                                                              Basic Info &gt; Custom Variable 메뉴에서 ESB.SOCKET.CONFIG.CHARSET에 설정되어 있는 목록을 Display 한다.<br>
+      	                                                              원하는 Character Set이 없을 경우에는 ESB.SOCKET.CONFIG.CHARSET의 Value에 추가를 하면 Display 된다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Asynch Online YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Asynch Online Socket Server Port인지 여부<br>
+      	                                                              Asynch Online Socket Server인 경우에는 Client가 접속하면 연결정보를 IS Memory에 저장하고
+      	                                                              연결상태를 계속 유지한다.<br>
+      	                                                              'Yes'를 선택하면 Allowed Session Count, Client's Real Session Count, Direction, 송신전용 Port Number 필드가 활성화 된다.<br>
+      	                                                              Allowed Session Count에는 Client의 Connection을 허용하는 최대 갯수를 설정하고
+																	  Client's Real Session Count에는 Client에서 실제로 연결하는 Connection 갯수를 설정한다.<br>
+      	                                                              Direction이 수신전용이면 수신전용 Port와 송신전용 Port가 따로 있는 경우로서 송신전용 Port Number도
+      	                                                              설정해야 하고 Direction이 송수신겸용이면 하나의 Port로 수신 및 송신을 모두 수행하는 경우로서
+      	                                                              송신전용 Port Number는 설정할 필요 없다.<br>
+      	                                                              수신전용, 송신전용 Port가 따로 있는 경우에는 일반적으로는 수신전용 Port로는 수신만 하고 송신전용 Port로는 송신만
+      	                                                              하는데 송신전용 Port로 Health Check 전문을 수신하는 경우가 있을 수 있다. 이런 경우에는 송신전용 Port Listen YN을 Yes로 설정해야 한다.
+																	  그러면 송신전용 Port에 대해서도 Client가 연결 시 Listener Service가 실행된다.<br>
+																	  송수신겸용 Port일 경우에는 유효한 모든 Connection에 대해서 수신 및 송신이 모두 가능하다.<br>
+      	                                                              수신전용, 송신전용 Port가 따로 있는 경우에 Allowed Session Count 필드의 값은 두 Port Number 각각에
+      	                                                              대해서 적용되는 값이다.<br>
+																	  Client에서 명시적으로 Socket Close를 하지 않고 네트웍 장애 등으로 비정상적으로 연결이 끊어진 경우에는
+																	  서버쪽에서 장애를 인지할 수가 없어서 기존의 세션은 유령(좀비) 세션이 된다.<br>
+																	  Client's Real Session Count에 설정한 값보다 더 많은 세션이 생기는 경우에 이러한 유령(좀비) 세션을 삭제하는 처리를 수행한다.<br>
+																	  이 작업을 수행하기 위해서는 Allowed Session Count를 Client's Real Session Count보다 큰 값으로 설정해야 한다.
+      	                                                              </a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Null To Space YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">수신한 전문(예를 들어서, 요청전문)에 포함되어 있는 Null Value를 Space로 변환해야 하는지 여부<br>
+      	                                                              Yes : Null Value를 Space로 변환한다.<br>
+      	                                                              No : Null Value를 Space로 변환하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Char To Zero YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">수신한 전문에 포함되어 있는 특정 Character를 숫자 0으로 변환해야 하는지 여부<br>
+      	                                                              Yes : 특정 Character를 0으로 변환한다.<br>
+      	                                                              No : 특정 Character를 0으로 변환하지 않는다.<br>
+																	  Char List : 변환해야 할 Character 목록으로 여러 개일 경우 '/'를 구분자로 한다.<br>
+																	  현대제철 냉연공장 전용으로 Custom Variable "ESB.CONFIG.CUSTOMMENU.CUSTOMER"가 "HCC" 인 경우에만 Display 된다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Doc Delimiter</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">하나의 전문을 구분하는 구분자<br>
+      	                                                              일반적으로 전문은 [공통정보부 + 업무정보부] 형태로 이루어지는 경우가 많다. 공통정보부가 존재하는 경우에는
+      	                                                              공통정보부에 전문에 대한 길이정보를 포함하고 있는데 그렇지 않은 경우에는 하나의 전문의 끝이라는 것을 표시하기 위한 구분자를 사용하여 전문과 전문을 구분할 수 있다.<br>
+      	                                                              이때 사용하는 전문의 구분자를 입력한다. 단, 전문의 구분자로는 1 byte Character를 사용해야 하고 필요 없는 경우에는 입력하지 않는다.<br>
+																	  전문 수신 시 이 구분자 Character가 있으면 이 구분자 Character 바로 앞까지를 전문의 끝으로 하고 이 구분자 Character 바로 뒤부터 전문의 시작으로 한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Header Remove Length</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">수신한 전문 데이터 중에서 제거해야 할 헤더 정보부의 길이<br>
+      	                                                              전문 데이터 중에서 전문의 처음부터 여기에 설정한 bytes 길이만큼 제거한다.<br>
+      	                                                              현대제철 냉연공장 전용으로 Custom Variable "ESB.CONFIG.CUSTOMMENU.CUSTOMER"가 "HCC" 인 경우에만 Display 된다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target Header Creation Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Target System 전문의 공통정보부 생성 서비스<br>
+      	                                                              수신한 전문 데이터를 Target System에 그대로 전달하는 것이 아니고 Target System에서 요구하는 공통정보부를 생성해서 수신한 전문 앞에 추가해서 전달해야 하는데
+																	  이 공통정보부를 생성하는 서비스를 선택한다.<br>
+      	                                                              현대제철 냉연공장 전용으로 Custom Variable "ESB.CONFIG.CUSTOMMENU.CUSTOMER"가 "HCC" 인 경우에만 Display 된다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Common Header Length</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문의 공통정보부의 길이<br>
+      	                                                              일반적으로 전문은 [공통정보부 + 업무정보부] 형태로 이루어지는 경우가 많다. 공통정보부가 존재하는 경우에는
+      	                                                              공통정보부로부터 전문에 대한 기본정보를 추출해서 그 다음 로직을 구현하는 데에 이용할 수 있다.<br>
+      	                                                              공통정보부가 존재하는 경우에만 설정한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">First Reading Length</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문 수신 시 처음에 Read 하는 데이터 길이<br>
+      	                                                              일반적으로 전문 안에는 전문의 길이를 나타내는 필드가 존재한다. 전문을 수신할 경우 전문의 길이 필드가
+      	                                                              포함되어 있는 부분을 먼저 Read 한 다음 전문의 길이 필드의 값을 추출해서 나머지 전문 데이터를 Read 한다.<br>
+      	                                                              전문의 길이를 나타내는 필드를 포함해서 처음에 먼저 Read 할 데이터 길이를 설정한다. 일반적으로 전문의 길이 계산을 시작하는 필드의 바로 전 필드까지의 길이로 설정한다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">DOC Length Type</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문길이 필드의 값의 의미<br>
+	                                                                  afterDocLengthField (After Doc Length Field) : 전문 처음부터 전문길이 필드까지를 제외한 나머지 부분의 길이. 이런 경우에는 "First Reading Length"에 전문 처음부터 전문길이 필드까지의 길이를 설정한다.<br>
+																	  exceptCommonHeader (Except Common Header) : 전문의 공통헤더를 제외한 나머지 부분의 길이. 이런 경우에는 "First Reading Length"에 공통헤더의 길이를 설정한다.<br>
+																	  docAll (Doc All) : 전문 처음부터 끝까지 전체 길이. 이런 경우에는 "First Reading Length"에 전문 처음부터 전문길이 필드까지의 길이를 설정하고 추가적으로 Read 할 전문 길이는 (전문 전체길이 - First Reading Length) 로 계산한다.<br>
+																	  fixedLength (Fixed Length) : 전문길이 필드가 존재하지 않으면서 고정길이인 경우. 이런 경우에는 "First Reading Length"에 고정길이 값을 설정한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">DOC Length Field Start Index</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">First Reading Length에 설정된 길이 만큼 Read 한 데이터 중에서 전문길이 필드의 시작 인덱스 번호</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">DOC Length Field Length</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문길이 필드의 데이터 길이</a></div>      
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Doc ID Field Start Index</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">공통헤더 데이터 중에서 전문ID 필드의 시작 인덱스 번호</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Doc ID Field Length</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문ID 필드의 데이터 길이</a></div>	  
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Source System Name Field Start Index</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">공통헤더 데이터 중에서 Source System Name 필드의 시작 인덱스 번호</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Source System Name Field Length</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Source System Name 필드의 데이터 길이</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target System Name Field Start Index</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">공통헤더 데이터 중에서 Target System Name 필드의 시작 인덱스 번호</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target System Name Field Length</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Target System Name 필드의 데이터 길이</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Doc Unique Key Field</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문의 Transaction Unique Key 추출 정보를 정의한다.<br>
+      	                                                              일반적으로 전문의 특정 필드 몇개를 조합하면 Transaction의 Unique Key 값을 생성할 수 있다.<br>
+																	  "Asynch Online YN"이 Yes인 경우에는 요청전문과 응답전문의 송수신이 Asynch 방식으로 일어나기 때문에 전문 내에서 Transaction Unique Key 값을 추출하여 두 전문을 서로 Join 할 수 있어야 한다.<br>
+																	  예를 들어서, 요청전문을 송신하고 응답전문을 수신하였을 때 응답전문이 어떤 요청전문에 대한 응답전문인지 이 Transaction Unique Key 값을 추출하여 알 수 있게 된다.<br>
+																	  Start Index : 추출하고자 하는 Key Field의 시작 Index 번호<br>
+																	  Length : 추출하고자 하는 Key Field의 길이<br>
+																	  "Asynch Online YN"이 Yes인 경우에만 설정한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Thread Pool Usage</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Thread Pool 사용 여부<br>
+      	                                                              Asynch Online YN이 'No'인 경우 즉, Synch Realtime Socket Server인 경우 Client 접속에 의해서 실행되는
+      	                                                              Flow Service가 Thread Pool에 있는 Thread로 실행될 것인지 여부로서 Thread Pool을 사용하면 Socket Server를
+      	                                                              더욱 안정적으로 운영할 수 있다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Max Pool Size</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Thread Pool을 사용할 경우 Pool에 존재할 수 있는 Thread의 최대 갯수<br>
+      	                                                              Thread Pool Usage를 'No'로 선택한 경우에는 설정하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Port Multi-Opening YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">운영서버가 두 대 이상인 경우 Port를 모든 서버에서 Open 할 것인지 한 쪽 서버에서만 Open 할 것인지 여부<br>
+      	                                                              'Yes'를 선택한 경우에는 모든 서버에서 Open 하고 'No'를 선택한 경우에는 한 쪽 서버에서만 Open 할 수 있다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Serial Processing YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">수신하는 데이터에 대해서 Single Thread에 의해서 순차적으로 처리할 것인지 Multi Thread에 의해서 비순차적으로 처리할 것인지 여부<br>
+      	                                                              'Yes'를 선택한 경우에는 Single Thread에 의해서 순차적으로 처리하고 'No'를 선택한 경우에는 Multi Thread에 의해서 비순차적으로 처리한다.<br>
+																	  'Yes'를 선택한 경우에는 Port Duplexing YN 및 Thread Pool Usage를 'Yes'로 선택할 수 없다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Nagle Algorithm Usage YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Nagle 알고리즘 사용 여부<br>
+      	                                                              Yes : Nagle 알고리즘을 사용. 네트웍 효율을 위해서 TCP 버퍼에 일정량의 데이터를 모아서 패킷을 전송.<br>
+      	                                                              No : Nagle 알고리즘을 사용하지 않음. Write 할 때마다 바로 바로 패킷을 전송.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Byte Order Conversion</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">수신한 데이터에 대한 Byte Order 변환 여부<br>
+      	                                                              Client와 Server 간에 Endian 방식이 서로 다른 경우 Endian 방식을 맞춰서 정확한 데이터를 얻도록 해야 한다.
+																	  LITTLE : Little Endian 방식으로 변환이 필요한 경우<br>
+      	                                                              BIG : Big Endian 방식으로 변환이 필요한 경우<br>
+																	  Endian 방식을 맞출 필요가 없을 경우에는 선택하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Doc Send Interval</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">전문을 연달아서 송신하는 경우 전문 송신 사이의 시간 간격을 Millisecond 단위로 설정<br>
+      	                                                              Target 쪽 상황에 따라서 전문을 시간 간격 없이 연달아서 송신하면 안 되는 경우에 앞에 송신한 전문과
+																	  뒤에 송신하는 전문 사이의 시간 간격이 필요한 경우에 설정한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Doc Receive Interval</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">전문을 연달아서 수신하는 경우 전문 수신 사이의 시간 간격을 Millisecond 단위로 설정<br>
+      	                                                              Source 쪽 상황에 따라서 전문을 시간 간격 없이 연달아서 수신하면 안 되는 경우에 앞에 수신한 전문과
+																	  뒤에 수신하는 전문 사이의 시간 간격이 필요한 경우에 설정한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Topic, JMS Trigger Creation</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Topic, JMS Trigger 생성 정보를 정의한다.<br>
+      	                                                              Socket Server에서 전문 수신 후 UM에 JMS Send 하고 JMS Trigger에 의해서 전문을 처리하는 구조로 시스템을 구성하는 경우 Topic 및 JMS Trigger를 자동으로 생성해 준다.<br>
+																	  "Apply Default Name" 버튼을 클릭하면 Topic의 기본 이름, JMS Trigger의 기본 이름이 자동으로 입력되고 이 값은 수정해도 된다.<br>
+																	  Source System Code + "TO" + Target System Code 항목에 값을 입력하면 실제로 Topic 및 JMS Trigger 생성 시에 기본 이름 뒤에 "_" + Source System Code + "TO" + Target System Code 를 붙여서 생성한다.<br>
+																	  Gateway Server, Main Server가 구분되어 있는 경우에 Topic 생성은 어떤 서버에서 수행해도 되지만 JMS Trigger 생성은 Main Server에서 수행되어야만 한다. Gateway Server에서 Local Server Socket 정보를 등록, 수정하는 경우에는
+																	  Topic, JMS Trigger 생성을 Remote Invoke 하여 일괄적으로 Main Server에서 처리하도록 되어 있다. 그러므로 "JMS Connection Alias"는 Gateway Server, Main Server에서 동일한 이름으로 등록해야 한다. Clustering 환경인 경우에는 모든 서버에서 동일해야 한다.<br>
+																	  JMS Trigger Folder : JMS Trigger가 생성될 Folder Path<br>
+																	  JMS Trigger Service : JMS Trigger에서 호출할 Service의 Full Name<br>
+																	  JMS Trigger Processing Mode : JMS Trigger의 Processing mode(Serial : 순차처리를 해야 하는 경우에 선택, Concurrent : 순차처리가 필요 없는 경우에 선택)<br>
+																	  해당 Port로 수신하는 전문 중에서 순차처리를 별도로 해야 하는 요건이 생기면 Source System Code + "TO" + Target System Code 항목에 값을 입력하여 추가해서 수정하면 Topic 및 JMS Trigger가 추가적으로 자동으로 생성된다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Encrypt Algorithm</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">송수신 데이터를 암호화 하는 경우 암호화 알고리즘<br>
+      	                                                              현재 지원하는 알고리즘은 DES, 3DES, AES 이다.<br>
+      	                                                              알고리즘을 선택하면 Encrypt Key, Encrypt Initial Vector를 자동으로 생성 해준다.<br>
+      	                                                              DES : Encrypt Key Length 8bytes, Initial Vector Length 8bytes 고정값<br>
+      	                                                              3DES : Encrypt Key Length 24bytes, Initial Vector Length 8bytes 고정값<br>
+      	                                                              AES : Encrypt Key Length 16, 24, 32bytes 중에서 선택, Initial Vector Length 16bytes 고정값<br>
+      	                                                              "Change Key & IV" 버튼을 클릭해서 Encrypt Key, Encrypt Initial Vector를 새로 생성할 수 있다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Encrypt Mode</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Block 암호화 알고리즘의 Block 운용모드<br>
+      	                                                              현재 지원하는 모드는 CBC, ECB 이다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Encrypt Padding</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">암호화 할 데이터를 Block으로 나누었을 때 Block 길이보다 부족한 데이터에 대한 Padding 방법<br>
+      	                                                              현재 지원하는 Padding 방법은 NoPadding, PKCS5Padding, PKCS7Padding 이다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Encrypt Key Length</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">암호화 Key의 길이<br>
+      	                                                              Encrypt Algorithm을 'AES'를 선택한 경우에만 Display 된다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Encrypt Key</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">암호화 할 때 사용하는 비밀키<br>
+      	                                                              Encrypt Algorithm, Encrypt Key Length 선택에 따라서 자동으로 생성된다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Encrypt Initial Vector</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">초기화 벡터<br>
+      	                                                              Block 운용모드에서 사용할 최초의 Block 데이터<br>
+      	                                                              Encrypt Mode에 따라서 초기화 벡터는 필요할(CBC) 수도 있고 필요 없을(ECB) 수도 있다.<br>
+      	                                                              Encrypt Algorithm ~ Encrypt Initial Vector 필드는 송수신 데이터를 암호화 하는 경우에만 설정한다.</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

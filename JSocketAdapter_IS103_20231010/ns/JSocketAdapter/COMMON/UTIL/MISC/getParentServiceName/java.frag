@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">getParentServiceName</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">U3RyaW5nIGZ1bGxOYW1lID0gU2VydmljZS5nZXRQYXJlbnRTZXJ2aWNlTmFtZSgpOw0KU3RyaW5n
+W10gZm9sZGVyU2VydmljZSA9IGZ1bGxOYW1lLnNwbGl0KCAiXFw6IiApOw0KU3RyaW5nIGZvbGRl
+ck5hbWUgPSBmb2xkZXJTZXJ2aWNlWyAwIF07DQpTdHJpbmcgc2VydmljZU5hbWUgPSBmb2xkZXJT
+ZXJ2aWNlWyAxIF07DQoNCklEYXRhQ3Vyc29yIHBpcGVsaW5lQ3Vyc29yXzEgPSBwaXBlbGluZS5n
+ZXRDdXJzb3IoKTsNCklEYXRhVXRpbC5wdXQoIHBpcGVsaW5lQ3Vyc29yXzEsICJmb2xkZXJOYW1l
+IiwgZm9sZGVyTmFtZSApOw0KSURhdGFVdGlsLnB1dCggcGlwZWxpbmVDdXJzb3JfMSwgInNlcnZp
+Y2VOYW1lIiwgc2VydmljZU5hbWUgKTsNCklEYXRhVXRpbC5wdXQoIHBpcGVsaW5lQ3Vyc29yXzEs
+ICJmdWxsTmFtZSIsIGZ1bGxOYW1lICk7DQpwaXBlbGluZUN1cnNvcl8xLmRlc3Ryb3koKTs=</value>
+</Values>

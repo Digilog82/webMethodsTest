@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Local File Delete Schedule</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Basic Info &gt; Local File Delete Schedule Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Basic Info &gt; Local File Delete Schedule</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">ESB 서버 Local 파일 시스템에 쌓이는 파일의 주기적인 삭제를 위한 Schedule을 [등록/수정/조회] 하는 메뉴이다.<br>
+      	                                        이 메뉴에서 관리하는 Schedule은 IS Administrator &gt; Server &gt; Scheduler 메뉴에서도 확인할 수 있다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Basic Info &gt; Local File Delete Schedule 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Create Schedule 버튼 클릭 : Schedule을 등록한다. Schedule 등록을 하지 않은 상태에서는 Create Schedule 버튼이 Display 된다.</li>
+    	                                              <li>Suspend Schedule 버튼 클릭 : Schedule을 중지한다. Schedule을 등록하고 Status가 Active인 경우에는 Suspend Schedule 버튼이 Display 된다.</li>
+    	                                              <li>Active Schedule 버튼 클릭 : Schedule을 Active 시킨다. Schedule을 등록하고 Status가 Suspended인 경우에는 Active Schedule 버튼이 Display 된다.
+    	                                              	  Run Time을 수정하고 Active 시킬 수 있다.
+    	                                              </li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Create And Update Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Schedule Service는 JSocketAdapter.COMMON.SCHEDULE:deleteLocalFiles로 고정값이다.</li>
+            	                                                                 <li>파일 삭제처리를 하기 위해서는 Basic Info &gt; Delete Local File 메뉴에서 파일삭제 디렉토리 정보를 등록해야 한다.</li>
+            	                                                                 <li>Schedule은 하루에 한 번 실행된다.</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">ID</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Schedule에 대한 Unique ID</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Schedule 실행 시 실행되는 서비스</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Run Time</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Schedule 실행 시간</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Status</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Schedule의 상태</a></div>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

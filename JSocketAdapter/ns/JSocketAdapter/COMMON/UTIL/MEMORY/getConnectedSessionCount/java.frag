@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">getConnectedSessionCount</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZyBwb3J0TnVtYmVyID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJwb3J0
+TnVtYmVyIiApOw0KU3RyaW5nIHRocmVhZFBvb2wgPSBJRGF0YVV0aWwuZ2V0U3RyaW5nKCBwaXBl
+bGluZUN1cnNvciwgInRocmVhZFBvb2wiICk7DQpwaXBlbGluZUN1cnNvci5kZXN0cm95KCk7DQoN
+ClN0cmluZyBjb25uZWN0Q291bnQgPSBzTWFuYWdlci5nZXRDb25uZWN0ZWRTZXNzaW9uQ291bnQo
+IEludGVnZXIucGFyc2VJbnQoIHBvcnROdW1iZXIgKSwgdGhyZWFkUG9vbCApOw0KDQpJRGF0YUN1
+cnNvciBwaXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJRGF0YVV0aWwu
+cHV0KCBwaXBlbGluZUN1cnNvcl8xLCAiY29ubmVjdENvdW50IiwgY29ubmVjdENvdW50ICk7DQpw
+aXBlbGluZUN1cnNvcl8xLmRlc3Ryb3koKTs=</value>
+</Values>

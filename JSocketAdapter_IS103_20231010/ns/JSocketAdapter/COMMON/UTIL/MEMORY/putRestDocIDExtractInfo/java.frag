@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">putRestDocIDExtractInfo</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJuYW1lIiApOw0K
+SURhdGEgUmVzdERvY0lERXh0cmFjdEluZm8JPSBJRGF0YVV0aWwuZ2V0SURhdGEoIHBpcGVsaW5l
+Q3Vyc29yLCAiUmVzdERvY0lERXh0cmFjdEluZm8iICk7DQpwaXBlbGluZUN1cnNvci5kZXN0cm95
+KCk7DQoNClN0cmluZyBlcnJvck1zZyA9ICIiOw0KDQp0cnkgew0KCXNNYW5hZ2VyLnB1dERvY0lE
+RXh0cmFjdEluZm8oIG5hbWUsIFJlc3REb2NJREV4dHJhY3RJbmZvICk7DQp9IGNhdGNoICggRXhj
+ZXB0aW9uIGUgKSB7DQoJZXJyb3JNc2cgPSBlLnRvU3RyaW5nKCk7DQp9DQoNCklEYXRhQ3Vyc29y
+IHBpcGVsaW5lQ3Vyc29yXzEgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCklEYXRhVXRpbC5wdXQo
+IHBpcGVsaW5lQ3Vyc29yXzEsICJlcnJvck1zZyIsIGVycm9yTXNnICk7DQpwaXBlbGluZUN1cnNv
+cl8xLmRlc3Ryb3koKTs=</value>
+</Values>

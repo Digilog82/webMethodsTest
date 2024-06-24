@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">removeOnlineQueuing</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJOQU1FIiApOw0K
+cGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpTdHJpbmcgZXJyb3JNc2cgPSAiIjsNCg0KdHJ5
+IHsNCglzTWFuYWdlci5yZW1vdmVPbmxpbmVRdWV1aW5nKCBuYW1lICk7DQp9IGNhdGNoICggRXhj
+ZXB0aW9uIGUgKSB7DQoJZXJyb3JNc2cgPSBlLnRvU3RyaW5nKCk7DQp9DQoNCklEYXRhQ3Vyc29y
+IHBpcGVsaW5lQ3Vyc29yXzEgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCklEYXRhVXRpbC5wdXQo
+IHBpcGVsaW5lQ3Vyc29yXzEsICJlcnJvck1zZyIsIGVycm9yTXNnICk7DQpwaXBlbGluZUN1cnNv
+cl8xLmRlc3Ryb3koKTs=</value>
+</Values>

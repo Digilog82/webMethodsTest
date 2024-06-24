@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">addSessionCount</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCmludAlw
+b3J0TnVtYmVyID0gSURhdGFVdGlsLmdldEludCggcGlwZWxpbmVDdXJzb3IsICJwb3J0TnVtYmVy
+IiwgMCApOw0KcGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpTdHJpbmcgZXJyb3JNc2cgPSAi
+IjsNCg0KdHJ5IHsNCglzTWFuYWdlci5hZGRTZXNzaW9uQ291bnQoIHBvcnROdW1iZXIgKTsNCn0g
+Y2F0Y2ggKCBFeGNlcHRpb24gZSApIHsNCgllcnJvck1zZyA9IGUudG9TdHJpbmcoKTsNCn0NCg0K
+SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3JfMSA9IHBpcGVsaW5lLmdldEN1cnNvcigpOw0KSURh
+dGFVdGlsLnB1dCggcGlwZWxpbmVDdXJzb3JfMSwgImVycm9yTXNnIiwgZXJyb3JNc2cgKTsNCnBp
+cGVsaW5lQ3Vyc29yXzEuZGVzdHJveSgpOw==</value>
+</Values>

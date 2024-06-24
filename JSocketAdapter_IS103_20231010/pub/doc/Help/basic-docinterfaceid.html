@@ -1,0 +1,382 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Interface Doc</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Basic Info &gt; Interface Doc Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Basic Info &gt; Interface Doc</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Local Socket Server가 제공하는 Business에 대한 전문의 기본정보를 [등록/수정/삭제/조회] 하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Basic Info &gt; Interface Doc 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Create New Interface Doc 클릭 : 신규정보 등록화면으로 이동한다.</li>
+													  <li>Schema Def Download 아이콘 클릭 : 전문의 Schema 정의 엑셀파일을 Download 한다.</li>
+    	                                              <li>Schema 아이콘 클릭 : 전문의 Schema 정의를 볼 수 있는 화면을 Open 한다.</li>
+													  <li>Schema Edit 아이콘 클릭 : 전문의 Schema 정의 정보만을 수정할 수 있는 화면으로 이동한다.</li>
+    	                                              <li>Edit 아이콘 클릭 : 상세조회 및 수정화면으로 이동한다.</li>
+    	                                              <li>Delete 아이콘 클릭 : 등록정보를 삭제한다.</li>
+													  <li>Search 버튼 클릭 : 조회 조건에 해당하는 Doc Name 목록을 조회한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Create And Update Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Doc Name은 기존에 등록되지 않은 Unique 한 값으로 해야 한다.<br>
+            	                                                                   Doc Name = Doc Class Code + Doc Business Code 로 자동으로 생성된다.
+            	                                                                 </li>
+            	                                                                 <li>Doc Class Code와 Doc Business Code는 전문 안에서 추출할 수 있는 값으로 해야 한다.</li>
+            	                                                                 <li>일반적으로 Batch 전문의 경우는 처리 프로세스가 파일수신, 파일송신으로 나뉘므로 Doc Business Code를 수신과 송신에 대한 코드값으로 한다.</li>
+            	                                                                 <li>Socket Server Port로 전문을 수신하면 Processing Service에 입력한 서비스를 호출한다. 만약 Processing Service를 입력하지 않은 경우에는
+																				     Doc Class Code와 Doc Business Code를 추출해서 Interface ID를 구하고 해당 전문을 처리하는 메인 서비스를 Naming Rule에 의해서 호출할 수 있다.</li>
+            	                                                                 <li>Source System과의 인터페이스 방식이 Socket인 경우 Target System과의 인터페이스 방식과는 상관 없이 이 메뉴에서 전문에 대한 관리를 한다.<br>
+																				     Target System과의 인터페이스 방식이 Socket인 경우에도 이 메뉴에서 전문에 대한 관리를 하고 Basic Info &gt; Business Name &gt; Business Interface List
+																					 메뉴에서는 전문에 대한 관리를 하지 않는다.
+																			     </li>
+																				 <li>Doc Name에 대한 [등록/수정/삭제] 정보는 Integration Server Memory에도 똑같이 동기화 된다.<br>
+            	                                                                 	 Integration Server Memory에 저장된 정보는 IS Memory Object &gt; Interface Doc 메뉴에서 확인 가능하다.
+            	                                                                 </li>
+																				 <li>전문에 대한 Format을 정의하는 IData Document Type과 전문의 각 필드에 대한 속성을 정의하는 Flow Service를 자동으로 생성할 수 있다.<br>
+																				     SAG_Directory/packages/JSocketSamples/templates/DOC_Define_Sample.xls 파일을 참고해서 똑같은 형식으로 전문에 대한 Schema 정의
+																					 엑셀 파일을 만들어서 타이틀 부분을 제외한 모든 부분을 복사해서 "Schema Define" 필드 Text Area에 붙여 넣는다.<br>
+																					 또는 "Schema Define File" 필드에서 전문에 대한 Schema 정의 엑셀 파일을 선택하면 엑셀 파일을 서버에 Upload 한 후 엑셀 파일을 읽어서
+																					 "Schema Define" 필드에 입력하는 것과 같은 데이터를 자동으로 생성해 준다. 그러므로, 최초 등록 시에는 "Schema Define", "Schema Define File"
+																					 중에서 하나는 반드시 입력 또는 선택해야 하고 수정 시에는 전문의 Schema가 수정되지 않은 경우에는 입력 또는 선택하지 않는다.<br>
+																					 엑셀 파일 Upload는 개발서버에서만 수행되고 그 이외의 서버에서는 수행되지 않는다. 그러므로 목록조회 화면에서 "Schema Def Download" 항목은
+																					 개발서버에만 Display 되고 그 이외의 서버에서는 Display 되지 않는다.<br>
+																					 여기서 개발서는 Socket Server에 대한 구성이 물리적으로 Gateway Server와 Main Server로 구분되어 있지 않은 경우의 개발서버 또는
+																					 Socket Server에 대한 구성이 물리적으로 Gateway Server와 Main Server로 구분되어 있는 경우의 Main Server 개발서버가 해당된다.<br>
+																					 "Schema Define Service", "Schema Document Type Name" 필드에는 Name Space Naming Rule에 맞게 Full Name을 입력해야 한다.<br>
+																					 저장 후 Designer를 Refresh 하면 새로 생성된 IData Document Type과 Flow Service를 확인할 수 있다.<br>
+																					 IData Document Type과 Flow Service의 자동 생성은 최초에 정보 등록 시 Create 되고 , 정보 수정 시에는 Overwrite 된다.
+																					 그러나 Socket Server에 대한 구성이 물리적으로 Gateway Server와 Main Server로 구분되어 있는 경우에는 Gateway Server에서는
+																					 IData Document Type과 Flow Service를 자동으로 생성하지 않는다.<br>
+																					 필드 추가 또는 필드의 속성이 변경된 경우에는 엑셀 파일을 먼저 수정하고 해당 전문 수정화면에서 "Schema Define" 필드에 변경된 값을
+																					 입력하고 저장하면 IData Document Type과 Flow Service가 자동으로 수정된다. 그러므로 해당 전문정보 수정 시 전문의 Schema 변경이 없는
+																					 경우에는 "Schema Define" 필드에 값을 입력하지 않도록 한다.<br>
+                                                                                     "Schema Define" 필드의 값은 Config XML, IS Memory에 저장하지 않기 때문에 Deploy Config &gt; Interface Doc 메뉴에서 Deploy
+																					 하는 경우에는 Target Server에 IData Document Type과 Flow Service가 자동으로 생성되지 않는다.
+																					 IData Document Type과 Flow Service Object는 IS Administrator &gt; Solutions &gt; Deployer 메뉴에서 Deploy 한다.<br>
+																					 <font color="blue">주의) IData Document Type과 Flow Service를 생성할 Package의 Name과 Package의 최상위 폴더의 Name을 반드시 같게 해야 하고
+																					 IData Document Type, Flow Service를 생성할 폴더는 Designer에서 미리 만들어 놓아야 한다(Clustering 환경일 경우 모든 서버에 미리 생성).<br>
+																					 전문에 대한 Schema 정의 엑셀 파일의 확장자는 .xls로 해야 한다. 엑셀파일을 업로드한 후 jxl 라이브러리를 이용해서 엑셀파일을 Read 해서
+																					 schemaDefine String을 만들어내는 경우에 엑셀파일의 확장자가 .xlsx인 경우에는 "jxl.read.biff.BiffException: Unable to recognize OLE stream"
+																					 에러가 발생한다.<br>
+																					 jxl 라이브러리를 이용해서 엑셀파일을 Read 하는 경우에는 속도가 느리기 때문에 "Schema Define" 필드에도 값을 입력해서 엑셀파일을 Read 하는
+																					 것을 Skip 함으로써 처리속도를 빠르게 할 수 있다.</font><br><br>
+																					 
+																					 "Schema Define Service" 필드에 값을 입력하지 않는 경우에는 Schema를 정의한 IData를 생성해서 IS Memory와 IS 파일 시스템에 저장한다.<br>
+																					 그러므로 시스템 상황에 따라서 IData Document Type과 Flow Service가 필요한지 필요하지 않은지 판단하여 "Schema Define Service", "Schema Document Type Name" 필드에
+																					 값을 입력할 수도 있고 입력하지 않을 수도 있다.<br>
+																					 예를 들어서, 메인 서비스에서 IData Document Type을 이용한 매핑이 없는 경우에는 IData Document Type을 생성할 필요가 없다.<br>
+																					 만약, IData Document Type과 Flow Service를 생성하지 않는 환경에서 전문의 Format이 변경된 경우에는 IS Memory에 저장된 Schema 정의 IData 만을
+																					 변경해서 다른 서버에 Deploy 함으로써 Package의 Reloading 없이 변경된 전문 Format으로 바로 반영할 수 있다.
+																				 </li>
+																				 <li>전문에 대한 Format을 정의하는 엑셀 양식에 대한 상세한 설명은 SAG_Directory/packages/JSocketSamples/templates/Schema Define 양식.txt 파일을 참고하면 된다.</li>
+																				 <li>전문을 처리하는 Main Flow Service를 자동으로 생성할 수 있다.<br>
+																					 전문의 종류에 따라서 Main Flow Service의 로직이 각각 다르지 않고 공통 로직으로 구현할 수 있어서 Main Flow Service에서는 공통 로직 Service만 Invoke 하면 되는
+																					 경우에는 "Processing Service" 필드에 입력한 Main Flow Service를 자동으로 생성할 수 있다.<br>
+																					 Main Flow Service를 자동으로 생성하기 위해서는 "Processing Common Service", "Processing Service Input Parameter Name" 필드에 값을 반드시 입력해야 하고
+																					 "Processing Common Service"의 Input Parameter 이름도 "Processing Service Input Parameter Name"과 같은 이름으로 미리 개발해 놓아야 한다.<br>
+																					 "Processing Service"와 "Processing Common Service"의 Input Parameter는 JSocketAdapter.DOC:MainServiceCommon Document Type을 Reference 하는 Document Type 이다.<br>
+																					 Main Flow Service의 자동 생성은 최초에 정보 등록 시 Create 되고 , 정보 수정 시에는 "Processing Common Service" 또는 "Processing Service Input Parameter Name" 필드의
+																					 값을 수정한 경우에만 Overwrite 한다.<br>
+																					 그러나 Socket Server에 대한 구성이 물리적으로 Gateway Server와 Main Server로 구분되어 있는 경우에는 Gateway Server에서는 Main Flow Service를 자동으로 생성하지 않는다.<br>
+																					 Deploy Config &gt; Interface Doc 메뉴에서 Deploy 하는 경우에는 Target Server에 Main Flow Service가 자동으로 생성되지 않으므로
+																					 IS Administrator &gt; Solutions &gt; Deployer 메뉴에서 Deploy 하도록 한다.<br>
+																					 주의) Main Flow Service를 생성할 Package의 Name과 Package의 최상위 폴더의 Name을 반드시 같게 해야 하고
+																					 Main Flow Service를 생성할 폴더는 Designer에서 미리 만들어 놓아야 한다(Clustering 환경일 경우 모든 서버에 미리 생성).
+																				 </li>
+																				 <li>공통 헤더에 대한 IData Document Type과 각 필드에 대한 속성을 정의하는 Flow Service는 Designer를 이용해서 미리 적당한 위치에 만들어 놓아야 한다.<br>
+																				     "Common Header Schema Define Service" 필드에 위에서 생성한 Flow Service의 Full Name을 입력하도록 한다.
+																				 </li>
+																				 <li>Socket To REST API 또는 REST API To Socket 통신을 하는 경우에는 전문 기본정보 등록뿐만 아니라 Socket Admin &gt; Basic Info &gt; REST API Protocol 메뉴에서
+																				     Target System Name, Target Business Name 기준으로 REST API 통신에 필요한 기본적이고 공통적으로 적용되는 정보들을 등록해야 한다.
+																			     </li>
+																				 <li>Socket To REST API Outbound 전문에 대해서 Target System Name, Target Business Name이 동일한 전문들의 Internal API URL, Target HTTP/S URL이
+																				     동일한 경우에는 이 메뉴에서 설정하지 않고 Socket Admin &gt; Basic Info &gt; REST API Protocol 메뉴에서 Internal API URL, Target API URL을 설정해서
+																					 공통적으로 적용할 수 있다.
+																				 </li>
+																				 <li>Socket To REST API 방식에 대한 전문을 처리할 때 Internal API URL을 호출할 때 또는 Target API URL을 호출할 때 User/Password가 필요한 경우에는
+																				     Socket Admin &gt; Basic Info &gt; REST API Protocol 메뉴에서 해당 정보를 등록해야 한다.
+																				 </li>
+																				 <li>이미 다른 서버에 Deploy한 전문 중에서 "Schema Edit" 버튼을 클릭해서 Schema Define 정보를 수정하면 Socket Admin &gt; Deploy Config &gt; Doc Schema Define 메뉴에서
+																				     해당 전문을 조회할 수 있고 수정된 Schema Define 정보를 다른 서버에 Deploy 할 수 있다.
+																				 </li>
+            	                                                                 <li><font color="blue">운영서버가 두 대 이상인 경우 한 쪽 운영서버에서 [등록/수정/삭제] 하면 다른 쪽 운영서버에서도 자동으로 [등록/수정/삭제] 된다.</font></li>
+            	                                                                 <li>Config File : SAG_Directory/CUSTOM_CONFIG/socket/docInterfaceIDConfig.xml</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Plant</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">공장 코드<br>
+	                                                                  현대제철 냉연공장 전용으로 Custom Variable "ESB.CONFIG.CUSTOMMENU.CUSTOMER"가 "HCC" 인 경우에만 Display 된다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Doc Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">기존에 등록되지 않은 Unique 한 전문의 이름</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Doc Class Code</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">전문의 종별코드</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Doc Business Code</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">전문의 업무구분코드</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Interface ID</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">인터페이스 ID<br>
+      	                                                              해당 전문을 처리하기 위해서 Interface ID와 같은 폴더를 생성해서 관련 Object 들을 생성하고 메인 서비스 이름에도 Interface ID를 포함시켜서 Naming Rule에 의해서 메인 서비스를 호출할 수 있도록 한다.<br>
+																	  요청전문과 응답전문에 대해서 각각 전문 정보를 등록하는 경우라 하더라도 Interface ID는 동일하게 설정해서 요청전문과 응답전문이 하나의 Interface ID로 Join 될 수 있도록 해야 한다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Description</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Doc Name에 대한 간략한 설명</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target Doc Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Target System에서 사용하는 전문의 이름<br>
+	                                                                  Source System에서 사용하는 전문의 이름과 Target System에서 사용하는 전문의 이름이 서로 다른 경우 Source System에서 사용하는 전문의 이름에 매핑되는
+																	  Target System에서 사용하는 전문의 이름을 입력한다.<br>
+																	  현대제철 냉연공장 전용으로 Custom Variable "ESB.CONFIG.CUSTOMMENU.CUSTOMER"가 "HCC" 인 경우에만 Display 된다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Doc Request/Response Type</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">요청전문인지 응답전문인지에 대한 구분과 요청전문에 응답전문이 있는지 없는지 여부를 설정한다.<br>
+	                                                                  Request & Response : 요청전문이면서 요청전문에 대한 응답전문이 있는 경우<br>
+																	  Only Request : 요청전문이면서 요청전문에 대한 응답전문이 없는 경우<br>
+																	  Response : 응답전문인 경우</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Response Doc Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">응답전문의 Doc Name<br>
+	                                                                  요청전문에 대한 전문정보를 등록 시 "Doc Request/Response Type"이 "Request & Response"인 경우 응답전문에 대한 Doc Name을 입력한다.<br>
+																	  응답전문 수신 시 전문 데이터 내에서 응답전문에 대한 전문 ID를 추출할 수 없는 경우에 이 데이터를 이용할 수 있다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Doc Interface Type</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">인터페이스를 담당하는 시스템과 Source System 간의 인터페이스 방식 & 인터페이스를 담당하는 시스템과 Target System 간의 인터페이스 방식을 설정한다.<br>
+	                                                                  전문정보를 요청전문/응답전문 쌍으로 등록하는 경우에는 응답전문에 대해서는 요청전문의 Doc Interface Type과 같게 설정한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Socket Processing Service URL</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">REST API To Socket 방식의 인터페이스일 경우 Socket 통신을 담당하는 서비스의 URL을 설정한다.<br>
+	                                                                  API Gateway 서버에서는 이 URL을 호출하여 Socket Processing을 하게 된다.<br>
+																	  기본값은 http://localhost:5555/invoke/JSocketAdapter.RESTAPI.GATEWAY/receive 이고 환경에 맞게 적당하게 수정해야 한다.<br>
+																	  "/invoke/JSocketAdapter.RESTAPI.GATEWAY/receive" 부분은 수정하면 안되고 "http://localhost:5555" 부분만 수정해야 한다.<br>
+																	  Socket 통신을 담당하는 서비스가 있는 서버와 API Gateway 서버가 동일한 경우에는 "localhost" 부분은 수정하지 않도록 한다.
+																	  서버가 이중화 되어 있더라도 L4 IP를 통해서 호출하지 않고 직접 호출하기 위함이다.<br>
+																	  그러나, Socket 통신을 담당하는 서비스가 있는 서버와 API Gateway 서버가 서로 다른 경우에는 Socket 통신을 담당하는 서비스가 있는 서버의 IP로 수정해야 한다.<br>
+																	  "Doc Request/Response Type" 항목을 "Request & Response" 또는 "Only Request"로 선택하고 "Doc Interface Type" 항목을 "REST API To Socket"으로 선택한 경우에만 Display 된다.</a></div>	  	  
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Health Check Doc YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Online Health Check 전문인지 여부<br>
+	                                                                  Yes : Health Check 전문<br>
+																	  No : Health Check 전문이 아닌 업무 전문</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Health Check Interval</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Online Health Check 전문인 경우에 Health Check 하는 Interval을 초단위로 입력한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Health Check Doc Body Content</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Online Health Check 전문인 경우에 전문 Body 부분에 대한 내용<br>
+	                                                                  Health Check Doc YN을 Yes로 설정하고 Socket Server 쪽에서 Socket Client 쪽으로 송신하는 Health Check 전문인 경우에 입력한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Listening Port</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문 수신을 Listening 하고 있는 Local Server Port Number<br>
+	                                                                  해당 전문을 수신하는 Port가 여러 개인 경우에는 "Multi Port" 를 선택한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Send Status Timeout</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">Asynch Online 전문송신 시 전문송신결과를 기다리는 Timeout<br>
+	                                                                  Target System과의 통신 방식이 Asynch Online Socket이면서 전문송신 결과를 IS Memory에서 체크해야 하는 경우에만 입력한다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Response Timeout</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Asynch Online 전문송신 시 응답전문 수신결과를 기다리는 Timeout<br>
+	                                                                  Target System과의 통신 방식이 Asynch Online Socket이면서 응답전문 수신결과를 IS Memory에서 체크해야 하는 경우에만 입력한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Common Header Schema Define Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문의 공통정보부 Format 및 각 Field에 대한 속성(필드길이/패딩문자/패딩구분/필드명)을 정의한 Service의 Full Name을 입력한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Schema Define Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문의 업무정보부 Format 및 각 Field에 대한 속성(필드길이/패딩문자/패딩구분/필드명)을 정의한 Service의 Full Name을 입력한다.<br>
+	                                                                  "Schema Define" 필드에 값을 입력하면 이 Flow Service가 자동으로 생성된다.<br>
+																	  Service가 생성될 Package 및 Folder를 수동으로 미리 생성하지 않은 경우에는 Package 및 Folder도 자동으로 생성된다.<br>
+																	  단, 수동으로 미리 생성하는 경우에 Package Name과 Root Folder Name은 동일해야 한다. 자동으로 생성되는 경우에도 Package Name과 Root Folder Name은 동일하게 생성된다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Schema Document Type Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문의 업무정보부 Format을 정의한 IData Document Type의 Full Name을 입력한다.<br>
+	                                                                  "Schema Define" 필드에 값을 입력하면 이 IData Document Type이 자동으로 생성된다.<br>
+																	  Document Type이 생성될 Package 및 Folder를 수동으로 미리 생성하지 않은 경우에는 Package 및 Folder도 자동으로 생성된다.<br>
+																	  단, 수동으로 미리 생성하는 경우에 Package Name과 Root Folder Name은 동일해야 한다. 자동으로 생성되는 경우에도 Package Name과 Root Folder Name은 동일하게 생성된다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Processing Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문에 대해서 실제로 처리할 Service의 Full Name을 입력한다.<br>
+	                                                                  "Processing Common Service", "Processing Service Input Parameter Name" 필드에 값을 입력하면 이 Flow Service가 자동으로 생성된다.<br>
+																	  Service가 생성될 Package 및 Folder를 수동으로 미리 생성하지 않은 경우에는 Package 및 Folder도 자동으로 생성된다.<br>
+																	  단, 수동으로 미리 생성하는 경우에 Package Name과 Root Folder Name은 동일해야 한다. 자동으로 생성되는 경우에도 Package Name과 Root Folder Name은 동일하게 생성된다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Processing Common Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Processing Service에서 Invoke 할 공통로직 Service의 Full Name을 입력한다.<br>
+	                                                                  Processing Service의 전체로직이 공통로직 Service 하나만 Invoke 하면 되는 경우에만 입력한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Processing Service Input Parameter Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Processing Service의 Input Parameter Document Type Name을 입력한다.<br>
+	                                                                  Processing Service의 전체로직이 공통로직 Service 하나만 Invoke 하면 되는 경우에만 입력한다.<br>
+																	  이 Document Type은 JSocketAdapter.DOC:MainServiceCommon Document Type을 Reference 하는 Document Type 이다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문을 Target System에 송신하기 위한 Service Name을 입력한다.<br>
+	                                                                  Processing Common Service가 존재하면서 Processing Common Service 안에서 전문별로 Invoke 할 Target Service를 다르게 적용할 경우에 입력한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Input Parameter Type</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Target Service의 Input Parameter Type<br>
+	                                                                  JDTO Record : 필드를 Name/Value 쌍으로 해서 JDTO Record로 변환해서 Service를 호출한다.<br>
+																	  String : 수신한 전문 String을 그대로 Input Parameter로 해서 Service를 호출한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target Service System Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Target Service 실행 시 연결해야 할 Target System의 Name</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Save Audit Log to DB YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Processing Service를 자동으로 생성할 경우 Processing Service에 대한 Audit Log를 Audit DB에 저장할 것인지 여부<br>
+      	                                                              'Yes'를 선택한 경우에는 Audit Log를 Audit DB에 저장하고 'No'를 선택한 경우에는 Audit Log를 Audit DB에 저장하지 않는다.<br>
+																	  Processing Service의 Audit Property 설정<br>
+																	  Yes : Enable auditing(Always), Log on(Error, success, and start), Include pipeline(Never)<br>
+																	  No : Enable auditing(Never), Log on(Error only), Include pipeline(Never)</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Serial Processing YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">수신하는 데이터에 대해서 Single Thread에 의해서 순차적으로 처리할 것인지 Multi Thread에 의해서 비순차적으로 처리할 것인지 여부<br>
+      	                                                              'Yes'를 선택한 경우에는 Single Thread에 의해서 순차적으로 처리하고 'No'를 선택한 경우에는 Multi Thread에 의해서 비순차적으로 처리한다.<br>
+																	  Server Port의 Serial Processing YN 설정과 별개로 전문 단위로 순차처리/비순차처리를 설정할 수 있다.<br>
+																	  예를 들어서, Server Port의 Serial Processing YN이 'Yes' 인데 해당 Port로 수신되는 전문 중에서 처리시간이 오래 걸려서 다른 전문처리에 영향을 주는 전문에 대해서는
+																	  예외로 순차처리하지 않도록 할 경우 해당 전문의 Serial Processing YN을 'No' 로 설정한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Processing Skip YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문에 대해서 실제로 처리할 것인지 처리하지 않을 것인지 여부<br>
+	                                                                  No : 전문에 대해서 실제로 처리함<br>
+																	  Yes : 전문에 대해서 실제로 처리하지 않음<br>
+																	  처리시간이 오래 걸리는 전문에 대해서 Yes로 설정해서 Skip 처리하고 Skip 처리가 끝난 후에 다시 No로 설정한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Answerback Doc YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문 수신 후에 Acknowledgement(수신통보) 전문을 리턴할 것인지 여부<br>
+	                                                                  Yes : 전문을 수신한 또는 송신한 Socket으로 수신통보 전문을 리턴함. 즉, 전문을 송수신한 Socket과 동일한 Socket을 이용해서 수신통보 전문을 리턴함.<br>
+																	  No : 수신통보 전문을 리턴하지 않음<br>
+																	  YesRSS : 전문을 수신한 Socket이 아닌 Remote Server Socket으로 수신통보 전문을 리턴함<br>
+																	  예외) 전문 송신 후에 타겟 시스템으로부터 Acknowledgement(수신통보) 전문을 수신하는지에 대한 여부도 설정할 수 있다.</a></div>
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Answerback Send Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문 수신 후에 Acknowledgement(수신통보) 전문 송신처리를 하는 서비스<br>
+	                                                                  Answerback Doc YN을 Yes로 설정한 경우에 입력한다.<br>
+																	  예외) 전문 송신 후에 타겟 시스템으로부터 Acknowledgement(수신통보) 전문을 수신하는 경우에는 설정하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Answerback Doc ID</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문 수신 후에 Acknowledgement(수신통보) 전문을 리턴할 경우 Acknowledgement 전문의 ID<br>
+	                                                                  Answerback Doc YN을 Yes로 설정한 경우에 입력한다.<br>
+																	  예외) 전문 송신 후에 타겟 시스템으로부터 Acknowledgement(수신통보) 전문을 수신하는 경우에는 설정하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Answerback Socket Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문 수신 후에 Remote Server Socket을 이용해서 Acknowledgement(수신통보) 전문을 리턴할 경우의 Socket Name<br>
+	                                                                  Answerback Doc YN을 YesRSS로 설정한 경우에 입력한다.<br>
+																	  예외) 전문 송신 후에 타겟 시스템으로부터 Acknowledgement(수신통보) 전문을 수신하는 경우에는 설정하지 않는다.</a></div>	  
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Answerback Doc Data</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문 수신 후에 Acknowledgement(수신통보) 전문을 리턴할 경우 Acknowledgement 전문의 Content<br>
+	                                                                  Answerback Doc YN을 Yes로 설정하고 Answerback Send Service를 입력하지 않은 경우에 입력한다. 즉, Answerback 전문 Data가 고정값으로 정해져 있는 경우에 입력한다.<br>
+																	  예외) 전문 송신 후에 타겟 시스템으로부터 Acknowledgement(수신통보) 전문을 수신하는 경우에는 설정하지 않는다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Answerback Receive Retry Count</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문 송신 후에 Acknowledgement(수신통보) 전문을 리턴 받을 경우 Acknowledgement 전문의 재수신 횟수<br>
+	                                                                  Answerback Doc YN을 Yes로 설정한 경우에 입력한다. Acknowledgement(수신통보) 전문을 수신하지 못한 경우에 Acknowledgement(수신통보) 전문을 정상적으로 수신하기 위해서
+																	  Acknowledgement(수신통보) 전문을 다시 수신처리하기 위한 횟수를 설정한다.<br>
+																	  예외) 전문 수신 후에 소스 시스템으로 Acknowledgement(수신통보) 전문을 송신하는 경우에는 설정하지 않는다.</a></div>	  
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Messaging Use YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문 수신 후에 전문을 처리하기 위해서 UM의 Messaging 기능을 사용할 것인지 여부<br>
+	                                                                  Yes : UM의 Messaging 기능을 사용함<br>
+																	  No : UM의 Messaging 기능을 사용하지 않음<br>
+																	  순차처리하는 Port로 수신하는 경우라도 No로 설정된 전문은 UM에 Send 하지 않고 별도의 Thread로 처리하기 때문에 순차처리에서 제외된다.<br>
+																	  GW, MA 서버가 분리되어 있는 구조에서 Remote Invoke 하는 것이 부담스러운 경우에는 비순차 처리를 하기 위한 전용의 Queue를 만들고
+																	  UM의 Messaging 기능을 사용해서 처리할 수 있다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">JMS Send Queue/Topic Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">UM의 JMS Send 방식을 이용하여 전문처리를 하는 경우 해당 전문을 Send 할 Queue 또는 Topic의 Name을 입력한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Publishing Document Type Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">UM의 webMethods Messaging Publish 방식을 이용하여 전문처리를 하는 경우 해당 전문을 Publish 할 Document Type의 Name을 입력한다.</a></div>	      
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Source System Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문을 송신하는 Source System의 Name<br>
+																	  하나의 전문에 대해서 여러 시스템에서 송신할 수 있기 때문에 Source System Name은 다중 선택이 가능하다.<br>
+																	  전문을 처리하는 데에는 사용되지 않고 전문 검색 등 참고 정보로만 사용된다.<br>
+	                                                                  전문정보를 요청전문/응답전문 쌍으로 등록하는 경우에는 응답전문에 대해서는 요청전문의 Source System Name과 같게 설정한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target System Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문을 송신해야 할 Target System의 Name<br>
+																	  요청전문을 기준으로 해서 요청전문을 수신하는 시스템이 Target System이 된다.<br>
+																	  예를 들어서 요청전문을 A --> B 로 송신하고 B --> A 로 응답전문을 수신하는 경우 요청전문, 응답전문 모두 Target System Name은 B가 된다.<br>
+																	  즉, 요청전문/응답전문 송수신은 하나의 인터페이스로 Join 된다.<br>
+																	  Inbound 전문, Outbound 전문 모두 위와 같은 기준으로 Target System Name을 결정한다.<br>
+																	  하나의 전문을 여러 System에 송신하는 경우에는 필요할 경우 Main Service에서 System Name을 결정한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target Socket Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Socket To Socket 인터페이스 방식일 경우 Target System에 대한 Socket Name<br>
+	                                                                  Target System과의 통신 방식이 Socket인 경우에만 입력한다.<br>
+																	  Target System에 대한 Remote Server Socket 정보를 이용해서 전문을 송신하는 경우에 입력한다.<br>
+																	  전문과 Target System이 1:1 관계일 경우에 입력하고 그 이외의 경우는 입력하지 말고 필요할 경우 Main Service에서 Target Socket Name을 결정한다.</a></div>      
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target Port Number</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Socket To Socket 인터페이스 방식일 경우 Target System에 대한 Local Server Port Number<br>
+	                                                                  Target System과의 통신 방식이 Socket인 경우에만 입력한다.<br>
+																	  Target System에 대한 Remote Server Socket 정보를 이용해서 전문을 송신하는 것이 아니고 Target System에서 Local Server Port Number에 연결한
+																	  Socket을 이용해서 전문을 송신하는 경우에 입력한다.<br>
+																	  전문과 Target System이 1:1 관계일 경우에 입력하고 그 이외의 경우는 입력하지 말고 필요할 경우 Main Service에서 Target Port Number를 결정한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Target HTTP/S URL</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Socket To REST API 인터페이스 방식일 경우 Target System에 대한 HTTP/S URL<br>
+	                                                                  Target System과의 통신 방식이 Http/s인 경우에만 입력한다.<br>
+																	  API Gateway 서버가 존재하지 않는 경우에는 반드시 입력해야 한다. 또한 API Gateway 서버가 존재하는 경우에라도 여러 개의 전문이 하나의 공통 Internal API URL을
+																	  사용하는 경우에는 반드시 입력해야 한다.<br>
+																	  전문과 Target System이 1:1 관계일 경우에 입력하고 그 이외의 경우는 입력하지 말고 필요할 경우 Main Service에서 Target HTTP/S URL을 결정한다.</a></div>	  
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Variable URL Service</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Socket To REST API 인터페이스 방식일 경우 HTTP/S URL이 고정값이 아니고 가변적인 경우 URL을 구하는 Service의 Full Name<br>
+	                                                                  Target System과의 통신 방식이 Http/s인 경우이면서 URL이 가변적인 경우에만 입력한다.<br>
+																	  Target HTTP/S URL 필드에는 URL 중에서 고정값 부분만을 입력하고 여기에 설정한 Service에 의해서 전체 URL을 완성하도록 한다.<br>
+																	  이 서비스의 Input Parameter는 Document 타입의 Name은 pipelineData로 하고 Output Parameter는 String 타입의 Name은 targetUrl로 해야 한다.<br>
+																	  Parent 서비스에서는 JSocketAdapter.COMMON.UTIL.IDATA:setPipelineData 서비스를 호출해서 모든 pipeline 데이터를 Document "pipelineData" 하위에 저장하여
+																	  이 서비스의 Input으로 넘겨주고 이 서비스에서는 pipelineData에서 필요한 값을 추출하여(필요 없을 경우에는 추출할 필요 없음) 전체 URL을 완성한 다음 Output으로 리턴한다.<br>
+																	  이 서비스에서는 기본적으로 pipelineData/targetUrl 필드에서 고정값 URL을 추출해야 한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">HTTP/S Service Method</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Socket To Http/s 인터페이스 방식일 경우 HTTP/S URL에 대한 Service Method<br>
+	                                                                  Target System과의 통신 방식이 Http/s인 경우에만 입력한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">API System Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Socket To REST API 또는 REST API To Socket 인터페이스 방식일 경우 API 통신을 하는 대상 System Name<br>
+	                                                                  타 System과의 통신 방식이 Http/s인 경우에만 입력한다.<br>
+																	  API 통신을 하는 대상 System, Business가 동일하다면 Inbound 요청전문/응답전문, Outbound 요청전문/응답전문 모두 API System Name, API Business Name을 동일하게 설정하면 된다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">API Business Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Socket To REST API 또는 REST API To Socket 인터페이스 방식일 경우 API System Name에 대한 Business Name<br>
+	                                                                  타 System과의 통신 방식이 Http/s인 경우에만 입력한다.<br>
+																	  API System Name과 API Business Name을 이용해서 필요 시에 Basic Info &gt; REST API Protocol 메뉴에서 등록한 정보를 이용할 수 있다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Internal API URL</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Socket To REST API 인터페이스 방식일 경우 API Gateway 서버의 Internal API URL<br>
+	                                                                  Outbound 전문에 대해서 Partner와 REST API를 연계해 주는 API Gateway 서버가 존재하는 경우에 Internal API URL을 호출해서
+	                                                                  Target API와 연계하도록 한다. Target System과의 통신 방식이 Http/s인 경우이면서 API Gateway 서버가 존재하는 경우에만 입력한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">External API URL</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">REST API To Socket 인터페이스 방식일 경우 API Gateway 서버의 External API URL<br>
+	                                                                  Inbound 전문에 대해서 Partner와 REST API를 연계해 주는 API Gateway 서버가 존재하는 경우에 Partner에서 External API URL을 호출해서
+	                                                                  Target Socket과 연계하도록 한다. Source System과의 통신 방식이 Http/s인 경우이면서 API Gateway 서버가 존재하는 경우에만 입력한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Convert JSON YN</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Socket String을 JSON 포맷으로 변환 또는 JSON 포맷을 Socket String으로 변환하는지 여부<br>
+	                                                                  Yes : JSON 포맷으로 변환함 ==> Socket String을 IData로 변환 시 Data Type이 N(숫자)인 경우에는 Number 타입으로 값을 매핑함<br>
+																	  No : JSON 포맷으로 변환하지 않음 ==> Socket String을 IData로 변환 시 Data Type이 N(숫자)이라 하더라도 String 타입으로 값을 매핑함<br>
+																	  인터페이스 방식이 Socket To REST API 또는 REST API To Socket 방식일 경우에는 Yes를 선택하고 Socket To Socket 방식일 경우에는 No를 선택한다.<br>
+																	  Socket String을 JSON 포맷으로 변환 또는 JSON 포맷을 Socket String으로 변환하는 경우 또는 Socket To Socket 방식이면서 Source, Target 포맷이 서로 다른 경우에는
+																	  JSocketAdapter.RESTAPI.UTIL:createSchemaDef, JSocketAdapter.RESTAPI.UTIL:convertToDocument,
+																	  JSocketAdapter.RESTAPI.UTIL:convertToString 서비스를 이용해서 변환처리를 해야 한다.</a></div>	  
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Multi Record Sequence Rule</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문 데이터가 Multi Record를 포함하고 있는 경우 Record의 순번을 결정하는 Rule<br>
+	                                                                  전문의 구조가 복잡하여 Multi Record 하위에 또 Multi Record가 존재하는 구조인 경우에는 전문 구조상 나오는 순서대로 Rule을 '/'를 구분자로 해서 입력한다.<br>
+																	  Specified Number Apply : Record의 순번을 특정 숫자를 이용해서 생성하는지 여부<br>
+																	  Sequence Rule : NS(Record의 순번을 붙이지 않는다), IS(Record의 Index 번호를 붙인다. Specified Number Apply에 특정 숫자를 입력한 경우에는 (특정 숫자 + Index) 한 것을 붙인다.)<br>
+																	  Sequence Length Apply : Record의 순번을 특정 자릿수 만큼 Padding 할 것인지 여부<br>
+																	  Delimiter Character : 필드명과 순번 사이에 구분 문자를 삽입할 것인지 여부. 구분 문자가 "_" 일 경우에는 "UNDERBAR" 로 변환해서 입력된다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Multi Record Count Field Name</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문 데이터가 Multi Record를 포함하고 있는 경우 Record의 갯수를 포함하고 있는 Field의 Name<br>
+	                                                                  전문의 구조가 복잡하여 Multi Record 하위에 또 Multi Record가 존재하는 구조인 경우에는 전문 구조상 나오는 순서대로 Field Name을 '/'를 구분자로 해서 입력한다.<br>
+																	  전문이 고정길이 이고 Record의 갯수를 포함하고 있는 Field가 없는 경우에는 Field Name 대신 Record의 갯수를 숫자로 입력한다.</a></div>      
+      <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Schema Define Scope</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">Schema Define이 적용되는 범위를 선택한다.<br>
+	                                                                  Request & Response : 요청전문/응답전문 Schema Define이 동일한 경우. 전문 정보를 하나만 등록(요청전문 기준)하고 요청전문/응답전문 모두 이 Schema Define을 같이 사용하여 전문 처리를 할 수 있다.<br>
+																	                       Synch 방식일 경우에만 이렇게 사용하는 것이 가능하고 Asynch 방식일 경우에는 이렇게 사용할 수 없다. Asynch 방식일 경우에는 요청전문/응답전문 Schema Define이 동일하다 하더라도
+				                                                                           요청전문/응답전문 정보 및 Schema Define을 각각 등록해야 한다.<br>
+																						   요청전문/응답전문 Schema Define이 동일하다는 것은 요청전문의 Source System 포맷/Target System 포맷, 응답전문의 Source System 포맷/Target System 포맷이 모두
+																						   동일한 경우를 말하는 것이다.<br>
+																	  Request : 요청전문/응답전문 Schema Define이 서로 다르면서 요청전문의 Schema Define을 등록하는 경우. Synch 방식인지 Asynch 방식인지 하고는 상관 없다.<br>
+																	  Response : 요청전문/응답전문 Schema Define이 서로 다르면서 경우 응답전문의 Schema Define을 등록하는 경우. Synch 방식인지 Asynch 방식인지 하고는 상관 없다.<br>
+																	             요청전문/응답전문 Schema Define이 서로 다른 경우에는 요청전문/응답전문 정보 및 Schema Define을 각각 등록해야 한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Schema Define</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문의 업무정보부 Format 및 각 Field에 대한 속성(필드길이/패딩문자/패딩구분/필드명)을 정의한 String List 값을 입력한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_4_2">Schema Define File</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_4_4">전문의 업무정보부 Format 및 각 Field에 대한 속성(필드길이/패딩문자/패딩구분/필드명)을 정의한 엑셀파일을 선택한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Doc Length</a></div>
+      <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">전문의 길이<br>
+	                                                                  전문의 공통정보부에 셋팅되는 전문의 길이를 입력한다.<br>
+																	  가변길이 전문인 경우에는 입력할 필요 없고 고정길이 전문인 경우에만 입력해서 전문의 유효성 체크하는 데 이용한다.</a></div>
+	  <div class="Definition_Term"><a name="3_5_7_6_6_4_7_2_2">Change Sending Doc Length</a></div>
+	  <div class="Definition_Description"><a name="3_5_7_6_6_4_7_2_4">수신한 전문을 Target System에 전달 할 때 전문길이 필드를 변경해서 전달할지 여부를 설정한다.<br>
+	                                                                  선택 : 전문길이 필드를 변경하지 않는다.<br>
+																	  Header + Body : 전문길이 필드를 (공통정보부 길이 + 업무정보부 길이) 로 변경한다.<br>
+																	  Only Body : 전문길이 필드를 업무정보부 길이로 변경한다.</a></div>	  	  
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

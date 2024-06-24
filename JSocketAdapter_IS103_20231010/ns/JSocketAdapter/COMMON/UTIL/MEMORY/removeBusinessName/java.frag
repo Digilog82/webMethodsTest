@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">removeBusinessName</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwluYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJOQU1FIiApOw0K
+cGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpTdHJpbmcgZXJyb3JNc2cgPSAiIjsNCg0KdHJ5
+IHsNCgkvL0J1c2luZXNzTmFtZUxpc3QucmVtb3ZlKCBuYW1lICk7DQoJc01hbmFnZXIucmVtb3Zl
+QnVzaW5lc3NOYW1lKCBuYW1lICk7DQp9IGNhdGNoICggRXhjZXB0aW9uIGUgKSB7DQoJZXJyb3JN
+c2cgPSBlLnRvU3RyaW5nKCk7DQp9DQoNCklEYXRhQ3Vyc29yIHBpcGVsaW5lQ3Vyc29yXzEgPSBw
+aXBlbGluZS5nZXRDdXJzb3IoKTsNCklEYXRhVXRpbC5wdXQoIHBpcGVsaW5lQ3Vyc29yXzEsICJl
+cnJvck1zZyIsIGVycm9yTXNnICk7DQpwaXBlbGluZUN1cnNvcl8xLmRlc3Ryb3koKTs=</value>
+</Values>

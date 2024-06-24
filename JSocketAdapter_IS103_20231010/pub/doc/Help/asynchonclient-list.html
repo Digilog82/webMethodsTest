@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Online Client List</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Online Client &gt; Online Client List Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Online Client &gt; Online Client List</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">Online Remote Socket Server에 대한 정보를 조회하고 Server에 연결/Close 처리 및 Business Name 단위로 Enable/Disable 처리를 하는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Online Client &gt; Online Client List 클릭 : 목록을 조회한다.</li>
+    	                                              <li>Search 클릭 : 조회조건에 맞는 정보를 조회한다.</li>
+    	                                              <li>To Do 필드의 링크 클릭 : 해당 Target Port에 연결/Close 한다.</li>
+													  <li>Target System Name 필드의 링크 클릭 : 해당 Target System Name에 대한 Online 업무에 필요한 Object 들을 관리를 할 수 있는 상세 관리화면이 오픈된다.</li>
+    	                                              <li>Business Enable 클릭 : 선택한 Business Name 또는 조회된 모든 Business Name을 일괄적으로 Enable 한다.</li>
+    	                                              <li>Business Disable 클릭 : 선택한 Business Name 또는 조회된 모든 Business Name을 일괄적으로 Disable 한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Search Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>Custom Variable "ESB.SOCKET.ONLINE.MENUDISPLAY"가 inlist로 설정된 경우에 이 메뉴가 Display 된다.</li>
+            	                                                                 <li>Remote Server Socket 중에서 Online Socket에 대해서만 조회를 하고 Target Server에 연결 및 Close 처리를 한다.</li>
+																				 <li>"Fixed Connecting Client IP" 필드에 설정한 값이 없으면서 "Multi-Connection YN" 필드의 값이 "No"인 경우에
+																				     Target Server에 연결하는 순간 Custom Variable "ESB.SOCKET.CONFIG.SHAREPATH"에 설정된 위치에
+																					 socketName$CURRENT$서버IP 라는 이름으로 파일을 생성하고 관리자가 직접 Close 처리를 하거나 IS를 Shutdown 하는
+																					 경우에는 해당 파일을 삭제한다.<br>
+																					 한 쪽 IS를 Shutdown 하고 있는 동안에는 Alive 상태에 있는 IS에서 Target Server에 연결이 되므로 Load Balancing이 깨지게 된다.
+																					 Shutdown 되었던 IS가 Start 된 이후에 JSocketAdapter.COMMON.INTERFACE.CLIENT:sendSimplexOnline 서비스를 이용해서 전문을
+																					 송신할 때 재연결 처리가 수행된 경우 Load Balancing이 필요하다고 판단되면 전문 송신 후에 해당 Socket을 Close 하고
+																					 해당 파일을 삭제해서 다음 전문 송신할 때 Target Server 연결에 대한 Load Balancing을 맞추도록 한다.<br>
+																					 해당 파일은 한 쪽 서버에서만 Target Server에 연결하기 위한 처리에 활용할 수 있다.
+																				 </li>
+            	                                                                 <li>체크박스를 선택하는 경우에는 선택된 Business Name에 대해서만 일괄적으로 Online 업무 Enable 및 Disable 처리를 한다.</li>
+            	                                                                 <li>체크박스를 전체 선택하든가 아예 선택하지 않으면 조회된 모든 Business Name에 대해서 일괄적으로 Online 업무 Enable 및 Disable 처리를 한다.</li>
+            	                                                                 <li>Online 업무 Enable 및 Disable 처리는 Connection, Schedule, Trigger 등 Online 업무에 필요한 Object 들에 대한 Enable/Disable 처리를 일괄적으로 한다.</li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

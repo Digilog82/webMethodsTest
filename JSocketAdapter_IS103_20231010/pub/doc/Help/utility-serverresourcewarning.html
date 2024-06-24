@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<title>Server Resources Warning</title>
+		<link rel="stylesheet" type="text/css" href="css/webMethods_97.css">
+		<link rel="StyleSheet" href="css/_is_admin_help.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+  </head>
+  <body style="background-color: White; margin-bottom: 25px; margin-left: 25px; margin-right: 25px; margin-top: 0px; padding-top: 0px">
+    <table align="left" role="presentation">
+      <tr>
+        <td class="WebWorks_Company_Logo_Top">
+          <img src="images/sag_online.png" />
+        </td>
+      </tr>
+    </table>
+    <br clear="all" />
+    <hr align="left" />
+    <blockquote>
+      <div class="Heading_2"><a name="3_5_7_6_2">Utility &gt; Server Resources Warning Screen</a></div>
+      <div class="Body"><span class="emphasis"><a name="3_5_7_6_6_2_3">Screen Heading</a></span>: <span class="uicontrol">IS Administrator &gt; Solutions &gt; Socket Admin &gt; Utility &gt; Server Resources Warning</span></div>
+      <div class="Body"><a name="3_5_7_6_6_2_5">ESB 서버의 Memory, CPU, Thread Pool 등 Resources 상태를 조회하고 위험수위에 도달한 경우 경고음으로 알려주는 메뉴이다.</a>
+      </div>
+    	<div class="Body"><a name="3_5_7_6_6_2_7"><ul><li>Utility &gt; Server Resources Warning 클릭 : 조회화면으로 이동한다.</li>
+    	                                              <li>Refresh Type : Auto(자동으로 Resources 상태를 다시 조회), Manual(관리자가 직접 클릭해서 Resources 상태를 다시 조회)<br>
+    	                                              	  Auto가 기본 설정이고 Auto로 설정한 상태에서 Auto Refresh Interval을 초단위로 입력 후 Refresh 버튼을 클릭하면 Interval 간격으로 화면이 자동으로 Refresh 되어 Resources 상태를 조회한다.</li>
+    	                                          </ul></a>
+      </div>
+      <div class="Section_Title"><a name="3_5_7_6_6_4_3">Search Screen</a></div>
+      <table class="note2" summary="">
+        <tr>
+          <td class="Table_Cell" style="vertical-align: top; width: 10%">
+            <div class="Note">
+              <span style="font-family: Arial, Verdana, Helvetica, Sans-Serif; font-weight: bold">Note:    </span><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_2_2">&nbsp;</a></div>
+          </td>
+          <td class="Table_Cell" style="vertical-align: top; width: 90%">
+            <div class="Table_Cell"><a name="3_5_7_6_6_6_7_14_4_3_1_3_1_3"><ul><li>ESB 서버의 IS Alive 상태, IS Heap Memory 사용가능률, Thread Pool 사용가능률, Main Service 처리시간 지연 갯수, Hardware의 CPU 사용률,
+            	                                                                   UM에 처리되지 않고 남아 있는 메세지의 갯수, UM 연결 상태, Clustering Enabled 여부, Terracotta Server Alive 상태, 연결 허용 갯수가 1인
+																				   Online Client의 다중 연결 유무를 조회하고 위험수위에 도달한 경우에 경고음으로 알려준다.
+            	                                                               </li>
+																			   <li>이 메뉴를 오픈 해놓은 서버 뿐만 아니라 IS Administrator &gt; Settings &gt; Remote Servers 메뉴에 등록되어 있는 Remote Server에 대한 상태도 같이 조회한다.</li>
+																			   <li>경고 상태를 판단하기 위한 기준은 Basic Info &gt; Custom Variable 메뉴에서 아래와 같은 Variable들 설정에 따른다.<br>
+																			       ESB.CONFIG.WARNINGTHRESHOLD.CPU, ESB.CONFIG.WARNINGTHRESHOLD.MEMORY, ESB.CONFIG.WARNINGTHRESHOLD.QUEUE, ESB.CONFIG.WARNINGTHRESHOLD.SVCDURATION, ESB.CONFIG.WARNINGTHRESHOLD.THREAD<br>
+																				   서버 상태에 따라서 위의 Variable들에 대한 설정값을 적당하게 조절한다.
+            	                                                               <li>경고음을 알리는 횟수와 경고음의 Interval은 Basic Info &gt; Custom Variable 메뉴에서 아래와 같은 Variable들 설정에 따른다.<br>
+																			       ESB.CONFIG.WARNING.COUNT, ESB.CONFIG.WARNING.INTERVAL<br>
+																				   경고음의 Interval은 2초 이상으로 설정해야 한다. 1초로 설정하면 경고음 횟수가 정상적으로 적용되지 않는다.
+																			   </li>
+																			   <li>Resources 상태는 화면에 진입하는 순간의 상태로서 지속적으로 모니터링하기 위해서는 화면을 Refresh 해야 한다.<br>
+																			       기본적으로 자동으로 Refresh 하도록 되어 있고 수동으로 Refresh 하고 싶은 경우에는 Refresh Type을 Manual로 선택하고 Refresh 버튼을 클릭하면 된다.
+																			   </li>
+																			   <li>위험수위에 도달해서 경고음으로 알리는 상황이 발생한 경우에는 관리자에게 메일로 통보를 하고 로그 파일에도 내용을 저장한다.<br>
+																			       로그 파일에 저장한 내용은 Socket Log &gt; Mail Notification Log 메뉴에서 확인할 수 있다.
+																			   </li>
+																			   <li>관리자는 이 메뉴를 항상 오픈 해놓고 서버의 위험 상태를 빠르게 감지할 수 있다.<br>
+																			       Refresh Type을 Auto로 설정한 상태에서는 브라우저를 최소화 해놓아도 자동으로 Refresh 되어 경고음으로 알릴 수 있다.
+																			   </li>
+																			   <li>그러나, 관리자가 이 메뉴를 오픈하지 않으면 모니터링이 되지 않는다.<br>
+																			       이 메뉴를 오픈하지 않고도 모니터링 하는 방법에 대해서는 IS Administrator > Solutions > Socket Admin > Basic Info > Help > Basic Info > Custom Variable 메뉴에서
+																				   "ESB.CONFIG.WARNINGCHK.DMSVCEXEC" Variable에 대한 설명을 참고하기 바란다.
+																			   </li>
+            	                                                             </ul></a>
+						</div>
+          </td>
+        </tr>
+      </table>
+    </blockquote>
+    <div>
+      <hr />
+    </div>
+  </body>
+</html>

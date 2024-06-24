@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">convertFileName</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IJcGlwZWxpbmVDdXJzb3IJPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZyBpbkZpbGVOYW1lID0gSURhdGFVdGlsLmdldFN0cmluZyggcGlwZWxpbmVDdXJzb3IsICJpbkZp
+bGVOYW1lIiApOw0KcGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpTdHJpbmcgb3V0RmlsZU5h
+bWUgPSAiIjsNClN0cmluZyBlcnJvck1zZyA9ICIiOw0KDQp0cnkgew0KCW91dEZpbGVOYW1lID0g
+bmV3IFN0cmluZyggaW5GaWxlTmFtZS5nZXRCeXRlcyggIjg4NTlfMSIgKSwgIlVURi04IiApOw0K
+fSBjYXRjaCAoIEV4Y2VwdGlvbiBlICkgew0KCWVycm9yTXNnID0gZS50b1N0cmluZygpOw0KfQ0K
+DQpJRGF0YUN1cnNvciBwaXBlbGluZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJ
+RGF0YVV0aWwucHV0KCBwaXBlbGluZUN1cnNvcl8xLCAiZXJyb3JNc2ciLCBlcnJvck1zZyApOw0K
+SURhdGFVdGlsLnB1dCggcGlwZWxpbmVDdXJzb3JfMSwgIm91dEZpbGVOYW1lIiwgb3V0RmlsZU5h
+bWUgKTsNCnBpcGVsaW5lQ3Vyc29yXzEuZGVzdHJveSgpOw==</value>
+</Values>

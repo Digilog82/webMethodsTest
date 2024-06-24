@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">getQueueSize</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNClN0cmlu
+ZwlxdWV1ZU5hbWUgPSBJRGF0YVV0aWwuZ2V0U3RyaW5nKCBwaXBlbGluZUN1cnNvciwgInF1ZXVl
+TmFtZSIgKTsNCnBpcGVsaW5lQ3Vyc29yLmRlc3Ryb3koKTsNCg0KUXVldWVNYW5hZ2VyIHFtID0g
+c01hbmFnZXIuZ2V0UXVldWVNYW5hZ2VyKCBxdWV1ZU5hbWUgKTsNClN0cmluZyBxdWV1ZVNpemUg
+PSBxbS5nZXRRdWV1ZVNpemUoKTsNCg0KSURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3JfMSA9IHBp
+cGVsaW5lLmdldEN1cnNvcigpOw0KSURhdGFVdGlsLnB1dCggcGlwZWxpbmVDdXJzb3JfMSwgInF1
+ZXVlU2l6ZSIsIHF1ZXVlU2l6ZSApOw0KcGlwZWxpbmVDdXJzb3JfMS5kZXN0cm95KCk7</value>
+</Values>

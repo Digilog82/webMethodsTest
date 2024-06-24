@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">getSessionCount</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">SURhdGFDdXJzb3IgcGlwZWxpbmVDdXJzb3IgPSBwaXBlbGluZS5nZXRDdXJzb3IoKTsNCmludAlw
+b3J0TnVtYmVyID0gSURhdGFVdGlsLmdldEludCggcGlwZWxpbmVDdXJzb3IsICJwb3J0TnVtYmVy
+IiwgMCApOw0KcGlwZWxpbmVDdXJzb3IuZGVzdHJveSgpOw0KDQpTdHJpbmcgZXJyb3JNc2cgPSAi
+IjsNCmludCBzZXNzaW9uQ291bnQgPSAwOw0KDQp0cnkgew0KCXNlc3Npb25Db3VudCA9IHNNYW5h
+Z2VyLmdldFNlc3Npb25Db3VudCggcG9ydE51bWJlciApOw0KfSBjYXRjaCAoIEV4Y2VwdGlvbiBl
+ICkgew0KCWVycm9yTXNnID0gZS50b1N0cmluZygpOw0KfQ0KDQpJRGF0YUN1cnNvciBwaXBlbGlu
+ZUN1cnNvcl8xID0gcGlwZWxpbmUuZ2V0Q3Vyc29yKCk7DQpJRGF0YVV0aWwucHV0KCBwaXBlbGlu
+ZUN1cnNvcl8xLCAiZXJyb3JNc2ciLCBlcnJvck1zZyApOw0KSURhdGFVdGlsLnB1dCggcGlwZWxp
+bmVDdXJzb3JfMSwgInNlc3Npb25Db3VudCIsIHNlc3Npb25Db3VudCArICIiICk7DQpwaXBlbGlu
+ZUN1cnNvcl8xLmRlc3Ryb3koKTs=</value>
+</Values>
